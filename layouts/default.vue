@@ -2,13 +2,13 @@
     <div>
         <section class="nav">
             <img src="~/assets/img/logo.svg" alt="">
-            <ul>
-                <li>Home</li>
-                <li>Estoque</li>
-                <li>Serviços</li>
-                <li>Blog</li>
-            </ul>
-            <button><a href="">CONTATO</a></button>
+            <div class="nav_menu">
+                <nuxt-link to="/">Home</nuxt-link>
+                <nuxt-link to="/estoque">Estoque</nuxt-link>
+                <nuxt-link to="/service">Serviços</nuxt-link>
+                <nuxt-link to="/blog">Blog</nuxt-link>
+            </div>
+            <button><a target="_blank" href="https://avenidaveiculosindaiatuba.com.br/Anuncio/Contato">CONTATO</a></button>
         </section>
         <Nuxt />
         <section class="blog">
@@ -29,33 +29,47 @@
 .nav {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     height: 10rem;
     padding: 4rem;
     margin-bottom: 4rem;
 
     img {
-        height: 6rem;
+        height: 4.5rem;
     }
 
-    ul {
+    &_menu {
         display: flex;
         gap: 4rem;
         justify-content: center;
 
-        li {
-            font-size: 2rem;
+        a {
+            font-family: $ff-primary;
+            font-weight: bolder;
+            font-size: 1.5rem;
             color: $gray-400;
+
+            &:hover {
+                color: $blue-700;
+            }
         }
     }
 
     button {
         border: none;
-        padding: 3rem 4rem;
         text-decoration: none;
-        background-color: $primary;
+        background-color: $blue-700;
+        height: 4rem;
+        
+        &:hover {
+            background-color: $blue-800;
+        }
 
         a {
-            font-size: 1.6rem;
+            padding: 2.5rem;
+            font-size: 1.3rem;
+            font-family: $ff-primary;
+            font-weight: bolder;
             text-align: center;
             color: $gray-100;
         }
