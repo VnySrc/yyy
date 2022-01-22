@@ -1,7 +1,7 @@
 <template>
     <div>
         <section class="nav">
-            <img src="~/assets/img/logo.svg" alt="">
+            <img src="~/assets/img/logo.svg" alt="Logo">
             <div class="nav_menu">
                 <nuxt-link to="/">Home</nuxt-link>
                 <nuxt-link to="/estoque">Estoque</nuxt-link>
@@ -11,15 +11,16 @@
             <button><a target="_blank" href="https://avenidaveiculosindaiatuba.com.br/Anuncio/Contato">CONTATO</a></button>
         </section>
         <Nuxt />
-        <section class="blog">
+        <div class="blog">
             <h1>VISITE NOSSO BLOG</h1>
             <div class="blog_cards">
                 <div class="blog_cards__card"></div>
                 <div class="blog_cards__card"></div>
                 <div class="blog_cards__card"></div>
             </div>
-        </section>
+        </div>
         <footer>
+            <img src="~/assets/img/logo.svg" alt="Logo">
         </footer>
     </div>
 </template>
@@ -36,6 +37,10 @@
 
     img {
         height: 4.5rem;
+
+        &:hover {
+            filter: brightness(2);
+        }
     }
 
     &_menu {
@@ -59,6 +64,7 @@
         border: none;
         text-decoration: none;
         background-color: $blue-700;
+        border-radius: 0.5rem;
         height: 4rem;
         
         &:hover {
@@ -94,6 +100,7 @@
 
     h1 {
         color: $gray-200;
+        font-family: $ff-primary;
         font-size: 2.5rem;
         font-weight: bolder;
         text-align: center;
@@ -106,6 +113,7 @@
 
         &__card {
             background-color: $gray-200;
+            border-radius: 1rem;
             height: 21rem;
             width: 32rem;
         }
@@ -115,6 +123,16 @@
 footer {
     height: 50rem;
     background-color: $secondary;
+    padding: 5rem;
+
+    img {
+        filter: grayscale(100%) invert(100%);
+        height: 5rem;
+
+        &:hover {
+            filter: none;
+        }
+    }
 }
 
 </style>
