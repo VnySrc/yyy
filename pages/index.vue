@@ -71,7 +71,7 @@
 
     h3 {
       font-size: 1.5rem;
-      font-weight: 600;
+      font-weight: 700;
       color: $red-500;
     }
   }
@@ -79,12 +79,16 @@
   &_cards {
     height: 100%;
     padding: 0 !important; 
-    
-    li {
-      background-color: $blue-800;
-      margin-right: 1rem;
-      border-radius: 2rem;
-      height: 35rem;
+
+    ul {
+      height: 100%;
+
+      li {
+        background-color: $blue-800;
+        margin-right: 1rem;
+        border-radius: 2rem;
+        height: 35rem;
+      }
     }
   }
 }
@@ -113,20 +117,24 @@
 
     h3 {
       font-size: 1.5rem;
-      font-weight: 600;
+      font-weight: 700;
       color: $red-500;
     }
   }
 
   &_cards {
     height: 100%;
-    padding: 0 !important; 
- 
-    li {
-      background-color: $primary;
-      margin-right: 1rem;
-      border-radius: 2rem;
-      height: 40rem;
+    padding: 0 !important;
+
+    ul {
+      height: 100%;
+
+      li {
+        background-color: $primary;
+        margin-right: 1rem;
+        border-radius: 2rem;
+        height: 40rem;
+      }
     }
   }
 }
