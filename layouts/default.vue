@@ -5,7 +5,7 @@
             <div>
                 <nuxt-link to="/">Home</nuxt-link>
                 <nuxt-link to="/estoque">Estoque</nuxt-link>
-                <nuxt-link to="/service">Serviços</nuxt-link>
+                <nuxt-link to="/serviços">Serviços</nuxt-link>
                 <nuxt-link to="/blog">Blog</nuxt-link>
             </div>
             <button><a target="_blank" href="https://avenidaveiculosindaiatuba.com.br/Anuncio/Contato">CONTATO</a></button>
@@ -20,26 +20,28 @@
             </div>
         </div>
         <footer>
-            <div class="links">
-                <h4>Links</h4>
-                <a href="">Termos e condições de uso</a>
-                <a href="">Contato por email</a>
-                <a href="">Cadastre seu pedido</a>
-                <a href="">Sobre a empresa</a>
-            </div>
-            <div class="contato">
-                <h4>Entre em contato</h4>
-                <a href="">Loja - (19) 3835-0800</a>
-                <a href="">(19) 99309-1270</a>
-                <div class="social">
-                    <IconsWhatsapp />
-                    <IconsInstagram />
-                    <IconsFacebook />
+            <div class="infos">
+                <div class="links">
+                    <h4>Links</h4>
+                    <a href="">Termos e condições de uso</a>
+                    <a href="">Contato por email</a>
+                    <a href="">Cadastre seu pedido</a>
+                    <a href="">Sobre a empresa</a>
+                </div>
+                <div class="contato">
+                    <h4>Entre em contato</h4>
+                    <a href="">Loja - (19) 3835-0800</a>
+                    <a href="">(19) 99309-1270</a>
+                    <div class="social">
+                        <IconsWhatsapp />
+                        <IconsInstagram />
+                        <IconsFacebook />
+                    </div>
                 </div>
             </div>
             <IconsLogo class="logo"/>
-            <div class="infos">
-                <span>Av. Visconde de Indaiatuba, 921 , Vila Vitòria 1 - Indaiatuba/SP</span>
+            <div class="cabeçalho">
+                <a target="_blank" href="https://g.page/Avenidaveiculosindaiatuba?share">Av. Visconde de Indaiatuba, 921 , Vila Vitòria 1 - Indaiatuba/SP</a>
                 <div></div>
                 <p>Todos os direitos reservados @2022</p>
             </div>
@@ -57,8 +59,8 @@ nav {
     width: 100%;
 
     svg {
-        height: 6rem;
-        margin: 4rem 0;
+        height: 7rem;
+        margin: 5rem 0;
 
         &:hover {
             filter: brightness(2);
@@ -66,18 +68,18 @@ nav {
     }
 
     div {
-        gap: 3.5rem;
         display: flex;
-        justify-content: center;
+        justify-content: space-evenly;
 
         a {
             font-family: $ff-primary;
-            font-weight: bolder;
+            font-weight: 600;
             font-size: 1.6rem;
             color: $gray-400;
 
             &:hover {
                 color: $blue-700;
+                font-weight: 800;
             }
         }
     }
@@ -94,7 +96,7 @@ nav {
             background-color: $blue-800;
         }
 
-        @include sm-up {
+        @include md {
             display: block;
         }
 
@@ -119,21 +121,37 @@ nav {
     h1 {
         color: $gray-200;
         font-family: $ff-primary;
-        font-size: 2.5rem;
-        font-weight: bolder;
+        font-size: 2.2rem;
+        font-weight: 600;
         text-align: center;
-        margin-bottom: 2rem;
+        margin-bottom: 3rem;
     }
 
     &_cards {
         display: flex;
         flex-direction: column;
-        gap: 2rem;
+
+        @include sm-up {
+            flex-direction: row;
+            justify-content: center;
+        }
 
         &__card {
             background-color: $gray-200;
             border-radius: 1rem;
-            height: 22rem;
+            height: 20rem;
+
+            &:nth-child(2) {
+                margin: 1rem 0;
+            }
+
+            @include sm-up {
+                width: 30rem;
+
+                &:nth-child(2) {
+                    margin: 0 2rem;
+                }
+            }
         }
     }
 }
@@ -143,57 +161,84 @@ footer {
     font-family: $ff-primary;
     background-color: $secondary;
 
-    .links,
-    .contato {
-        display: flex;
-        flex-direction: column;
-        margin-bottom: 2rem;
-
-        h4 {
-            font-weight: 600;
-            font-size: 2rem;
-            color: $blue-500;
-            margin-bottom: 1rem;
-        }
-
-        a {
-            font-size: 1.6rem;
-            margin: 0.5rem 0;
-            color: $gray-100;
-        }
-
-        .social {
+    .infos {
+        @include sm-up {
+            display: flex;
             flex-direction: row;
+            justify-content: flex-end;
 
-            svg {
-                width: 2rem;
-                fill: $blue-300;
+            .contato {
+                margin-left: 4rem;
+            }
+        }
 
-                &:nth-child(2) {
-                    margin: 0 1rem;
+        .links,
+        .contato {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 4rem;
+    
+            h4 {
+                font-weight: 600;
+                font-size: 2.4rem;
+                color: $blue-500;
+                margin-bottom: 2rem;
+            }
+    
+            a {
+                font-size: 1.8rem;
+                margin: 0.6rem 0;
+                color: $gray-100;
+            }
+    
+            .social {
+                flex-direction: row;
+    
+                svg {
+                    width: 2.2rem;
+                    fill: $blue-300;
+    
+                    &:nth-child(2) {
+                        margin: 0 1rem;
+                    }
                 }
             }
         }
     }
 
+
     .logo {
         height: 6rem;
         display: block;
         margin: auto;
-        filter: grayscale(100%) invert(100%);
+        filter: grayscale(100%) invert(100%) opacity(0.8);
+
+        @include sm-up {
+            display: inline;
+
+        }
 
         &:hover {
             filter: none;
         }
     }
 
-    .infos {
+    .cabeçalho {
         margin-top: 4rem;
 
-        span {
-            font-weight: 400;
-            font-size: 1.3rem;
+        @include sm-up {
+            text-align: right;
+            margin-top: 0;
+        }
+
+        a {
+            font-weight: 500;
+            font-size: 1.5rem;
             color: $gray-100;
+
+            &:hover {
+                color: $gray-300;
+            }
         }
     
         div {
@@ -204,7 +249,7 @@ footer {
     
         p {
             font-weight: 400;
-            font-size: 1.2rem;
+            font-size: 1.4rem;
             color: $gray-100;
         }
 
