@@ -84,7 +84,6 @@
       background-color: $blue-800;
       margin-right: 1rem;
       border-radius: 2rem;
-      height: 35rem;
     }
   }
 }
@@ -126,7 +125,6 @@
       background-color: $primary;
       margin-right: 1rem;
       border-radius: 2rem;
-      height: 40rem;
     }
   }
 }
