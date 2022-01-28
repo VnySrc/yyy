@@ -8,9 +8,9 @@
     </div>
   </header>
   <hooper :centerMode="true" :itemsToShow="1.2" class="header_cards">
-    <slide class="header_cards_card"></slide>
-    <slide class="header_cards_card"></slide>
-    <slide class="header_cards_card"></slide>
+    <slide></slide>
+    <slide></slide>
+    <slide></slide>
   </hooper>
   <section class="razoes">
     <div class="razoes_text">
@@ -20,9 +20,9 @@
     </div>
   </section>
   <hooper :centerMode="true" :itemsToShow="1.2" class="razoes_cards">
-    <slide class="razoes_cards_card"></slide>
-    <slide class="razoes_cards_card"></slide>
-    <slide class="razoes_cards_card"></slide>
+    <slide></slide>
+    <slide></slide>
+    <slide></slide>
   </hooper>
   <section class="feedback">
     <div class="feedback_card"></div>
@@ -77,11 +77,12 @@
   }
 
   &_cards {
-    height: 37rem;
+    height: 100%;
     padding: 0 !important; 
     
-    &_card {
+    li {
       background-color: $blue-800;
+      margin-right: 1rem;
       border-radius: 2rem;
       height: 35rem;
     }
@@ -118,11 +119,12 @@
   }
 
   &_cards {
-    height: 42rem;
+    height: 100%;
     padding: 0 !important; 
  
-    &_card {
+    li {
       background-color: $primary;
+      margin-right: 1rem;
       border-radius: 2rem;
       height: 40rem;
     }
