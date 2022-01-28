@@ -57,7 +57,7 @@ nav {
     width: 100%;
 
     svg {
-        height: 5.5rem;
+        height: 6rem;
         margin: 4rem 0;
 
         &:hover {
@@ -66,14 +66,14 @@ nav {
     }
 
     div {
-        gap: 3rem;
+        gap: 3.5rem;
         display: flex;
         justify-content: center;
 
         a {
             font-family: $ff-primary;
             font-weight: bolder;
-            font-size: 1.5rem;
+            font-size: 1.6rem;
             color: $gray-400;
 
             &:hover {
@@ -114,14 +114,7 @@ nav {
     flex-direction: column;
     background-color: $primary;
     padding: 4rem 2rem;
-
-    @include md {
-        padding: 6rem 16rem;
-    }
-
-    @include bg {
-        padding: 6rem 40rem;
-    }
+    margin-top: 4rem;
 
     h1 {
         color: $gray-200;

@@ -6,21 +6,24 @@
       <h1>Semi-novos em Indaiatuba</h1>
       <p>Semi-novos em Indaiatuba</p>
     </div>
-    <div class="header_card"></div>
-    <div class="header_card"></div>
   </header>
+  <hooper :centerMode="true" :itemsToShow="1.2" class="header_cards">
+    <slide class="header_cards_card"></slide>
+    <slide class="header_cards_card"></slide>
+    <slide class="header_cards_card"></slide>
+  </hooper>
   <section class="razoes">
     <div class="razoes_text">
       <h3>COMPRA CERTA</h3>
       <h1>Benefícios de comprar com a Avenida veículos</h1>
       <p>Atuando no mercado automobilístico, nós da Avenida Veículos buscamos auxiliar nossos clientes afim de encontrar o melhor negócio, agindo como consultores, não somente como simples vendedores.</p>
     </div>
-    <div class="razoes_cards">
-      <div class="razoes_cards_card"></div>
-      <div class="razoes_cards_card"></div>
-      <div class="razoes_cards_card"></div>
-    </div>
   </section>
+  <hooper :centerMode="true" :itemsToShow="1.2" class="razoes_cards">
+    <slide class="razoes_cards_card"></slide>
+    <slide class="razoes_cards_card"></slide>
+    <slide class="razoes_cards_card"></slide>
+  </hooper>
   <section class="feedback">
     <div class="feedback_card"></div>
     <div class="feedback_card"></div>
@@ -29,10 +32,24 @@
 </div>
 </template>
 
+<script>
+  import { Hooper, Slide } from 'hooper';
+  import 'hooper/dist/hooper.css';
+
+  export default {
+    name: 'App',
+    components: {
+      Hooper,
+      Slide
+    }
+  }
+</script>
+
 <style lang="scss">
 
 .header {
   display: flex;
+  position: relative;
   flex-direction: column;
   justify-content: space-between;
   gap: 2rem;
@@ -60,11 +77,16 @@
     }
   }
 
-  &_card {
-    background-color: $primary;
-    border-radius: 2rem;
-    height: 30rem;
-
+  &_cards {
+    height: 100%;
+    padding: 0 !important; 
+    
+    &_card {
+      background-color: $blue-800;
+      border-radius: 2rem;
+      margin-right: 1rem;
+      height: 30rem;
+    }
   }
 }
 
@@ -98,13 +120,13 @@
   }
 
   &_cards {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
+    height: 100%;
+    padding: 0 !important; 
  
     &_card {
       background-color: $primary;
       border-radius: 2rem;
+      margin-right: 1rem;
       height: 40rem;
     }
   }
