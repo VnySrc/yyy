@@ -77,18 +77,14 @@
   }
 
   &_cards {
-    height: 100%;
+    height: 35rem;
     padding: 0 !important; 
 
-    ul {
-      height: 100%;
-
-      li {
-        background-color: $blue-800;
-        margin-right: 1rem;
-        border-radius: 2rem;
-        height: 35rem;
-      }
+    li {
+      background-color: $blue-800;
+      margin-right: 1rem;
+      border-radius: 2rem;
+      height: 35rem;
     }
   }
 }
@@ -123,18 +119,14 @@
   }
 
   &_cards {
-    height: 100%;
+    height: 40rem;
     padding: 0 !important;
 
-    ul {
-      height: 100%;
-
-      li {
-        background-color: $primary;
-        margin-right: 1rem;
-        border-radius: 2rem;
-        height: 40rem;
-      }
+    li {
+      background-color: $primary;
+      margin-right: 1rem;
+      border-radius: 2rem;
+      height: 40rem;
     }
   }
 }
