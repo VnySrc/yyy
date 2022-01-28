@@ -66,8 +66,8 @@ nav {
     }
 
     div {
+        gap: 3rem;
         display: flex;
-        gap: 4rem;
         justify-content: center;
 
         a {
@@ -140,7 +140,7 @@ nav {
         &__card {
             background-color: $gray-200;
             border-radius: 1rem;
-            height: 30rem;
+            height: 22rem;
         }
     }
 }

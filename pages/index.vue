@@ -63,10 +63,7 @@
   &_card {
     background-color: $primary;
     border-radius: 2rem;
-    min-width: 35rem;
-    min-height: 35rem;
-    max-height: 40rem;
-    max-width: 40rem;
+    height: 30rem;
 
   }
 }
@@ -102,13 +99,13 @@
 
   &_cards {
     display: flex;
+    flex-direction: column;
     gap: 2rem;
  
     &_card {
       background-color: $primary;
       border-radius: 2rem;
       height: 40rem;
-      width: 35rem;
     }
   }
 }
