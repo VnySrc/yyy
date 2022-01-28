@@ -67,7 +67,6 @@
       font-size: 2.4rem;
       font-weight: 300;
       color: $gray-500;
-      padding-top: 1rem;
     }
 
     h3 {
@@ -78,14 +77,13 @@
   }
 
   &_cards {
-    height: 100%;
+    height: 37rem;
     padding: 0 !important; 
     
     &_card {
       background-color: $blue-800;
       border-radius: 2rem;
-      margin-right: 1rem;
-      height: 30rem;
+      height: 35rem;
     }
   }
 }
@@ -120,13 +118,12 @@
   }
 
   &_cards {
-    height: 100%;
+    height: 42rem;
     padding: 0 !important; 
  
     &_card {
       background-color: $primary;
       border-radius: 2rem;
-      margin-right: 1rem;
       height: 40rem;
     }
   }
