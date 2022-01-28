@@ -7,7 +7,7 @@
       <p>Semi-novos em Indaiatuba</p>
     </div>
   </header>
-  <hooper :centerMode="true" :itemsToShow="1.2" style="height: 100%" class="header_cards">
+  <hooper :centerMode="true" :itemsToShow="1.2" class="header_cards">
     <slide></slide>
     <slide></slide>
     <slide></slide>
@@ -19,7 +19,7 @@
       <p>Atuando no mercado automobilístico, nós da Avenida Veículos buscamos auxiliar nossos clientes afim de encontrar o melhor negócio, agindo como consultores, não somente como simples vendedores.</p>
     </div>
   </section>
-  <hooper :centerMode="true" :itemsToShow="1.2" style="height: 100%" class="razoes_cards">
+  <hooper :centerMode="true" :itemsToShow="1.2" class="razoes_cards">
     <slide></slide>
     <slide></slide>
     <slide></slide>
