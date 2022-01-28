@@ -1,15 +1,15 @@
 <template>
     <div>
-        <section class="nav">
-            <img src="~/assets/img/logo.svg" alt="Logo">
-            <div class="nav_menu">
+        <nav>
+            <IconsLogo />
+            <div>
                 <nuxt-link to="/">Home</nuxt-link>
                 <nuxt-link to="/estoque">Estoque</nuxt-link>
                 <nuxt-link to="/service">Serviços</nuxt-link>
                 <nuxt-link to="/blog">Blog</nuxt-link>
             </div>
             <button><a target="_blank" href="https://avenidaveiculosindaiatuba.com.br/Anuncio/Contato">CONTATO</a></button>
-        </section>
+        </nav>
         <Nuxt />
         <div class="blog">
             <h1>VISITE NOSSO BLOG</h1>
@@ -20,30 +20,52 @@
             </div>
         </div>
         <footer>
-            <img src="~/assets/img/logo.svg" alt="Logo">
+            <div class="links">
+                <h4>Links</h4>
+                <a href="">Termos e condições de uso</a>
+                <a href="">Contato por email</a>
+                <a href="">Cadastre seu pedido</a>
+                <a href="">Sobre a empresa</a>
+            </div>
+            <div class="contato">
+                <h4>Entre em contato</h4>
+                <a href="">Loja - (19) 3835-0800</a>
+                <a href="">(19) 99309-1270</a>
+                <div class="social">
+                    <IconsWhatsapp />
+                    <IconsInstagram />
+                    <IconsFacebook />
+                </div>
+            </div>
+            <IconsLogo class="logo"/>
+            <div class="infos">
+                <span>Av. Visconde de Indaiatuba, 921 , Vila Vitòria 1 - Indaiatuba/SP</span>
+                <div></div>
+                <p>Todos os direitos reservados @2022</p>
+            </div>
         </footer>
     </div>
 </template>
 
 <style lang="scss">
 
-.nav {
+nav {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 10rem;
-    padding: 4rem;
+    flex-direction: column;
+    justify-content: center;
     margin-bottom: 4rem;
+    width: 100%;
 
-    img {
-        height: 4.5rem;
+    svg {
+        height: 5.5rem;
+        margin: 4rem 0;
 
         &:hover {
             filter: brightness(2);
         }
     }
 
-    &_menu {
+    div {
         display: flex;
         gap: 4rem;
         justify-content: center;
@@ -61,6 +83,7 @@
     }
 
     button {
+        display: none;
         border: none;
         text-decoration: none;
         background-color: $blue-700;
@@ -69,6 +92,10 @@
         
         &:hover {
             background-color: $blue-800;
+        }
+
+        @include sm-up {
+            display: block;
         }
 
         a {
@@ -83,12 +110,10 @@
 }
 
 .blog {
-    height:40rem;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     background-color: $primary;
-    padding: 6rem;
+    padding: 4rem 2rem;
 
     @include md {
         padding: 6rem 16rem;
@@ -104,34 +129,92 @@
         font-size: 2.5rem;
         font-weight: bolder;
         text-align: center;
+        margin-bottom: 2rem;
     }
 
     &_cards {
         display: flex;
-        justify-content: space-between;
+        flex-direction: column;
         gap: 2rem;
 
         &__card {
             background-color: $gray-200;
             border-radius: 1rem;
-            height: 21rem;
-            width: 32rem;
+            height: 30rem;
         }
     }
 }
 
 footer {
-    height: 50rem;
+    padding: 4rem 2rem;
+    font-family: $ff-primary;
     background-color: $secondary;
-    padding: 5rem;
 
-    img {
+    .links,
+    .contato {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 2rem;
+
+        h4 {
+            font-weight: 600;
+            font-size: 2rem;
+            color: $blue-500;
+            margin-bottom: 1rem;
+        }
+
+        a {
+            font-size: 1.6rem;
+            margin: 0.5rem 0;
+            color: $gray-100;
+        }
+
+        .social {
+            flex-direction: row;
+
+            svg {
+                width: 2rem;
+                fill: $blue-300;
+
+                &:nth-child(2) {
+                    margin: 0 1rem;
+                }
+            }
+        }
+    }
+
+    .logo {
+        height: 6rem;
+        display: block;
+        margin: auto;
         filter: grayscale(100%) invert(100%);
-        height: 5rem;
 
         &:hover {
             filter: none;
         }
+    }
+
+    .infos {
+        margin-top: 4rem;
+
+        span {
+            font-weight: 400;
+            font-size: 1.3rem;
+            color: $gray-100;
+        }
+    
+        div {
+            height: 0.1rem;
+            background-color: $gray-100;
+            margin: 1rem 0;
+        }
+    
+        p {
+            font-weight: 400;
+            font-size: 1.2rem;
+            color: $gray-100;
+        }
+
     }
 }
 
