@@ -78,12 +78,16 @@
 
   &_cards {
     height: 35rem;
-    padding: 0 !important; 
+    padding: 0 !important;
 
-    li {
-      background-color: $blue-800;
-      margin-right: 1rem;
-      border-radius: 2rem;
+    ul {
+      height: 35rem;
+
+      li {
+        background-color: $blue-800;
+        margin-right: 1rem;
+        border-radius: 2rem;
+      }
     }
   }
 }
@@ -118,13 +122,17 @@
   }
 
   &_cards {
-    height: 40rem;
     padding: 0 !important;
+    height: 40rem;
 
-    li {
-      background-color: $primary;
-      margin-right: 1rem;
-      border-radius: 2rem;
+    ul {
+      height: 40rem;
+      
+      li {
+        background-color: $primary;
+        margin-right: 1rem;
+        border-radius: 2rem;
+      }
     }
   }
 }
