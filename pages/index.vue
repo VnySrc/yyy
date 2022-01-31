@@ -7,11 +7,7 @@
       <p>Semi-novos em Indaiatuba</p>
     </div>
   </header>
-  <hooper :centerMode="true" :itemsToShow="1.2" class="header_cards">
-    <slide></slide>
-    <slide></slide>
-    <slide></slide>
-  </hooper>
+  <cardHeader />
   <section class="razoes">
     <div class="razoes_text">
       <h3>COMPRA CERTA</h3>
@@ -19,11 +15,7 @@
       <p>Atuando no mercado automobilístico, nós da Avenida Veículos buscamos auxiliar nossos clientes afim de encontrar o melhor negócio, agindo como consultores, não somente como simples vendedores.</p>
     </div>
   </section>
-  <hooper :centerMode="true" :itemsToShow="1.2" class="razoes_cards">
-    <slide></slide>
-    <slide></slide>
-    <slide></slide>
-  </hooper>
+  <cardReason />
   <section class="feedback">
     <div class="feedback_card"></div>
     <div class="feedback_card"></div>
@@ -31,19 +23,6 @@
   </section>
 </div>
 </template>
-
-<script>
-  import { Hooper, Slide } from 'hooper';
-  import 'hooper/dist/hooper.css';
-
-  export default {
-    name: 'App',
-    components: {
-      Hooper,
-      Slide
-    }
-  }
-</script>
 
 <style lang="scss">
 
@@ -75,17 +54,6 @@
       color: $red-500;
     }
   }
-
-  &_cards {
-    height: 35rem;
-    padding: 0 !important;
-
-    li {
-      background-color: $blue-800;
-      margin-right: 1rem;
-      border-radius: 2rem;
-    }
-  }
 }
 
 .razoes {
@@ -114,17 +82,6 @@
       font-size: 1.5rem;
       font-weight: 700;
       color: $red-500;
-    }
-  }
-
-  &_cards {
-    padding: 0 !important;
-    height: 40rem;
-
-    li {
-      background-color: $primary;
-      margin-right: 1rem;
-      border-radius: 2rem;
     }
   }
 }

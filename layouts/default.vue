@@ -14,9 +14,33 @@
         <div class="blog">
             <h1>VISITE NOSSO BLOG</h1>
             <div class="blog_cards">
-                <div class="blog_cards__card"></div>
-                <div class="blog_cards__card"></div>
-                <div class="blog_cards__card"></div>
+                <div class="blog_cards__card">
+                    <picture>
+                        <source srcset="~/assets/img/avenida.webp" type="image/webp">
+                        <img src="~/assets/img/avenida.webp" alt="Avenida" />
+                    </picture>
+                    <div>
+                        <h4>Conheça a história de sucesso!</h4>
+                    </div>
+                </div>
+                <div class="blog_cards__card">
+                    <picture>
+                        <source srcset="~/assets/img/avenida.webp" type="image/webp">
+                        <img src="~/assets/img/avenida.webp" alt="Avenida" />
+                    </picture>
+                    <div>
+                        <h4>Conheça a história de sucesso!</h4>
+                    </div>
+                </div>
+                <div class="blog_cards__card">
+                    <picture>
+                        <source srcset="~/assets/img/avenida.webp" type="image/webp">
+                        <img src="~/assets/img/avenida.webp" alt="Avenida" />
+                    </picture>
+                    <div>
+                        <h4>Conheça a história de sucesso!</h4>
+                    </div>
+                </div>
             </div>
         </div>
         <footer>
@@ -117,12 +141,12 @@ nav {
     background-color: $primary;
     padding: 4rem 2rem;
     margin-top: 4rem;
+    font-family: $ff-primary;
 
     h1 {
         color: $gray-200;
-        font-family: $ff-primary;
-        font-size: 2.2rem;
-        font-weight: 600;
+        font-size: 2.4rem;
+        font-weight: 700;
         text-align: center;
         margin-bottom: 3rem;
     }
@@ -137,12 +161,14 @@ nav {
         }
 
         &__card {
-            background-color: $gray-200;
+            box-shadow: 1rem 1rem 0.5rem rgba($color: $gray-500, $alpha: 0.2);
             border-radius: 1rem;
+            overflow: hidden;
+            position: relative;
             height: 20rem;
 
             &:nth-child(2) {
-                margin: 1rem 0;
+                margin: 2rem 0;
             }
 
             @include sm-up {
@@ -152,6 +178,34 @@ nav {
                     margin: 0 2rem;
                 }
             }
+
+            img {
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                object-fit: cover;
+            }
+
+            div {
+                background: linear-gradient(180deg, rgba(0, 0, 0, 0) 10%, $red-700 100%);
+                position: relative;
+                height: 100%;
+                z-index: 1;
+
+                h4 {
+                    position: absolute;
+                    bottom: 0;
+                    font-size: 2rem;
+                    font-weight: 700;
+                    color: $gray-100;
+                    text-align: center;
+                    padding: 2rem;
+
+                    &:hover {
+                        color: $gray-200;
+                    }
+                }
+            }      
         }
     }
 }
