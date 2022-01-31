@@ -74,6 +74,9 @@
 </template>
 
 <style lang="scss">
+.hooper {
+    height: auto !important;
+}
 
 nav {
     display: flex;
