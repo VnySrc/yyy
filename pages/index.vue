@@ -6,8 +6,8 @@
       <h1>Semi-novos em Indaiatuba</h1>
       <p>Semi-novos em Indaiatuba</p>
     </div>
+    <cardHeader />
   </header>
-  <cardHeader />
   <section class="razoes">
     <div class="razoes_text">
       <h3>COMPRA CERTA</h3>
@@ -28,18 +28,31 @@
 
 .header {
   display: flex;
-  position: relative;
   flex-direction: column;
-  justify-content: space-between;
-  gap: 2rem;
+  margin-top: 6rem;
+
+  @include md {
+    flex-direction: row;
+  }
 
   &_text {
     font-family: $ff-primary;
+    padding-left: 2rem;
+
+    @include md {
+      padding: 2rem 0 0 6rem;
+    }
+
+    @include lg-up {
+      padding: 2rem 0 0 16rem;
+    }
+
     
     h1 {
       font-size: 4rem;
       font-weight: 700;
       color: $gray-600;
+      margin: 0.5rem 0;
     }
 
     p {
@@ -59,11 +72,20 @@
 .razoes {
   display: flex;
   flex-direction: column;
+  margin-top: 4rem;
 
   &_text {
     font-family: $ff-primary;
+    padding-right: 2rem;
     text-align: right;
-    margin: 4rem 0;
+
+    @include md {
+      padding: 0 2rem 2rem 16rem;
+    }
+
+    @include lg-up {
+      padding: 0 16rem 2rem 60rem;
+    }
     
     h1 {
       font-size: 3rem;

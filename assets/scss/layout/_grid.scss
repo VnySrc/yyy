@@ -1,12 +1,12 @@
-body {
+body, html {
     box-sizing: border-box;
     background-color: #E0ECFF;
 }
 
-section, 
-header {
-    margin: 0 auto;
-    padding: 2rem;
+.site {
+    width: 100vw;
+    position: relative;
+    overflow-x: hidden !important;
 }
 
 a {

@@ -1,5 +1,5 @@
 <template>
-    <hooper :centerMode="true" :itemsToShow="1.2" class="razoes_cards">
+    <hooper :settings="hooperSettings" class="razoes_cards">
         <slide>
             <picture>
                 <source srcset="~/assets/img/avenida.webp" type="image/webp">
@@ -87,6 +87,19 @@
     components: {
       Hooper,
       Slide
+    },
+    data() {
+        return {
+            hooperSettings: {
+                itemsToShow: 1.2,
+                centerMode: true,
+                breakpoints: {
+                    900: {
+                        itemsToShow: 3
+                    }
+                }
+            }
+        };
     }
   }
 </script>

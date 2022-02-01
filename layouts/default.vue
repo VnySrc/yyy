@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="site">
         <nav>
             <IconsLogo />
             <div>
@@ -82,12 +82,24 @@ nav {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin-bottom: 4rem;
+    margin: 0 auto;
     width: 100%;
+
+    @include md {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 2rem;
+        max-width: 120rem;
+    }
 
     svg {
         height: 7rem;
         margin: 5rem 0;
+
+        @include md {
+            height: 5rem;
+        }
 
         &:hover {
             filter: brightness(2);
@@ -103,6 +115,12 @@ nav {
             font-weight: 600;
             font-size: 1.6rem;
             color: $gray-400;
+
+            @include md {
+                &:nth-child(2n) {
+                    margin: 0 4rem;
+                }
+            }
 
             &:hover {
                 color: $blue-700;

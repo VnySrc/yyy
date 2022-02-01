@@ -33,6 +33,12 @@
       @content;
     }
   }
+
+  @mixin lg-up {
+    @media (min-width: 1030px) {
+      @content;
+    }
+  }
   
   
   @mixin bg {
