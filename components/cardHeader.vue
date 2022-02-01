@@ -34,10 +34,9 @@
 .header_cards {
     padding: 0 !important;
     height: auto;
-    font-family: $ff-primary;
 
     ul {
-        padding: 2rem 0;
+        padding: 1rem 0;
 
         li {
         position: relative;

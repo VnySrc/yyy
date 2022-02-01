@@ -8,6 +8,10 @@
     </div>
     <cardHeader />
   </header>
+  <section class="stock">
+    <h1>Confira nosso estoque</h1>
+    <stock />
+  </section>
   <section class="razoes">
     <div class="razoes_text">
       <h3>COMPRA CERTA</h3>
@@ -36,7 +40,6 @@
   }
 
   &_text {
-    font-family: $ff-primary;
     padding-left: 2rem;
 
     @include md {
@@ -69,13 +72,25 @@
   }
 }
 
+.stock {
+  margin-top: 4rem;
+
+  h1 {
+      font-size: 2.4rem;
+      font-weight: 700;
+      text-align: center;
+      color: $gray-600;
+      margin: 1rem 0;
+    }
+
+}
+
 .razoes {
   display: flex;
   flex-direction: column;
   margin-top: 4rem;
 
   &_text {
-    font-family: $ff-primary;
     padding-right: 2rem;
     text-align: right;
 

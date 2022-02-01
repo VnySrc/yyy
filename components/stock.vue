@@ -1,42 +1,45 @@
 <template>
-    <hooper :settings="hooperSettings" class="razoes_cards">
+    <hooper :settings="hooperSettings" class="stock_cards">
         <slide>
             <picture>
-                <source srcset="~/assets/img/avenida.webp" type="image/webp">
-                <img src="~/assets/img/avenida.webp" alt="Avenida" />
+                <source srcset="~/assets/img/cross.webp" type="image/webp">
+                <img src="~/assets/img/cross.webp" alt="Avenida" />
             </picture>
             <div>
-                <h4>Conheça a história de sucesso!</h4>
+                <h4>Volkswagen</h4>
+                <h5>T-Cross 2020</h5>
             </div>
         </slide>
         <slide>
             <picture>
-                <source srcset="~/assets/img/avenida.webp" type="image/webp">
-                <img src="~/assets/img/avenida.webp" alt="Avenida" />
+                <source srcset="~/assets/img/cross.webp" type="image/webp">
+                <img src="~/assets/img/cross.webp" alt="Avenida" />
             </picture>
             <div>
-                <h4>Conheça a história de sucesso!</h4>
+                <h4>Volkswagen</h4>
+                <h5>T-Cross 2020</h5>
             </div>
         </slide>
         <slide>
             <picture>
-                <source srcset="~/assets/img/avenida.webp" type="image/webp">
-                <img src="~/assets/img/avenida.webp" alt="Avenida" />
+                <source srcset="~/assets/img/cross.webp" type="image/webp">
+                <img src="~/assets/img/cross.webp" alt="Avenida" />
             </picture>
             <div>
-                <h4>Conheça a história de sucesso!</h4>
+                <h4>Volkswagen</h4>
+                <h5>T-Cross 2020</h5>
             </div>
         </slide>
     </hooper>
 </template>
 
 <style lang="scss">
-.razoes_cards {
+.stock_cards {
     padding: 0 !important;
     height: auto;
 
     ul {
-        padding: 2rem 0;
+        padding: 1rem 0;
 
         li {
         position: relative;
@@ -44,7 +47,7 @@
         border-radius: 2rem;
         overflow: hidden;
         box-shadow: 1rem 1rem 0.5rem rgba($color: $gray-500, $alpha: 0.2);
-        height: 40rem;
+        height: 20rem;
 
             img {
                 z-index: -1;
@@ -55,21 +58,25 @@
             }
 
             div {
-                background: linear-gradient(180deg, rgba(0, 0, 0, 0) 10%, $blue-800 100%);
+                display: flex;
+                flex-direction: column;
+                justify-content: end;
+                padding: 2rem;
+                background: linear-gradient(160deg, rgba(0, 0, 0, 0) 10%, $blue-800 100%);
                 height: 100%;
 
                 h4 {
-                    position: absolute;
-                    bottom: 0;
+                    font-size: 2rem;
+                    font-weight: 700;
+                    color: $blue-300;
+                    text-align: right;
+                }
+
+                h5 {
                     font-size: 3rem;
                     font-weight: 700;
-                    color: $gray-100;
+                    color: $blue-100;
                     text-align: right;
-                    padding: 2rem;
-
-                    &:hover {
-                        color: $gray-200;
-                    }
                 }
             }
         }
@@ -94,7 +101,7 @@
                 centerMode: true,
                 breakpoints: {
                     900: {
-                        itemsToShow: 3
+                        itemsToShow: 1.8
                     }
                 }
             }

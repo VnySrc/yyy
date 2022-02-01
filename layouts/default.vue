@@ -111,7 +111,6 @@ nav {
         justify-content: space-evenly;
 
         a {
-            font-family: $ff-primary;
             font-weight: 600;
             font-size: 1.6rem;
             color: $gray-400;
@@ -148,7 +147,6 @@ nav {
         a {
             padding: 2.5rem;
             font-size: 1.3rem;
-            font-family: $ff-primary;
             font-weight: bolder;
             text-align: center;
             color: $gray-100;
@@ -162,7 +160,6 @@ nav {
     background-color: $primary;
     padding: 4rem 2rem;
     margin-top: 4rem;
-    font-family: $ff-primary;
 
     h1 {
         color: $gray-200;
@@ -233,7 +230,6 @@ nav {
 
 footer {
     padding: 4rem 2rem;
-    font-family: $ff-primary;
     background-color: $secondary;
 
     .infos {
