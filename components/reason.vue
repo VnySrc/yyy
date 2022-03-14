@@ -1,8 +1,18 @@
 <template>
-  <div>
-    <Header />
-    <Reason />
-  </div>
+    <section class="razoes">
+      <div class="razoes_text">
+        <h3>COMPRA CERTA</h3>
+        <h1>Benefícios de comprar com a Avenida veículos</h1>
+        <p>Atuando no mercado automobilístico, nós da Avenida Veículos buscamos auxiliar nossos clientes afim de
+          encontrar o melhor negócio, agindo como consultores, não somente como simples vendedores.</p>
+      </div>
+      <div class="razoes_card">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </section>
 </template>
 
 <style lang="scss">
@@ -25,7 +35,7 @@
       }
 
       h1 {
-          color: $p-600;
+          color: $p-700;
           line-height: 1;
           margin: 1rem 0;
           font-weight: 700;
@@ -35,8 +45,8 @@
 
       p {
           font-size: 2.2rem;
-          font-weight: 300;
-          color: $cream-400;
+          font-weight: 400;
+          color: $cream-500;
       }
 
       h3 {

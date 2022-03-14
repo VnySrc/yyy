@@ -15,7 +15,7 @@
                 <div class="links">
                     <h4>Links</h4>
                     <a href="">Termos e condições de uso</a>
-                    <a href="">Contato por email</a>
+                    <nuxt-link to="/contato">Contato por email</nuxt-link>
                     <a href="">Cadastre seu pedido</a>
                     <a href="">Sobre a empresa</a>
                 </div>
@@ -89,7 +89,11 @@
 
 footer {
     padding: 4rem 2rem 1rem 2rem;
-    background: linear-gradient(45deg, $p-600 0%, $p-700 100%);
+    background: linear-gradient(45deg, $p-600 0%, $p-800 50%, $p-700 100%);
+    background-size: 1000% 1000%;
+    -webkit-animation: Color 5s ease infinite;
+    -moz-animation: Color 5s ease infinite;
+    animation: Color 5s ease infinite;
 
     .infos {
         @include sm-up {

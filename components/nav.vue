@@ -1,14 +1,14 @@
 <template>
     <nav>
-            <nuxt-link to="/" class="logo"><IconsLogo /></nuxt-link>
-            <div>
-                <nuxt-link to="/">Home</nuxt-link>
-                <nuxt-link to="/estoque">Estoque</nuxt-link>
-                <nuxt-link to="/serviços">Serviços</nuxt-link>
-                <nuxt-link to="/blog">Blog</nuxt-link>
-                <nuxt-link to="/contato" class="chat"><IconsChat /></nuxt-link>
-            </div>
-        </nav>
+        <nuxt-link to="/" class="logo"><IconsLogo /></nuxt-link>
+        <div>
+            <nuxt-link to="/">Home</nuxt-link>
+            <nuxt-link to="/estoque">Estoque</nuxt-link>
+            <nuxt-link to="/serviços">Serviços</nuxt-link>
+            <nuxt-link to="/blog">Blog</nuxt-link>
+            <nuxt-link to="/contato" class="chat animatedFill"><IconsChat /></nuxt-link>
+        </div>
+    </nav>
 </template>
 
 <style lang="scss">
@@ -72,11 +72,9 @@ nav {
         }
 
         .chat {
-            fill: $p-300;
             padding: 2rem;
             display: none;
             cursor: pointer;
-            background: linear-gradient(45deg, $p-600 0%, $p-700 100%);
 
             &:hover {
                 fill: $p-100;
@@ -89,7 +87,8 @@ nav {
 
             svg {
                 display: block;
-                margin: auto;                    
+                margin: auto;   
+                fill: $p-200;                 
             }
 
             @include md {

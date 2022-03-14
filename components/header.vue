@@ -5,7 +5,7 @@
             <h1>Tudo começa com um sonho, mas aqui a gente te ajudar a realizar</h1>
             <p>Vamos juntos achar um veículo perfeito para você</p>
             <nuxt-link to="/estoque">
-                <div>
+                <div class="animatedFill">
                     <IconsArrow />
                 </div>
                 <span>Confira nosso estoque</span>
@@ -44,19 +44,30 @@
         &_text {
             margin-bottom: 3rem;
 
+            @include lg {
+                padding-right: 14rem;
+            }
+
             h1 {
-                color: $p-700;
                 line-height: 1;
                 margin: 1rem 0;
                 font-weight: 700;
                 font-size: 3.8rem;
                 word-spacing: -0.5rem;
+                
+                color: transparent;
+                background: radial-gradient(circle, rgba(32,148,180,1) 0%, rgba(104,22,63,1) 100%);
+                background-clip: text;
+                background-size: 600% 600%;
+                -webkit-animation: Color 5s ease infinite;
+                -moz-animation: Color 5s ease infinite;
+                animation: Color 5s ease infinite;
             }
 
             p {
                 font-size: 2.6rem;
-                font-weight: 400;
-                color: $cream-400;
+                font-weight: 300;
+                color: $cream-300;
             }
 
             h3 {
@@ -82,7 +93,6 @@
                 }
 
                 div {
-                    background-color: $p-600;
                     margin-right: 1rem;
                     padding: 1rem;
 
