@@ -47,7 +47,8 @@
 }
 
 .blog {
-    margin: 4rem 0;
+    margin: 0 auto;
+    max-width: 120rem;
 
     h1 {
         color: $p-600;
@@ -55,10 +56,12 @@
         font-weight: 700;
         text-align: center;
         margin-bottom: 1rem;
+        margin-top: 4rem;
     }
 
     &_cards {
-        padding: 2rem 1rem;
+        padding: 2rem 1.4rem;
+        margin-bottom: 4rem;
 
         @include sm-up {
             padding: 2rem;
@@ -142,7 +145,7 @@ footer {
         height: 5rem;
         display: block;
         margin: auto;
-        filter: grayscale(100%) invert(100%) opacity(0.4);
+        filter: grayscale(100%) invert(100%) opacity(0.6);
 
         @include sm-up {
             display: inline;

@@ -1,12 +1,12 @@
 <template>
     <nav>
-            <IconsLogo class="logo"/>
+            <nuxt-link to="/"><IconsLogo class="logo"/></nuxt-link>
             <div>
                 <nuxt-link to="/">Home</nuxt-link>
                 <nuxt-link to="/estoque">Estoque</nuxt-link>
                 <nuxt-link to="/serviços">Serviços</nuxt-link>
                 <nuxt-link to="/blog">Blog</nuxt-link>
-                <button><a target="_blank" href="https://avenidaveiculosindaiatuba.com.br/Anuncio/Contato"><IconsChat /></a></button>
+                <nuxt-link to="/contato" class="chat"><IconsChat /></nuxt-link>
             </div>
         </nav>
 </template>
@@ -36,7 +36,7 @@ nav {
         }
 
         &:hover {
-            filter: brightness(2);
+            filter: brightness(1.4);
         }
     }
 
@@ -66,21 +66,24 @@ nav {
             color: $p-600;
         }
 
-        button {
-            width: 5rem;
-            height: 5rem;
-            background: linear-gradient(45deg, $p-600 0%, $p-700 100%);
+        .chat {
+            padding: 2rem;
+            fill: $p-300;
             cursor: pointer;
+            background: linear-gradient(45deg, $p-600 0%, $p-700 100%);
 
             &:hover {
-                a {
-                    fill: $p-100;
-                }
+                fill: $p-100;
             }
 
-            a {
+            &.nuxt-link-exact-active {
                 fill: $p-300;
+                background: linear-gradient(45deg, $p-500 0%, $p-600 100%);
+            }
 
+            svg {
+                display: block;
+                margin: auto;                    
             }
 
             @include md {

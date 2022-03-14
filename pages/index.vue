@@ -22,7 +22,7 @@
   .razoes {
     display: flex;
     flex-direction: column;
-    padding: 2rem 1rem;
+    padding: 2rem 1.4rem;
     margin-top: 4rem;
 
     @include sm-up {
@@ -32,14 +32,6 @@
     &_text {
       text-align: right;
       margin-bottom: 2rem;
-
-      @include md {
-        padding: 0 2rem 2rem 16rem;
-      }
-
-      @include lg-up {
-        padding: 0 16rem 2rem 60rem;
-      }
 
       h1 {
           color: $p-700;
