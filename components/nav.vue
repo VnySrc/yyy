@@ -1,6 +1,6 @@
 <template>
     <nav>
-            <nuxt-link to="/"><IconsLogo class="logo"/></nuxt-link>
+            <nuxt-link to="/" class="logo"><IconsLogo /></nuxt-link>
             <div>
                 <nuxt-link to="/">Home</nuxt-link>
                 <nuxt-link to="/estoque">Estoque</nuxt-link>
@@ -28,15 +28,20 @@ nav {
     }
 
     .logo {
-        height: 7rem;
         margin: 3rem 0 4rem 0;
 
-        @include md {
-            height: 5rem;
-        }
+        svg {
+            height: 7rem;
+            display: block;
+            margin: auto;
 
-        &:hover {
-            filter: brightness(1.4);
+            @include md {
+                height: 5rem;
+            }
+
+            &:hover {
+                filter: brightness(1.4);
+            }
         }
     }
 
@@ -67,8 +72,9 @@ nav {
         }
 
         .chat {
-            padding: 2rem;
             fill: $p-300;
+            padding: 2rem;
+            display: none;
             cursor: pointer;
             background: linear-gradient(45deg, $p-600 0%, $p-700 100%);
 
