@@ -17,9 +17,9 @@
                 <h4>Conheça a história de sucesso!</h4>
             </div>
             <div class="header_card_media">
-                <div class="header_card_media_youtube"></div>
-                <div class="header_card_media_instagram"></div>
-                <div class="header_card_media_maps"></div>
+                <div class="header_card_media_youtube"><IconsYoutube class="header_card_media_youtube"/></div>
+                <div class="header_card_media_instagram"><IconsInstagram class="header_card_media_instagram"/></div>
+                <div class="header_card_media_maps"><IconsWhatsapp class="header_card_media_maps"/></div>
             </div>
         </div>
     </header>
@@ -116,6 +116,7 @@
                 justify-content: flex-end;
                 background: linear-gradient(45deg, $p-600 0%, $p-500 100%);
                 text-align: right;
+                margin-bottom: 0.5rem;
     
                 h5 {
                     margin-top: 16rem;
@@ -135,11 +136,27 @@
     
             &_media {
                 display: flex;
-                height: 10rem;
-                margin-top: 0.5rem;
+                justify-content: flex-end;
+                height: 8rem;
+
+                div {
+                    display: flex;
+                    height: 5rem;
+                    width: 5rem;
+
+                    svg {
+                        display: block;
+                        margin: auto;
+                        height: 2rem;
+                        fill: $gray-100;
+                    }
+
+                }
 
                 @include sm-up {
                     flex-direction: column;
+                    justify-content: flex-start;
+                    margin-left: 0.5rem;
                     height: 100%;
                 }
     
@@ -152,6 +169,10 @@
                     width: 100%;
                     margin: 0 0.5rem;
                     background: linear-gradient(45deg, $s-300 0%, $s-400 100%);
+
+                    @include sm-up {
+                        margin: 0.5rem 0;
+                    }
                 }
     
                 &_maps {
