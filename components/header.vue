@@ -4,6 +4,12 @@
             <h3>INDAIATUBA - SP</h3>
             <h1>Tudo começa com um sonho, mas aqui a gente te ajudar a realizar</h1>
             <p>Vamos juntos achar um veículo perfeito para você</p>
+            <nuxt-link to="/estoque">
+                <div>
+                    <IconsArrow />
+                </div>
+                <span>Confira nosso estoque</span>
+            </nuxt-link>
         </div>
         <div class="header_card">
             <div class="header_card_main">
@@ -36,7 +42,7 @@
         }
 
         &_text {
-            margin-bottom: 2rem;
+            margin-bottom: 3rem;
 
             h1 {
                 color: $p-700;
@@ -57,6 +63,33 @@
                 font-size: 2rem;
                 font-weight: 700;
                 color: $s-400;
+            }
+
+            a {
+                display: flex;
+                align-items: center;
+                font-size: 1.6rem;
+                font-weight: 600;
+                color: $p-700;
+                margin-top: 2rem;
+
+                &:hover {
+                    color: $p-500;
+
+                    div {
+                        background-color: $p-500;
+                    }
+                }
+
+                div {
+                    background-color: $p-600;
+                    margin-right: 1rem;
+                    padding: 1rem;
+
+                    svg {
+                        fill: $p-200;
+                    }
+                }
             }
         }
 
