@@ -5,18 +5,9 @@
         <div class="blog">
             <h1>VISITE NOSSO BLOG</h1>
             <div class="blog_cards">
-                <div class="blog_cards__card">
-                    <div>
-                    </div>
-                </div>
-                <div class="blog_cards__card">
-                    <div>
-                    </div>
-                </div>
-                <div class="blog_cards__card">
-                    <div>
-                    </div>
-                </div>
+                <div></div>
+                <div></div>
+                <div></div>
             </div>
         </div>
         <footer>
@@ -56,12 +47,10 @@
 }
 
 .blog {
-    display: flex;
-    flex-direction: column;
     margin: 4rem 0;
 
     h1 {
-        color: $p-500;
+        color: $p-600;
         font-size: 2.4rem;
         font-weight: 700;
         text-align: center;
@@ -69,47 +58,26 @@
     }
 
     &_cards {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        padding: 2rem;
+        padding: 2rem 1rem;
 
         @include sm-up {
-            flex-direction: row;
-            justify-content: space-evenly;
+            padding: 2rem;
         }
 
-        &__card {
+        @include sm-up {
+            display: flex;
+        }
+
+        div {
             height: 25rem;
+            width: 100%;
+            background: linear-gradient(45deg, $p-500 0%, $p-600 100%);
 
             &:nth-child(2) {
                 margin: 2rem 0;
-            }
 
-            img {
-                width: 100%;
-                height: 100%;
-                position: absolute;
-                object-fit: cover;
-            }
-
-            div {
-                background-color: $p-500;
-                background: linear-gradient(45deg, $p-500 0%, $p-600 100%);
-                height: 100%;
-
-                h4 {
-                    position: absolute;
-                    bottom: 0;
-                    font-size: 2rem;
-                    font-weight: 700;
-                    color: $p-100;
-                    text-align: center;
-                    padding: 2rem;
-
-                    &:hover {
-                        color: $p-200;
-                    }
+                @include sm-up {
+                    margin: 0 1rem;
                 }
             }                 
         }

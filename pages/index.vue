@@ -22,8 +22,12 @@
   .razoes {
     display: flex;
     flex-direction: column;
-    padding: 2rem;
+    padding: 2rem 1rem;
     margin-top: 4rem;
+
+    @include sm-up {
+      padding: 2rem;
+    }
 
     &_text {
       text-align: right;
@@ -61,13 +65,12 @@
 
     &_card {
       display: flex;
-      flex-wrap: wrap;
-      margin-bottom: 1rem;
+      flex-direction: column;
 
       div {
         height: 20rem;
-        margin: 0.4rem;
-        width: 47%;
+        width: 100%;
+        margin-top: 0.5rem;
         background: linear-gradient(45deg, $p-500 0%, $p-600 100%);
 
       }

@@ -11,9 +11,9 @@
                 <h4>Conheça a história de sucesso!</h4>
             </div>
             <div class="header_card_media">
-                <div class="header_media_youtube"></div>
-                <div class="header_media_instagram"></div>
-                <div class="header_media_maps"></div>
+                <div class="header_card_media_youtube"></div>
+                <div class="header_card_media_instagram"></div>
+                <div class="header_card_media_maps"></div>
             </div>
         </div>
     </header>
@@ -21,26 +21,36 @@
 
 <style lang="scss">
     .header {
-        padding: 2rem;
+        display: flex;
+        flex-direction: column;
+        padding: 2rem 1rem;
         margin-top: 4rem;
         max-width: 120rem;
 
+        @include sm-up {
+            padding: 2rem;
+        }
+
+        @include lg {
+            flex-direction: row;
+        }
+
         &_text {
-            margin-bottom: 4rem;
+            margin-bottom: 2rem;
 
             h1 {
                 color: $p-700;
                 line-height: 1;
                 margin: 1rem 0;
                 font-weight: 700;
-                font-size: 3.6rem;
+                font-size: 3.8rem;
                 word-spacing: -0.5rem;
             }
 
             p {
                 font-size: 2.6rem;
                 font-weight: 400;
-                color: $cream-500;
+                color: $cream-400;
             }
 
             h3 {
@@ -51,17 +61,21 @@
         }
 
         &_card {
+            @include sm-up {
+                display: flex;
+                width: 100%;
+            }
+
             &_main {
                 display: flex;
                 padding: 2rem;
-                height: 30rem;
                 flex-direction: column;
                 justify-content: flex-end;
-                margin-bottom: 0.5rem;
                 background: linear-gradient(45deg, $p-600 0%, $p-500 100%);
                 text-align: right;
     
                 h5 {
+                    margin-top: 16rem;
                     font-size: 1.6rem;
                     font-weight: 700;
                     color: $p-300;
@@ -77,25 +91,29 @@
             }
     
             &_media {
+                display: flex;
                 height: 10rem;
+                margin-top: 0.5rem;
+
+                @include sm-up {
+                    flex-direction: column;
+                    height: 100%;
+                }
     
                 &_youtube {
                     width: 100%;
-                    height: 100%;
-                    background-color: $s-600;
+                    background: linear-gradient(45deg, $s-500 0%, $s-600 100%);
                 }
     
                 &_instagram {
                     width: 100%;
-                    height: 100%;
                     margin: 0 0.5rem;
-                    background-color: $s-400;
+                    background: linear-gradient(45deg, $s-300 0%, $s-400 100%);
                 }
     
                 &_maps {
                     width: 100%;
-                    height: 100%;
-                    background-color: $p2-600;
+                    background: linear-gradient(45deg, $p2-500 0%, $p2-600 100%);
                 }
             }
         }
