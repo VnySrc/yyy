@@ -1,137 +1,76 @@
 <template>
-<div>
-  <header class="header">
-    <div class="header_text">
-      <h3>INDAIATUBA - SP</h3>
-      <h1>Semi-novos em Indaiatuba</h1>
-      <p>Semi-novos em Indaiatuba</p>
-    </div>
-    <cardHeader />
-  </header>
-  <section class="stock">
-    <h1>Confira nosso estoque</h1>
-    <stock />
-  </section>
-  <section class="razoes">
-    <div class="razoes_text">
-      <h3>COMPRA CERTA</h3>
-      <h1>Benefícios de comprar com a Avenida veículos</h1>
-      <p>Atuando no mercado automobilístico, nós da Avenida Veículos buscamos auxiliar nossos clientes afim de encontrar o melhor negócio, agindo como consultores, não somente como simples vendedores.</p>
-    </div>
-  </section>
-  <cardReason />
-  <section class="feedback">
-    <div class="feedback_card"></div>
-    <div class="feedback_card"></div>
-    <div class="feedback_card"></div>
-  </section>
-</div>
+  <div>
+    <Header />
+    <section class="razoes">
+      <div class="razoes_text">
+        <h3>COMPRA CERTA</h3>
+        <h1>Benefícios de comprar com a Avenida veículos</h1>
+        <p>Atuando no mercado automobilístico, nós da Avenida Veículos buscamos auxiliar nossos clientes afim de
+          encontrar o melhor negócio, agindo como consultores, não somente como simples vendedores.</p>
+      </div>
+      <div class="razoes_card">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </section>
+  </div>
 </template>
 
 <style lang="scss">
+  .razoes {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    margin-top: 4rem;
 
-.header {
-  display: flex;
-  flex-direction: column;
-  margin-top: 6rem;
+    &_text {
+      text-align: right;
+      margin-bottom: 2rem;
 
-  @include md {
-    flex-direction: row;
-  }
+      @include md {
+        padding: 0 2rem 2rem 16rem;
+      }
 
-  &_text {
-    padding-left: 2rem;
+      @include lg-up {
+        padding: 0 16rem 2rem 60rem;
+      }
 
-    @include md {
-      padding: 2rem 0 0 6rem;
+      h1 {
+          color: $p-700;
+          line-height: 1;
+          margin: 1rem 0;
+          font-weight: 700;
+          font-size: 3rem;
+          word-spacing: -0.5rem;
+      }
+
+      p {
+          font-size: 2.2rem;
+          font-weight: 400;
+          color: $cream-500;
+      }
+
+      h3 {
+          font-size: 1.8rem;
+          font-weight: 700;
+          color: $s-400;
+      }
     }
 
-    @include lg-up {
-      padding: 2rem 0 0 16rem;
-    }
+    &_card {
+      display: flex;
+      flex-wrap: wrap;
+      margin-bottom: 1rem;
 
-    
-    h1 {
-      font-size: 4rem;
-      font-weight: 700;
-      color: $gray-600;
-      margin: 0.5rem 0;
-    }
+      div {
+        height: 20rem;
+        margin: 0.4rem;
+        width: 47%;
+        background: linear-gradient(45deg, $p-500 0%, $p-600 100%);
 
-    p {
-      font-size: 2.4rem;
-      font-weight: 300;
-      color: $gray-500;
-    }
-
-    h3 {
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: $red-500;
-    }
-  }
-}
-
-.stock {
-  margin-top: 4rem;
-
-  h1 {
-      font-size: 2.4rem;
-      font-weight: 700;
-      text-align: center;
-      color: $gray-600;
-      margin: 1rem 0;
-    }
-
-}
-
-.razoes {
-  display: flex;
-  flex-direction: column;
-  margin-top: 4rem;
-
-  &_text {
-    padding-right: 2rem;
-    text-align: right;
-
-    @include md {
-      padding: 0 2rem 2rem 16rem;
-    }
-
-    @include lg-up {
-      padding: 0 16rem 2rem 60rem;
-    }
-    
-    h1 {
-      font-size: 3rem;
-      font-weight: 700;
-      color: $gray-600;
-    }
-
-    p {
-      font-size: 2rem;
-      font-weight: 300;
-      color: $gray-500;
-      padding-top: 1rem;
-    }
-
-    h3 {
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: $red-500;
+      }
     }
   }
-}
-
-.feedback {
-  display: none;
-  flex-direction: column;
-  gap: 2rem;
-
-  &_card {
-    background-color: $primary;
-    border-radius: 100%;
-    height: 35rem;
-  }
-}
 </style>
