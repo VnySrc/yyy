@@ -2,7 +2,7 @@
     <header class="header">
         <div class="header_text">
             <h3>INDAIATUBA - SP</h3>
-            <h1>Tudo começa com um sonho, mas aqui a gente te ajudar a realizar</h1>
+            <h1 class="animatedFill">Tudo começa com um sonho, mas aqui a gente te ajudar a realizar</h1>
             <p>Vamos juntos achar um veículo perfeito para você</p>
             <nuxt-link to="/estoque">
                 <div class="animatedFill">
@@ -30,23 +30,17 @@
         display: flex;
         flex-direction: column;
         padding: 2rem 1.4rem;
-        margin-top: 4rem;
         max-width: 120rem;
+        margin-top: 4rem;
 
         @include sm-up {
             padding: 2rem;
-        }
-
-        @include lg {
             flex-direction: row;
         }
 
         &_text {
             margin-bottom: 3rem;
-
-            @include lg {
-                padding-right: 14rem;
-            }
+            max-width: 50rem;
 
             h1 {
                 line-height: 1;
@@ -56,17 +50,13 @@
                 word-spacing: -0.5rem;
                 
                 color: transparent;
-                background: radial-gradient(circle, rgba(32,148,180,1) 0%, rgba(104,22,63,1) 100%);
                 background-clip: text;
-                background-size: 600% 600%;
-                -webkit-animation: Color 5s ease infinite;
-                -moz-animation: Color 5s ease infinite;
-                animation: Color 5s ease infinite;
             }
 
             p {
                 font-size: 2.6rem;
-                font-weight: 300;
+                font-family: $ff-s;
+                font-weight: 400;
                 color: $cream-300;
             }
 
@@ -104,10 +94,9 @@
         }
 
         &_card {
-            @include sm-up {
-                display: flex;
-                width: 100%;
-            }
+            display: flex;
+            justify-content: flex-end;
+            width: 100%;
 
             &_main {
                 display: flex;
@@ -136,8 +125,9 @@
     
             &_media {
                 display: flex;
-                justify-content: flex-end;
-                height: 8rem;
+                flex-direction: column;
+                margin-left: 0.5rem;
+                height: 100%;
 
                 div {
                     display: flex;
@@ -150,14 +140,6 @@
                         height: 2rem;
                         fill: $gray-100;
                     }
-
-                }
-
-                @include sm-up {
-                    flex-direction: column;
-                    justify-content: flex-start;
-                    margin-left: 0.5rem;
-                    height: 100%;
                 }
     
                 &_youtube {
@@ -167,12 +149,8 @@
     
                 &_instagram {
                     width: 100%;
-                    margin: 0 0.5rem;
+                    margin: 0.5rem 0;
                     background: linear-gradient(45deg, $s-300 0%, $s-400 100%);
-
-                    @include sm-up {
-                        margin: 0.5rem 0;
-                    }
                 }
     
                 &_maps {

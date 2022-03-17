@@ -89,7 +89,7 @@
 
 footer {
     padding: 4rem 2rem 1rem 2rem;
-    background: linear-gradient(45deg, $p-600 0%, $p-800 50%, $p-700 100%);
+    background: linear-gradient(45deg, $p2-600 0%, $p-600 100%);
     background-size: 1000% 1000%;
     -webkit-animation: Color 5s ease infinite;
     -moz-animation: Color 5s ease infinite;

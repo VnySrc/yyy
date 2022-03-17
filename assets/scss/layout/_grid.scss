@@ -1,8 +1,7 @@
 .site {
     width: 100%;
-    overflow-x: hidden !important;
     font-family: $ff-primary;
-    background-color: #fefdf8;
+    overflow-x: hidden !important;
     background: linear-gradient(215deg, rgba(254,253,248,1) 0%, rgba(255,249,240,1) 100%);
 }
 
@@ -11,4 +10,3 @@ button {
     display: none;
     text-decoration: none;
 }
-

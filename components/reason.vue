@@ -45,6 +45,7 @@
 
       p {
           font-size: 2.2rem;
+          font-family: $ff-s;
           font-weight: 400;
           color: $cream-500;
       }

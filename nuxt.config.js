@@ -3,8 +3,8 @@ export default {
   components: true,
 
   head: {
-    title: 'Avenida Automóveis',
-    titleTemplate: 'Veículos seminovos em Indaiatuba - SP | %s',
+    title: 'Avenida Veículos',
+    titleTemplate: 'Vamos juntos achar um veículo perfeito para você | %s',
     htmlAttrs: {
       lang: 'pt-br',
       amp: true

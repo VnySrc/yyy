@@ -22,7 +22,6 @@ nav {
     @include md {
         flex-direction: row;
         justify-content: space-between;
-        align-items: center;
         padding: 0 2rem;
         max-width: 120rem;
     }
@@ -53,6 +52,7 @@ nav {
         a {
             font-weight: 500;
             font-size: 1.6rem;
+            font-family: $ff-s;
             color: $cream-300;
 
             @include md {
