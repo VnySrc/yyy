@@ -31,11 +31,11 @@
       margin-bottom: 2rem;
 
       @include lg {
-        margin-left: 30%;
+        padding-left: 26rem;
       }
 
       h1 {
-          color: $p-700;
+          color: $p-500;
           line-height: 1;
           margin: 1rem 0;
           font-weight: 700;
@@ -44,10 +44,10 @@
       }
 
       p {
-          font-size: 2.2rem;
+          font-size: 2.4rem;
           font-family: $ff-s;
           font-weight: 400;
-          color: $cream-500;
+          color: $cream-300;
       }
 
       h3 {

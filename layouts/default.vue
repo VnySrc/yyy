@@ -30,7 +30,7 @@
                     </div>
                 </div>
             </div>
-            <IconsLogoFlat class="logoFlat"/>
+            <nuxt-link to="/" class="logo"><IconsLogoFlat class="logoFlat"/></nuxt-link>
             <div class="cabeçalho">
                 <a target="_blank" href="https://g.page/Avenidaveiculosindaiatuba?share">Av. Visconde de Indaiatuba, 921 , Vila Vitòria 1 - Indaiatuba/SP</a>
                 <div></div>
@@ -127,6 +127,10 @@ footer {
                 font-size: 1.8rem;
                 margin: 0.6rem 0;
                 color: $p-200;
+
+                &:hover {
+                    filter: brightness(1.4);
+                }
             }
     
             .social {
@@ -135,6 +139,11 @@ footer {
                 svg {
                     width: 2.2rem;
                     fill: $p-200;
+                    cursor: pointer;
+
+                    &:hover {
+                        filter: brightness(1.4);
+                    }
     
                     &:nth-child(2) {
                         margin: 0 1rem;
@@ -149,14 +158,14 @@ footer {
         height: 5rem;
         display: block;
         margin: auto;
-        fill: $p-400;
+        fill: $p-500;
 
         @include sm-up {
             display: inline;
         }
 
         &:hover {
-            filter: none;
+            filter: brightness(1.2);
         }
     }
 
@@ -175,20 +184,20 @@ footer {
             color: $p-400;
 
             &:hover {
-                color: $p-500;
+                filter: brightness(1.2);
             }
         }
     
         div {
             height: 0.1rem;
-            background-color: $p-400;
+            background-color: $p-500;
             margin: 1rem 0;
         }
     
         p {
             font-weight: 400;
             font-size: 1.4rem;
-            color: $p-400;
+            color: $p-500;
         }
 
     }

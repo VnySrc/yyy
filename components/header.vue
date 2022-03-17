@@ -75,11 +75,7 @@
                 margin-top: 2rem;
 
                 &:hover {
-                    color: $p-500;
-
-                    div {
-                        background-color: $p-500;
-                    }
+                    filter: brightness(1.2);
                 }
 
                 div {
@@ -133,6 +129,11 @@
                     display: flex;
                     height: 5rem;
                     width: 5rem;
+                    cursor: pointer;
+
+                    &:hover {
+                        filter: brightness(1.2);
+                    }
 
                     svg {
                         display: block;

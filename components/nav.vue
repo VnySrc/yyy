@@ -39,7 +39,7 @@ nav {
             }
 
             &:hover {
-                filter: brightness(1.4);
+                filter: brightness(1.2);
             }
         }
     }
@@ -50,7 +50,7 @@ nav {
         align-items: center;
 
         a {
-            font-weight: 500;
+            font-weight: 600;
             font-size: 1.6rem;
             font-family: $ff-s;
             color: $cream-300;
@@ -62,33 +62,32 @@ nav {
             }
 
             &:hover {
-                color: $p-600;
+                color: $p-500;
             }
         }
 
         a.nuxt-link-exact-active {
-            font-weight: 700;
-            color: $p-600;
+            font-weight: 800;
+            color: $p-500;
         }
 
         .chat {
-            padding: 2rem;
             display: none;
+            padding: 2rem;
             cursor: pointer;
 
-            &:hover {
-                fill: $p-100;
+            &.nuxt-link-exact-active {
+                filter: brightness(1.2);
             }
 
-            &.nuxt-link-exact-active {
-                fill: $p-300;
-                background: linear-gradient(45deg, $p-500 0%, $p-600 100%);
+            &:hover {
+                filter: brightness(1.2);
             }
 
             svg {
                 display: block;
                 margin: auto;   
-                fill: $p-200;                 
+                fill: $p-300;            
             }
 
             @include md {
