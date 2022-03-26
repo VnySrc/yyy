@@ -50,10 +50,9 @@ nav {
         align-items: center;
 
         a {
-            font-weight: 600;
+            font-weight: 700;
             font-size: 1.6rem;
-            font-family: $ff-s;
-            color: $cream-300;
+            color: $gray-300;
 
             @include md {
                 &:nth-child(2n) {

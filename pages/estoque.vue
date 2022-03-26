@@ -1,12 +1,16 @@
 <template>
-  <section class="estoque">
-  </section>
+<div>
+
+</div>
 </template>
 
-<style lang="scss">
-
-.estoque {
-  height: 50rem;
-}
-
-</style>
+<script>
+  export default {
+    created() {
+      this.$axios.$get(`/vehicles`)
+      .then((Response) => {
+        console.table(Response);
+      })
+    }
+  }
+</script>

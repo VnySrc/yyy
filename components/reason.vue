@@ -46,8 +46,7 @@
       p {
           font-size: 2.4rem;
           font-family: $ff-s;
-          font-weight: 400;
-          color: $cream-300;
+          color: $gray-500;
       }
 
       h3 {
@@ -69,7 +68,7 @@
         height: 20rem;
         width: 100%;
         margin-top: 0.5rem;
-        background: linear-gradient(45deg, $p-500 0%, $p-600 100%);
+        background: linear-gradient(45deg, $gray-600 0%, $gray-700 100%);
 
         @include md {
           margin-top: 0;

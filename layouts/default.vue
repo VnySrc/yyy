@@ -2,22 +2,13 @@
     <div class="site">
         <Nav />
         <Nuxt class="content"/>
-        <div class="blog">
-            <h1>VISITE NOSSO BLOG</h1>
-            <div class="blog_cards">
-                <div></div>
-                <div></div>
-                <div></div>
-            </div>
-        </div>
         <footer>
             <div class="infos">
                 <div class="links">
                     <h4>Links</h4>
-                    <a href="">Termos e condições de uso</a>
+                    <nuxt-link to="/termos">Termos e condições de uso</nuxt-link>
                     <nuxt-link to="/contato">Contato por email</nuxt-link>
-                    <a href="">Cadastre seu pedido</a>
-                    <a href="">Sobre a empresa</a>
+                    <nuxt-link to="/sobre" href="">Sobre a empresa</nuxt-link>
                 </div>
                 <div class="contato">
                     <h4>Entre em contato</h4>
@@ -46,54 +37,9 @@
     margin: 0 auto;
 }
 
-.blog {
-    margin: 0 auto;
-    max-width: 120rem;
-
-    h1 {
-        color: $p-600;
-        font-size: 2.4rem;
-        font-weight: 700;
-        text-align: center;
-        margin-bottom: 1rem;
-        margin-top: 4rem;
-    }
-
-    &_cards {
-        padding: 2rem 1.4rem;
-        margin-bottom: 4rem;
-
-        @include sm-up {
-            padding: 2rem;
-        }
-
-        @include sm-up {
-            display: flex;
-        }
-
-        div {
-            height: 25rem;
-            width: 100%;
-            background: linear-gradient(45deg, $p-500 0%, $p-600 100%);
-
-            &:nth-child(2) {
-                margin: 2rem 0;
-
-                @include sm-up {
-                    margin: 0 1rem;
-                }
-            }                 
-        }
-    }
-}
-
 footer {
     padding: 4rem 2rem 1rem 2rem;
-    background: linear-gradient(45deg, $p2-600 0%, $p-600 100%);
-    background-size: 1000% 1000%;
-    -webkit-animation: Color 5s ease infinite;
-    -moz-animation: Color 5s ease infinite;
-    animation: Color 5s ease infinite;
+    background: linear-gradient(45deg, $gray-700 0%, $gray-800 100%);
 
     .infos {
         @include sm-up {
@@ -119,17 +65,18 @@ footer {
             h4 {
                 font-weight: 600;
                 font-size: 2.4rem;
-                color: $p-500;
+                color: $gray-500;
                 margin-bottom: 2rem;
             }
     
             a {
                 font-size: 1.8rem;
+                font-family: $ff-s;
                 margin: 0.6rem 0;
-                color: $p-200;
+                color: $gray-400;
 
                 &:hover {
-                    filter: brightness(1.4);
+                    color: $gray-100;
                 }
             }
     
@@ -138,11 +85,11 @@ footer {
     
                 svg {
                     width: 2.2rem;
-                    fill: $p-200;
+                    fill: $gray-400;
                     cursor: pointer;
 
                     &:hover {
-                        filter: brightness(1.4);
+                        fill: $gray-100;
                     }
     
                     &:nth-child(2) {
@@ -158,7 +105,7 @@ footer {
         height: 5rem;
         display: block;
         margin: auto;
-        fill: $p-500;
+        fill: $gray-500;
 
         @include sm-up {
             display: inline;
@@ -172,6 +119,7 @@ footer {
     .cabeçalho {
         margin-top: 4rem;
         text-align: center;
+        font-family: $ff-s;
 
         @include sm-up {
             text-align: right;
@@ -181,7 +129,7 @@ footer {
         a {
             font-weight: 500;
             font-size: 1.5rem;
-            color: $p-400;
+            color: $gray-500;
 
             &:hover {
                 filter: brightness(1.2);
@@ -190,14 +138,14 @@ footer {
     
         div {
             height: 0.1rem;
-            background-color: $p-500;
+            background-color: $gray-600;
             margin: 1rem 0;
         }
     
         p {
             font-weight: 400;
             font-size: 1.4rem;
-            color: $p-500;
+            color: $gray-500;
         }
 
     }

@@ -56,8 +56,7 @@
             p {
                 font-size: 2.6rem;
                 font-family: $ff-s;
-                font-weight: 400;
-                color: $cream-300;
+                color: $gray-500;
             }
 
             h3 {
@@ -99,7 +98,7 @@
                 padding: 2rem;
                 flex-direction: column;
                 justify-content: flex-end;
-                background: linear-gradient(45deg, $p-600 0%, $p-500 100%);
+                background: linear-gradient(45deg, $gray-600 0%, $gray-700 100%);
                 text-align: right;
                 margin-bottom: 0.5rem;
     
@@ -107,7 +106,7 @@
                     margin-top: 16rem;
                     font-size: 1.6rem;
                     font-weight: 700;
-                    color: $p-300;
+                    color: $p2-400;
                     margin-bottom: 1rem;
                 }
     
@@ -115,7 +114,7 @@
                     font-size: 3rem;
                     font-weight: 800;
                     line-height: 1;
-                    color: $p-100;
+                    color: $gray-100;
                 }
             }
     
