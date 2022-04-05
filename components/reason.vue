@@ -57,26 +57,19 @@
     }
 
     &_card {
+      gap: 0.5rem;
       display: flex;
-      flex-direction: column;
+      flex-wrap: wrap;
+      justify-content: space-between;
 
-      @include md {
-        flex-direction: row;
+      @include sm-up {
+        flex-wrap: nowrap;
       }
 
       div {
-        height: 20rem;
-        width: 100%;
-        margin-top: 0.5rem;
+        height: 20rem;    
+        flex-basis: 49%;
         background: linear-gradient(45deg, $gray-600 0%, $gray-700 100%);
-
-        @include md {
-          margin-top: 0;
-
-          &:nth-child(2n+1) {
-            margin: 0 0.5rem;
-          }
-        }
       }
     }
   }

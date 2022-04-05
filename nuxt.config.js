@@ -20,20 +20,24 @@ export default {
     ],
   },
 
+
+  axios: {
+    baseURL: 'https://integreauto.com.br/anuncios/listaAnunciosParceiros/17/1931.xml',
+    https: true
+  },
+
+  http: {
+    baseURL: 'https://integreauto.com.br/anuncios/listaAnunciosParceiros/17/1931.xml',
+    https: true
+  },
+
   buildModules: [
     '@nuxtjs/style-resources',
   ],
 
   modules: [
     '@nuxtjs/axios',
-  ],
-
-  axios: {
-    baseURL: 'https://app.revendamais.com.br/application/index.php/apiGeneratorXml/generator/appdaloja/f8a950790397fa2961e7dd59b4860b1f5586.json'
-  },
-
-  plugins: [
-    '~/plugins/axios'
+    '@nuxt/http'
   ],
 
   styleResources: {

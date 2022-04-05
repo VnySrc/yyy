@@ -6,7 +6,7 @@
             <nuxt-link to="/estoque">Estoque</nuxt-link>
             <nuxt-link to="/serviços">Serviços</nuxt-link>
             <nuxt-link to="/blog">Blog</nuxt-link>
-            <nuxt-link to="/contato" class="chat animatedFill"><IconsChat /></nuxt-link>
+            <nuxt-link to="/contato" class="chat"><IconsChat /></nuxt-link>
         </div>
     </nav>
 </template>
@@ -74,6 +74,7 @@ nav {
             display: none;
             padding: 2rem;
             cursor: pointer;
+            background-color: $p-500;
 
             &.nuxt-link-exact-active {
                 filter: brightness(1.2);
@@ -81,12 +82,14 @@ nav {
 
             &:hover {
                 filter: brightness(1.2);
+                outline: 0.2rem solid $p-500;
+                outline-offset: 0.2rem;
             }
 
             svg {
                 display: block;
                 margin: auto;   
-                fill: $p-300;            
+                fill: $p-100;            
             }
 
             @include md {

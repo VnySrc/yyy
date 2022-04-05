@@ -33,23 +33,20 @@
         margin-bottom: 4rem;
 
         @include sm-up {
+            display: flex;
             padding: 2rem;
         }
-
-        @include sm-up {
-            display: flex;
-        }
-
+        
         div {
             height: 25rem;
             width: 100%;
             background: linear-gradient(45deg, $gray-600 0%, $gray-700 100%);
 
             &:nth-child(2) {
-                margin: 2rem 0;
+                margin: 0.5rem 0;
 
                 @include sm-up {
-                    margin: 0 1rem;
+                    margin: 0 0.5rem;
                 }
             }                 
         }

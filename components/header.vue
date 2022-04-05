@@ -2,10 +2,10 @@
     <header class="header">
         <div class="header_text">
             <h3>INDAIATUBA - SP</h3>
-            <h1 class="animatedFill">Tudo começa com um sonho, mas aqui a gente te ajudar a realizar</h1>
+            <h1>Tudo começa com um sonho, mas aqui a gente te ajudar a realizar</h1>
             <p>Vamos juntos achar um veículo perfeito para você</p>
             <nuxt-link to="/estoque">
-                <div class="animatedFill">
+                <div>
                     <IconsArrow />
                 </div>
                 <span>Confira nosso estoque</span>
@@ -17,30 +17,40 @@
                 <h4>Conheça a história de sucesso!</h4>
             </div>
             <div class="header_card_media">
-                <div class="header_card_media_youtube"><IconsYoutube class="header_card_media_youtube"/></div>
-                <div class="header_card_media_instagram"><IconsInstagram class="header_card_media_instagram"/></div>
-                <div class="header_card_media_maps"><IconsWhatsapp class="header_card_media_maps"/></div>
+                <div class="header_card_media_youtube"><IconsYoutube /></div>
+                <div class="header_card_media_instagram"><IconsInstagram /></div>
+                <div class="header_card_media_whatsapp"><IconsWhatsapp /></div>
+                <div class="header_card_media_tiktok"><IconsTiktok /></div>
             </div>
+        </div>
+        <div class="header_highlights">
+            <destaques />
+            <destaques />
+            <destaques />
+            <destaques />
         </div>
     </header>
 </template>
 
 <style lang="scss">
     .header {
-        display: flex;
-        flex-direction: column;
         padding: 2rem 1.4rem;
         max-width: 120rem;
         margin-top: 4rem;
 
         @include sm-up {
+            display: flex;
+            flex-wrap: wrap;
             padding: 2rem;
-            flex-direction: row;
         }
 
         &_text {
             margin-bottom: 3rem;
             max-width: 50rem;
+
+            @include sm-up {
+                flex-basis: 50%;
+            }
 
             h1 {
                 line-height: 1;
@@ -49,8 +59,7 @@
                 font-size: 3.8rem;
                 word-spacing: -0.5rem;
                 
-                color: transparent;
-                background-clip: text;
+                color: $p-500;
             }
 
             p {
@@ -68,21 +77,32 @@
             a {
                 display: flex;
                 align-items: center;
-                font-size: 1.6rem;
-                font-weight: 600;
-                color: $p-700;
+                padding: 0.5rem;
                 margin-top: 2rem;
+                width: auto;
 
                 &:hover {
                     filter: brightness(1.2);
+
+                    div {
+                        outline: 0.2rem solid $p-500;
+                        outline-offset: 0.2rem;
+                    }
+                }
+
+                span {
+                    font-size: 1.6rem;
+                    font-weight: 600;
+                    color: $p-600;
                 }
 
                 div {
+                    background-color: $p-500;
                     margin-right: 1rem;
                     padding: 1rem;
 
                     svg {
-                        fill: $p-200;
+                        fill: $p-100;
                     }
                 }
             }
@@ -90,17 +110,18 @@
 
         &_card {
             display: flex;
-            justify-content: flex-end;
-            width: 100%;
+            align-items: flex-end;
+
+            @include sm-up {
+                flex-basis: 50%;
+            }
 
             &_main {
                 display: flex;
                 padding: 2rem;
                 flex-direction: column;
-                justify-content: flex-end;
                 background: linear-gradient(45deg, $gray-600 0%, $gray-700 100%);
                 text-align: right;
-                margin-bottom: 0.5rem;
     
                 h5 {
                     margin-top: 16rem;
@@ -129,6 +150,7 @@
                     height: 5rem;
                     width: 5rem;
                     cursor: pointer;
+                    margin-top: 0.5rem;
 
                     &:hover {
                         filter: brightness(1.2);
@@ -149,16 +171,32 @@
     
                 &_instagram {
                     width: 100%;
-                    margin: 0.5rem 0;
                     background: linear-gradient(45deg, $s-300 0%, $s-400 100%);
                 }
     
-                &_maps {
+                &_whatsapp {
                     width: 100%;
                     background: linear-gradient(45deg, $p2-500 0%, $p2-600 100%);
+                }
+
+                &_tiktok {
+                    width: 100%;
+                    background: linear-gradient(45deg, $gray-600 0%, $gray-800 100%);
                 }
             }
         }
 
+        &_highlights {
+            gap: 0.5rem;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-top: 0.5rem;
+            
+            @include sm-up {
+                flex-wrap: nowrap;
+                flex-basis: 100%;
+            }
+        }
     }
 </style>

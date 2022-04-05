@@ -39,8 +39,8 @@
 
 footer {
     padding: 4rem 2rem 1rem 2rem;
-    background: linear-gradient(45deg, $gray-700 0%, $gray-800 100%);
-
+    background-color: $gray-700;
+    
     .infos {
         @include sm-up {
             display: flex;
