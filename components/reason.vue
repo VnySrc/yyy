@@ -7,10 +7,14 @@
           encontrar o melhor negócio, agindo como consultores, não somente como simples vendedores.</p>
       </div>
       <div class="razoes_card">
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
+        <div>
+        </div>
+        <div>
+        </div>
+        <div>
+        </div>
+        <div>
+        </div>
       </div>
     </section>
 </template>
@@ -58,17 +62,18 @@
 
     &_card {
       gap: 0.5rem;
+      width: 100%;
       display: flex;
       flex-wrap: wrap;
-      justify-content: space-between;
 
       @include sm-up {
         flex-wrap: nowrap;
       }
 
       div {
-        height: 20rem;    
-        flex-basis: 49%;
+        flex: 1 1 auto;
+        height: 20rem;
+        min-width: 15rem;
         background: linear-gradient(45deg, $gray-600 0%, $gray-700 100%);
       }
     }

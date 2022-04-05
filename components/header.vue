@@ -41,6 +41,7 @@
         @include sm-up {
             display: flex;
             flex-wrap: wrap;
+            justify-content: space-between;
             padding: 2rem;
         }
 
@@ -50,6 +51,7 @@
 
             @include sm-up {
                 flex-basis: 50%;
+                margin-bottom: 0;
             }
 
             h1 {
@@ -109,18 +111,27 @@
         }
 
         &_card {
+            gap: 0.5rem;
             display: flex;
-            align-items: flex-end;
+            align-content: flex-end;
+            height: 100%;
 
             @include sm-up {
                 flex-basis: 50%;
+                flex-direction: column-reverse;
+                align-items: flex-end;
+                padding-left: 4rem;
+            }
+
+            @include md {
+                flex-direction: row;
             }
 
             &_main {
                 display: flex;
                 padding: 2rem;
                 flex-direction: column;
-                background: linear-gradient(45deg, $gray-600 0%, $gray-700 100%);
+                background: linear-gradient(45deg, $p-600 0%, $p-700 100%);
                 text-align: right;
     
                 h5 {
@@ -142,15 +153,22 @@
             &_media {
                 display: flex;
                 flex-direction: column;
-                margin-left: 0.5rem;
-                height: 100%;
+                align-self: flex-end;
+                gap: 0.5rem;
+
+                @include sm-up {
+                    flex-direction: row;
+                }
+
+                @include md {
+                    flex-direction: column;
+                }
 
                 div {
                     display: flex;
                     height: 5rem;
                     width: 5rem;
                     cursor: pointer;
-                    margin-top: 0.5rem;
 
                     &:hover {
                         filter: brightness(1.2);
@@ -188,14 +206,23 @@
 
         &_highlights {
             gap: 0.5rem;
+            width: 100%;
             display: flex;
             flex-wrap: wrap;
-            justify-content: space-between;
             margin-top: 0.5rem;
-            
+
             @include sm-up {
                 flex-wrap: nowrap;
-                flex-basis: 100%;
+            }
+
+            @include md {
+                margin-left: 40rem;
+            }
+
+            div {
+                flex: 1 1 auto;
+                min-width: 15rem;
+                background: linear-gradient(45deg, $p-500 0%, $p-700 100%);
             }
         }
     }
