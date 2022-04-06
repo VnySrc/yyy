@@ -20,7 +20,6 @@ export default {
     ],
   },
 
-
   axios: {
     baseURL: 'https://integreauto.com.br/anuncios/listaAnunciosParceiros/17/1931.xml',
     https: true
@@ -33,6 +32,7 @@ export default {
 
   buildModules: [
     '@nuxtjs/style-resources',
+    '@nuxt/image'
   ],
 
   modules: [

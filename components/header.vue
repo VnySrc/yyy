@@ -12,10 +12,13 @@
             </nuxt-link>
         </div>
         <div class="header_card">
-            <div class="header_card_main">
-                <h5>Avenida Veículos</h5>
-                <h4>Conheça a história de sucesso!</h4>
-            </div>
+            <nuxt-link to="/sobre" class="header_card_main">
+                <div>
+                    <h5>Avenida Veículos</h5>
+                    <h4>Conheça a história de sucesso!</h4>
+                </div>
+                <nuxt-img format="webp" src="/img/avenida.jpg" />
+            </nuxt-link>
             <div class="header_card_media">
                 <div class="header_card_media_youtube"><IconsYoutube /></div>
                 <div class="header_card_media_instagram"><IconsInstagram /></div>
@@ -23,12 +26,7 @@
                 <div class="header_card_media_tiktok"><IconsTiktok /></div>
             </div>
         </div>
-        <div class="header_highlights">
-            <destaques />
-            <destaques />
-            <destaques />
-            <destaques />
-        </div>
+        <highlights />
     </header>
 </template>
 
@@ -129,24 +127,47 @@
 
             &_main {
                 display: flex;
-                padding: 2rem;
+                position: relative;
+                overflow: hidden;
                 flex-direction: column;
-                background: linear-gradient(45deg, $p-600 0%, $p-700 100%);
                 text-align: right;
-    
-                h5 {
-                    margin-top: 16rem;
-                    font-size: 1.6rem;
-                    font-weight: 700;
-                    color: $p2-400;
-                    margin-bottom: 1rem;
+                
+
+                &:hover {
+                    img {
+                        scale: 1.2;
+                    }
+                }
+
+                div {
+                    padding: 2rem;
+                    z-index: 2;
+                    background: linear-gradient(240deg, rgba(21, 97, 121, 0.2) 0%, rgba(29, 138, 171, 0.2) 25%, rgba(14, 99, 196, 0.4) 100%),
+                                linear-gradient(180deg, rgba(21, 97, 121, 0.2) 0%, rgba(14, 99, 196, 0.6) 100%);
+
+                    h5 {
+                        margin-top: 16rem;
+                        font-size: 1.6rem;
+                        font-weight: 700;
+                        color: $p2-400;
+                        margin-bottom: 1rem;
+                    }
+        
+                    h4 {
+                        font-size: 3rem;
+                        font-weight: 800;
+                        line-height: 1;
+                        color: $gray-100;
+                    }
                 }
     
-                h4 {
-                    font-size: 3rem;
-                    font-weight: 800;
-                    line-height: 1;
-                    color: $gray-100;
+
+                img {
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    transition: scale 1000ms;
                 }
             }
     
@@ -201,28 +222,6 @@
                     width: 100%;
                     background: linear-gradient(45deg, $gray-600 0%, $gray-800 100%);
                 }
-            }
-        }
-
-        &_highlights {
-            gap: 0.5rem;
-            width: 100%;
-            display: flex;
-            flex-wrap: wrap;
-            margin-top: 0.5rem;
-
-            @include sm-up {
-                flex-wrap: nowrap;
-            }
-
-            @include md {
-                margin-left: 40rem;
-            }
-
-            div {
-                flex: 1 1 auto;
-                min-width: 15rem;
-                background: linear-gradient(45deg, $p-500 0%, $p-700 100%);
             }
         }
     }
