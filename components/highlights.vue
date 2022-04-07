@@ -112,19 +112,19 @@
 
             h5 {
                 font-size: 2.2rem;
-                color: $p-200;
+                color: $gray-100;
                 margin: 0 0 0.6rem 0;
             }
 
             span {
                 font-size: 1rem;
-                color: $p-200;
+                color: $p-400;
 
                 &:nth-child(2) {
                     margin: 0 0.5rem;
                     padding: 0 0.5rem;
-                    border-left: solid 0.1rem $p-300;
-                    border-right: solid 0.1rem $p-300;
+                    border-left: solid 0.1rem $p-400;
+                    border-right: solid 0.1rem $p-400;
                 }
             }
         }
@@ -148,12 +148,13 @@
 
         div {
             display: flex;
-            padding: 1rem;
+            padding: 0rem 0 0.8rem 0.4rem;
             align-items: flex-end;
 
             svg {
                 fill: $gray-100;
                 height: 1rem;
+                margin-right: 0.2rem;
             }
              span {
                  font-size: 0.8rem;
