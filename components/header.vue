@@ -38,9 +38,9 @@
 
         @include sm-up {
             display: flex;
+            padding: 2rem;
             flex-wrap: wrap;
             justify-content: space-between;
-            padding: 2rem;
         }
 
         &_text {
@@ -142,15 +142,16 @@
                 div {
                     padding: 2rem;
                     z-index: 2;
-                    background: linear-gradient(240deg, rgba(21, 97, 121, 0.2) 0%, rgba(29, 138, 171, 0.2) 25%, rgba(14, 99, 196, 0.4) 100%),
-                                linear-gradient(180deg, rgba(21, 97, 121, 0.2) 0%, rgba(14, 99, 196, 0.6) 100%);
+                    background: linear-gradient(240deg, rgba(16, 88, 129, 0.3) 25%, rgba(32, 148, 180, 0.6) 100%),
+                                linear-gradient(180deg, rgba(16, 88, 129, 0.3) 25%, rgba(132, 148, 180, 0.6) 100%);
 
                     h5 {
                         margin-top: 16rem;
                         font-size: 1.6rem;
                         font-weight: 700;
-                        color: $p2-400;
+                        color: $p-400;
                         margin-bottom: 1rem;
+                        text-shadow: $p-700 1rem 1rem 10rem;
                     }
         
                     h4 {
@@ -158,6 +159,7 @@
                         font-weight: 800;
                         line-height: 1;
                         color: $gray-100;
+                        text-shadow: $p-700 1rem 1rem 10rem;
                     }
                 }
     
@@ -168,6 +170,8 @@
                     height: 100%;
                     object-fit: cover;
                     transition: scale 1000ms;
+                    filter: saturate(1.2)
+                            contrast(1.2);
                 }
             }
     

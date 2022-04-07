@@ -10,6 +10,12 @@
                     <span>20mil KM</span>
                 </div>
             </div>
+            <div class="highlights_background">
+                <div>
+                    <IconsInfo />
+                    <span>Saiba mais</span>
+                </div>
+            </div>
             <nuxt-img format="webp" src="/img/compass.png" />
         </div>
         <div class="highlights_imgs">
@@ -20,6 +26,12 @@
                     <span>2020</span>
                     <span>Flex</span>
                     <span>20mil KM</span>
+                </div>
+            </div>
+            <div class="highlights_background">
+                <div>
+                    <IconsInfo />
+                    <span>Saiba mais</span>
                 </div>
             </div>
             <nuxt-img format="webp" src="/img/civic.png" />
@@ -34,6 +46,12 @@
                     <span>20mil KM</span>
                 </div>
             </div>
+            <div class="highlights_background">
+                <div>
+                    <IconsInfo />
+                    <span>Saiba mais</span>
+                </div>
+            </div>
             <nuxt-img format="webp" src="/img/captur.png" />
         </div>
         <div class="highlights_imgs">
@@ -46,6 +64,12 @@
                     <span>20mil KM</span>
                 </div>
             </div>
+            <div class="highlights_background">
+                <div>
+                    <IconsInfo />
+                    <span>Saiba mais</span>
+                </div>
+            </div>
             <nuxt-img format="webp" src="/img/kicks.png" />
         </div>
     </div>
@@ -53,6 +77,7 @@
 
 <style lang="scss">
 .highlights {
+    display: flex;
     gap: 0.5rem;
     width: 100%;
     display: flex;
@@ -68,7 +93,7 @@
     }
 
     &_imgs {
-        height: 20rem;
+        height: 22rem;
         flex: 1 1 auto;
         min-width: 15rem;
         background: linear-gradient(45deg, $p-500 0%, $p-700 100%);
@@ -103,13 +128,38 @@
                 }
             }
         }
-        
 
         img {
             height: 13rem;
             right: -3rem;
-            bottom: 0;
+            bottom: 1rem;
             position: absolute;
+        }
+    }
+
+    &_background {
+        display: flex;
+        align-content: flex-end;
+        background: linear-gradient(45deg, $s2-500 0%, $s2-700 100%);
+        width: 100%;
+        position: absolute;
+        height: 7rem;
+        bottom: 0;
+
+        div {
+            display: flex;
+            padding: 1rem;
+            align-items: flex-end;
+
+            svg {
+                fill: $gray-100;
+                height: 1rem;
+            }
+             span {
+                 font-size: 0.8rem;
+                 font-weight: bold;
+                 color: $gray-100;
+             }
         }
     }
 }
