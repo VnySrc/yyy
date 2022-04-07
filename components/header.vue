@@ -142,8 +142,9 @@
                 div {
                     padding: 2rem;
                     z-index: 2;
-                    background: linear-gradient(240deg, rgba(49, 53, 56, 0.2) 25%, rgba(37, 39, 39, 0.4) 100%),
-                                linear-gradient(180deg, rgba(16, 88, 129, 0.3) 25%, rgba(132, 148, 180, 0.6) 100%);
+                    text-shadow: .1rem .1rem 1rem #1f2224;
+                    background: linear-gradient(240deg, rgba(30, 115, 180, 0.2) 25%, rgba(13, 98, 177, 0.4) 100%),
+                                linear-gradient(180deg, rgba(26, 117, 170, 0.3) 25%, rgba(10, 55, 73, 0.6) 100%);
 
                     h5 {
                         margin-top: 16rem;
@@ -151,7 +152,6 @@
                         font-weight: 700;
                         color: $p-400;
                         margin-bottom: 1rem;
-                        text-shadow: $p-700 1rem 1rem 10rem;
                     }
         
                     h4 {
@@ -159,7 +159,6 @@
                         font-weight: 800;
                         line-height: 1;
                         color: $gray-100;
-                        text-shadow: $p-700 1rem 1rem 10rem;
                     }
                 }
     

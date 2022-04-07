@@ -15,9 +15,11 @@
                     <a href="">Loja - (19) 3835-0800</a>
                     <a href="">(19) 99309-1270</a>
                     <div class="social">
+                        <IconsFacebook />
                         <IconsWhatsapp />
                         <IconsInstagram />
-                        <IconsFacebook />
+                        <IconsYoutube />
+                        <IconsTiktok />
                     </div>
                 </div>
             </div>
@@ -82,6 +84,10 @@ footer {
     
             .social {
                 flex-direction: row;
+                display: flex;
+                width: 20rem;
+                align-items: center;
+                justify-content: space-between;
     
                 svg {
                     width: 2.2rem;
@@ -90,10 +96,6 @@ footer {
 
                     &:hover {
                         fill: $gray-100;
-                    }
-    
-                    &:nth-child(2) {
-                        margin: 0 1rem;
                     }
                 }
             }

@@ -106,17 +106,20 @@
             position: absolute;
 
             h4 {
-                font-size: 1rem;
                 color: $p-300;
+                font-size: 1.2rem;
+                text-shadow: .1rem .1rem 1rem #105881;
             }
 
             h5 {
-                font-size: 2.2rem;
+                font-size: 2.6rem;
                 color: $gray-100;
-                margin: 0 0 0.6rem 0;
+                margin: 0 0 0.4rem 0;
+                text-shadow: .1rem .1rem 1rem #105881;
             }
 
             span {
+                font-weight: bold;
                 font-size: 1rem;
                 color: $p-400;
 
