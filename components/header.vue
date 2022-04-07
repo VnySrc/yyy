@@ -142,7 +142,7 @@
                 div {
                     padding: 2rem;
                     z-index: 2;
-                    background: linear-gradient(240deg, rgba(16, 88, 129, 0.3) 25%, rgba(32, 148, 180, 0.6) 100%),
+                    background: linear-gradient(240deg, rgba(49, 53, 56, 0.2) 25%, rgba(37, 39, 39, 0.4) 100%),
                                 linear-gradient(180deg, rgba(16, 88, 129, 0.3) 25%, rgba(132, 148, 180, 0.6) 100%);
 
                     h5 {
@@ -209,7 +209,7 @@
     
                 &_youtube {
                     width: 100%;
-                    background: linear-gradient(45deg, $s-500 0%, $s-600 100%);
+                    background: linear-gradient(45deg, $s-400 0%, $s-600 100%);
                 }
     
                 &_instagram {

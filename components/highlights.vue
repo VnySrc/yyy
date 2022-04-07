@@ -96,7 +96,7 @@
         height: 22rem;
         flex: 1 1 auto;
         min-width: 15rem;
-        background: linear-gradient(45deg, $p-500 0%, $p-700 100%);
+        background: linear-gradient(45deg, $p-400 0%, $p-700 100%);
 
         overflow: hidden;
         position: relative;
@@ -140,7 +140,7 @@
     &_background {
         display: flex;
         align-content: flex-end;
-        background: linear-gradient(45deg, $s2-500 0%, $s2-700 100%);
+        background: linear-gradient(170deg, $s-400 25%, $s-600 100%);
         width: 100%;
         position: absolute;
         height: 7rem;
