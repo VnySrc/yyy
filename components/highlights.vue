@@ -143,7 +143,7 @@
     &_background {
         display: flex;
         align-content: flex-end;
-        background: linear-gradient(170deg, $s-400 25%, $s-600 100%);
+        background: linear-gradient(170deg, $gray-500 0%, $gray-800 75%);
         width: 100%;
         position: absolute;
         height: 7rem;

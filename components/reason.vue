@@ -6,15 +6,31 @@
         <p>Atuando no mercado automobilístico, nós da Avenida Veículos buscamos auxiliar nossos clientes afim de
           encontrar o melhor negócio, agindo como consultores, não somente como simples vendedores.</p>
       </div>
-      <div class="razoes_card">
-        <div>
-        </div>
-        <div>
-        </div>
-        <div>
-        </div>
-        <div>
-        </div>
+      <div class="razoes_cards">
+        <nuxt-link to="/serviços" class="razoes_cards_card">
+          <div>
+            <h3>Garantia de até 1 ano inédita entre as lojas de seminovos no Brasil</h3>
+          </div>
+          <nuxt-img format="webp" src="/img/warranty.jpg" />
+        </nuxt-link>
+        <nuxt-link to="/serviços" class="razoes_cards_card">
+          <div>
+            <h3>Financiamento rápido que cabe no seu bolso sem burocracia</h3>
+          </div>
+          <nuxt-img format="webp" src="/img/finance.jpg" />
+        </nuxt-link>
+        <nuxt-link to="/serviços" class="razoes_cards_card">
+          <div>
+            <h3>Compre e receba em casa como presente</h3>
+          </div>
+          <nuxt-img format="webp" src="/img/present.jpg" />
+        </nuxt-link>
+        <nuxt-link to="/serviços" class="razoes_cards_card">
+          <div>
+            <h3>Carros com certificados de qualidade</h3>
+          </div>
+          <nuxt-img format="webp" src="/img/check.jpg" />
+        </nuxt-link>
       </div>
     </section>
 </template>
@@ -60,7 +76,7 @@
       }
     }
 
-    &_card {
+    &_cards {
       gap: 0.5rem;
       width: 100%;
       display: flex;
@@ -70,11 +86,38 @@
         flex-wrap: nowrap;
       }
 
-      div {
+      &_card {
         flex: 1 1 auto;
         height: 20rem;
         min-width: 15rem;
-        background: linear-gradient(45deg, $gray-600 0%, $gray-700 100%);
+        position: relative;
+        overflow: hidden;
+        background: linear-gradient(240deg, rgba(30, 115, 180, 0.2) 25%, rgba(13, 98, 177, 0.4) 100%),
+                    linear-gradient(180deg, rgba(26, 117, 170, 0.3) 25%, rgba(10, 55, 73, 0.6) 100%);
+
+        div {
+          padding: 1rem;
+          position: absolute;
+          bottom: 0;
+          z-index: 2;
+          text-shadow: .1rem .1rem 1rem #1f2224;
+          text-align: right;
+
+          h3 {
+            font-size: 2rem;
+            font-weight: 800;
+            line-height: 1;
+            color: $gray-100;
+          }
+        }
+
+        img {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            object-fit: cover;
+        }
       }
     }
   }
