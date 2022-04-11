@@ -13,7 +13,7 @@
         </div>
         <div class="header_card">
             <nuxt-link to="/sobre" class="header_card_main">
-                <div>
+                <div class="imageFilter">
                     <h5>Avenida Veículos</h5>
                     <h4>Conheça a história de sucesso!</h4>
                 </div>
@@ -131,20 +131,11 @@
                 overflow: hidden;
                 flex-direction: column;
                 text-align: right;
-                
-
-                &:hover {
-                    img {
-                        scale: 1.2;
-                    }
-                }
 
                 div {
                     padding: 2rem;
                     z-index: 2;
-                    text-shadow: .1rem .1rem 1rem #1f2224;
-                    background: linear-gradient(240deg, rgba(30, 115, 180, 0.2) 25%, rgba(13, 98, 177, 0.4) 100%),
-                                linear-gradient(180deg, rgba(26, 117, 170, 0.3) 25%, rgba(10, 55, 73, 0.6) 100%);
+                    text-shadow: .1rem .1rem 1rem $p-900;
 
                     h5 {
                         margin-top: 16rem;
@@ -168,7 +159,6 @@
                     width: 100%;
                     height: 100%;
                     object-fit: cover;
-                    transition: scale 1000ms;
                     filter: saturate(1.2)
                             contrast(1.2);
                 }

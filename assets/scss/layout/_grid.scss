@@ -1,5 +1,6 @@
-.site {
-    width: 100%;
+html, body {
+    width: 100vw;
+    min-height: 100vh;
     font-family: $ff-primary;
     overflow-x: hidden !important;
 }

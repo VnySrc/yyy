@@ -7,25 +7,25 @@
           encontrar o melhor negócio, agindo como consultores, não somente como simples vendedores.</p>
       </div>
       <div class="razoes_cards">
-        <nuxt-link to="/serviços" class="razoes_cards_card">
+        <nuxt-link to="/serviços" class="razoes_cards_card imageFilter">
           <div>
             <h3>Garantia de até 1 ano inédita entre as lojas de seminovos no Brasil</h3>
           </div>
           <nuxt-img format="webp" src="/img/warranty.jpg" />
         </nuxt-link>
-        <nuxt-link to="/serviços" class="razoes_cards_card">
+        <nuxt-link to="/serviços" class="razoes_cards_card imageFilter">
           <div>
             <h3>Financiamento rápido que cabe no seu bolso sem burocracia</h3>
           </div>
           <nuxt-img format="webp" src="/img/finance.jpg" />
         </nuxt-link>
-        <nuxt-link to="/serviços" class="razoes_cards_card">
+        <nuxt-link to="/serviços" class="razoes_cards_card imageFilter">
           <div>
             <h3>Compre e receba em casa como presente</h3>
           </div>
           <nuxt-img format="webp" src="/img/present.jpg" />
         </nuxt-link>
-        <nuxt-link to="/serviços" class="razoes_cards_card">
+        <nuxt-link to="/serviços" class="razoes_cards_card imageFilter">
           <div>
             <h3>Carros com certificados de qualidade</h3>
           </div>
@@ -92,22 +92,19 @@
         min-width: 15rem;
         position: relative;
         overflow: hidden;
-        background: linear-gradient(240deg, rgba(30, 115, 180, 0.2) 25%, rgba(13, 98, 177, 0.4) 100%),
-                    linear-gradient(180deg, rgba(26, 117, 170, 0.3) 25%, rgba(10, 55, 73, 0.6) 100%);
+        border-bottom: solid .5rem $p-500;
 
         div {
+          bottom: 0;
           padding: 1rem;
           position: absolute;
-          bottom: 0;
-          z-index: 2;
-          text-shadow: .1rem .1rem 1rem #1f2224;
-          text-align: right;
+          text-shadow: .1rem .1rem 1rem $p-900;
 
           h3 {
-            font-size: 2rem;
+            font-size: 2.2rem;
             font-weight: 800;
             line-height: 1;
-            color: $gray-100;
+            color: $p-100;
           }
         }
 

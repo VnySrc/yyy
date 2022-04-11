@@ -54,12 +54,14 @@
     }
 
     p {
+      font-family: $ff-s;
       font-size: 2rem;
       color: $gray-500;
     }
 
     div {
       position: relative;
+      border-bottom: solid .5rem $p-500;
       height: 20rem;
 
       img {

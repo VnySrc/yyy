@@ -39,24 +39,23 @@
 
     &_info {
         padding: 1.5rem;
+        text-shadow: .1rem .1rem 1rem $p-600;
 
         h4 {
             color: $p-300;
-            font-size: 1.2rem;
-            text-shadow: .1rem .1rem 1rem #105881;
+            font-size: 1.4rem;   
         }
 
         h5 {
-            font-size: 2.6rem;
+            font-size: 3rem;
             color: $gray-100;
             margin: 0 0 0.4rem 0;
-            text-shadow: .1rem .1rem 1rem #105881;
         }
 
         span {
             font-weight: bold;
-            font-size: 1rem;
-            color: $p-400;
+            font-size: 1.2rem;
+            color: $p-300;
 
             &:nth-child(2) {
                 margin: 0 0.5rem;
@@ -81,7 +80,7 @@
     &_background {
         display: flex;
         align-content: flex-end;
-        background: linear-gradient(170deg, $gray-500 0%, $gray-800 75%);
+        background: linear-gradient(170deg, $gray-600 0%, $gray-800 100%);
         width: 100%;
         position: absolute;
         height: 10rem;
