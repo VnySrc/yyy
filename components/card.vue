@@ -4,9 +4,18 @@
             <h4>volkswagen</h4>
             <h5>Cross</h5>
             <div>
-                <span>2020</span>
-                <span>Flex</span>
-                <span>20mil KM</span>
+                <div>
+                    <iconsDate />
+                    <span>2020</span>
+                </div>
+                <div>
+                    <iconsEngine />
+                    <span>Flex</span>
+                </div>
+                <div>
+                    <iconsSpeed />
+                    <span>20mil KM</span>
+                </div>
             </div>
         </div>
         <span class="card_price">R$60.000</span>
@@ -21,6 +30,60 @@
         </div>
     </div>
 </template>
+
+<script>
+import axios from 'axios';
+import xml2js from 'xml2js';
+
+export default {
+  
+    mounted(){ 
+     //xml file calling
+      axios.get('')
+        .then(response => {
+          this.parseXML(response.data)  
+              .then((data) => {  
+                this.xmlItems = data;  
+              });       
+        })
+      
+    },
+
+    methods: {
+      //xml file data parsing
+      parseXML(data) {  
+            return  new Promise(resolve => {  
+                var k=""; 
+                var arr = [],  
+                parser = new xml2js.Parser(  
+                {  
+                    trim: true,  
+                    explicitArray: true  
+                });  
+            parser.parseString(data, function (err, result) {  
+                var obj = result.estoque;  
+                for (k in obj.emp) {  
+                var item = obj.emp[k];  
+                arr.push({  
+                    id: item.id[0],  
+                    name: item.marca_descricao[0],  
+                    email: item.modelo_descricao[0],  
+                    
+                });  
+                }  
+                resolve(arr);  
+            });  
+            });  
+        }
+    },
+
+    data: function() {
+        return {
+            xmlItems:[]
+        }
+    }  
+}
+</script>
 
 <style lang="scss">
 .card {
@@ -47,21 +110,28 @@
         }
 
         h5 {
-            font-size: 3rem;
+            font-size: 3.4rem;
             color: $gray-100;
-            margin: 0 0 0.4rem 0;
+            margin: 0 0 1rem 0;
         }
 
-        span {
-            font-weight: bold;
-            font-size: 1.2rem;
-            color: $p-300;
+        div {
+            display: flex;
+            align-items: center;
 
-            &:nth-child(2) {
-                margin: 0 0.5rem;
-                padding: 0 0.5rem;
-                border-left: solid 0.1rem $p-400;
-                border-right: solid 0.1rem $p-400;
+            svg {
+                fill: $p-300;
+            }
+
+            span {
+                font-weight: bold;
+                font-size: 1.6rem;
+                color: $p-200;
+
+                &:nth-child(2) {
+                    margin: 0 0.5rem;
+                    padding: 0 0.5rem;
+                }
             }
         }
     }
@@ -69,12 +139,14 @@
     &_price {
         position: absolute;
         top: 0;
-        right: 0;
-        padding: 1rem;
-        font-size: 1.4rem;
+        right: 1rem;
+        padding: 1.5rem 1rem;
+        font-size: 1.6rem;
         font-weight: bold;
-        color: $p-200;
-        background: linear-gradient(45deg, $p-500 0%, $p-700 100%);
+        color: $gray-100;
+        background: linear-gradient(200deg, $s-500 0%, $s-600 75%);
+        clip-path: polygon(50% 85%, 100% 100%, 100% 0, 0 0, 0 100%);
+        outline: solid $gray-700 1rem;
     }
     
     &_background {
@@ -109,6 +181,8 @@
         height: 18rem;
         position: relative;
         margin: 0 0 4rem 1.5rem;
+        border-top: solid $gray-700 1rem;
+        border-left: solid $gray-700 1rem;
 
         @include md {
             height: 15rem;

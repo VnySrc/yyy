@@ -25,19 +25,13 @@ export default {
     https: true
   },
 
-  http: {
-    baseURL: 'https://integreauto.com.br/anuncios/listaAnunciosParceiros/17/1931.xml',
-    https: true
-  },
-
   buildModules: [
     '@nuxtjs/style-resources',
     '@nuxt/image'
   ],
 
   modules: [
-    '@nuxtjs/axios',
-    '@nuxt/http'
+    '@nuxtjs/axios'
   ],
 
   styleResources: {

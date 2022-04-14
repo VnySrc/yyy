@@ -8,28 +8,32 @@
       </div>
       <div class="razoes_cards">
         <nuxt-link to="/serviços" class="razoes_cards_card imageFilter">
+          <nuxt-img format="webp" src="/img/warranty.jpg" />
           <div>
+            <iconsShield />
             <h3>Garantia de até 1 ano inédita entre as lojas de seminovos no Brasil</h3>
           </div>
-          <nuxt-img format="webp" src="/img/warranty.jpg" />
         </nuxt-link>
         <nuxt-link to="/serviços" class="razoes_cards_card imageFilter">
+          <nuxt-img format="webp" src="/img/finance.jpg" />
           <div>
+            <iconsDeal />
             <h3>Financiamento rápido que cabe no seu bolso sem burocracia</h3>
           </div>
-          <nuxt-img format="webp" src="/img/finance.jpg" />
         </nuxt-link>
         <nuxt-link to="/serviços" class="razoes_cards_card imageFilter">
+          <nuxt-img format="webp" src="/img/present.jpg" />
           <div>
+            <iconsGift />
             <h3>Compre e receba em casa como presente</h3>
           </div>
-          <nuxt-img format="webp" src="/img/present.jpg" />
         </nuxt-link>
         <nuxt-link to="/serviços" class="razoes_cards_card imageFilter">
+          <nuxt-img format="webp" src="/img/check.jpg" />
           <div>
+            <iconsTool />
             <h3>Carros com certificados de qualidade</h3>
           </div>
-          <nuxt-img format="webp" src="/img/check.jpg" />
         </nuxt-link>
       </div>
     </section>
@@ -95,16 +99,30 @@
         border-bottom: solid .5rem $p-500;
 
         div {
-          bottom: 0;
+          width: 100%;
+          height: 100%;
+          display: flex;
           padding: 1rem;
           position: absolute;
-          text-shadow: .1rem .1rem 1rem $p-900;
+          align-items: center;
+          flex-direction: column;
+          justify-content: space-between;
+          text-shadow: .1rem .1rem 1rem $p-800;
+
+          svg {
+            width: 4rem;
+            height: 4rem;
+            fill: $gray-100;
+            align-self: flex-end;
+            filter: drop-shadow(0 0 0.75rem $p-800);
+          }
 
           h3 {
-            font-size: 2.2rem;
+            font-size: 1.6rem;
             font-weight: 800;
             line-height: 1;
-            color: $p-100;
+            text-align: left;
+            color: $gray-100;
           }
         }
 
