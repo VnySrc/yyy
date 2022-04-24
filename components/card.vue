@@ -10,7 +10,7 @@
                 </div>
                 <div>
                     <iconsEngine />
-                    <span>Flex</span>
+                    <span>{ cars.id }</span>
                 </div>
                 <div>
                     <iconsSpeed />
@@ -32,56 +32,22 @@
 </template>
 
 <script>
-import axios from 'axios';
-import xml2js from 'xml2js';
+ 
+const parseString = require('xml2js').parseString;
 
 export default {
-  
-    mounted(){ 
-     //xml file calling
-      axios.get('')
-        .then(response => {
-          this.parseXML(response.data)  
-              .then((data) => {  
-                this.xmlItems = data;  
-              });       
+    created() {
+        this.$axios.$get()
+        .then((response) => {
+            console.log(response);
+            parseString(response.data, function (err, result) {
+                console.log(result)
+            });
         })
-      
-    },
-
-    methods: {
-      //xml file data parsing
-      parseXML(data) {  
-            return  new Promise(resolve => {  
-                var k=""; 
-                var arr = [],  
-                parser = new xml2js.Parser(  
-                {  
-                    trim: true,  
-                    explicitArray: true  
-                });  
-            parser.parseString(data, function (err, result) {  
-                var obj = result.estoque;  
-                for (k in obj.emp) {  
-                var item = obj.emp[k];  
-                arr.push({  
-                    id: item.id[0],  
-                    name: item.marca_descricao[0],  
-                    email: item.modelo_descricao[0],  
-                    
-                });  
-                }  
-                resolve(arr);  
-            });  
-            });  
-        }
-    },
-
-    data: function() {
-        return {
-            xmlItems:[]
-        }
-    }  
+        .catch( err => {
+            console.log(err)
+        })
+    }
 }
 </script>
 
