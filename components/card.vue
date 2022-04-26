@@ -10,7 +10,7 @@
                 </div>
                 <div>
                     <iconsEngine />
-                    <span>{ cars.id }</span>
+                    <span>Flex</span>
                 </div>
                 <div>
                     <iconsSpeed />
@@ -33,15 +33,14 @@
 
 <script>
  
-const parseString = require('xml2js').parseString;
+const xml2js = require('xml2js');
 
 export default {
     created() {
         this.$axios.$get()
-        .then((response) => {
-            console.log(response);
-            parseString(response.data, function (err, result) {
-                console.log(result)
+        .then(res => {
+            xml2js.parseString(res, function (err, result) {
+                console.log(JSON.stringify(result))
             });
         })
         .catch( err => {
