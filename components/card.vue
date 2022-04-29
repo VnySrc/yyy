@@ -1,12 +1,14 @@
 <template>
     <div class="card">
         <div class="card_brand">
-            <h4>volkswagen</h4>
-            <h5>Cross</h5>
+            <h4>TOYOTA</h4>
+            <h5>YARIS HATCH</h5>
         </div>
-        <span class="card_price">R$60.000</span>
         <div class="card_imgs">
-            <nuxt-img format="webp" src="/img/cross.jpg" />
+            <nuxt-link to="/">
+                <span class="card_imgs_price">R$99.900,00</span>
+                <nuxt-img format="webp" src="/img/cross.jpg" />
+            </nuxt-link>
         </div>
         <div class="card_info">
             <div>
@@ -22,48 +24,12 @@
                 <span>20mil KM</span>
             </div>
             <div class="card_info_stats">
-                <IconsInfo />
-                <span>Ver mais</span>
+                    <IconsInfo />
+                    <span>Ver mais</span>
             </div>
         </div>
     </div>
 </template>
-
-<script>
- 
-const xml2js = require('xml2js');
-
-export default {
-    data() {
-        return {
-            cars: []
-        }
-    },
-    methods: {
-        xmlToJSON: (xml, options) => {
-        return new Promise((resolve, reject) => {
-            xml2js.parseStringPromise(xml, options, (err, jsonObj) => {
-            if (err) {
-                return reject(err);
-            }
-            resolve(jsonObj);
-            });
-        });
-        }
-    },
-    async fetch() {
-        const xmlData = await this.$axios.$get()
-        .then(res => res.xmlToJSON())
-        .then(data => {
-            console.log('<<==');
-            const xml = data;
-            return data;
-        });
-        const jsonData = await this.xmlToJSON(xmlData);
-        if (jsonData && jsonData.estoque && jsonData.estoque.veiculo) this.cars = jsonData.estoque.veiculo
-    }
-}
-</script>
 
 <style lang="scss">
 .card {
@@ -81,48 +47,48 @@ export default {
     &_brand {
 
         h4 {
-            color: $p-800;
-            font-size: 1.4rem;   
+            color: $gray-500;
+            font-size: 1.5rem;   
         }
 
         h5 {
-            font-size: 3.4rem;
+            font-size: 3.5rem;
             color: $p-600;
         }
-    }
-
-    &_price {
-        position: absolute;
-        top: 0;
-        right: 0;
-        padding: 1rem;
-        font-size: 1.3rem;
-        font-weight: bold;
-        color: $p-800;
-        background-color: $gray-100;
-        border-top: solid $p-600 .5rem;
-        clip-path: polygon(50% 85%, 100% 100%, 100% 0, 0 0, 0 100%);
     }
     
     &_info {
         width: 100%;
         display: flex;
         justify-content: space-between;
+        padding: 0 .2rem;
         
         div {
             display: flex;
             align-items: center;
+
+            &:hover {
+                span, svg {
+                    fill: $p-600;
+                    color: $p-600;
+                    scale: 1.1;
+                }
+            }
         }
 
         svg {
-            fill: $p-800;
+            fill: $gray-500;
         }
 
         span {
             padding: 0 1rem;
             font-weight: bold;
-            font-size: 1.1rem;
-            color: $p-800;
+            font-size: 1.4rem;
+            color: $gray-500;
+
+            @include sm-up {
+                font-size: 1.1rem;
+            }
         }
 
         &_stats {
@@ -133,8 +99,17 @@ export default {
     &_imgs {
         height: 25rem;
         position: relative;
-        margin: 1rem 0;
-        border-bottom: solid $p-600 .5rem;
+        margin: 1.5rem 0;
+        border-bottom: solid $p-500 .8rem;
+        overflow: hidden;
+        
+        cursor: pointer;
+
+        &:hover {
+            span {
+                color: $p-600;
+            }
+        }
 
         @include md {
             height: 20rem;
@@ -144,6 +119,23 @@ export default {
             width: 100%;
             height: 100%;
             object-fit: cover;
+        }
+
+        &_price {
+            position: absolute;
+            top: 0;
+            right: 0;
+            color: $gray-600;
+            font-size: 2rem;
+            font-weight: bold;
+            margin-right: 1rem;
+            padding: 1.2rem 1rem;
+            background-color: $gray-100;
+            border-bottom: solid $p-500 .8rem;
+
+            @include sm-up {
+                font-size: 1.5rem;
+            }
         }
     }
 }
