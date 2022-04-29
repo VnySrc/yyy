@@ -9,23 +9,21 @@
             <nuxt-img format="webp" src="/img/cross.jpg" />
         </div>
         <div class="card_info">
-            <div class="card_info_stats">
-                <div>
-                    <iconsDate />
-                    <span>2020</span>
-                </div>
-                <div>
-                    <iconsEngine />
-                    <span>Gasolina</span>
-                </div>
-                <div>
-                    <iconsSpeed />
-                    <span>20mil KM</span>
-                </div>
+            <div>
+                <iconsDate />
+                <span>2020</span>
             </div>
-            <div class="card_info_more">
-                <span>Ver mais</span>
+            <div>
+                <iconsEngine />
+                <span>Gasolina</span>
+            </div>
+            <div>
+                <iconsSpeed />
+                <span>20mil KM</span>
+            </div>
+            <div class="card_info_stats">
                 <IconsInfo />
+                <span>Ver mais</span>
             </div>
         </div>
     </div>
@@ -107,50 +105,36 @@ export default {
     }
     
     &_info {
+        width: 100%;
         display: flex;
         justify-content: space-between;
+        
+        div {
+            display: flex;
+            align-items: center;
+        }
 
         svg {
             fill: $p-800;
         }
 
         span {
+            padding: 0 1rem;
             font-weight: bold;
-            font-size: 1rem;
+            font-size: 1.1rem;
             color: $p-800;
         }
 
         &_stats {
-            display: flex;
-            
-            div {
-                display: flex;
-                align-items: center;
-            }
-
-            span {
-                &:nth-child(2) {
-                    padding: 0 1rem;
-                }
-            }
-        }
-
-        &_more {
-            display: flex;
-            align-items: center;
             cursor: pointer;
-
-            span {
-                margin-right: 0.5rem;
-            }
         }
     }
 
     &_imgs {
-        height: 20rem;
+        height: 25rem;
         position: relative;
         margin: 1rem 0;
-        border-left: solid $p-600 1rem;
+        border-bottom: solid $p-600 .5rem;
 
         @include md {
             height: 20rem;
