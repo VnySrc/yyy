@@ -3,6 +3,7 @@
         <Nav />
         <Nuxt class="content"/>
         <footer>
+            <div></div>
             <div class="infos">
                 <div class="links">
                     <h4>Links</h4>
@@ -43,7 +44,6 @@
     
     footer {
         padding: 4rem 2rem 1rem 2rem;
-        background-color: $gray-100;
         
         .infos {
             @include sm-up {
@@ -60,7 +60,7 @@
             .contato {
                 display: flex;
                 flex-direction: column;
-                margin-bottom: 4rem;
+                margin: 0rem 0 2rem 0;
     
                 @include lg-up {
                     margin-right: 6rem;
@@ -141,8 +141,8 @@
             }
         
             div {
-                height: 0.1rem;
-                background-color: $gray-500;
+                height: 0.2rem;
+                background-color: $p-500;
                 margin: 1rem 0;
             }
         

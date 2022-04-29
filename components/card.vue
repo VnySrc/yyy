@@ -36,12 +36,13 @@
     flex: 1 1 auto;
     min-width: 15rem;
     margin: 2rem 0;
+    flex-wrap: nowrap;
 
     overflow: hidden;
     position: relative;
 
     @include md {
-        margin: 2rem;
+        margin: 1rem;
     }
 
     &_brand {
@@ -61,11 +62,11 @@
         width: 100%;
         display: flex;
         justify-content: space-between;
-        padding: 0 .2rem;
         
         div {
             display: flex;
             align-items: center;
+            flex-wrap: nowrap;
 
             &:hover {
                 span, svg {
@@ -81,13 +82,13 @@
         }
 
         span {
-            padding: 0 1rem;
+            padding-left: 0.8rem;
             font-weight: bold;
-            font-size: 1.4rem;
+            font-size: 1.2rem;
             color: $gray-500;
 
             @include sm-up {
-                font-size: 1.1rem;
+                font-size: 1rem;
             }
         }
 
@@ -126,16 +127,12 @@
             top: 0;
             right: 0;
             color: $gray-600;
-            font-size: 2rem;
+            font-size: 1rem;
             font-weight: bold;
             margin-right: 1rem;
             padding: 1.2rem 1rem;
             background-color: $gray-100;
             border-bottom: solid $p-500 .8rem;
-
-            @include sm-up {
-                font-size: 1.5rem;
-            }
         }
     }
 }
