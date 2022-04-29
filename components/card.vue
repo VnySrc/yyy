@@ -1,32 +1,32 @@
 <template>
     <div class="card">
-        <div class="card_info">
+        <div class="card_brand">
             <h4>volkswagen</h4>
             <h5>Cross</h5>
-            <div>
+        </div>
+        <span class="card_price">R$60.000</span>
+        <div class="card_imgs">
+            <nuxt-img format="webp" src="/img/cross.jpg" />
+        </div>
+        <div class="card_info">
+            <div class="card_info_stats">
                 <div>
                     <iconsDate />
                     <span>2020</span>
                 </div>
                 <div>
                     <iconsEngine />
-                    <span>Flex</span>
+                    <span>Gasolina</span>
                 </div>
                 <div>
                     <iconsSpeed />
                     <span>20mil KM</span>
                 </div>
             </div>
-        </div>
-        <span class="card_price">R$60.000</span>
-        <div class="card_background">
-            <div>
+            <div class="card_info_more">
+                <span>Ver mais</span>
                 <IconsInfo />
-                <span>Mais informações</span>
             </div>
-        </div>
-        <div class="card_imgs">
-            <nuxt-img format="webp" src="/img/cross.jpg" />
         </div>
     </div>
 </template>
@@ -36,16 +36,33 @@
 const xml2js = require('xml2js');
 
 export default {
-    created() {
-        this.$axios.$get()
-        .then(res => {
-            xml2js.parseString(res, function (err, result) {
-                console.log(JSON.stringify(result))
+    data() {
+        return {
+            cars: []
+        }
+    },
+    methods: {
+        xmlToJSON: (xml, options) => {
+        return new Promise((resolve, reject) => {
+            xml2js.parseStringPromise(xml, options, (err, jsonObj) => {
+            if (err) {
+                return reject(err);
+            }
+            resolve(jsonObj);
             });
-        })
-        .catch( err => {
-            console.log(err)
-        })
+        });
+        }
+    },
+    async fetch() {
+        const xmlData = await this.$axios.$get()
+        .then(res => res.xmlToJSON())
+        .then(data => {
+            console.log('<<==');
+            const xml = data;
+            return data;
+        });
+        const jsonData = await this.xmlToJSON(xmlData);
+        if (jsonData && jsonData.estoque && jsonData.estoque.veiculo) this.cars = jsonData.estoque.veiculo
     }
 }
 </script>
@@ -54,103 +71,89 @@ export default {
 .card {
     flex: 1 1 auto;
     min-width: 15rem;
-    background: linear-gradient(45deg, $p-400 0%, $p-700 100%);
+    margin: 2rem 0;
 
     overflow: hidden;
     position: relative;
 
-    &:hover {
-        span, svg {
-            filter: brightness(1.2);
-        }
+    @include md {
+        margin: 2rem;
     }
 
-    &_info {
-        padding: 1.5rem;
-        text-shadow: .1rem .1rem 1rem $p-600;
+    &_brand {
 
         h4 {
-            color: $p-300;
+            color: $p-800;
             font-size: 1.4rem;   
         }
 
         h5 {
             font-size: 3.4rem;
-            color: $gray-100;
-            margin: 0 0 1rem 0;
-        }
-
-        div {
-            display: flex;
-            align-items: center;
-
-            svg {
-                fill: $p-300;
-            }
-
-            span {
-                font-weight: bold;
-                font-size: 1.6rem;
-                color: $p-200;
-
-                &:nth-child(2) {
-                    margin: 0 0.5rem;
-                    padding: 0 0.5rem;
-                }
-            }
+            color: $p-600;
         }
     }
 
     &_price {
         position: absolute;
         top: 0;
-        right: 1rem;
-        padding: 1.5rem 1rem;
-        font-size: 1.6rem;
+        right: 0;
+        padding: 1rem;
+        font-size: 1.3rem;
         font-weight: bold;
-        color: $gray-100;
-        background: linear-gradient(200deg, $s-500 0%, $s-600 75%);
+        color: $p-800;
+        background-color: $gray-100;
+        border-top: solid $p-600 .5rem;
         clip-path: polygon(50% 85%, 100% 100%, 100% 0, 0 0, 0 100%);
-        outline: solid $gray-700 1rem;
     }
     
-    &_background {
+    &_info {
         display: flex;
-        align-content: flex-end;
-        background: linear-gradient(170deg, $gray-600 0%, $gray-800 100%);
-        width: 100%;
-        position: absolute;
-        height: 10rem;
-        bottom: 0;
+        justify-content: space-between;
 
-        div {
+        svg {
+            fill: $p-800;
+        }
+
+        span {
+            font-weight: bold;
+            font-size: 1rem;
+            color: $p-800;
+        }
+
+        &_stats {
             display: flex;
-            padding: 0rem 0 1.5rem 1.5rem;
-            align-items: flex-end;
+            
+            div {
+                display: flex;
+                align-items: center;
+            }
+
+            span {
+                &:nth-child(2) {
+                    padding: 0 1rem;
+                }
+            }
+        }
+
+        &_more {
+            display: flex;
+            align-items: center;
             cursor: pointer;
 
-            svg {
-                fill: $gray-100;
-                height: 1.5rem;
-                margin-right: 0.5rem;
-            }
             span {
-                font-size: 1.2rem;
-                font-weight: bold;
-                color: $gray-100;
+                margin-right: 0.5rem;
             }
         }
     }
 
     &_imgs {
-        height: 18rem;
+        height: 20rem;
         position: relative;
-        margin: 0 0 4rem 1.5rem;
-        border-top: solid $gray-700 1rem;
-        border-left: solid $gray-700 1rem;
+        margin: 1rem 0;
+        border-left: solid $p-600 1rem;
 
         @include md {
-            height: 15rem;
+            height: 20rem;
         }
 
         img {
