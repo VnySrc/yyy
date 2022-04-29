@@ -1,6 +1,6 @@
 <template>
   <section class="sobre">
-    <div class="sobre_info">
+    <div class="sobre_empresa">
       <div>
         <nuxt-img format="webp" src="/img/avenida.jpg" />
       </div>
@@ -14,7 +14,8 @@
 .sobre {
   padding: 4rem 2rem;
 
-  &_info {
+  &_empresa {
+    display: flex;
 
     p {
       font-family: $ff-s;
@@ -25,6 +26,7 @@
 
     div {
       height: 20rem;
+      width: 100rem;
       position: relative;
 
       img {

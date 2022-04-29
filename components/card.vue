@@ -108,7 +108,7 @@
 
         &:hover {
             span {
-                color: $p-600;
+                color: $p-100;
             }
         }
 
@@ -124,15 +124,15 @@
 
         &_price {
             position: absolute;
-            top: 0;
-            right: 0;
-            color: $gray-600;
-            font-size: 1rem;
+            bottom: 0;
+            left: 0;
+            color: $white;
+            font-size: 1.2rem;
             font-weight: bold;
-            margin-right: 1rem;
+            margin-left: 1rem;
             padding: 1.2rem 1rem;
-            background-color: $gray-100;
-            border-bottom: solid $p-500 .8rem;
+            background-color: $p-500;
+            border-top: solid $gray-100 .5rem;
         }
     }
 }

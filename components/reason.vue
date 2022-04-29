@@ -8,28 +8,28 @@
       </div>
       <div class="razoes_cards">
         <nuxt-link to="/serviços" class="razoes_cards_card imageFilter">
-          <nuxt-img format="webp" src="/img/warranty.jpg" />
+          <nuxt-img format="webp" src="/img/services/warranty.jpg" />
           <div>
             <iconsShield />
             <h3>Garantia de até 1 ano inédita entre as lojas de seminovos no Brasil</h3>
           </div>
         </nuxt-link>
         <nuxt-link to="/serviços" class="razoes_cards_card imageFilter">
-          <nuxt-img format="webp" src="/img/finance.jpg" />
+          <nuxt-img format="webp" src="/img/services/finance.jpg" />
           <div>
             <iconsDeal />
             <h3>Financiamento rápido que cabe no seu bolso sem burocracia</h3>
           </div>
         </nuxt-link>
         <nuxt-link to="/serviços" class="razoes_cards_card imageFilter">
-          <nuxt-img format="webp" src="/img/present.jpg" />
+          <nuxt-img format="webp" src="/img/services/present.jpg" />
           <div>
             <iconsGift />
             <h3>Compre e receba em casa como presente</h3>
           </div>
         </nuxt-link>
         <nuxt-link to="/serviços" class="razoes_cards_card imageFilter">
-          <nuxt-img format="webp" src="/img/check.jpg" />
+          <nuxt-img format="webp" src="/img/services/check.jpg" />
           <div>
             <iconsTool />
             <h3>Carros com certificados de qualidade</h3>
