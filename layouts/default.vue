@@ -13,8 +13,10 @@
                 </div>
                 <div class="contato">
                     <h4>Entre em contato</h4>
-                    <a href="">Loja - (19) 3835-0800</a>
-                    <a href="">(19) 99309-1270</a>
+                    <a href="tel:+551938350800">Loja - (19) 3835-0800</a>
+                    <a href="https://api.whatsapp.com/send/?phone=5519997976865&text&app_absent=0">Vendas - (19) 99797-6865</a>
+                    <a href="https://api.whatsapp.com/send/?phone=5519978226748&text&app_absent=0">Pós venda - (19) 97822-6748</a>
+                    <a href="https://api.whatsapp.com/send/?phone=5519992214727&text&app_absent=0">ADM - (19) 99221-4727</a>
                     <div class="social">
                         <IconsFacebook />
                         <IconsWhatsapp />

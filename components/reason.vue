@@ -7,28 +7,28 @@
           encontrar o melhor negócio, agindo como consultores, não somente como simples vendedores.</p>
       </div>
       <div class="razoes_cards">
-        <nuxt-link to="/serviços" class="razoes_cards_card imageFilter">
+        <nuxt-link to="/serviços" class="razoes_cards_card">
           <nuxt-img format="webp" src="/img/services/warranty.jpg" />
           <div>
             <iconsShield />
-            <h3>Garantia de até 1 ano inédita entre as lojas de seminovos no Brasil</h3>
+            <h3>Garantia de até um ano</h3>
           </div>
         </nuxt-link>
-        <nuxt-link to="/serviços" class="razoes_cards_card imageFilter">
+        <nuxt-link to="/serviços" class="razoes_cards_card">
           <nuxt-img format="webp" src="/img/services/finance.jpg" />
           <div>
             <iconsDeal />
-            <h3>Financiamento rápido que cabe no seu bolso sem burocracia</h3>
+            <h3>Financiamento rápido que cabe no seu bolso</h3>
           </div>
         </nuxt-link>
-        <nuxt-link to="/serviços" class="razoes_cards_card imageFilter">
+        <nuxt-link to="/serviços" class="razoes_cards_card">
           <nuxt-img format="webp" src="/img/services/present.jpg" />
           <div>
             <iconsGift />
             <h3>Compre e receba em casa como presente</h3>
           </div>
         </nuxt-link>
-        <nuxt-link to="/serviços" class="razoes_cards_card imageFilter">
+        <nuxt-link to="/serviços" class="razoes_cards_card">
           <nuxt-img format="webp" src="/img/services/check.jpg" />
           <div>
             <iconsTool />
@@ -81,7 +81,7 @@
     }
 
     &_cards {
-      gap: 0.5rem;
+      gap: 1rem;
       width: 100%;
       display: flex;
       flex-wrap: wrap;
@@ -91,47 +91,36 @@
       }
 
       &_card {
+        width: 15rem;
         flex: 1 1 auto;
-        height: 20rem;
-        min-width: 15rem;
-        position: relative;
-        overflow: hidden;
-        border-bottom: solid .5rem $p-500;
 
         div {
-          width: 100%;
-          height: 100%;
           display: flex;
-          padding: 1rem;
-          position: absolute;
+          padding: 2rem 1rem;
           align-items: center;
           flex-direction: column;
-          justify-content: space-between;
-          text-shadow: .1rem .1rem 1rem $p-800;
 
           svg {
             width: 4rem;
             height: 4rem;
-            fill: $gray-100;
-            align-self: flex-end;
-            filter: drop-shadow(0 0 0.75rem $p-800);
+            margin-bottom: 1.5rem;
+            fill: $p-500;
           }
 
           h3 {
-            font-size: 1.6rem;
-            font-weight: 800;
-            line-height: 1;
-            text-align: left;
-            color: $gray-100;
+            font-size: 1.8rem;
+            font-weight: bold;
+            text-align: center;
+            color: $gray-400;
           }
         }
 
         img {
-            position: absolute;
             width: 100%;
-            height: 100%;
+            height: 10rem;
             z-index: -1;
             object-fit: cover;
+            border-bottom: solid .8rem $p-500;
         }
       }
     }

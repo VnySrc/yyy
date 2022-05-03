@@ -135,14 +135,14 @@
                 div {
                     padding: 2rem;
                     z-index: 2;
-                    text-shadow: .1rem .1rem 1rem $p-900;
+                    text-shadow: .1rem .1rem 1rem $gray-600;
 
                     h5 {
                         margin-top: 16rem;
                         font-size: 1.6rem;
                         font-weight: 700;
-                        color: $p-400;
-                        margin-bottom: 1rem;
+                        color: $p-300;
+                        margin-bottom: .5rem;
                     }
         
                     h4 {

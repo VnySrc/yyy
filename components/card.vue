@@ -72,7 +72,6 @@
                 span, svg {
                     fill: $p-600;
                     color: $p-600;
-                    scale: 1.1;
                 }
             }
         }

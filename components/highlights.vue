@@ -1,7 +1,7 @@
 <template>
     <div class="highlights">
-        <div class="highlights_imgs">
-            <div class="highlights_imgs_info">
+        <div class="highlights_card">
+            <div class="highlights_card_info">
                 <h4>Jeep</h4>
                 <h5>Compass</h5>
                 <div>
@@ -10,16 +10,16 @@
                     <span>20mil KM</span>
                 </div>
             </div>
-            <div class="highlights_background">
-                <div>
-                    <IconsInfo />
-                    <span>Saiba mais</span>
-                </div>
+            <div class="highlights_card_img">
+                <nuxt-img format="webp" src="/img/cross.jpg" />
             </div>
-            <nuxt-img format="webp" src="/img/compass.png" />
+            <div class="highlights_card_plus">
+                <span>Saiba mais</span>
+                <IconsInfo />
+            </div>
         </div>
-        <div class="highlights_imgs">
-            <div class="highlights_imgs_info">
+        <div class="highlights_card">
+            <div class="highlights_card_info">
                 <h4>Honda</h4>
                 <h5>Civic</h5>
                 <div>
@@ -28,16 +28,16 @@
                     <span>20mil KM</span>
                 </div>
             </div>
-            <div class="highlights_background">
-                <div>
-                    <IconsInfo />
-                    <span>Saiba mais</span>
-                </div>
+            <div class="highlights_card_img">
+                <nuxt-img format="webp" src="/img/cross.jpg" />
             </div>
-            <nuxt-img format="webp" src="/img/civic.png" />
+            <div class="highlights_card_plus">
+                <span>Saiba mais</span>
+                <IconsInfo />
+            </div>
         </div>
-        <div class="highlights_imgs">
-            <div class="highlights_imgs_info">
+        <div class="highlights_card">
+            <div class="highlights_card_info">
                 <h4>Renault</h4>
                 <h5>Captur</h5>
                 <div>
@@ -46,16 +46,16 @@
                     <span>20mil KM</span>
                 </div>
             </div>
-            <div class="highlights_background">
-                <div>
-                    <IconsInfo />
-                    <span>Saiba mais</span>
-                </div>
+            <div class="highlights_card_img">
+                <nuxt-img format="webp" src="/img/cross.jpg" />
             </div>
-            <nuxt-img format="webp" src="/img/captur.png" />
+            <div class="highlights_card_plus">
+                <span>Saiba mais</span>
+                <IconsInfo />
+            </div>
         </div>
-        <div class="highlights_imgs">
-            <div class="highlights_imgs_info">
+        <div class="highlights_card">
+            <div class="highlights_card_info">
                 <h4>Nissan</h4>
                 <h5>Kicks</h5>
                 <div>
@@ -64,13 +64,13 @@
                     <span>20mil KM</span>
                 </div>
             </div>
-            <div class="highlights_background">
-                <div>
-                    <IconsInfo />
-                    <span>Saiba mais</span>
-                </div>
+            <div class="highlights_card_img">
+                <nuxt-img format="webp" src="/img/cross.jpg" />
             </div>
-            <nuxt-img format="webp" src="/img/kicks.png" />
+            <div class="highlights_card_plus">
+                <span>Saiba mais</span>
+                <IconsInfo />
+            </div>
         </div>
     </div>
 </template>
@@ -92,36 +92,33 @@
         margin-left: 40rem;
     }
 
-    &_imgs {
-        height: 22rem;
+    &_card {
         flex: 1 1 auto;
         min-width: 15rem;
-        background: linear-gradient(45deg, $p-400 0%, $p-700 100%);
 
         overflow: hidden;
         position: relative;
 
         &_info {
             padding: 1rem;
-            position: absolute;
-            text-shadow: .1rem .1rem 1rem $p-600;
+            background-color: $p-500;
 
             h4 {
-                color: $p-300;
-                font-size: 1.4rem;
+                color: $p-200;
+                font-size: 1.5rem;
             }
 
             h5 {
-                font-size: 2.8rem;
+                font-size: 2.5rem;
+                margin: 0 0 .5rem 0;
                 color: $gray-100;
-                margin: 0 0 0.4rem 0;
             }
 
             span {
                 font-weight: bold;
                 font-size: 1.2rem;
-                color: $p-300;
-
+                color: $p-400;
+                
                 &:nth-child(2) {
                     margin: 0 0.5rem;
                     padding: 0 0.5rem;
@@ -131,39 +128,41 @@
             }
         }
 
-        img {
-            height: 13rem;
-            right: -3rem;
-            bottom: 1rem;
-            position: absolute;
+        &_img {
+            height: 12rem;
+            border-bottom: solid .8rem $p-500;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
         }
-    }
 
-    &_background {
-        display: flex;
-        align-content: flex-end;
-        background: linear-gradient(170deg, $gray-600 0%, $gray-800 100%);
-        width: 100%;
-        position: absolute;
-        height: 7rem;
-        bottom: 0;
-
-        div {
+        &_plus {
             display: flex;
-            padding: 0rem 0 0.8rem 0.4rem;
-            align-items: flex-end;
+            padding: 1rem 0 1rem 0;
+            align-items: center;
+            justify-content: flex-end;
+            cursor: pointer;
+
+            &:hover {
+                svg, span {
+                    fill: $p-500;
+                    color: $p-500;
+                }
+            }
 
             svg {
-                fill: $gray-100;
-                height: 1.2rem;
-                margin-right: 0.4rem;
+                fill: $gray-400;
+                margin-left: 0.5rem;
             }
-             span {
-                 font-size: 1rem;
-                 text-align: center;
-                 font-weight: bold;
-                 color: $gray-100;
-             }
+            span {
+                font-size: 1rem;
+                text-align: center;
+                font-weight: bold;
+                color: $gray-400;
+            }
         }
     }
 }
