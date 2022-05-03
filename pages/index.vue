@@ -5,9 +5,33 @@
     <div class="blog">
         <h1>VISITE NOSSO BLOG</h1>
         <div class="blog_cards">
-            <div></div>
-            <div></div>
-            <div></div>
+            <div class="blog_cards_card">
+                <nuxt-link to="/sobre" class="blog_cards_card_main">
+                    <nuxt-img format="webp" src="/img/avenida.jpg" />
+                </nuxt-link>
+                <div class="blog_cards_card_title">
+                    <h5>Avenida Veículos</h5>
+                    <h4>Conheça a história de sucesso!</h4>
+                </div>
+            </div>
+            <div class="blog_cards_card">
+                <nuxt-link to="/sobre" class="blog_cards_card_main">
+                    <nuxt-img format="webp" src="/img/avenida.jpg" />
+                </nuxt-link>
+                <div class="blog_cards_card_title">
+                    <h5>Avenida Veículos</h5>
+                    <h4>Conheça a história de sucesso!</h4>
+                </div>
+            </div>
+            <div class="blog_cards_card">
+                <nuxt-link to="/sobre" class="blog_cards_card_main">
+                    <nuxt-img format="webp" src="/img/avenida.jpg" />
+                </nuxt-link>
+                <div class="blog_cards_card_title">
+                    <h5>Avenida Veículos</h5>
+                    <h4>Conheça a história de sucesso!</h4>
+                </div>
+            </div>
         </div>
     </div>
   </div>
@@ -29,26 +53,53 @@
     }
 
     &_cards {
-        padding: 2rem 1.4rem;
-        margin-bottom: 4rem;
+        padding: 0 2rem;
 
         @include sm-up {
             display: flex;
+            gap: 1rem;
             padding: 2rem;
         }
-        
-        div {
-            height: 25rem;
-            width: 100%;
-            background: linear-gradient(45deg, $gray-600 0%, $gray-700 100%);
 
-            &:nth-child(2) {
-                margin: 0.5rem 0;
+        &_card {
+            gap: 0.5rem;
+            margin: 2rem 0;
+            display: flex;
+            flex-direction: column;
 
-                @include sm-up {
-                    margin: 0 0.5rem;
+            &_title {
+                margin: 1rem 0;
+                padding: 0 1rem;
+                text-align: left;
+                border-left: solid $p-500 .8rem;
+
+                h5 {
+                    font-size: 1.2rem;
+                    font-weight: bold;
+                    color: $gray-500;
+                    margin-bottom: .5rem;
                 }
-            }                 
+    
+                h4 {
+                    font-size: 2.2rem;
+                    font-weight: bold;
+                    line-height: 1;
+                    color: $p-500;
+                }
+            }
+
+            &_main {
+                display: flex;
+                flex-direction: column;
+                gap: .5rem;
+                height: 20rem;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
         }
     }
 }

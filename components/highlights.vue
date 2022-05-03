@@ -78,18 +78,21 @@
 <style lang="scss">
 .highlights {
     display: flex;
-    gap: 0.5rem;
-    width: 100%;
+    gap: 1rem;
     display: flex;
     flex-wrap: wrap;
     margin-top: 0.5rem;
+    max-width: 45rem;
 
     @include sm-up {
         flex-wrap: nowrap;
+        max-width: 100%;
     }
 
     @include md {
-        margin-left: 40rem;
+        flex-wrap: wrap;
+        max-width: 45rem;
+        gap: 2rem;
     }
 
     &_card {
@@ -100,30 +103,29 @@
         position: relative;
 
         &_info {
-            padding: 1rem;
-            background-color: $p-500;
+            padding: 1rem 0;
 
             h4 {
-                color: $p-200;
-                font-size: 1.5rem;
+                color: $gray-500;
+                font-size: 1.2rem;
             }
 
             h5 {
-                font-size: 2.5rem;
+                font-size: 2.8rem;
                 margin: 0 0 .5rem 0;
-                color: $gray-100;
+                color: $p-500;
             }
 
             span {
                 font-weight: bold;
                 font-size: 1.2rem;
-                color: $p-400;
+                color: $gray-400;
                 
                 &:nth-child(2) {
                     margin: 0 0.5rem;
                     padding: 0 0.5rem;
-                    border-left: solid 0.1rem $p-400;
-                    border-right: solid 0.1rem $p-400;
+                    border-left: solid 0.1rem $gray-400;
+                    border-right: solid 0.1rem $gray-400;
                 }
             }
         }
