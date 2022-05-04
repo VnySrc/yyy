@@ -1,6 +1,10 @@
 <template>
 <div class="estoque">
     <div class="estoque_filter">
+        <span>Marca ></span>
+        <span>Modelo ></span>
+        <span>Ano ></span>
+        <span>Ordena por ></span>
     </div>
     <div class="estoque_cards">
         <card />
@@ -25,10 +29,30 @@
         padding: 0 2rem;
     }
 
+    @include md {
+        padding: 2rem 2rem;
+    }
+
     &_filter {
-        height: 4rem;
-        border: solid $p-500 .1rem;
+        display: flex;
+        justify-content: space-between;
         margin: 4rem 0 2rem 0;
+        padding: 0 1rem;
+
+        @include sm-up {
+            width: 40rem;
+        }
+
+        span {
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: $gray-400;
+            cursor: pointer;
+
+            &:hover {
+                color: $p-500;
+            }
+        }
     }
     
     &_cards {
