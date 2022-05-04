@@ -9,6 +9,7 @@
         <card />
         <card />
         <card />
+        <card />
     </div>
 </div>
 </template>

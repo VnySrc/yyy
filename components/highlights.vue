@@ -91,7 +91,7 @@
 
     @include md {
         flex-wrap: wrap;
-        max-width: 45rem;
+        max-width: 48rem;
         gap: 2rem;
     }
 

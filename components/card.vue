@@ -4,9 +4,9 @@
             <h4>TOYOTA</h4>
             <h5>YARIS HATCH</h5>
         </div>
+        <span class="card_price">$ 99.900,00</span>
         <div class="card_imgs">
             <nuxt-link to="/">
-                <span class="card_imgs_price">R$99.900,00</span>
                 <nuxt-img format="webp" src="/img/cross.jpg" />
             </nuxt-link>
         </div>
@@ -56,6 +56,19 @@
             font-size: 3.5rem;
             color: $p-600;
         }
+    }
+
+    &_price {
+        position: absolute;
+        top: 0;
+        right: 0;
+        color: $white;
+        font-size: 1.2rem;
+        font-weight: bold;
+        font-family: $ff-s;
+        background-color: $p-500;
+        padding: 1rem 1rem 1.4rem 1rem;
+        clip-path: polygon(50% 85%, 100% 100%, 100% 0, 0 0, 0 100%);
     }
     
     &_info {
@@ -119,19 +132,6 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-        }
-
-        &_price {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            color: $white;
-            font-size: 1.2rem;
-            font-weight: bold;
-            margin-left: 1rem;
-            padding: 1.2rem 1rem;
-            background-color: $p-500;
-            border-top: solid $gray-100 .5rem;
         }
     }
 }

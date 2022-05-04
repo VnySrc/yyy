@@ -3,7 +3,6 @@
     <Header />
     <Reason />
     <div class="blog">
-        <h1>VISITE NOSSO BLOG</h1>
         <div class="blog_cards">
             <div class="blog_cards_card">
                 <nuxt-link to="/sobre" class="blog_cards_card_main">
@@ -61,9 +60,13 @@
             padding: 2rem;
         }
 
+        @include md {
+            gap: 4rem;
+        }
+
         &_card {
             gap: 0.5rem;
-            margin: 2rem 0;
+            margin: 4rem 0;
             display: flex;
             flex-direction: column;
 

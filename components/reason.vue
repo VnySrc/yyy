@@ -8,28 +8,24 @@
       </div>
       <div class="razoes_cards">
         <nuxt-link to="/serviços" class="razoes_cards_card">
-          <nuxt-img format="webp" src="/img/services/warranty.jpg" />
           <div>
             <iconsShield />
             <h3>Garantia de até um ano</h3>
           </div>
         </nuxt-link>
         <nuxt-link to="/serviços" class="razoes_cards_card">
-          <nuxt-img format="webp" src="/img/services/finance.jpg" />
           <div>
             <iconsDeal />
             <h3>Financiamento rápido que cabe no seu bolso</h3>
           </div>
         </nuxt-link>
         <nuxt-link to="/serviços" class="razoes_cards_card">
-          <nuxt-img format="webp" src="/img/services/present.jpg" />
           <div>
             <iconsGift />
             <h3>Compre e receba em casa como presente</h3>
           </div>
         </nuxt-link>
         <nuxt-link to="/serviços" class="razoes_cards_card">
-          <nuxt-img format="webp" src="/img/services/check.jpg" />
           <div>
             <iconsTool />
             <h3>Carros com certificados de qualidade</h3>
@@ -100,6 +96,7 @@
           align-items: center;
           flex-direction: column;
 
+
           svg {
             width: 4rem;
             height: 4rem;
@@ -113,14 +110,6 @@
             text-align: center;
             color: $gray-400;
           }
-        }
-
-        img {
-            width: 100%;
-            height: 10rem;
-            z-index: -1;
-            object-fit: cover;
-            border-bottom: solid .8rem $p-500;
         }
       }
     }
