@@ -92,8 +92,12 @@
 
         div {
           display: flex;
+          height: 20rem;
           padding: 2rem 1rem;
           align-items: center;
+          justify-content: center;
+          border: solid $p-500 .1rem;
+          border-radius: 1rem;
           flex-direction: column;
 
 

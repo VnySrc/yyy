@@ -1,5 +1,7 @@
 <template>
 <div class="estoque">
+    <div class="estoque_filter">
+    </div>
     <div class="estoque_cards">
         <card />
         <card />
@@ -22,12 +24,17 @@
     @include sm-up {
         padding: 0 2rem;
     }
+
+    &_filter {
+        height: 4rem;
+        border: solid $p-500 .1rem;
+        margin: 4rem 0 2rem 0;
+    }
     
     &_cards {
         display: flex;
         flex-direction: column;
-        margin: 4rem 0;
-        gap: 1rem;
+        gap: 2rem;
 
         @include sm-up {
             display: grid;

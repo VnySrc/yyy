@@ -62,7 +62,7 @@
             .contato {
                 display: flex;
                 flex-direction: column;
-                margin: 0rem 0 2rem 0;
+                margin: 0rem 0 4rem 0;
     
                 @include lg-up {
                     margin-right: 6rem;
@@ -71,7 +71,7 @@
                 h4 {
                     font-weight: 600;
                     font-size: 2.4rem;
-                    color: $p-600;
+                    color: $p-500;
                     margin-bottom: 2rem;
                 }
         
