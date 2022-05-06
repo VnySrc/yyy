@@ -107,7 +107,7 @@
     &_value {
       h5 {
         font-size: 1.6rem;
-        color: $p-400;
+        color: $s-400;
         margin: 1rem 0;
         text-align: left;
       }

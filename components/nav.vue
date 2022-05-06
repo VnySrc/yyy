@@ -52,7 +52,7 @@ nav {
         a {
             font-weight: 700;
             font-size: 1.6rem;
-            color: $gray-300;
+            color: $gray-400;
 
             @include md {
                 &:nth-child(2n) {

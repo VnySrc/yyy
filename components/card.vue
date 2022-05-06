@@ -5,7 +5,7 @@
             <h5>YARIS HATCH</h5>
         </div>
         <span class="card_price">$ 99.900,00</span>
-        <div class="card_imgs">
+        <div class="card_img">
             <nuxt-link to="/">
                 <nuxt-img format="webp" src="/img/cross.jpg" />
             </nuxt-link>
@@ -109,20 +109,13 @@
         }
     }
 
-    &_imgs {
+    &_img {
         height: 25rem;
-        position: relative;
         margin: 1.5rem 0;
         border-bottom: solid $p-500 .8rem;
         overflow: hidden;
         
         cursor: pointer;
-
-        &:hover {
-            span {
-                color: $p-100;
-            }
-        }
 
         @include md {
             height: 20rem;

@@ -31,7 +31,8 @@ export default {
   ],
 
   modules: [
-    '@nuxtjs/axios'
+    '@nuxtjs/axios',
+    '@nuxt/content'
   ],
 
   styleResources: {
