@@ -6,7 +6,7 @@
         </div>
         <span class="card_price">$ 99.900,00</span>
         <div class="card_img">
-            <nuxt-link to="/">
+            <nuxt-link to="/veiculo">
                 <nuxt-img format="webp" src="/img/cross.jpg" />
             </nuxt-link>
         </div>
@@ -46,7 +46,6 @@
     }
 
     &_brand {
-
         h4 {
             color: $gray-500;
             font-size: 1.5rem;   

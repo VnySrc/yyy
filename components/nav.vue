@@ -6,7 +6,10 @@
             <nuxt-link to="/estoque">Estoque</nuxt-link>
             <nuxt-link to="/serviços">Serviços</nuxt-link>
             <nuxt-link to="/blog">Blog</nuxt-link>
-            <nuxt-link to="/contato" class="chat"><IconsChat /></nuxt-link>
+            <nuxt-link to="/contato" class="chat">
+                <IconsChat />
+                <span>Entre em contato</span>
+            </nuxt-link>
         </div>
     </nav>
 </template>
@@ -71,29 +74,57 @@ nav {
         }
 
         .chat {
-            display: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            bottom: 0;
+            width: 100%;
             padding: 2rem;
             cursor: pointer;
+            position: fixed;
             background-color: $p-500;
+            z-index: 2;
+
+            @include sm-up {
+                display: block;
+                position: relative;
+                width: auto;
+            }
 
             &.nuxt-link-exact-active {
-                filter: brightness(1.2);
+                display: none;
+
+                @include sm-up {
+                    filter: brightness(1.2);
+                    display: block;
+                }
             }
 
             &:hover {
                 filter: brightness(1.2);
-                outline: 0.2rem solid $p-500;
-                outline-offset: 0.2rem;
+
+                @include sm-up {
+                    outline: 0.2rem solid $p-500;
+                    outline-offset: 0.2rem;
+                }
             }
 
             svg {
-                display: block;
-                margin: auto;   
-                fill: $p-100;            
+                fill: $p-100;
+                margin-right: 1rem;
+                
+                @include sm-up {
+                    display: block;
+                    margin: auto; 
+                }
             }
 
-            @include md {
-                display: block;
+            span {
+                color: $p-100;
+
+                @include sm-up {
+                    display: none;
+                }
             }
         }
     }
