@@ -13,10 +13,10 @@
             <div class="highlights_card_img">
                 <nuxt-img format="webp" src="/img/cross.jpg" />
             </div>
-            <div class="highlights_card_plus">
+            <nuxt-link to="/veiculo" class="highlights_card_plus">
                 <span>Saiba mais</span>
                 <IconsInfo />
-            </div>
+            </nuxt-link >
         </div>
         <div class="highlights_card">
             <div class="highlights_card_info">
@@ -31,10 +31,10 @@
             <div class="highlights_card_img">
                 <nuxt-img format="webp" src="/img/cross.jpg" />
             </div>
-            <div class="highlights_card_plus">
+            <nuxt-link to="/veiculo" class="highlights_card_plus">
                 <span>Saiba mais</span>
                 <IconsInfo />
-            </div>
+            </nuxt-link>
         </div>
         <div class="highlights_card">
             <div class="highlights_card_info">
@@ -49,10 +49,10 @@
             <div class="highlights_card_img">
                 <nuxt-img format="webp" src="/img/cross.jpg" />
             </div>
-            <div class="highlights_card_plus">
+            <nuxt-link to="/veiculo" class="highlights_card_plus">
                 <span>Saiba mais</span>
                 <IconsInfo />
-            </div>
+            </nuxt-link>
         </div>
         <div class="highlights_card">
             <div class="highlights_card_info">
@@ -67,10 +67,10 @@
             <div class="highlights_card_img">
                 <nuxt-img format="webp" src="/img/cross.jpg" />
             </div>
-            <div class="highlights_card_plus">
+            <nuxt-link to="/veiculo" class="highlights_card_plus">
                 <span>Saiba mais</span>
                 <IconsInfo />
-            </div>
+            </nuxt-link>
         </div>
     </div>
 </template>

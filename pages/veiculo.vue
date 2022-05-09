@@ -1,19 +1,23 @@
 <template>
     <section class="cars">
-        <div class="cars_imgs">
-            <nuxt-img format="webp" src="/img/cross.jpg" />
-        </div>
-        <div class="cars_brand">
-            <h2>TOYOTA</h2>
-            <h1>YARIS HATCH</h1>
-            <span>1.6 MSI TRENDLINE CS 8V FLEX 2P MANUAL</span>
-        </div>
         <div class="cars_info">
-            <div class="cars_info_price">
-                <h3>R$ 99.900,00</h3>
+            <div class="cars_info_imgs">
+                <nuxt-img format="webp" src="/img/cross.jpg" />
             </div>
-            <div class="cars_info_zap">
-                <IconsWhatsapp />
+            <div class="cars_info_brand">
+                <div class="cars_info_brand_titles">
+                    <h2>TOYOTA</h2>
+                    <h1>YARIS HATCH</h1>
+                    <span>1.6 MSI TRENDLINE CS 8V FLEX 2P MANUAL</span>
+                </div>
+                <div class="cars_info_brand_details">
+                    <div class="cars_info_brand_details_price">
+                        <h3>R$ 99.900,00</h3>
+                    </div>
+                    <div class="cars_info_brand_details_zap">
+                        <nuxt-link to="/contato"><IconsWhatsapp /></nuxt-link>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="cars_table">
@@ -64,62 +68,83 @@
     .cars {
         padding: 4rem 2rem;
 
-        &_imgs {
-            img {
-                width: 100%;
-                object-fit: cover;
-            }
-        }
-
-        &_brand {
-            margin: 1rem 0;
-            padding-left: 1rem;
-            border-left: solid $p-500 1rem;
-
-            h2 {
-                color: $gray-600;
-                font-size: 1.5rem;
-            }
-
-            h1 {
-                font-size: 3.5rem;
-                color: $p-600;
-                margin: 0 0 .5rem 0;
-            }
-
-            span {
-                font-family: $ff-s;
-                font-size: 1.4rem;
-                color: $gray-500;
-            }
-        }
-
         &_info {
-            display: flex;
-            gap: .5rem;
-
-            &_price {
-                width: 100%;
-                padding: 1.5rem 0;
-                background-color: $p-500;
-
-                h3 {
-                    font-size: 2rem;
-                    color: $white;
-                    text-align: center;
-                }
+            @include sm-up {
+                display: flex;
+                justify-content: space-around;
             }
 
-            &_zap {
-                padding: 1.5rem 0;
-                background-color: $p-400;
+            &_imgs {
+                img {
+                    width: 100%;
+                    height: 25rem;
+                    object-fit: cover;
 
-                svg {
-                    fill: $white;
-                    height: 2rem;
+                    @include sm-up {
+                        height: 28rem;
+                    }
+
+                    @include md {
+                        height: 38rem;
+                    }
+                }
+            }
+    
+            &_brand {
+                
+                &_titles {
+                    padding-left: 1rem;
+                    margin: 1rem 0;
+                    border-left: solid $p-500 1rem;
+
+                    h2 {
+                        color: $gray-600;
+                        font-size: 1.5rem;
+                    }
+        
+                    h1 {
+                        font-size: 3.5rem;
+                        color: $p-600;
+                        margin: 0 0 .5rem 0;
+                    }
+        
+                    span {
+                        font-family: $ff-s;
+                        font-size: 1.4rem;
+                        color: $gray-500;
+                    }
+                }
+    
+                &_details {
+                    display: flex;
+                    gap: .5rem;
+
+                    &_price {
+                        width: 100%;
+                        padding: 1.5rem 0;
+                        background-color: $p-500;
+
+                        h3 {
+                            font-size: 2rem;
+                            color: $white;
+                            text-align: center;
+                        }
+                    }
+
+                    &_zap {
+                        padding: 1.5rem 0;
+                        background-color: $p-400;
+
+                        svg {
+                            fill: $white;
+                            height: 2rem;
+                        }
+                    }
                 }
             }
         }
+
+
 
         &_table {
             margin: 2rem 0;
