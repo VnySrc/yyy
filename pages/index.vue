@@ -95,7 +95,6 @@
                 display: flex;
                 flex-direction: column;
                 gap: .5rem;
-                box-shadow: 1rem 1rem 6rem $gray-300;
 
                 height: 20rem;
 
