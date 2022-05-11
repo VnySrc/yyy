@@ -13,21 +13,21 @@
                 <div class="footer_contato">
                     <h4>Entre em contato</h4>
                     <a href="tel:+551938350800">Loja - (19) 3835-0800</a>
-                    <a href="https://api.whatsapp.com/send/?phone=5519997976865&text&app_absent=0">Vendas - (19) 99797-6865</a>
-                    <a href="https://api.whatsapp.com/send/?phone=5519978226748&text&app_absent=0">Pós venda - (19) 97822-6748</a>
-                    <a href="https://api.whatsapp.com/send/?phone=5519992214727&text&app_absent=0">ADM - (19) 99221-4727</a>
+                    <a v-bind:href="LinkVendas" target="_blank">Vendas - (19) 99797-6865</a>
+                    <a v-bind:href="LinkPos" target="_blank">Pós venda - (19) 97822-6748</a>
+                    <a v-bind:href="LinkAdm" target="_blank">ADM - (19) 99221-4727</a>
                     <div class="footer_contato_social">
-                        <a href="https://api.whatsapp.com/send/?phone=5519997976865&text&app_absent=0" target="_blank"><IconsWhatsapp /></a>
-                        <a href="https://www.facebook.com/avenidaveiculosindaiatuba/" target="_blank"><IconsFacebook /></a>
-                        <a href="https://www.instagram.com/avenidaveiculosindaiatuba/" target="_blank"><IconsInstagram /></a>
-                        <a href="https://www.tiktok.com/@lojaavenidaveiculos" target="_blank"><IconsTiktok /></a>
-                        <a href="https://www.youtube.com/channel/UCbz6EVG5UgrYbZS1ydfWN5A" target="_blank"><IconsYoutube /></a>
+                        <a v-bind:href="LinkVendas" target="_blank"><IconsWhatsapp /></a>
+                        <a v-bind:href="LinkFace" target="_blank"><IconsFacebook /></a>
+                        <a v-bind:href="LinkInsta" target="_blank"><IconsInstagram /></a>
+                        <a v-bind:href="LinkTiktok" target="_blank"><IconsTiktok /></a>
+                        <a v-bind:href="LinkYoutube" target="_blank"><IconsYoutube /></a>
                     </div>
                 </div>
             </div>
             <nuxt-link to="/" class="logo"><IconsLogo class="logoFlat"/></nuxt-link>
             <div class="cabeçalho">
-                <a target="_blank" href="https://g.page/Avenidaveiculosindaiatuba?share">Av. Visconde de Indaiatuba, 921 , Vila Vitòria 1 - Indaiatuba/SP</a>
+                <a v-bind:href="LinkMap" target="_blank">Av. Visconde de Indaiatuba, 921 , Vila Vitòria 1 - Indaiatuba/SP</a>
                 <div></div>
                 <p>Avenida Veiculos Indaiatuba / T. Bella Vitta da Silva Veiculos LTDA - CNPJ 15.358.908/0001-49</p>
                 <p>Todos os direitos reservados @2022</p>
@@ -35,6 +35,23 @@
         </footer>
     </div>
 </template>
+
+<script>
+export default {
+    data() {
+        return {
+            LinkVendas: 'https://api.whatsapp.com/send/?phone=5519997976865&text&app_absent=0',
+            LinkPos: 'https://api.whatsapp.com/send/?phone=5519978226748&text&app_absent=0',
+            LinkAdm: 'https://api.whatsapp.com/send/?phone=5519992214727&text&app_absent=0',
+            LinkFace: 'https://www.facebook.com/avenidaveiculosindaiatuba/',
+            LinkInsta: 'https://www.instagram.com/avenidaveiculosindaiatuba/',
+            LinkTiktok: 'https://www.tiktok.com/@lojaavenidaveiculos',
+            LinkYoutube: 'https://www.youtube.com/channel/UCbz6EVG5UgrYbZS1ydfWN5A',
+            LinkMap: 'https://g.page/Avenidaveiculosindaiatuba?share'
+        }
+    }
+}
+</script>
 
 <style lang="scss">
 .site {
