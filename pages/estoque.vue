@@ -6,10 +6,6 @@
         <span>Ano ></span>
         <span>Ordena por ></span>
     </div>
-    <div v-for="(car, index) in cars" :key="index">
-        <span>{{ car.veiculo.id }}</span>
-    </div>
-    <span v-bind="cars"></span>
     <pre>{{ cars }}</pre>
     <div class="estoque_cards">
         <card />
@@ -26,15 +22,22 @@
 </template>
 
 <script>
-const xml2js = require('xml2js');
+const xml2js = require('xml2js'),
+      parser = new xml2js.Parser({explicitRoot: false, explicitArray: false});
 
 export default {
+    data() {
+        return {
+            cars: []
+        };
+    },
     async asyncData({ $axios }) {
         const cars = await $axios.$get()
         .then(res => {
-            xml2js.parseString(res, {explicitRoot: false, explicitArray: false}, function (err, result) {
-                console.dir(result)
-            });
+            parser.parseStringPromise(res)
+            .then(function (res) {
+                console.dir(JSON.stringify(res.veiculo));
+            })
         })
         return { cars }
     }
