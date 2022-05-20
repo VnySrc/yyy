@@ -1,18 +1,18 @@
 <template>
-    <section class="cars">
+    <div class="cars">
         <div class="cars_info">
             <div class="cars_info_imgs">
-                <nuxt-img format="webp" src="/img/cross.jpg" />
+                <img v-bind:src="cars[0].fotos.imagem[0]" />
             </div>
             <div class="cars_info_brand">
                 <div class="cars_info_brand_titles">
-                    <h2>TOYOTA</h2>
-                    <h1>YARIS HATCH</h1>
-                    <span>1.6 MSI TRENDLINE CS 8V FLEX 2P MANUAL</span>
+                    <h2>{{ cars[0].marca_descricao }}</h2>
+                    <h1>{{ cars[0].modelo_descricao }}</h1>
+                    <span>{{ cars[0].versao_descricao }}</span>
                 </div>
                 <div class="cars_info_brand_details">
                     <div class="cars_info_brand_details_price">
-                        <h3>R$ 99.900,00</h3>
+                        <h3>R$ {{ cars[0].valor_final }}</h3>
                     </div>
                     <div class="cars_info_brand_details_zap">
                         <nuxt-link to="/contato"><IconsWhatsapp /></nuxt-link>
@@ -26,43 +26,60 @@
                 <tbody>
                     <tr>
                         <th>Ano</th>
-                        <td>2020</td>
+                        <td>{{ cars[0].ano_fabricacao_descricao }}</td>
                     </tr>
                     <tr>
                         <th>Categoria</th>
-                        <td>Hatch</td>
+                        <td>{{ cars[0].tipo_descricao }}</td>
                     </tr>
                     <tr>
                         <th>Kilometragem</th>
-                        <td>30mil</td>
+                        <td>{{ cars[0].kilometragem }}</td>
                     </tr>
                     <tr>
                         <th>Combustível</th>
-                        <td>Gasolina</td>
+                        <td>{{ cars[0].combustivel_descricao }}</td>
                     </tr>
                     <tr>
                         <th>Transmisão</th>
-                        <td>Automático</td>
+                        <td>{{ cars[0].cambio_descricao }}</td>
                     </tr>
                     <tr>
-                        <th>Potência</th>
-                        <td>200cv</td>
-                    </tr>
-                    <tr>
-                        <th>Freio</th>
-                        <td>Disco</td>
+                        <th>Portas</th>
+                        <td>{{ cars[0].porta_id }}</td>
                     </tr>
                     <tr>
                         <th>Cor</th>
-                        <td>Branco</td>
+                        <td>{{ cars[0].cor_descricao }}</td>
                     </tr>
                 </tbody>
             </table>
             <h4>Observações</h4>
-            <p>===Opcionais: completo ===Vários Acessórios rizoma ===Embreagem a seco ===Kit procton rizoma ===Mecânica ok ===Documentos ok Financiamos em até 60x parcelamos sua entrada em 12x no cartão de crédito. Aceitamos trocas e fazemos troca com troco. Avenida veículos Indaiatuba. Av. Visconde de Indaiatuba,921 Indaiatuba SP tel (19) 3835-0800whats (19) 99309-1270</p>
+            <p>{{ cars[0].observacao }}</p>
         </div>
-    </section>
+    </div>
 </template>
+
+<script>
+const xml2js = require('xml2js'),
+      parser = new xml2js.Parser({explicitRoot: false, explicitArray: false});
+
+export default {
+    data() {
+      return {
+        cars: []
+      }
+    },
+    async asyncData({ $axios }) {
+        const xml = await $axios.$get()
+        const cars = await parser.parseStringPromise(xml)
+        .then(function (res) {
+            return res.veiculo
+        })
+        return { cars }
+    }
+}
+</script>
 
 <style lang="scss">
     .cars {
