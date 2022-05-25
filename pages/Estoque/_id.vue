@@ -2,17 +2,17 @@
     <div class="cars">
         <div class="cars_info">
             <div class="cars_info_imgs">
-                <img v-bind:src="cars[0].fotos.imagem[0]" />
+                <img v-bind:src="car.fotos.imagem[0]" />
             </div>
             <div class="cars_info_brand">
                 <div class="cars_info_brand_titles">
-                    <h2>{{ cars[0].marca_descricao }}</h2>
-                    <h1>{{ cars[0].modelo_descricao }}</h1>
-                    <span>{{ cars[0].versao_descricao }}</span>
+                    <h2>{{ car.marca_descricao }}</h2>
+                    <h1>{{ car.modelo_descricao }}</h1>
+                    <span>{{ car.versao_descricao }}</span>
                 </div>
                 <div class="cars_info_brand_details">
                     <div class="cars_info_brand_details_price">
-                        <h3>R$ {{ cars[0].valor_final }}</h3>
+                        <h3>R$ {{ car.valor_final }}</h3>
                     </div>
                     <div class="cars_info_brand_details_zap">
                         <nuxt-link to="/contato"><IconsWhatsapp /></nuxt-link>
@@ -26,36 +26,36 @@
                 <tbody>
                     <tr>
                         <th>Ano</th>
-                        <td>{{ cars[0].ano_fabricacao_descricao }}</td>
+                        <td>{{ car.ano_fabricacao_descricao }}</td>
                     </tr>
                     <tr>
                         <th>Categoria</th>
-                        <td>{{ cars[0].tipo_descricao }}</td>
+                        <td>{{ car.tipo_descricao }}</td>
                     </tr>
                     <tr>
                         <th>Kilometragem</th>
-                        <td>{{ cars[0].kilometragem }}</td>
+                        <td>{{ car.kilometragem }}</td>
                     </tr>
                     <tr>
                         <th>Combustível</th>
-                        <td>{{ cars[0].combustivel_descricao }}</td>
+                        <td>{{ car.combustivel_descricao }}</td>
                     </tr>
                     <tr>
                         <th>Transmisão</th>
-                        <td>{{ cars[0].cambio_descricao }}</td>
+                        <td>{{ car.cambio_descricao }}</td>
                     </tr>
                     <tr>
                         <th>Portas</th>
-                        <td>{{ cars[0].porta_id }}</td>
+                        <td>{{ car.porta_id }}</td>
                     </tr>
                     <tr>
                         <th>Cor</th>
-                        <td>{{ cars[0].cor_descricao }}</td>
+                        <td>{{ car.cor_descricao }}</td>
                     </tr>
                 </tbody>
             </table>
             <h4>Observações</h4>
-            <p>{{ cars[0].observacao }}</p>
+            <p>{{ car.observacao }}</p>
         </div>
     </div>
 </template>
@@ -67,8 +67,13 @@ const xml2js = require('xml2js'),
 export default {
     data() {
       return {
-        cars: []
+        cars: {}
       }
+    },
+    computed: {
+        car() {
+            return this.cars.find(el => el.id === this.$route.params.id)
+        }
     },
     async asyncData({ $axios }) {
         const xml = await $axios.$get()

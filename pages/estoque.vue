@@ -14,7 +14,7 @@
             </div>
             <span class="estoque_cards_card_price">$ {{ car.valor_final }}</span>
             <div class="estoque_cards_card_img">
-                <nuxt-link to="/veiculo">
+                <nuxt-link :to="`/estoque/${car.id}`">
                     <img v-bind:src="car.fotos.imagem[0]" />
                 </nuxt-link>
             </div>
@@ -31,10 +31,12 @@
                     <iconsSpeed />
                     <span>{{ car.kilometragem }} KM</span>
                 </div>
-                <div class="estoque_cards_card_info_stats">
-                    <IconsInfo />
-                    <span>Ver mais</span>
-                </div>
+                <nuxt-link :to="`/estoque/${car.id}`">
+                    <div class="estoque_cards_card_info_stats">
+                        <IconsInfo />
+                        <span>Ver mais</span>
+                    </div>
+                </nuxt-link>
             </div>
         </div>
     </div>
@@ -141,11 +143,10 @@ export default {
                 top: 0;
                 right: 0;
                 color: $white;
-                font-size: 1.2rem;
+                font-size: 1.6rem;
                 font-weight: bold;
-                font-family: $ff-s;
                 background-color: $p-500;
-                padding: 1rem 1rem 1.4rem 1rem;
+                padding: 1rem 1.5rem 1.5rem 1.5rem;
                 clip-path: polygon(50% 85%, 100% 100%, 100% 0, 0 0, 0 100%);
             }
 
@@ -192,7 +193,7 @@ export default {
             &_img {
                 height: 25rem;
                 margin: 1.5rem 0;
-                border-bottom: solid $p-500 .8rem;
+                border-bottom: solid $p-500 1rem;
                 overflow: hidden;
 
                 cursor: pointer;
