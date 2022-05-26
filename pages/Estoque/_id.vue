@@ -1,9 +1,92 @@
 <template>
     <div class="cars">
         <div class="cars_info">
-            <div class="cars_info_imgs">
-                <img v-bind:src="car.fotos.imagem[0]" />
-            </div>
+            <swiper
+              class="swiper gallery-top"
+              :options="swiperOptionTop"
+              ref="swiperTop"
+            >
+                <swiper-slide class="cars_info_imgs">
+                    <img v-bind:src="car.fotos.imagem[0]" />
+                </swiper-slide>
+                <swiper-slide class="cars_info_imgs">
+                    <img v-bind:src="car.fotos.imagem[1]" />
+                </swiper-slide>
+                <swiper-slide class="cars_info_imgs">
+                    <img v-bind:src="car.fotos.imagem[2]" />
+                </swiper-slide>
+                <swiper-slide class="cars_info_imgs">
+                    <img v-bind:src="car.fotos.imagem[3]" />
+                </swiper-slide>
+                <swiper-slide class="cars_info_imgs">
+                    <img v-bind:src="car.fotos.imagem[4]" />
+                </swiper-slide>
+                <swiper-slide class="cars_info_imgs">
+                    <img v-bind:src="car.fotos.imagem[5]" />
+                </swiper-slide>
+                <swiper-slide class="cars_info_imgs">
+                    <img v-bind:src="car.fotos.imagem[6]" />
+                </swiper-slide>
+                <swiper-slide class="cars_info_imgs">
+                    <img v-bind:src="car.fotos.imagem[7]" />
+                </swiper-slide>
+                <swiper-slide class="cars_info_imgs">
+                    <img v-bind:src="car.fotos.imagem[8]" />
+                </swiper-slide>
+                <swiper-slide class="cars_info_imgs">
+                    <img v-bind:src="car.fotos.imagem[9]" />
+                </swiper-slide>
+                <swiper-slide class="cars_info_imgs">
+                    <img v-bind:src="car.fotos.imagem[10]" />
+                </swiper-slide>
+                <div
+                    class="swiper-button-next swiper-button-white"
+                    slot="button-next"
+                ></div>
+                <div
+                    class="swiper-button-prev swiper-button-white"
+                    slot="button-prev"
+                ></div>
+            </swiper>
+            <swiper
+              class="swiper gallery-thumbs"
+              :options="swiperOptionThumbs"
+              ref="swiperThumbs"
+            >
+                <swiper-slide class="cars_info_thumbs">
+                    <img v-bind:src="car.fotos.imagem[0]" />
+                </swiper-slide>
+                <swiper-slide class="cars_info_thumbs">
+                    <img v-bind:src="car.fotos.imagem[1]" />
+                </swiper-slide>
+                <swiper-slide class="cars_info_thumbs">
+                    <img v-bind:src="car.fotos.imagem[2]" />
+                </swiper-slide>
+                <swiper-slide class="cars_info_thumbs">
+                    <img v-bind:src="car.fotos.imagem[3]" />
+                </swiper-slide>
+                <swiper-slide class="cars_info_thumbs">
+                    <img v-bind:src="car.fotos.imagem[4]" />
+                </swiper-slide>
+                <swiper-slide class="cars_info_thumbs">
+                    <img v-bind:src="car.fotos.imagem[5]" />
+                </swiper-slide>
+                <swiper-slide class="cars_info_thumbs">
+                    <img v-bind:src="car.fotos.imagem[6]" />
+                </swiper-slide>
+                <swiper-slide class="cars_info_thumbs">
+                    <img v-bind:src="car.fotos.imagem[7]" />
+                </swiper-slide>
+                <swiper-slide class="cars_info_thumbs">
+                    <img v-bind:src="car.fotos.imagem[8]" />
+                </swiper-slide>
+                <swiper-slide class="cars_info_thumbs">
+                    <img v-bind:src="car.fotos.imagem[9]" />
+                </swiper-slide>
+                <swiper-slide class="cars_info_thumbs">
+                    <img v-bind:src="car.fotos.imagem[10]" />
+                </swiper-slide>
+            </swiper>
             <div class="cars_info_brand">
                 <div class="cars_info_brand_titles">
                     <h2>{{ car.marca_descricao }}</h2>
@@ -27,10 +110,6 @@
                     <tr>
                         <th>Ano</th>
                         <td>{{ car.ano_fabricacao_descricao }}</td>
-                    </tr>
-                    <tr>
-                        <th>Categoria</th>
-                        <td>{{ car.tipo_descricao }}</td>
                     </tr>
                     <tr>
                         <th>Kilometragem</th>
@@ -61,14 +140,47 @@
 </template>
 
 <script>
+import { Swiper, SwiperSlide } from "vue-awesome-swiper";
+import "swiper/css/swiper.css";
+
 const xml2js = require('xml2js'),
       parser = new xml2js.Parser({explicitRoot: false, explicitArray: false});
 
 export default {
+    components: {
+        Swiper,
+        SwiperSlide,
+    },
     data() {
       return {
-        cars: {}
+        cars: [],
+        swiperOptionTop: {
+            loop: true,
+            loopedSlides: 5, // looped slides should be the same
+            spaceBetween: 5,
+            navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+            },
+        },
+        swiperOptionThumbs: {
+            loop: true,
+            loopedSlides: 5, // looped slides should be the same
+            spaceBetween: 5,
+            centeredSlides: false,
+            slidesPerView: "auto",
+            touchRatio: 0.2,
+            slideToClickedSlide: true,
+        },
       }
+    },
+    mounted() {
+        this.$nextTick(() => {
+        const swiperTop = this.$refs.swiperTop.$swiper;
+        const swiperThumbs = this.$refs.swiperThumbs.$swiper;
+        swiperTop.controller.control = swiperThumbs;
+        swiperThumbs.controller.control = swiperTop;
+        });
     },
     computed: {
         car() {
@@ -87,6 +199,22 @@ export default {
 </script>
 
 <style lang="scss">
+    .gallery-thumbs {
+        padding-top: .5rem;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .gallery-thumbs .swiper-slide {
+        width: 25%;
+        height: 100%;
+        opacity: 0.4;
+    }
+
+    .gallery-thumbs .swiper-slide-active {
+        opacity: 1;
+    }
+
     .cars {
         padding: 4rem 2rem;
 
@@ -109,6 +237,14 @@ export default {
                     @include md {
                         height: 38rem;
                     }
+                }
+            }
+
+            &_thumbs {
+                img {
+                    width: 100%;
+                    height: 10rem;
+                    object-fit: cover;
                 }
             }
     
