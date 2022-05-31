@@ -17,7 +17,7 @@
             <option value="priceDown">Menor preço</option>
         </select>
     </div>
-    <div v-for="value in cars" :key="value.id" class="estoque_cards">
+    <div v-for="value in getCars" :key="value.id" class="estoque_cards">
         <div class="estoque_cards_card">
             <div class="estoque_cards_card_brand">
                 <h4>{{ value.marca_descricao }}</h4>
@@ -81,6 +81,9 @@ export default {
         }
     },
     computed: {
+        getCars() {
+            return this.cars.slice(0, 10);
+        },
         getBrand() {
             return this.cars.map(el => el.marca_descricao).filter((value, index, arr) => (arr.indexOf(value) === index));
         },
