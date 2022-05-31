@@ -6,38 +6,8 @@
               :options="swiperOptionTop"
               ref="swiperTop"
             >
-                <swiper-slide class="cars_info_imgs">
-                    <img v-bind:src="car.fotos.imagem[0]" />
-                </swiper-slide>
-                <swiper-slide class="cars_info_imgs">
-                    <img v-bind:src="car.fotos.imagem[1]" />
-                </swiper-slide>
-                <swiper-slide class="cars_info_imgs">
-                    <img v-bind:src="car.fotos.imagem[2]" />
-                </swiper-slide>
-                <swiper-slide class="cars_info_imgs">
-                    <img v-bind:src="car.fotos.imagem[3]" />
-                </swiper-slide>
-                <swiper-slide class="cars_info_imgs">
-                    <img v-bind:src="car.fotos.imagem[4]" />
-                </swiper-slide>
-                <swiper-slide class="cars_info_imgs">
-                    <img v-bind:src="car.fotos.imagem[5]" />
-                </swiper-slide>
-                <swiper-slide class="cars_info_imgs">
-                    <img v-bind:src="car.fotos.imagem[6]" />
-                </swiper-slide>
-                <swiper-slide class="cars_info_imgs">
-                    <img v-bind:src="car.fotos.imagem[7]" />
-                </swiper-slide>
-                <swiper-slide class="cars_info_imgs">
-                    <img v-bind:src="car.fotos.imagem[8]" />
-                </swiper-slide>
-                <swiper-slide class="cars_info_imgs">
-                    <img v-bind:src="car.fotos.imagem[9]" />
-                </swiper-slide>
-                <swiper-slide class="cars_info_imgs">
-                    <img v-bind:src="car.fotos.imagem[10]" />
+                <swiper-slide v-for="(value, index) in carImgs" :key="index" class="cars_info_imgs">
+                    <img :src="value" />
                 </swiper-slide>
                 <div
                     class="swiper-button-next swiper-button-white"
@@ -53,38 +23,8 @@
               :options="swiperOptionThumbs"
               ref="swiperThumbs"
             >
-                <swiper-slide class="cars_info_thumbs">
-                    <img v-bind:src="car.fotos.imagem[0]" />
-                </swiper-slide>
-                <swiper-slide class="cars_info_thumbs">
-                    <img v-bind:src="car.fotos.imagem[1]" />
-                </swiper-slide>
-                <swiper-slide class="cars_info_thumbs">
-                    <img v-bind:src="car.fotos.imagem[2]" />
-                </swiper-slide>
-                <swiper-slide class="cars_info_thumbs">
-                    <img v-bind:src="car.fotos.imagem[3]" />
-                </swiper-slide>
-                <swiper-slide class="cars_info_thumbs">
-                    <img v-bind:src="car.fotos.imagem[4]" />
-                </swiper-slide>
-                <swiper-slide class="cars_info_thumbs">
-                    <img v-bind:src="car.fotos.imagem[5]" />
-                </swiper-slide>
-                <swiper-slide class="cars_info_thumbs">
-                    <img v-bind:src="car.fotos.imagem[6]" />
-                </swiper-slide>
-                <swiper-slide class="cars_info_thumbs">
-                    <img v-bind:src="car.fotos.imagem[7]" />
-                </swiper-slide>
-                <swiper-slide class="cars_info_thumbs">
-                    <img v-bind:src="car.fotos.imagem[8]" />
-                </swiper-slide>
-                <swiper-slide class="cars_info_thumbs">
-                    <img v-bind:src="car.fotos.imagem[9]" />
-                </swiper-slide>
-                <swiper-slide class="cars_info_thumbs">
-                    <img v-bind:src="car.fotos.imagem[10]" />
+                <swiper-slide v-for="(value, index) in carImgs" :key="index" class="cars_info_thumbs">
+                    <img :src="value" />
                 </swiper-slide>
             </swiper>
             <div class="cars_info_brand">
@@ -95,7 +35,7 @@
                 </div>
                 <div class="cars_info_brand_details">
                     <div class="cars_info_brand_details_price">
-                        <h3>R$ {{ car.valor_final }}</h3>
+                        <h3>{{ car.valor_final | price }}</h3>
                     </div>
                     <div class="cars_info_brand_details_zap">
                         <nuxt-link to="/contato"><IconsWhatsapp /></nuxt-link>
@@ -113,7 +53,7 @@
                     </tr>
                     <tr>
                         <th>Kilometragem</th>
-                        <td>{{ car.kilometragem }}</td>
+                        <td>{{ car.kilometragem | km }}</td>
                     </tr>
                     <tr>
                         <th>Combustível</th>
@@ -171,7 +111,7 @@ export default {
             slidesPerView: "auto",
             touchRatio: 0.2,
             slideToClickedSlide: true,
-        },
+        }
       }
     },
     mounted() {
@@ -182,9 +122,20 @@ export default {
         swiperThumbs.controller.control = swiperTop;
         });
     },
+    filters: {
+        price(value) {
+            return Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(value)
+        },
+        km(value) {
+            return Intl.NumberFormat('pt-BR', { style: 'unit', unit: 'kilometer' }).format(value)
+        }
+    },
     computed: {
         car() {
             return this.cars.find(el => el.id === this.$route.params.id)
+        },
+        carImgs() {
+            return this.car.fotos.imagem
         }
     },
     async asyncData({ $axios }) {
@@ -227,12 +178,8 @@ export default {
             &_imgs {
                 img {
                     width: 100%;
-                    height: 25rem;
+                    height: 28rem;
                     object-fit: cover;
-
-                    @include sm-up {
-                        height: 28rem;
-                    }
 
                     @include md {
                         height: 38rem;
@@ -243,7 +190,7 @@ export default {
             &_thumbs {
                 img {
                     width: 100%;
-                    height: 10rem;
+                    height: 8rem;
                     object-fit: cover;
                 }
             }

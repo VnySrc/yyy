@@ -12,22 +12,21 @@
             </nuxt-link>
         </header>
         <section class="highlights">
-            <div class="highlights_card">
+            <div v-for="value in car" :key="value.id" class="highlights_card">
                 <div class="highlights_card_info">
-                    <h4>{{ car.marca_descricao }}</h4>
-                    <h5>{{ car.modelo_descricao }}</h5>
+                    <h4>{{ value.marca_descricao }}</h4>
+                    <h5>{{ value.modelo_descricao }}</h5>
                     <div>
-                        <span>{{ car.ano_fabricacao_descricao }}</span>
-                        <span>{{ car.combustivel_descricao }}</span>
-                        <span>{{ car.kilometragem }} KM</span>
+                        <span>{{ value.ano_fabricacao_descricao }}</span>
+                        <span>{{ value.valor_final | price }}</span>
                     </div>
                 </div>
-                <nuxt-link :to="`/estoque/${car.id}`">
+                <nuxt-link :to="`/estoque/${value.id}`">
                     <div class="highlights_card_img">
-                        <img :src="car.fotos.imagem[0]" />
+                        <img :src="value.fotos.imagem[0]" />
                     </div>
                 </nuxt-link>
-                <nuxt-link :to="`/estoque/${car.id}`" class="highlights_card_plus">
+                <nuxt-link :to="`/estoque/${value.id}`" class="highlights_card_plus">
                     <span>Saiba mais</span>
                     <IconsInfo />
                 </nuxt-link>
@@ -108,14 +107,17 @@
     export default {
         data() {
             return {
-                cars: [],
-                a: "Gasolina e álcool",
-                b: "flex"
+                cars: []
+            }
+        },
+        filters: {
+            price(value) {
+                return Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(value)
             }
         },
         computed: {
             car() {
-                return this.cars[3]
+                return this.cars.slice(0, 4)
             }
         },
         async asyncData({ $axios }) {
@@ -243,7 +245,6 @@
                         margin: 0 0.5rem;
                         padding: 0 0.5rem;
                         border-left: solid 0.1rem $gray-400;
-                        border-right: solid 0.1rem $gray-400;
                     }
                 }
             }

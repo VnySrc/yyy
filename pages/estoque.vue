@@ -1,37 +1,48 @@
 <template>
 <div class="estoque">
     <div class="estoque_filter">
-        <span>Marca ></span>
-        <span>Modelo ></span>
-        <span>Ano ></span>
-        <span>Ordena por ></span>
+        <select v-model="sortModel" @change="orderModel($event)">
+            <option value="">Modelo</option>
+            <option v-for="(value, index) in getModel" :key="index" :value="value">{{ value }}</option>
+        </select>
+        <select v-model="sortBrand" @change="orderBrand($event)">
+            <option value="">Marca</option>
+            <option v-for="(value, index) in getBrand" :key="index" :value="value">{{ value }}</option>
+        </select>
+        <select v-model="sortType" :change="sortItem()">
+            <option value="">Ordenar por</option>
+            <option value="yearUp">Mais novo</option>
+            <option value="yearDown">Mais velho</option>
+            <option value="priceUp">Maior preço</option>
+            <option value="priceDown">Menor preço</option>
+        </select>
     </div>
-    <div v-for="(car, index) of cars" :key="index" class="estoque_cards">
+    <div v-for="value in cars" :key="value.id" class="estoque_cards">
         <div class="estoque_cards_card">
             <div class="estoque_cards_card_brand">
-                <h4>{{ car.marca_descricao }}</h4>
-                <h5>{{ car.modelo_descricao }}</h5>
+                <h4>{{ value.marca_descricao }}</h4>
+                <h5>{{ value.modelo_descricao }}</h5>
             </div>
-            <span class="estoque_cards_card_price">$ {{ car.valor_final }}</span>
+            <span class="estoque_cards_card_price">{{ value.valor_final | price }}</span>
             <div class="estoque_cards_card_img">
-                <nuxt-link :to="`/estoque/${car.id}`">
-                    <img v-bind:src="car.fotos.imagem[0]" />
+                <nuxt-link :to="`/estoque/${value.id}`">
+                    <img :src="value.fotos.imagem[0]" />
                 </nuxt-link>
             </div>
             <div class="estoque_cards_card_info">
                 <div>
                     <iconsDate />
-                    <span>{{ car.ano_fabricacao_descricao }}</span>
+                    <span>{{ value.ano_fabricacao_descricao }}</span>
                 </div>
                 <div>
                     <iconsEngine />
-                    <span>{{ car.combustivel_descricao }}</span>
+                    <span>{{ value.combustivel_descricao | gas }}</span>
                 </div>
                 <div>
                     <iconsSpeed />
-                    <span>{{ car.kilometragem }} KM</span>
+                    <span>{{ value.kilometragem | km }}</span>
                 </div>
-                <nuxt-link :to="`/estoque/${car.id}`">
+                <nuxt-link :to="`/estoque/${value.id}`">
                     <div class="estoque_cards_card_info_stats">
                         <IconsInfo />
                         <span>Ver mais</span>
@@ -50,8 +61,71 @@ const xml2js = require('xml2js'),
 export default {
     data() {
       return {
-        cars: []
+        cars: [],
+        sortType: '',
+        sortModel: '',
+        sortBrand: ''
       }
+    },
+    filters: {
+        gas(value) {
+            if ( value === `Gasolina e álcool` ) {
+                return `Flex`
+            } else { return value }
+        },
+        price(value) {
+            return Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(value)
+        },
+        km(value) {
+            return Intl.NumberFormat('pt-BR', { style: 'unit', unit: 'kilometer' }).format(value)
+        }
+    },
+    computed: {
+        getBrand() {
+            return this.cars.map(el => el.marca_descricao).filter((value, index, arr) => (arr.indexOf(value) === index));
+        },
+        getModel() {
+            return this.cars.map(el => el.modelo_descricao).filter((value, index, arr) => (arr.indexOf(value) === index));
+        }
+    },
+    methods: {
+        sortItem() {
+            if (this.sortType == '') {
+                this.cars = this.cars.sort(function(a, b) {
+                    var nameA = a.marca_descricao.toUpperCase();
+                    var nameB = b.marca_descricao.toUpperCase();
+                    if (nameA < nameB) {
+                        return -1;
+                    }
+                    if (nameA > nameB) {
+                        return 1;
+                    }
+                    return 0;
+                });
+            }
+            if (this.sortType == 'priceUp') {
+                this.cars = this.cars.sort((prev, curr) => curr.valor_final - prev.valor_final);
+            }
+            if (this.sortType == 'priceDown') {
+                this.cars = this.cars.sort((prev, curr) => prev.valor_final - curr.valor_final);
+            }
+            if (this.sortType == 'yearUp') {
+                this.cars = this.cars.sort((prev, curr) => curr.ano_fabricacao_descricao - prev.ano_fabricacao_descricao);
+            }
+            if (this.sortType == 'yearDown') {
+                this.cars = this.cars.sort((prev, curr) => prev.ano_fabricacao_descricao - curr.ano_fabricacao_descricao);
+            }
+        },
+        orderModel(event) {
+            if (this.sortModel == event.target.value) {
+                this.cars = this.cars.filter(el => el.modelo_descricao === event.target.value );
+            }
+        },
+        orderBrand(event) {
+            if (this.sortBrand == event.target.value) {
+                this.cars = this.cars.filter(el => el.marca_descricao === event.target.value );
+            }
+        }
     },
     async asyncData({ $axios }) {
         const xml = await $axios.$get()
@@ -87,7 +161,7 @@ export default {
             width: 40rem;
         }
 
-        span {
+        select {
             font-size: 1.4rem;
             font-weight: bold;
             color: $gray-400;
@@ -97,8 +171,16 @@ export default {
                 color: $p-500;
             }
         }
+
+        button {
+            font-size: 2rem;
+            background-color: $gray-300;
+            height: 10rem;
+            width: 10rem;
+        }
     }
     
+
     &_cards {
         display: flex;
         flex-direction: column;
