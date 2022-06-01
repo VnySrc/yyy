@@ -169,11 +169,11 @@ export default {
     .cars {
         padding: 4rem 2rem;
 
+        @include md {
+            display: flex;
+        }
+
         &_info {
-            @include sm-up {
-                display: flex;
-                justify-content: space-around;
-            }
 
             &_imgs {
                 img {
@@ -181,8 +181,8 @@ export default {
                     height: 28rem;
                     object-fit: cover;
 
-                    @include md {
-                        height: 38rem;
+                    @include sm-up {
+                        height: 50rem;
                     }
                 }
             }

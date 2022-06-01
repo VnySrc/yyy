@@ -17,8 +17,8 @@
             <option value="priceDown">Menor preço</option>
         </select>
     </div>
-    <div v-for="value in getCars" :key="value.id" class="estoque_cards">
-        <div class="estoque_cards_card">
+    <div class="estoque_cards">
+        <div v-for="value in getCars" :key="value.id" class="estoque_cards_card">
             <div class="estoque_cards_card_brand">
                 <h4>{{ value.marca_descricao }}</h4>
                 <h5>{{ value.modelo_descricao }}</h5>
@@ -31,12 +31,15 @@
             </div>
             <div class="estoque_cards_card_info">
                 <div>
+                    <IconsDate />
                     <span>{{ value.ano_fabricacao_descricao }}</span>
                 </div>
                 <div>
+                    <IconsEngine />
                     <span>{{ value.combustivel_descricao | gas }}</span>
                 </div>
                 <div>
+                    <IconsSpeed />
                     <span>{{ value.kilometragem | km }}</span>
                 </div>
                 <nuxt-link :to="`/estoque/${value.id}`">
@@ -79,7 +82,7 @@ export default {
     },
     computed: {
         getCars() {
-            return this.cars.slice(0, 10);
+            return this.cars.slice(0, 9);
         },
         getBrand() {
             return this.cars.map(el => el.marca_descricao).filter((value, index, arr) => (arr.indexOf(value) === index));
@@ -153,22 +156,35 @@ export default {
 
     &_filter {
         display: flex;
-        justify-content: space-between;
-        margin: 4rem 0 2rem 0;
-        padding: 0 1rem;
+        margin: 4rem 1rem;
+        justify-content: center;
 
-        @include sm-up {
-            width: 40rem;
+        @include md {
+            justify-content: flex-start;
         }
 
         select {
-            font-size: 1.4rem;
+            padding: .5rem 0;
             font-weight: bold;
-            color: $gray-400;
+            color: $gray-500;
+            border: none;
+            background-color: transparent;
+            text-align: center;
             cursor: pointer;
+            border: solid .2rem $gray-300;
 
-            &:hover {
-                color: $p-500;
+            @include sm-up {
+                padding: 1rem;
+
+                &:hover {
+                    color: $p-500;
+                    border: solid .2rem $p-500;
+                }
+            }
+
+
+            &:nth-child(2) {
+                margin: 0 1rem;
             }
         }
 
@@ -193,6 +209,7 @@ export default {
 
         @include md {
             grid-template-columns: repeat(3, 1fr);
+            row-gap: 6rem;
         }
 
         &_card {
@@ -211,11 +228,11 @@ export default {
             &_brand {
                 h4 {
                     color: $gray-500;
-                    font-size: 1.5rem;
+                    font-size: 1.2rem;
                 }
 
                 h5 {
-                    font-size: 3.5rem;
+                    font-size: 3.2rem;
                     color: $p-600;
                 }
             }
@@ -225,10 +242,11 @@ export default {
                 top: 0;
                 right: 0;
                 color: $white;
-                font-size: 1.6rem;
+                font-size: 1.2rem;
                 font-weight: bold;
                 background-color: $p-500;
-                padding: 1rem 1.5rem 1.5rem 1.5rem;
+                border-top: solid .5rem $p-400;
+                padding: .6rem 1.2rem 1.4rem 1.2rem;
                 clip-path: polygon(50% 85%, 100% 100%, 100% 0, 0 0, 0 100%);
             }
 
