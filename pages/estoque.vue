@@ -31,15 +31,12 @@
             </div>
             <div class="estoque_cards_card_info">
                 <div>
-                    <iconsDate />
                     <span>{{ value.ano_fabricacao_descricao }}</span>
                 </div>
                 <div>
-                    <iconsEngine />
                     <span>{{ value.combustivel_descricao | gas }}</span>
                 </div>
                 <div>
-                    <iconsSpeed />
                     <span>{{ value.kilometragem | km }}</span>
                 </div>
                 <nuxt-link :to="`/estoque/${value.id}`">
