@@ -36,3 +36,14 @@
 
 
 </style>
+
+<script>
+
+export default {
+    computed: {
+        cars(){
+            return this.$store.state.stock.cars
+        }
+    }
+}
+</script>
