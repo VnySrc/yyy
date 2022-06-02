@@ -9,7 +9,7 @@
             <option value="">Marca</option>
             <option v-for="(value, index) in getBrand" :key="index" :value="value">{{ value }}</option>
         </select>
-        <select v-model="sortType" :change="sortItem()">
+        <select v-model="sortType" :change="sortItem">
             <option value="">Ordenar</option>
             <option value="yearUp">Mais novo</option>
             <option value="yearDown">Mais velho</option>
@@ -81,15 +81,20 @@ export default {
         }
     },
     computed: {
-        getBrand() {
-            return this.cars.map(el => el.marca_descricao).filter((value, index, arr) => (arr.indexOf(value) === index));
-        },
-        getModel() {
-            return this.cars.map(el => el.modelo_descricao).filter((value, index, arr) => (arr.indexOf(value) === index));
-        }
-    },
-    methods: {
         sortItem() {
+            if (this.sortType == '') {
+                this.cars = this.cars.sort(function(a, b) {
+                    var nameA = a.marca_descricao.toUpperCase();
+                    var nameB = b.marca_descricao.toUpperCase();
+                    if (nameA < nameB) {
+                        return -1;
+                    }
+                    if (nameA > nameB) {
+                        return 1;
+                    }
+                    return 0;
+                });
+            }
             if (this.sortType == 'priceUp') {
                 this.cars = this.cars.sort((prev, curr) => curr.valor_final - prev.valor_final);
             }
@@ -103,6 +108,14 @@ export default {
                 this.cars = this.cars.sort((prev, curr) => prev.ano_fabricacao_descricao - curr.ano_fabricacao_descricao);
             }
         },
+        getBrand() {
+            return this.cars.map(el => el.marca_descricao).filter((value, index, arr) => (arr.indexOf(value) === index));
+        },
+        getModel() {
+            return this.cars.map(el => el.modelo_descricao).filter((value, index, arr) => (arr.indexOf(value) === index));
+        }
+    },
+    methods: {
         orderModel(event) {
             if (this.sortModel == event.target.value) {
                 this.cars = this.cars.filter(el => el.modelo_descricao === event.target.value );
@@ -148,6 +161,7 @@ export default {
         }
 
         select {
+            width: 100%;
             border: none;
             color: $gray-400;
             padding: .5rem 0;
@@ -164,6 +178,10 @@ export default {
                     color: $p-500;
                     border: solid .2rem $p-500;
                 }
+            }
+
+            @include md {
+                width: 20rem;
             }
 
 
