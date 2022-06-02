@@ -80,6 +80,7 @@
 </template>
 
 <script>
+import { mapState } from "vuex";
 import { Swiper, SwiperSlide } from "vue-awesome-swiper";
 import "swiper/css/swiper.css";
 
@@ -131,6 +132,7 @@ export default {
         }
     },
     computed: {
+        ...mapState('links', ['links']),
         car() {
             return this.cars.find(el => el.id === this.$route.params.id)
         },
@@ -168,10 +170,6 @@ export default {
 
     .cars {
         padding: 4rem 2rem;
-
-        @include md {
-            display: flex;
-        }
 
         &_info {
 

@@ -10,7 +10,7 @@
             <option v-for="(value, index) in getBrand" :key="index" :value="value">{{ value }}</option>
         </select>
         <select v-model="sortType" :change="sortItem()">
-            <option value="">Ordenar por</option>
+            <option value="">Ordenar</option>
             <option value="yearUp">Mais novo</option>
             <option value="yearDown">Mais velho</option>
             <option value="priceUp">Maior preço</option>
@@ -18,7 +18,7 @@
         </select>
     </div>
     <div class="estoque_cards">
-        <div v-for="value in getCars" :key="value.id" class="estoque_cards_card">
+        <div v-for="value in cars" :key="value.id" class="estoque_cards_card">
             <div class="estoque_cards_card_brand">
                 <h4>{{ value.marca_descricao }}</h4>
                 <h5>{{ value.modelo_descricao }}</h5>
@@ -81,9 +81,6 @@ export default {
         }
     },
     computed: {
-        getCars() {
-            return this.cars.slice(0, 9);
-        },
         getBrand() {
             return this.cars.map(el => el.marca_descricao).filter((value, index, arr) => (arr.indexOf(value) === index));
         },
@@ -93,19 +90,6 @@ export default {
     },
     methods: {
         sortItem() {
-            if (this.sortType == '') {
-                this.cars = this.cars.sort(function(a, b) {
-                    var nameA = a.marca_descricao.toUpperCase();
-                    var nameB = b.marca_descricao.toUpperCase();
-                    if (nameA < nameB) {
-                        return -1;
-                    }
-                    if (nameA > nameB) {
-                        return 1;
-                    }
-                    return 0;
-                });
-            }
             if (this.sortType == 'priceUp') {
                 this.cars = this.cars.sort((prev, curr) => curr.valor_final - prev.valor_final);
             }
@@ -164,14 +148,14 @@ export default {
         }
 
         select {
+            border: none;
+            color: $gray-400;
             padding: .5rem 0;
             font-weight: bold;
-            color: $gray-500;
-            border: none;
             background-color: transparent;
             text-align: center;
             cursor: pointer;
-            border: solid .2rem $gray-300;
+            border: solid .2rem $gray-100;
 
             @include sm-up {
                 padding: 1rem;

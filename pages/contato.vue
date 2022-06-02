@@ -6,20 +6,20 @@
         <p>Nossa equipe está à sua disposição em diversos canais, tire suas dúvidas com nossos vendedores ou tenha todo o suporte ao comprar seu seminovo com o serviço de pós-venda especializado.</p>
         <div class="contato_media_mail_numbers">
           <a href="tel:+551938350800"><span>Loja :</span>(19) 3835-0800</a>
-          <a href="https://api.whatsapp.com/send/?phone=5519997976865&text&app_absent=0"><span>Vendas :</span>(19) 99797-6865</a>
-          <a href="https://api.whatsapp.com/send/?phone=5519978226748&text&app_absent=0"><span>Pós venda :</span>(19) 97822-6748</a>
-          <a href="https://api.whatsapp.com/send/?phone=5519992214727&text&app_absent=0"><span>Administração :</span>(19) 99221-4727</a>
+          <a :href="links.vendas"><span>Vendas :</span>(19) 99797-6865</a>
+          <a :href="links.pos"><span>Pós venda :</span>(19) 97822-6748</a>
+          <a :href="links.adm"><span>Administração :</span>(19) 99221-4727</a>
         </div>
       </div>
       <div class="contato_media_social">
         <h2>Siga nossas redes socias</h2>
         <p>Conteúdo original sobre nossos serviços e tudo que involve o mundo automobilístico</p>
         <div class="contato_media_social_icons">
-          <a href="https://api.whatsapp.com/send/?phone=5519997976865&text&app_absent=0" target="_blank"><IconsWhatsapp class="contato_media_social_icons_whatsapp"/></a>
-          <a href="https://www.facebook.com/avenidaveiculosindaiatuba/" target="_blank"><IconsFacebook class="contato_media_social_icons_facebook"/></a>
-          <a href="https://www.instagram.com/avenidaveiculosindaiatuba/" target="_blank"><IconsInstagram class="contato_media_social_icons_instagram"/></a>
-          <a href="https://www.tiktok.com/@lojaavenidaveiculos" target="_blank"><IconsTiktok class="contato_media_social_icons_tiktok"/></a>
-          <a href="https://www.youtube.com/channel/UCbz6EVG5UgrYbZS1ydfWN5A" target="_blank"><IconsYoutube class="contato_media_social_icons_youtube"/></a>
+          <a :href="links.whatsapp" target="_blank"><IconsWhatsapp class="contato_media_social_icons_whatsapp"/></a>
+          <a :href="links.face" target="_blank"><IconsFacebook class="contato_media_social_icons_facebook"/></a>
+          <a :href="links.insta" target="_blank"><IconsInstagram class="contato_media_social_icons_instagram"/></a>
+          <a :href="links.tiktok" target="_blank"><IconsTiktok class="contato_media_social_icons_tiktok"/></a>
+          <a :href="links.youtube" target="_blank"><IconsYoutube class="contato_media_social_icons_youtube"/></a>
         </div>
       </div>
     </div>
@@ -36,6 +36,16 @@
     </div>
   </section>
 </template>
+
+<script>
+import { mapState } from "vuex";
+
+export default {
+    computed: {
+         ...mapState('links', ['links'])
+    }
+}
+</script>
 
 <style lang="scss">
 .contato {

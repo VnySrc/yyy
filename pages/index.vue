@@ -176,7 +176,7 @@
                     align-items: center;
                     padding: 0.5rem;
                     margin-top: 2rem;
-                    margin-bottom: 2rem;
+                    margin-bottom: 4rem;
                     width: auto;
         
                     &:hover {
@@ -211,14 +211,7 @@
                 gap: 1rem;
                 display: flex;
                 flex-wrap: wrap;
-                margin-top: 0.5rem;
-                max-width: 45rem;
-        
-                @include sm-up {
-                    flex-wrap: nowrap;
-                    max-width: 100%;
-                }
-        
+
                 @include md {
                     flex-wrap: wrap;
                     max-width: 48rem;
@@ -233,7 +226,7 @@
                     position: relative;
         
                     &_info {
-                        padding: 1rem 0;
+                        padding-bottom: 1rem;
         
                         h4 {
                             color: $gray-500;
@@ -361,7 +354,7 @@
                         padding: 2rem 1rem;
                         align-items: center;
                         justify-content: center;
-                        border: solid $p-500 .1rem;
+                        border: solid $gray-500 .1rem;
                         border-radius: 1rem;
                         flex-direction: column;
 
@@ -370,14 +363,26 @@
                             width: 4rem;
                             height: 4rem;
                             margin-bottom: 1.5rem;
-                            fill: $p-500;
+                            fill: $gray-600;
                         }
 
                         h3 {
-                            font-size: 1.8rem;
+                            font-size: 1.6rem;
                             font-weight: bold;
                             text-align: center;
                             color: $gray-400;
+                        }
+
+                        &:hover {
+                            border: solid $p-500 .1rem;
+                            
+                            svg {
+                                fill: $p-500;
+                            }
+
+                            h3 {
+                                color: $p-400;
+                            }
                         }
                     }
                 }
