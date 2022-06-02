@@ -1,16 +1,16 @@
 <template>
 <div class="estoque">
     <div class="estoque_filter">
-        <select v-model="sortModel" @change="orderModel($event)">
-            <option value="">Modelo</option>
-            <option v-for="(value, index) in getModel" :key="index" :value="value">{{ value }}</option>
-        </select>
         <select v-model="sortBrand" @change="orderBrand($event)">
             <option value="">Marca</option>
             <option v-for="(value, index) in getBrand" :key="index" :value="value">{{ value }}</option>
         </select>
+        <select v-model="sortModel" @change="orderModel($event)">
+            <option value="">Modelo</option>
+            <option v-for="(value, index) in getModel" :key="index" :value="value">{{ value }}</option>
+        </select>
         <select v-model="sortType" :change="sortItem">
-            <option value="">Ordenar</option>
+            <option value="">A - Z</option>
             <option value="yearUp">Mais novo</option>
             <option value="yearDown">Mais velho</option>
             <option value="priceUp">Maior preço</option>
@@ -23,11 +23,11 @@
                 <h4>{{ value.marca_descricao }}</h4>
                 <h5>{{ value.modelo_descricao }}</h5>
             </div>
-            <span class="estoque_cards_card_price">{{ value.valor_final | price }}</span>
             <div class="estoque_cards_card_img">
                 <nuxt-link :to="`/estoque/${value.id}`">
                     <img :src="value.fotos.imagem[0]" />
                 </nuxt-link>
+                <span class="estoque_cards_card_img_price">{{ value.valor_final | price }}</span>
             </div>
             <div class="estoque_cards_card_info">
                 <div>
@@ -153,7 +153,7 @@ export default {
 
     &_filter {
         display: flex;
-        margin: 4rem 1rem;
+        margin: 4rem 0 1rem 0;
         justify-content: center;
 
         @include md {
@@ -164,26 +164,18 @@ export default {
             width: 100%;
             border: none;
             color: $gray-400;
-            padding: .5rem 0;
+            padding: 1rem;
             font-weight: bold;
             background-color: transparent;
             text-align: center;
             cursor: pointer;
             border: solid .2rem $gray-100;
+            max-width: 20rem;
 
-            @include sm-up {
-                padding: 1rem;
-
-                &:hover {
-                    color: $p-500;
-                    border: solid .2rem $p-500;
-                }
+            &:hover {
+                color: $p-500;
+                border: solid .2rem $p-500;
             }
-
-            @include md {
-                width: 20rem;
-            }
-
 
             &:nth-child(2) {
                 margin: 0 1rem;
@@ -211,7 +203,7 @@ export default {
 
         @include md {
             grid-template-columns: repeat(3, 1fr);
-            row-gap: 6rem;
+            gap: 4rem;
         }
 
         &_card {
@@ -223,11 +215,10 @@ export default {
             overflow: hidden;
             position: relative;
 
-            @include md {
-                margin: 1rem;
-            }
-
             &_brand {
+                border-left: solid 1rem $p-500;
+                padding-left: 1rem;
+
                 h4 {
                     color: $gray-500;
                     font-size: 1.2rem;
@@ -237,19 +228,6 @@ export default {
                     font-size: 3.2rem;
                     color: $p-600;
                 }
-            }
-
-            &_price {
-                position: absolute;
-                top: 0;
-                right: 0;
-                color: $white;
-                font-size: 1.2rem;
-                font-weight: bold;
-                background-color: $p-500;
-                border-top: solid .5rem $p-400;
-                padding: .6rem 1.2rem 1.4rem 1.2rem;
-                clip-path: polygon(50% 85%, 100% 100%, 100% 0, 0 0, 0 100%);
             }
 
             &_info {
@@ -297,6 +275,7 @@ export default {
                 margin: 1.5rem 0;
                 border-bottom: solid $p-500 1rem;
                 overflow: hidden;
+                position: relative;
 
                 cursor: pointer;
 
@@ -308,6 +287,19 @@ export default {
                     width: 100%;
                     height: 100%;
                     object-fit: cover;
+                }
+
+                &_price {
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    color: $white;
+                    font-size: 1.2rem;
+                    font-weight: bold;
+                    margin-right: 1rem;
+                    background-color: $p-500;
+                    padding: 1.2rem 1.2rem 1.8rem 1.2rem;
+                    clip-path: polygon(50% 85%, 100% 100%, 100% 0, 0 0, 0 100%);
                 }
             }
         }

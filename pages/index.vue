@@ -139,7 +139,7 @@
         max-width: 120rem;
 
         &_header {
-            margin-top: 4rem;
+            margin-top: 2rem;
 
             @include md {
                 display: flex;
@@ -390,8 +390,7 @@
         }
 
         &_blog {
-            margin: 0 auto;
-
+            
             h1 {
                 color: $p-600;
                 font-size: 2.4rem;

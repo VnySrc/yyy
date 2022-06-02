@@ -3,7 +3,7 @@ const xml2js = require('xml2js'),
 
 export default {
     async fetchXml({ commit }) {
-        const xml = await $axios.$get('https://integreauto.com.br/anuncios/listaAnunciosParceiros/17/1931.xml')
+        const xml = await $axios.$get()
         parser.parseStringPromise(xml)
         .then(function (res) {
             commit('setCars', res.data);
