@@ -15,20 +15,22 @@
   }
 
   @include md {
-    height: 60rem;
+    padding: 10rem;
   }
 
   h2 {
     font-size: 2.4rem;
     font-weight: bold;
     color: $p-500;
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
+    padding-left: 1rem;
+    border-left: solid .8rem $p-500;
   }
 
   p {
     font-family: $ff-s;
     font-size: 2rem;
-    color: $gray-400;
+    color: $gray-500;
   }
 }
 

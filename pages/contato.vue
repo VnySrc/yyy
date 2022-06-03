@@ -28,7 +28,7 @@
         <h2>Siga nossas redes socias</h2>
         <p>Conteúdo original sobre nossos serviços e tudo que involve o mundo automobilístico</p>
         <div class="contato_media_social_icons">
-          <a :href="links.whatsapp" target="_blank">
+          <a :href="links.vendas" target="_blank">
             <IconsWhatsapp class="contato_media_social_icons_whatsapp" /></a>
           <a :href="links.face" target="_blank">
             <IconsFacebook class="contato_media_social_icons_facebook" /></a>
@@ -78,18 +78,25 @@
     h2 {
       font-size: 2.8rem;
       color: $p-500;
-      margin: 1rem 0;
+      margin: 0 0 1rem 0;
     }
 
     &_media {
       @include md {
         display: flex;
+        align-content: space-evenly;
+        justify-content: space-between;
         margin-bottom: 6rem;
       }
 
       &_social {
         margin: 6rem 0;
         text-align: right;
+
+        h2 {
+          border-right: solid $p-500 .8rem;
+          padding-right: 1rem;
+        }
 
         @include md {
           margin: 0;
@@ -98,17 +105,17 @@
         p {
           font-size: 2rem;
           font-family: $ff-s;
-          color: $gray-600;
+          color: $gray-500;
         }
 
         &_icons {
-          margin: 2rem 0;
+          margin: 2rem 0 0 0;
 
           svg {
             height: 4rem;
 
             &:hover {
-              fill: $gray-500;
+              fill: $gray-300;
             }
           }
 
@@ -138,25 +145,29 @@
         p {
           font-size: 2rem;
           font-family: $ff-s;
-          color: $gray-600;
+          color: $gray-500;
 
           @include md {
-            width: 80%;
+            width: 70%;
           }
+        }
+
+        h2 {
+          border-left: solid $p-500 .8rem;
+          padding-left: 1rem;
         }
 
         &_numbers {
           display: flex;
           flex-wrap: wrap;
           gap: 2rem;
-          margin: 2rem 0;
+          margin: 2rem 0 0 0;
 
           a {
             margin: 1rem 0;
-            color: $gray-600;
             font-weight: bold;
             padding: 0 1rem;
-            border-left: solid $s-500 .8rem;
+            border-left: solid $s-400 .5rem;
 
             h3 {
               font-size: 2rem;

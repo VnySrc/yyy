@@ -55,31 +55,32 @@ export default {
     }
     
     footer {
-        padding: 4rem 2rem 1rem 2rem;
+        padding: 3rem 2rem 8rem 2rem;
+        background: rgba(179, 179, 179, 0.1);
+
+        @include sm-up {
+            padding: 3rem 2rem 2rem 2rem;
+        }
         
         .footer {
             @include sm-up {
                 display: flex;
                 flex-direction: row;
                 justify-content: flex-end;
-    
-                &_contato {
-                    margin-left: 4rem;
-                }
             }
     
             &_links,
             &_contato {
                 display: flex;
                 flex-direction: column;
-                margin: 0rem 0 4rem 0;
-    
+                margin: 0 0 2rem 0;
+
                 @include sm-up {
-                    margin-right: 2rem;
+                    margin: 0 4rem 0 0;
                 }
 
                 @include bg {
-                    margin-right: 8rem;
+                    margin: 0 8rem 0 0;
                 }
         
                 h4 {
@@ -93,7 +94,7 @@ export default {
                     font-size: 1.8rem;
                     font-family: $ff-s;
                     margin: 0.6rem 0;
-                    color: $gray-400;
+                    color: $gray-600;
     
                     &:hover {
                         color: $p-600;
@@ -101,15 +102,13 @@ export default {
                 }
         
                 &_social {
-                    flex-direction: row;
                     display: flex;
-                    width: 20rem;
-                    align-items: center;
                     justify-content: space-between;
+                    max-width: 20rem;
         
                     svg {
                         width: 2.2rem;
-                        fill: $gray-400;
+                        fill: $gray-600;
                         cursor: pointer;
     
                         &:hover {
