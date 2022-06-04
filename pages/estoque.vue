@@ -23,31 +23,33 @@
                 <h4>{{ value.marca_descricao }}</h4>
                 <h5>{{ value.modelo_descricao }}</h5>
             </div>
-            <div class="estoque_cards_card_img">
-                <nuxt-link :to="`/estoque/${value.id}`">
-                    <img :src="value.fotos.imagem[0]" />
-                </nuxt-link>
-                <span class="estoque_cards_card_img_price">{{ value.valor_final | price }}</span>
-            </div>
             <div class="estoque_cards_card_info">
-                <div>
-                    <IconsDate />
-                    <span>{{ value.ano_fabricacao_descricao }}</span>
+                <div class="estoque_cards_card_info_img">
+                    <nuxt-link :to="`/estoque/${value.id}`">
+                        <img :src="value.fotos.imagem[0]" />
+                    </nuxt-link>
                 </div>
-                <div>
-                    <IconsEngine />
-                    <span>{{ value.combustivel_descricao | gas }}</span>
-                </div>
-                <div>
-                    <IconsSpeed />
-                    <span>{{ value.kilometragem | km }}</span>
-                </div>
-                <nuxt-link :to="`/estoque/${value.id}`">
-                    <div class="estoque_cards_card_info_stats">
-                        <IconsInfo />
-                        <span>Ver mais</span>
+                <div class="estoque_cards_card_info_stats">
+                    <div>
+                        <IconsDate />
+                        <span>{{ value.ano_fabricacao_descricao }}</span>
                     </div>
-                </nuxt-link>
+                    <div>
+                        <IconsEngine />
+                        <span>{{ value.combustivel_descricao | gas }}</span>
+                    </div>
+                    <div>
+                        <IconsSpeed />
+                        <span>{{ value.kilometragem | km }}</span>
+                    </div>
+                    <nuxt-link :to="`/estoque/${value.id}`">
+                        <div class="estoque_cards_card_info_stats_plus">
+                            <IconsInfo />
+                            <span>Ver mais</span>
+                        </div>
+                    </nuxt-link>
+                </div>
+                <span class="estoque_cards_card_info_price">{{ value.valor_final | price }}</span>
             </div>
         </div>
     </div>
@@ -141,14 +143,14 @@ export default {
 <style lang="scss">
 
 .estoque {
-    padding: 0 1.5rem;
+    padding: 0 1.5rem 2rem 1.5rem;
 
     @include sm-up {
-        padding: 0 2rem;
+        padding: 0 2rem 4rem 2rem;
     }
 
     @include md {
-        padding: 2rem 2rem;
+        padding: 2rem 2rem 6rem 2rem;
     }
 
     &_filter {
@@ -203,7 +205,7 @@ export default {
 
         @include md {
             grid-template-columns: repeat(3, 1fr);
-            gap: 4rem;
+            gap: 3rem;
         }
 
         &_card {
@@ -212,7 +214,6 @@ export default {
             margin: 2rem 0;
             flex-wrap: nowrap;
 
-            overflow: hidden;
             position: relative;
 
             &_brand {
@@ -230,73 +231,73 @@ export default {
                 }
             }
 
+
             &_info {
-                width: 100%;
+                margin: 1.5rem 0 0 0;
+                overflow: hidden;
                 display: flex;
-                justify-content: space-between;
+                flex-direction: column;
+                position: relative;
+                border-radius: .5rem;
+                box-shadow: .5rem .5rem 4rem rgba(0, 0, 0, 0.2);
 
-                div {
+                &_img {
                     display: flex;
-                    align-items: center;
-                    flex-wrap: nowrap;
-
-                    &:hover {
-
-                        span,
-                        svg {
-                            fill: $p-600;
-                            color: $p-600;
-                        }
-                    }
-                }
-
-                svg {
-                    fill: $gray-500;
-                }
-
-                span {
-                    padding-left: 0.8rem;
-                    font-weight: bold;
-                    font-size: 1.2rem;
-                    color: $gray-500;
-
-                    @include sm-up {
-                        font-size: 1rem;
+                    
+                    img {
+                        width: 100%;
+                        object-fit: cover;
                     }
                 }
 
                 &_stats {
-                    cursor: pointer;
-                }
-            }
-
-            &_img {
-                height: 25rem;
-                margin: 1.5rem 0;
-                border-bottom: solid $p-500 1rem;
-                overflow: hidden;
-                position: relative;
-
-                cursor: pointer;
-
-                @include md {
-                    height: 20rem;
-                }
-
-                img {
                     width: 100%;
-                    height: 100%;
-                    object-fit: cover;
+                    display: flex;
+                    position: absolute;
+                    bottom: 0;
+                    justify-content: space-between;
+                    background: linear-gradient(360deg, rgba(207, 199, 196, 0.9) 0%, rgba(221, 217, 216, 0.8) 100%);
+                    padding: 1rem 2rem;
+    
+                    div {
+                        display: flex;
+                        align-items: center;
+                        flex-wrap: nowrap;
+    
+                        &:hover {
+    
+                            span,
+                            svg {
+                                fill: $p-600;
+                                color: $p-600;
+                            }
+                        }
+                    }
+    
+                    svg {
+                        fill: $gray-600;
+                    }
+    
+                    span {
+                        padding-left: 0.8rem;
+                        font-weight: bold;
+                        font-size: 1rem;
+                        color: $gray-600;
+                    }
+    
+                    &_plus {
+                        cursor: pointer;
+                    }
                 }
 
                 &_price {
-                    position: absolute;
                     top: 0;
                     right: 0;
                     color: $white;
                     font-size: 1.2rem;
-                    font-weight: bold;
                     margin-right: 1rem;
+                    font-weight: bold;
+                    position: absolute;
                     background-color: $p-500;
                     padding: 1.2rem 1.2rem 1.8rem 1.2rem;
                     clip-path: polygon(50% 85%, 100% 100%, 100% 0, 0 0, 0 100%);

@@ -22,6 +22,10 @@
             <h3>Administração</h3>
             <h4>(19) 99221-4727</h4>
           </a>
+          <a href="mailto:avenidaveiculosindaiatuba@gmail.com">
+            <h3>Email</h3>
+            <h4>avenidaveiculosindaiatuba@gmail.com</h4>
+          </a>
         </div>
       </div>
       <div class="contato_media_social">
@@ -163,20 +167,36 @@
           gap: 2rem;
           margin: 2rem 0 0 0;
 
+          @include md {
+            h3 {
+              font-size: 2.2rem;
+            }
+
+            h4 {
+              font-size: 2rem;
+            }
+          }
+
           a {
             margin: 1rem 0;
             font-weight: bold;
             padding: 0 1rem;
             border-left: solid $s-400 .5rem;
 
+            &:hover {
+              h3 {
+                color: $s-500;
+              }
+            }
+
             h3 {
-              font-size: 2rem;
+              font-size: 1.8rem;
               color: $gray-600;
               margin-bottom: .5rem;
             }
 
             h4 {
-              font-size: 1.6rem;
+              font-size: 1.4rem;
               color: $s-400;
             }
 
@@ -220,6 +240,8 @@
             width: 50rem;
             height: 20rem;
             margin-right: 2rem;
+            border-bottom: none;
+            border-right: solid $p-500 .8rem;
           }
         }
 

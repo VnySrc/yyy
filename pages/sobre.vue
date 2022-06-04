@@ -71,16 +71,21 @@
         font-family: $ff-s;
         font-size: 2rem;
         color: $gray-500;
+        margin: 0 0 1.5rem 0;
       }
     }
 
     img {
       width: 100%;
-      max-width: 80rem;
-      max-height: 40rem;
+      height: 25rem;
       object-fit: cover;
       margin: 0 0 1rem 0;
       border-bottom: solid $p-500 .8rem;
+
+      @include md {
+        max-width: 60rem;
+        height: 38rem;
+      }
     }
   }
 
@@ -89,7 +94,6 @@
 
     @include md {
       padding: 0 8rem 0 8rem;
-
     }
 
     p {

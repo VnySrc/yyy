@@ -22,14 +22,12 @@
                             <span>{{ value.valor_final | price }}</span>
                         </div>
                     </div>
-                    <nuxt-link :to="`/estoque/${value.id}`">
-                        <div class="home_header_highlights_card_img">
-                            <img :src="value.fotos.imagem[0]" />
+                    <nuxt-link :to="`/estoque/${value.id}`" class="home_header_highlights_card_img">
+                        <img :src="value.fotos.imagem[0]" />
+                        <div class="home_header_highlights_card_img_plus">
+                            <span>Saiba mais</span>
+                            <IconsInfo />
                         </div>
-                    </nuxt-link>
-                    <nuxt-link :to="`/estoque/${value.id}`" class="home_header_highlights_card_plus">
-                        <span>Saiba mais</span>
-                        <IconsInfo />
                     </nuxt-link>
                 </div>
             </div>
@@ -147,37 +145,34 @@
             }
 
             header {
-                max-width: 50rem;
+                max-width: 40rem;
         
                 h1 {
-                    line-height: 1;
-                    margin: 1rem 0;
-                    font-weight: 700;
-                    font-size: 3.8rem;
-                    word-spacing: -0.5rem;
-        
                     color: $p-500;
+                    line-height: 1.1;
+                    font-weight: bold;
+                    font-size: 3.2rem;
+                    word-spacing: -0.5rem;
+                    margin: .5rem 0 2rem 0;
                 }
         
                 p {
-                    font-size: 2.6rem;
+                    font-size: 2.2rem;
                     font-family: $ff-s;
                     color: $gray-500;
                 }
         
                 h3 {
                     font-size: 2rem;
-                    font-weight: 700;
+                    font-weight: bold;
                     color: $s-400;
                 }
         
                 a {
                     display: flex;
                     align-items: center;
-                    padding: 0.5rem;
                     margin-top: 2rem;
                     margin-bottom: 4rem;
-                    width: auto;
         
                     &:hover {
                         filter: brightness(1.2);
@@ -189,18 +184,19 @@
                     }
         
                     span {
-                        font-size: 1.6rem;
-                        font-weight: 600;
-                        color: $p-600;
+                        font-size: 1.8rem;
+                        font-weight: bold;
+                        color: $p-500;
                     }
         
                     div {
-                        background-color: $p-500;
+                        padding: 1.2rem;
                         margin-right: 1rem;
-                        padding: 1rem;
+                        border-radius: .5rem;
+                        background-color: $p-500;
         
                         svg {
-                            fill: $p-100;
+                            fill: $white;
                         }
                     }
                 }
@@ -241,8 +237,8 @@
         
                         span {
                             font-weight: bold;
-                            font-size: 1.2rem;
-                            color: $gray-400;
+                            font-size: 1.4rem;
+                            color: $gray-300;
         
                             &:nth-child(2) {
                                 margin: 0 0.5rem;
@@ -253,42 +249,42 @@
                     }
         
                     &_img {
-                        height: 12rem;
-                        border-bottom: solid .8rem $p-500;
-        
                         img {
                             width: 100%;
-                            height: 100%;
+                            height: 12rem;
+                            border-radius: .5rem;
+                            border-bottom: solid .8rem $p-500;
                             object-fit: cover;
                         }
-                    }
-        
-                    &_plus {
-                        display: flex;
-                        padding: 1rem 0 1rem 0;
-                        align-items: center;
-                        justify-content: flex-end;
-                        cursor: pointer;
-        
-                        &:hover {
-        
-                            svg,
+
+                        &_plus {
+                            display: flex;
+                            margin: 1rem 0 1rem 0;
+                            justify-content: flex-end;
+
+                            svg {
+                                height: 1.8rem;
+                                fill: $gray-300;
+                                margin-left: .8rem;
+                            }
+            
                             span {
-                                fill: $p-500;
-                                color: $p-500;
+                                font-size: 1.4rem;
+                                color: $gray-300;
+                                font-weight: bold;
+                                text-align: center;
                             }
                         }
-        
-                        svg {
-                            fill: $gray-400;
-                            margin-left: 0.5rem;
-                        }
-        
-                        span {
-                            font-size: 1rem;
-                            text-align: center;
-                            font-weight: bold;
-                            color: $gray-400;
+
+                        &:hover {
+                            img {
+                                border-bottom: solid .8rem $p-400;
+                            }
+
+                            span, svg {
+                                color: $p-400;
+                                fill: $p-400;
+                            }
                         }
                     }
                 }
@@ -353,10 +349,10 @@
                         height: 20rem;
                         padding: 2rem 1rem;
                         align-items: center;
-                        justify-content: center;
-                        border: solid $gray-500 .1rem;
                         border-radius: 1rem;
                         flex-direction: column;
+                        justify-content: center;
+                        border: solid $gray-500 .1rem;
 
 
                         svg {

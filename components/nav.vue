@@ -64,7 +64,7 @@ nav {
             }
 
             &:hover {
-                color: $p-500;
+                color: $p-400;
             }
         }
 
@@ -82,6 +82,7 @@ nav {
             padding: 2rem;
             cursor: pointer;
             position: fixed;
+            border-radius: .5rem;
             background-color: $p-500;
             z-index: 2;
 
