@@ -41,28 +41,20 @@
             </div>
             <div class="home_razoes_cards">
                 <nuxt-link to="/serviços" class="home_razoes_cards_card">
-                    <div>
                         <iconsShield />
                         <h3>Garantia de até um ano</h3>
-                    </div>
                 </nuxt-link>
                 <nuxt-link to="/serviços" class="home_razoes_cards_card">
-                    <div>
                         <iconsDeal />
                         <h3>Financiamento rápido que cabe no seu bolso</h3>
-                    </div>
                 </nuxt-link>
                 <nuxt-link to="/serviços" class="home_razoes_cards_card">
-                    <div>
                         <iconsGift />
                         <h3>Compre e receba em casa como presente</h3>
-                    </div>
                 </nuxt-link>
                 <nuxt-link to="/serviços" class="home_razoes_cards_card">
-                    <div>
                         <iconsTool />
                         <h3>Carros com certificados de qualidade</h3>
-                    </div>
                 </nuxt-link>
             </div>
         </section>
@@ -331,10 +323,11 @@
             }
 
             &_cards {
-                gap: 1rem;
+                gap: 2rem;
                 width: 100%;
                 display: flex;
                 flex-wrap: wrap;
+                margin: 4rem 0 0 0;
 
                 @include sm-up {
                     flex-wrap: nowrap;
@@ -342,43 +335,37 @@
 
                 &_card {
                     width: 15rem;
+                    height: 15rem;
                     flex: 1 1 auto;
+                    display: flex;
+                    padding: 0 2rem;
+                    align-items: center;
+                    flex-direction: column;
+                    justify-content: flex-start;
 
-                    div {
-                        display: flex;
-                        height: 20rem;
-                        padding: 2rem 1rem;
-                        align-items: center;
-                        border-radius: 1rem;
-                        flex-direction: column;
-                        justify-content: center;
-                        border: solid $gray-500 .1rem;
+                    svg {
+                        height: 6rem;
+                        margin-bottom: 1.5rem;
+                        fill: $p-500;
+                        border-bottom: solid .5rem $p-500;
+                        padding: 0 0 1rem 0;
+                    }
 
+                    h3 {
+                        font-size: 1.6rem;
+                        font-weight: bold;
+                        text-align: center;
+                        color: $gray-400;
+                    }
 
+                    &:hover {
                         svg {
-                            width: 4rem;
-                            height: 4rem;
-                            margin-bottom: 1.5rem;
-                            fill: $gray-600;
+                            fill: $p-400;
+                            border-bottom: solid .5rem $p-400;
                         }
 
                         h3 {
-                            font-size: 1.6rem;
-                            font-weight: bold;
-                            text-align: center;
-                            color: $gray-400;
-                        }
-
-                        &:hover {
-                            border: solid $p-500 .1rem;
-                            
-                            svg {
-                                fill: $p-500;
-                            }
-
-                            h3 {
-                                color: $p-400;
-                            }
+                            color: $gray-500;
                         }
                     }
                 }

@@ -48,27 +48,25 @@
 <style lang="scss">
   .services {
     display: flex;
-    flex-direction: column;
     row-gap: 5rem;
-    padding: 4rem 2rem;
+    padding: 6rem 1.5rem;
+    flex-direction: column;
 
     @include sm-up {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      align-items: flex-end;
-      padding: 4rem 2rem;
       gap: 4rem;
+      display: grid;
+      padding: 4rem 2rem;
+      align-items: center;
+      grid-template-columns: repeat(2, 1fr);
     }
 
     @include md {
-      padding: 5rem 10rem;
-      gap: 5rem;
+      grid-template-columns: repeat(3, 1fr);
     }
 
     &_service {
       div {
         display: flex;
-        padding: 2rem 0;
         text-align: center;
         align-items: center;
         flex-direction: column;
@@ -83,13 +81,29 @@
           font-size: 2.5rem;
           font-weight: bold;
           color: $p-500;
-          margin: 1rem 0;
         }
 
         p {
           font-family: $ff-s;
-          font-size: 2rem;
+          font-size: 2.2rem;
           color: $gray-500;
+          margin: 1rem 0 2rem 0;
+        }
+
+        @include sm-up {      
+          justify-content: flex-start;
+
+          svg {
+            height: 4rem;
+          }
+
+          h3 {
+            font-size: 1.6rem;
+          }
+
+          p {
+            font-size: 1.6rem;
+          }
         }
       }
 
@@ -98,6 +112,10 @@
         height: 14rem;
         object-fit: cover;
         border-bottom: solid .8rem $p-500;
+
+        @include md {
+          height: 10rem;
+        }
       }
     }
   }

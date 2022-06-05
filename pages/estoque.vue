@@ -256,8 +256,8 @@ export default {
                     position: absolute;
                     bottom: 0;
                     justify-content: space-between;
-                    background: linear-gradient(360deg, rgba(207, 199, 196, 0.9) 0%, rgba(221, 217, 216, 0.8) 100%);
-                    padding: 1rem 2rem;
+                    background: linear-gradient(0deg, rgba(207, 199, 196, 0.8) 30%, rgba(221, 217, 216, 0.5) 100%);
+                    padding: 1.2rem 2rem;
     
                     div {
                         display: flex;
@@ -294,12 +294,12 @@ export default {
                     top: 0;
                     right: 0;
                     color: $white;
-                    font-size: 1.2rem;
+                    font-size: 1.8rem;
                     margin-right: 1rem;
                     font-weight: bold;
                     position: absolute;
                     background-color: $p-500;
-                    padding: 1.2rem 1.2rem 1.8rem 1.2rem;
+                    padding: 1rem 1rem 1.8rem 1rem;
                     clip-path: polygon(50% 85%, 100% 100%, 100% 0, 0 0, 0 100%);
                 }
             }
