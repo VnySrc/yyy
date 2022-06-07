@@ -18,17 +18,13 @@
         </select>
     </div>
     <div class="estoque_cards">
-        <div v-for="value in cars" :key="value.id" class="estoque_cards_card">
+        <nuxt-link :to="`/estoque/${value.id}`" v-for="value in cars" :key="value.id" class="estoque_cards_card">
             <div class="estoque_cards_card_brand">
                 <h4>{{ value.marca_descricao }}</h4>
                 <h5>{{ value.modelo_descricao }}</h5>
             </div>
             <div class="estoque_cards_card_info">
-                <div class="estoque_cards_card_info_img">
-                    <nuxt-link :to="`/estoque/${value.id}`">
-                        <img :src="value.fotos.imagem[0]" />
-                    </nuxt-link>
-                </div>
+                <img :src="value.fotos.imagem[0]" />
                 <div class="estoque_cards_card_info_stats">
                     <div>
                         <IconsDate />
@@ -39,8 +35,8 @@
                         <span>{{ value.combustivel_descricao | gas }}</span>
                     </div>
                     <div>
-                        <IconsSpeed />
-                        <span>{{ value.kilometragem | km }}</span>
+                        <IconsDolar />
+                        <span>{{ value.valor_final | price }}</span>
                     </div>
                     <nuxt-link :to="`/estoque/${value.id}`">
                         <div class="estoque_cards_card_info_stats_plus">
@@ -49,9 +45,8 @@
                         </div>
                     </nuxt-link>
                 </div>
-                <span class="estoque_cards_card_info_price">{{ value.valor_final | price }}</span>
             </div>
-        </div>
+        </nuxt-link>
     </div>
 </div>
 </template>
@@ -76,7 +71,7 @@ export default {
             } else { return value }
         },
         price(value) {
-            return Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(value)
+            return Intl.NumberFormat('pt-BR').format(value)
         },
         km(value) {
             return Intl.NumberFormat('pt-BR', { style: 'unit', unit: 'kilometer' }).format(value)
@@ -214,20 +209,18 @@ export default {
             margin: 2rem 0;
             flex-wrap: nowrap;
 
-            position: relative;
-
             &_brand {
-                border-left: solid 1rem $p-500;
-                padding-left: 1rem;
+                border-left: solid .8rem $p-500;
+                padding: .5rem 1rem;
 
                 h4 {
-                    color: $gray-500;
-                    font-size: 1.2rem;
+                    color: $s-400;
+                    font-size: 1.4rem;
                 }
 
                 h5 {
-                    font-size: 3.2rem;
-                    color: $p-600;
+                    font-size: 3.4rem;
+                    color: $p-500;
                 }
             }
 
@@ -239,15 +232,11 @@ export default {
                 flex-direction: column;
                 position: relative;
                 border-radius: .5rem;
-                box-shadow: .5rem .5rem 4rem rgba(0, 0, 0, 0.2);
+                box-shadow: .2rem .2rem 2rem rgba(0, 0, 0, 0.1);
 
-                &_img {
-                    display: flex;
-                    
-                    img {
-                        width: 100%;
-                        object-fit: cover;
-                    }
+                img {
+                    width: 100%;
+                    object-fit: cover;
                 }
 
                 &_stats {
@@ -256,55 +245,51 @@ export default {
                     position: absolute;
                     bottom: 0;
                     justify-content: space-between;
-                    background: linear-gradient(0deg, rgba(207, 199, 196, 0.8) 30%, rgba(221, 217, 216, 0.5) 100%);
+                    background: linear-gradient(10deg, rgb(234, 220, 204) 0%, rgb(237, 225, 212) 100%);
                     padding: 1.2rem 2rem;
     
                     div {
                         display: flex;
                         align-items: center;
                         flex-wrap: nowrap;
-    
-                        &:hover {
-    
-                            span,
-                            svg {
-                                fill: $p-600;
-                                color: $p-600;
-                            }
-                        }
                     }
     
                     svg {
-                        fill: $gray-600;
+                        fill: #7C605A;
                     }
     
                     span {
                         padding-left: 0.8rem;
                         font-weight: bold;
                         font-size: 1rem;
-                        color: $gray-600;
+                        color: #7C605A;
                     }
     
                     &_plus {
                         cursor: pointer;
                     }
                 }
+            }
 
-                &_price {
-                    top: 0;
-                    right: 0;
-                    color: $white;
-                    font-size: 1.8rem;
-                    margin-right: 1rem;
-                    font-weight: bold;
-                    position: absolute;
-                    background-color: $p-500;
-                    padding: 1rem 1rem 1.8rem 1rem;
-                    clip-path: polygon(50% 85%, 100% 100%, 100% 0, 0 0, 0 100%);
+            &:hover {
+                .estoque_cards_card_brand {
+                    border-left: solid .8rem $p-400;
+
+                    h4 {
+                        color: $s-300;
+                    }
+
+                    h5 {
+                        color: $p-400
+                    }
                 }
+
+                .estoque_cards_card_info {
+                    outline: solid .4rem $p-400;
+                }
+
             }
         }
-
     }
 }
 </style>

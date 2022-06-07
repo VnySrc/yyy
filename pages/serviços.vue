@@ -112,6 +112,7 @@
         height: 14rem;
         object-fit: cover;
         border-bottom: solid .8rem $p-500;
+        border-radius: .5rem;
 
         @include md {
           height: 10rem;

@@ -99,7 +99,7 @@
 
         h2 {
           border-right: solid $p-500 .8rem;
-          padding-right: 1rem;
+          padding: .5rem 1rem;
         }
 
         @include md {
@@ -158,7 +158,7 @@
 
         h2 {
           border-left: solid $p-500 .8rem;
-          padding-left: 1rem;
+          padding: .5rem 1rem;
         }
 
         &_numbers {
@@ -211,7 +211,7 @@
     &_shop {
       
       &_title {
-        padding: 0 1rem;
+        padding: .5rem 1rem;
         border-left: solid $p-500 .8rem;
 
         span {

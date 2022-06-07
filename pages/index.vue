@@ -13,23 +13,20 @@
                 </nuxt-link>
             </header>
             <div class="home_header_highlights">
-                <div v-for="value in car" :key="value.id" class="home_header_highlights_card">
-                    <div class="home_header_highlights_card_info">
-                        <h4>{{ value.marca_descricao }}</h4>
-                        <h5>{{ value.modelo_descricao }}</h5>
-                        <div>
+                <nuxt-link :to="`/estoque/${value.id}`" v-for="value in car" :key="value.id" class="home_header_highlights_card">
+                    <h4>{{ value.marca_descricao }}</h4>
+                    <h5>{{ value.modelo_descricao }}</h5>
+                    <div class="home_header_highlights_card_img">
+                        <div class="home_header_highlights_card_img_stats">
                             <span>{{ value.ano_fabricacao_descricao }}</span>
+                            <span>|</span>
+                            <span>{{ value.combustivel_descricao | gas }}</span>
+                            <span>|</span>
                             <span>{{ value.valor_final | price }}</span>
                         </div>
-                    </div>
-                    <nuxt-link :to="`/estoque/${value.id}`" class="home_header_highlights_card_img">
                         <img :src="value.fotos.imagem[0]" />
-                        <div class="home_header_highlights_card_img_plus">
-                            <span>Saiba mais</span>
-                            <IconsInfo />
-                        </div>
-                    </nuxt-link>
-                </div>
+                    </div>
+                </nuxt-link>
             </div>
         </section>
         <section class="home_razoes">
@@ -59,35 +56,27 @@
             </div>
         </section>
         <section class="home_blog">
-            <div class="home_blog_cards">
-                <div class="home_blog_cards_card">
-                    <nuxt-link to="/sobre" class="home_blog_cards_card_main">
-                        <nuxt-img format="webp" src="/img/avenida.jpg" />
-                    </nuxt-link>
-                    <div class="home_blog_cards_card_title">
-                        <h5>Avenida Veículos</h5>
-                        <h4>Conheça nossa história de sucesso!</h4>
-                    </div>
+            <nuxt-link to="/sobre" class="home_blog_card">
+                <nuxt-img format="webp" src="/img/avenida.jpg" />
+                <div class="home_blog_card_title">
+                    <h5>Avenida Veículos</h5>
+                    <h4>Conheça nossa história de sucesso!</h4>
                 </div>
-                <div class="home_blog_cards_card">
-                    <nuxt-link to="/sobre" class="home_blog_cards_card_main">
-                        <nuxt-img format="webp" src="/img/avenida.jpg" />
-                    </nuxt-link>
-                    <div class="home_blog_cards_card_title">
-                        <h5>Avenida Veículos</h5>
-                        <h4>Conheça nossa história de sucesso!</h4>
-                    </div>
+            </nuxt-link>
+            <nuxt-link to="/sobre" class="home_blog_card">
+                <nuxt-img format="webp" src="/img/avenida.jpg" />
+                <div class="home_blog_card_title">
+                    <h5>Avenida Veículos</h5>
+                    <h4>Conheça nossa história de sucesso!</h4>
                 </div>
-                <div class="home_blog_cards_card">
-                    <nuxt-link to="/sobre" class="home_blog_cards_card_main">
-                        <nuxt-img format="webp" src="/img/avenida.jpg" />
-                    </nuxt-link>
-                    <div class="home_blog_cards_card_title">
-                        <h5>Avenida Veículos</h5>
-                        <h4>Conheça nossa história de sucesso!</h4>
-                    </div>
+            </nuxt-link>
+            <nuxt-link to="/sobre" class="home_blog_card">
+                <nuxt-img format="webp" src="/img/avenida.jpg" />
+                <div class="home_blog_card_title">
+                    <h5>Avenida Veículos</h5>
+                    <h4>Conheça nossa história de sucesso!</h4>
                 </div>
-            </div>
+            </nuxt-link>
         </section>
     </div>
 </template>
@@ -103,6 +92,11 @@
             }
         },
         filters: {
+            gas(value) {
+                if ( value === `Gasolina e álcool` ) {
+                    return `Flex`
+                } else { return value }
+            },
             price(value) {
                 return Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(value)
             }
@@ -128,8 +122,12 @@
         padding: 2rem 1.4rem;
         max-width: 120rem;
 
+        @include md {
+            padding: 2rem 2rem 8rem 2rem;
+        }
+
         &_header {
-            margin-top: 2rem;
+            margin-top: 4rem;
 
             @include md {
                 display: flex;
@@ -195,89 +193,79 @@
             }
         
             &_highlights {
-                display: flex;
-                gap: 1rem;
+                gap: 2rem;
                 display: flex;
                 flex-wrap: wrap;
 
+                @include sm-up {
+                    flex-wrap: nowrap;
+                }
+
                 @include md {
                     flex-wrap: wrap;
-                    max-width: 48rem;
-                    gap: 2rem;
+                    gap: 4rem 3rem;
+                    max-width: 46rem;
                 }
         
                 &_card {
                     flex: 1 1 auto;
-                    min-width: 15rem;
-        
-                    overflow: hidden;
-                    position: relative;
-        
-                    &_info {
-                        padding-bottom: 1rem;
-        
-                        h4 {
-                            color: $gray-500;
-                            font-size: 1.2rem;
-                        }
-        
-                        h5 {
-                            font-size: 2.8rem;
-                            margin: 0 0 .5rem 0;
-                            color: $p-500;
-                        }
-        
-                        span {
-                            font-weight: bold;
-                            font-size: 1.4rem;
-                            color: $gray-300;
-        
-                            &:nth-child(2) {
-                                margin: 0 0.5rem;
-                                padding: 0 0.5rem;
-                                border-left: solid 0.1rem $gray-400;
-                            }
-                        }
+                    width: 45%;
+
+                    h4 {
+                        color: $s-400;
+                        font-size: 1.2rem;
+                    }
+    
+                    h5 {
+                        font-size: 2.8rem;
+                        color: $p-500;
                     }
         
                     &_img {
+                        overflow: hidden;
+                        position: relative;
+                        border-radius: .5rem;
+                        margin: 1rem 0 0 0;
+                        box-shadow: .1rem .1rem 1rem rgba(0, 0, 0, 0.1);
+                        
                         img {
                             width: 100%;
-                            height: 12rem;
-                            border-radius: .5rem;
-                            border-bottom: solid .8rem $p-500;
+                            height: 15rem;
                             object-fit: cover;
+                            object-position: bottom;
                         }
 
-                        &_plus {
+                        &_stats {
+                            bottom: 0;
+                            width: 100%;
                             display: flex;
-                            margin: 1rem 0 1rem 0;
-                            justify-content: flex-end;
-
-                            svg {
-                                height: 1.8rem;
-                                fill: $gray-300;
-                                margin-left: .8rem;
-                            }
-            
+                            position: absolute;
+                            padding: .5rem 1rem;
+                            justify-content: space-around;
+                            background: linear-gradient(10deg, rgb(234, 220, 204) 0%, rgb(237, 225, 212) 100%);
+        
                             span {
-                                font-size: 1.4rem;
-                                color: $gray-300;
                                 font-weight: bold;
-                                text-align: center;
+                                font-size: 1rem;
+                                color: #7C605A;
                             }
                         }
+                    }
 
-                        &:hover {
-                            img {
-                                border-bottom: solid .8rem $p-400;
-                            }
-
-                            span, svg {
-                                color: $p-400;
-                                fill: $p-400;
-                            }
+                    &:hover {
+                        h4 {
+                            color: $s-300;
                         }
+
+                        h5 {
+                            color: $p-400;
+                        }
+
+                        .home_header_highlights_card_img {
+                            outline: solid .3rem $p-400;
+                        }
+
+                        
                     }
                 }
             }
@@ -286,10 +274,10 @@
         &_razoes {
             display: flex;
             flex-direction: column;
-            margin-top: 4rem;
+            margin: 6rem 0;
 
-            @include sm-up {
-                padding: 2rem;
+            @include md {
+                margin: 8rem 0;
             }
 
             &_text {
@@ -373,67 +361,67 @@
         }
 
         &_blog {
-            
-            h1 {
-                color: $p-600;
-                font-size: 2.4rem;
-                font-weight: 700;
-                text-align: center;
-                margin-bottom: 1rem;
-                margin-top: 4rem;
+            @include sm-up {
+                display: flex;
+                gap: 1rem;
             }
 
-            &_cards {
+            @include md {
+                gap: 3rem;
+            }
+
+            &_card {
+                margin: 4rem 0;
+                gap: 0.5rem;
+                display: flex;
+                flex-direction: column;
 
                 @include sm-up {
-                    display: flex;
-                    gap: 1rem;
-                    padding: 2rem;
+                    margin: 0;
                 }
 
-                @include md {
-                    gap: 4rem;
-                }
+                &_title {
+                    text-align: left;
+                    font-weight: bold;
+                    margin: 1rem 0 0 0;
+                    padding: .5rem 1rem;
+                    border-left: solid $p-500 .8rem;
 
-                &_card {
-                    gap: 0.5rem;
-                    margin: 4rem 0;
-                    display: flex;
-                    flex-direction: column;
-
-                    &_title {
-                        margin: 1rem 0;
-                        padding: 0 1rem;
-                        text-align: left;
-                        border-left: solid $p-500 .8rem;
-
-                        h5 {
-                            font-size: 1.2rem;
-                            font-weight: bold;
-                            color: $gray-500;
-                            margin-bottom: .5rem;
-                        }
-
-                        h4 {
-                            font-size: 2.2rem;
-                            font-weight: bold;
-                            line-height: 1;
-                            color: $p-500;
-                        }
+                    h5 {
+                        font-size: 1.4rem;
+                        color: $s-400;
+                        margin-bottom: .5rem;
                     }
 
-                    &_main {
-                        display: flex;
-                        flex-direction: column;
-                        gap: .5rem;
+                    h4 {
+                        font-size: 2.4rem;
+                        line-height: 1;
+                        color: $p-500;
+                    }
+                }
 
-                        height: 20rem;
+                img {
+                    height: 18rem;
+                    object-fit: cover;
+                    border-radius: .5rem;
+                    box-shadow: .1rem .1rem 1rem rgba(0, 0, 0, 0.1);
+                }
 
-                        img {
-                            width: 100%;
-                            height: 100%;
-                            object-fit: cover;
-                        }
+                &:hover {
+                    div {
+                        border-left: solid $p-400 .8rem;
+                    }
+
+                    img {
+                        outline: solid .4rem $p-400;
+                    }
+
+                    h4 {
+                        color: $p-400;
+                    }
+
+                    h5 {
+                        color: $s-300;
                     }
                 }
             }

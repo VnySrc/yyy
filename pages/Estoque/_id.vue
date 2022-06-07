@@ -1,32 +1,34 @@
 <template>
     <div class="cars">
         <div class="cars_info">
-            <swiper
-              class="swiper gallery-top"
-              :options="swiperOptionTop"
-              ref="swiperTop"
-            >
-                <swiper-slide v-for="(value, index) in carImgs" :key="index" class="cars_info_imgs">
-                    <img :src="value" />
-                </swiper-slide>
-                <div
-                    class="swiper-button-next swiper-button-white"
-                    slot="button-next"
-                ></div>
-                <div
-                    class="swiper-button-prev swiper-button-white"
-                    slot="button-prev"
-                ></div>
-            </swiper>
-            <swiper
-              class="swiper gallery-thumbs"
-              :options="swiperOptionThumbs"
-              ref="swiperThumbs"
-            >
-                <swiper-slide v-for="(value, index) in carImgs" :key="index" class="cars_info_thumbs">
-                    <img :src="value" />
-                </swiper-slide>
-            </swiper>
+            <div class="cars_info_gallery">
+                <swiper
+                class="swiper gallery-top"
+                :options="swiperOptionTop"
+                ref="swiperTop"
+                >
+                    <swiper-slide v-for="(value, index) in carImgs" :key="index" class="cars_info_gallery_imgs">
+                        <img :src="value" />
+                    </swiper-slide>
+                    <div
+                        class="swiper-button-next swiper-button-white"
+                        slot="button-next"
+                    ></div>
+                    <div
+                        class="swiper-button-prev swiper-button-white"
+                        slot="button-prev"
+                    ></div>
+                </swiper>
+                <swiper
+                class="swiper gallery-thumbs"
+                :options="swiperOptionThumbs"
+                ref="swiperThumbs"
+                >
+                    <swiper-slide v-for="(value, index) in carImgs" :key="index" class="cars_info_gallery_thumbs">
+                        <img :src="value" />
+                    </swiper-slide>
+                </swiper>
+            </div>
             <div class="cars_info_brand">
                 <div class="cars_info_brand_titles">
                     <h2>{{ car.marca_descricao }}</h2>
@@ -37,44 +39,48 @@
                     <div class="cars_info_brand_details_price">
                         <h3>{{ car.valor_final | price }}</h3>
                     </div>
-                    <div class="cars_info_brand_details_zap">
-                        <nuxt-link to="/contato"><IconsWhatsapp /></nuxt-link>
-                    </div>
+                    <nuxt-link to="/contato" class="cars_info_brand_details_zap">
+                        <IconsWhatsapp />
+                    </nuxt-link>
                 </div>
             </div>
         </div>
         <div class="cars_table">
-            <h4>Especificações técnicas</h4>
-            <table>
-                <tbody>
-                    <tr>
-                        <th>Ano</th>
-                        <td>{{ car.ano_fabricacao_descricao }}</td>
-                    </tr>
-                    <tr>
-                        <th>Kilometragem</th>
-                        <td>{{ car.kilometragem | km }}</td>
-                    </tr>
-                    <tr>
-                        <th>Combustível</th>
-                        <td>{{ car.combustivel_descricao }}</td>
-                    </tr>
-                    <tr>
-                        <th>Transmisão</th>
-                        <td>{{ car.cambio_descricao }}</td>
-                    </tr>
-                    <tr>
-                        <th>Portas</th>
-                        <td>{{ car.porta_id }}</td>
-                    </tr>
-                    <tr>
-                        <th>Cor</th>
-                        <td>{{ car.cor_descricao }}</td>
-                    </tr>
-                </tbody>
-            </table>
-            <h4>Observações</h4>
-            <p>{{ car.observacao }}</p>
+            <div class="cars_table_specs">
+                <h4>Especificações técnicas</h4>
+                <table>
+                    <tbody>
+                        <tr>
+                            <th>Ano</th>
+                            <td>{{ car.ano_fabricacao_descricao }}</td>
+                        </tr>
+                        <tr>
+                            <th>Kilometragem</th>
+                            <td>{{ car.kilometragem | km }}</td>
+                        </tr>
+                        <tr>
+                            <th>Combustível</th>
+                            <td>{{ car.combustivel_descricao }}</td>
+                        </tr>
+                        <tr>
+                            <th>Transmisão</th>
+                            <td>{{ car.cambio_descricao }}</td>
+                        </tr>
+                        <tr>
+                            <th>Portas</th>
+                            <td>{{ car.porta_id }}</td>
+                        </tr>
+                        <tr>
+                            <th>Cor</th>
+                            <td>{{ car.cor_descricao }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="cars_table_obs">
+                <h4>Observações</h4>
+                <p>{{ car.observacao }}</p>
+            </div>
         </div>
     </div>
 </template>
@@ -169,51 +175,73 @@ export default {
     }
 
     .cars {
-        padding: 4rem 2rem;
+        padding: 4rem 1.5rem;
+
+        @include md {
+            display: flex;
+            padding: 4rem 4rem 6rem 4rem;
+            gap: 6rem;
+        }
 
         &_info {
+            @include md {
+                width: 45%;
+            }
 
-            &_imgs {
-                img {
-                    width: 100%;
+            &_gallery {
+    
+
+                &_imgs {
                     height: 28rem;
-                    object-fit: cover;
 
                     @include sm-up {
-                        height: 50rem;
+                        height: 40rem;
+                    }
+
+                    @include md {
+                        height: 30rem;
+                    }
+
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        border-radius: .5rem;
+                        object-fit: cover;
+                    }
+                }
+    
+                &_thumbs {
+                    img {
+                        width: 100%;
+                        height: 6rem;
+                        object-fit: cover;
+                        border-radius: .5rem;
                     }
                 }
             }
 
-            &_thumbs {
-                img {
-                    width: 100%;
-                    height: 8rem;
-                    object-fit: cover;
-                }
-            }
     
             &_brand {
                 
                 &_titles {
-                    padding-left: 1rem;
                     margin: 1rem 0;
-                    border-left: solid $p-500 1rem;
+                    padding-left: 1rem;
+                    border-left: solid $p-500 .8rem;
 
                     h2 {
-                        color: $gray-600;
-                        font-size: 1.5rem;
+                        color: $s-400;
+                        font-size: 1.4rem;
                     }
         
                     h1 {
-                        font-size: 3.5rem;
-                        color: $p-600;
-                        margin: 0 0 .5rem 0;
+                        color: $p-500;
+                        font-size: 3.4rem;
+                        margin: 0 0 .8rem 0;
                     }
         
                     span {
                         font-family: $ff-s;
-                        font-size: 1.4rem;
+                        font-size: 1.5rem;
                         color: $gray-500;
                     }
                 }
@@ -225,6 +253,7 @@ export default {
                     &_price {
                         width: 100%;
                         padding: 1.5rem 0;
+                        border-radius: .5rem;
                         background-color: $p-500;
 
                         h3 {
@@ -236,11 +265,16 @@ export default {
 
                     &_zap {
                         padding: 1.5rem 0;
-                        background-color: $p-400;
+                        border-radius: .5rem;
+                        background-color: #0FD34A;
 
                         svg {
                             fill: $white;
                             height: 2rem;
+                        }
+
+                        &:hover {
+                            background-color: #10E851;
                         }
                     }
                 }
@@ -250,43 +284,67 @@ export default {
 
 
         &_table {
-            margin: 2rem 0;
-            font-family: $ff-s;
-            font-size: 1.4rem;
+            margin: 4rem 0;
+
+            @include md {
+                margin: 0;
+            }
 
             h4 {
-                text-align: right;
-                color: $p-600;
-                font-size: 2rem;
-                margin: 4rem 0;
+                color: $s-400;
+                font-size: 2.2rem;
             }
 
-            p {
-                border-right: solid $p-500 1rem;
-                padding-right: 1rem;
-                text-align: right;
-            }
+            &_specs {
+                margin: 0 0 4rem 0;
 
-            table {
-                width: 100%;
-                table-layout: fixed;
-                border-collapse: collapse;
-                text-align: center;
+                h4 {
+                    padding: .5rem 1rem;
+                    text-align: left;
+                    border-left: solid $s-400 .5rem;
+                    margin: 0 0 4rem 0;
+                }
 
-                tbody {
-                    tr {
-                        th {
-                            padding: 1rem;
-                            color: $p-600;
-                            border-bottom: .2rem $p-500 solid;
-                        }
+                table {
+                    width: 100%;
+                    table-layout: fixed;
+                    border-collapse: collapse;
+                    text-align: center;
+                    font-size: 1.4rem;
+                    font-family: $ff-s;
     
-                        td {
-                            border-bottom: .2rem $p-500 solid;
-                            color: $gray-600;
-                            padding: 1rem;
+                    tbody {
+                        tr {
+                            th {
+                                padding: 1rem;
+                                color: $gray-500;
+                                border-bottom: .2rem $gray-200 solid;
+                                border-right: .2rem $gray-200 solid;
+                            }
+        
+                            td {
+                                border-bottom: .2rem $gray-200 solid;
+                                color: $gray-500;
+                                padding: 1rem;
+                            }
                         }
                     }
+                }
+            }
+
+            &_obs {
+                text-align: right;
+                
+                h4 {
+                    padding: .5rem 1rem;
+                    border-right: solid $s-400 .5rem;
+                    margin: 0 0 2rem 0;
+                }
+
+                p {
+                    font-size: 1.4rem;
+                    font-family: $ff-s;
+                    color: $gray-500;
                 }
             }
         }

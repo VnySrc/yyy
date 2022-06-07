@@ -82,7 +82,6 @@ nav {
             padding: 2rem;
             cursor: pointer;
             position: fixed;
-            border-radius: .5rem;
             background-color: $p-500;
             z-index: 2;
 
@@ -90,6 +89,7 @@ nav {
                 display: block;
                 position: relative;
                 width: auto;
+                border-radius: .5rem;
             }
 
             &.nuxt-link-exact-active {

@@ -84,7 +84,7 @@ export default {
                 }
         
                 h4 {
-                    font-weight: 600;
+                    font-weight: bold;
                     font-size: 2.4rem;
                     color: $p-500;
                     margin-bottom: 2rem;
@@ -94,10 +94,10 @@ export default {
                     font-size: 1.8rem;
                     font-family: $ff-s;
                     margin: 0.6rem 0;
-                    color: $gray-600;
+                    color: $gray-500;
     
                     &:hover {
-                        color: $p-600;
+                        color: $p-400;
                     }
                 }
         
@@ -108,11 +108,11 @@ export default {
         
                     svg {
                         width: 2.2rem;
-                        fill: $gray-600;
+                        fill: $gray-500;
                         cursor: pointer;
     
                         &:hover {
-                            fill: $p-600;
+                            fill: $p-400;
                         }
                     }
                 }
@@ -124,14 +124,27 @@ export default {
             height: 5rem;
             display: block;
             margin: auto;
-            fill: $gray-500;
+
+            #car {
+                fill: $p-600;
+            }
+
+            #veiculos {
+                fill: $p-600;
+            }
     
             @include sm-up {
                 display: inline;
             }
     
             &:hover {
-                filter: brightness(1.2);
+                #veiculos {
+                    fill: $s-400;
+                }
+
+                #car {
+                    fill: $s-400;
+                }
             }
         }
     
@@ -146,17 +159,17 @@ export default {
             }
     
             a {
-                font-weight: 500;
+                font-weight: bold;
                 font-size: 1.5rem;
-                color: $p-600;
+                color: $p-500;
     
                 &:hover {
-                    filter: brightness(1.2);
+                    color: $p-400;
                 }
             }
         
             div {
-                height: 0.2rem;
+                height: 0.3rem;
                 background-color: $p-500;
                 margin: 1rem 0;
             }
