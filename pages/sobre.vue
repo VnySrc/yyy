@@ -80,7 +80,7 @@
       height: 25rem;
       object-fit: cover;
       margin: 0 0 1rem 0;
-      border-bottom: solid $p-500 .8rem;
+      border-bottom: solid $p-600 .8rem;
 
       @include md {
         max-width: 60rem;
@@ -129,9 +129,9 @@
         h4 {
           font-size: 2rem;
           text-align: center;
-          color: $p-500;
+          color: $p-600;
           padding: 1rem;
-          border-bottom: solid .5rem $p-500;
+          border-bottom: solid .5rem $p-600;
         }
       }
     }
@@ -153,9 +153,9 @@
 
         h4 {
           font-size: 2rem;
-          color: $p-500;
+          color: $p-600;
           padding: 1rem;
-          border-bottom: solid .5rem $p-500;
+          border-bottom: solid .5rem $p-600;
         }
       }
       

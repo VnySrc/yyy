@@ -27,15 +27,15 @@
 
 <style lang="scss">
 #veiculos {
-    fill: $s-400;
+    fill: $s-500;
 }
 
 #car {
-    fill: $s-400;
+    fill: $s-500;
 }
 
 #avenida {
-    fill: $p-500;
+    fill: $p-600;
 }
 
 </style>

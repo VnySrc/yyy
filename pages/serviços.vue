@@ -51,36 +51,37 @@
     row-gap: 5rem;
     padding: 6rem 1.5rem;
     flex-direction: column;
+    justify-content: center;
 
     @include sm-up {
-      gap: 4rem;
-      display: grid;
-      padding: 4rem 2rem;
-      align-items: center;
-      grid-template-columns: repeat(2, 1fr);
-    }
-
-    @include md {
-      grid-template-columns: repeat(3, 1fr);
+      gap: 8rem 4rem;
+      flex-wrap: wrap;
+      flex-direction: row;
     }
 
     &_service {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      @include sm-up {
+        max-width: 30rem;
+      }
+
       div {
-        display: flex;
         text-align: center;
-        align-items: center;
-        flex-direction: column;
 
         svg {
           height: 6rem;
           margin-bottom: 1.5rem;
-          fill: $p-500;
+          fill: $p-600;
         }
 
         h3 {
           font-size: 2.5rem;
           font-weight: bold;
-          color: $p-500;
+          color: $p-600;
         }
 
         p {
@@ -91,8 +92,6 @@
         }
 
         @include sm-up {      
-          justify-content: flex-start;
-
           svg {
             height: 4rem;
           }
@@ -111,8 +110,7 @@
         width: 100%;
         height: 14rem;
         object-fit: cover;
-        border-bottom: solid .8rem $p-500;
-        border-radius: .5rem;
+        border-bottom: solid .8rem $p-600;
 
         @include md {
           height: 10rem;

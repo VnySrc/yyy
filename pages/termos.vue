@@ -21,10 +21,10 @@
   h2 {
     font-size: 2.4rem;
     font-weight: bold;
-    color: $p-500;
+    color: $p-600;
     margin-bottom: 2rem;
     padding-left: 1rem;
-    border-left: solid .8rem $p-500;
+    border-left: solid .8rem $p-600;
   }
 
   p {

@@ -27,7 +27,7 @@
             </div>
             <nuxt-link to="/" class="logo"><IconsLogo class="logoFlat"/></nuxt-link>
             <div class="cabeçalho">
-                <a :href="links.map" target="_blank">Av. Visconde de Indaiatuba, 921 , Vila Vitòria 1 - Indaiatuba/SP</a>
+                <a :href="links.map" target="_blank">Av. Visconde de Indaiatuba, 921 , Vila Vitòria - Indaiatuba/SP</a>
                 <div></div>
                 <p>Avenida Veiculos Indaiatuba / T. Bella Vitta da Silva Veiculos LTDA - CNPJ 15.358.908/0001-49</p>
                 <p>Todos os direitos reservados @2022</p>
@@ -86,7 +86,7 @@ export default {
                 h4 {
                     font-weight: bold;
                     font-size: 2.4rem;
-                    color: $p-500;
+                    color: $p-600;
                     margin-bottom: 2rem;
                 }
         
@@ -97,7 +97,7 @@ export default {
                     color: $gray-500;
     
                     &:hover {
-                        color: $p-400;
+                        color: $p-500;
                     }
                 }
         
@@ -112,7 +112,7 @@ export default {
                         cursor: pointer;
     
                         &:hover {
-                            fill: $p-400;
+                            fill: $p-500;
                         }
                     }
                 }
@@ -139,11 +139,11 @@ export default {
     
             &:hover {
                 #veiculos {
-                    fill: $s-400;
+                    fill: $s-500;
                 }
 
                 #car {
-                    fill: $s-400;
+                    fill: $s-500;
                 }
             }
         }
@@ -161,16 +161,16 @@ export default {
             a {
                 font-weight: bold;
                 font-size: 1.5rem;
-                color: $p-500;
+                color: $p-600;
     
                 &:hover {
-                    color: $p-400;
+                    color: $p-500;
                 }
             }
         
             div {
                 height: 0.3rem;
-                background-color: $p-500;
+                background-color: $p-600;
                 margin: 1rem 0;
             }
         

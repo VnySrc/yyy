@@ -55,7 +55,7 @@
                             <td>{{ car.ano_fabricacao_descricao }}</td>
                         </tr>
                         <tr>
-                            <th>Kilometragem</th>
+                            <th>Quilometragem</th>
                             <td>{{ car.kilometragem | km }}</td>
                         </tr>
                         <tr>

@@ -19,9 +19,9 @@
                     <div class="home_header_highlights_card_img">
                         <div class="home_header_highlights_card_img_stats">
                             <span>{{ value.ano_fabricacao_descricao }}</span>
-                            <span>|</span>
+                            <span>-</span>
                             <span>{{ value.combustivel_descricao | gas }}</span>
-                            <span>|</span>
+                            <span>-</span>
                             <span>{{ value.valor_final | price }}</span>
                         </div>
                         <img :src="value.fotos.imagem[0]" />
@@ -138,7 +138,7 @@
                 max-width: 40rem;
         
                 h1 {
-                    color: $p-500;
+                    color: $p-600;
                     line-height: 1.1;
                     font-weight: bold;
                     font-size: 3.2rem;
@@ -149,13 +149,13 @@
                 p {
                     font-size: 2.2rem;
                     font-family: $ff-s;
-                    color: $gray-500;
+                    color: $gray-400;
                 }
         
                 h3 {
                     font-size: 2rem;
                     font-weight: bold;
-                    color: $s-400;
+                    color: $gray-500;
                 }
         
                 a {
@@ -165,25 +165,27 @@
                     margin-bottom: 4rem;
         
                     &:hover {
-                        filter: brightness(1.2);
+                        span {
+                            color: $p-500;
+                        }
         
                         div {
                             outline: 0.2rem solid $p-500;
                             outline-offset: 0.2rem;
+                            background-color: $p-500;
                         }
                     }
         
                     span {
                         font-size: 1.8rem;
                         font-weight: bold;
-                        color: $p-500;
+                        color: $p-600;
                     }
         
                     div {
                         padding: 1.2rem;
                         margin-right: 1rem;
-                        border-radius: .5rem;
-                        background-color: $p-500;
+                        background-color: $p-600;
         
                         svg {
                             fill: $white;
@@ -212,19 +214,18 @@
                     width: 45%;
 
                     h4 {
-                        color: $s-400;
+                        color: $gray-500;
                         font-size: 1.2rem;
                     }
     
                     h5 {
                         font-size: 2.8rem;
-                        color: $p-500;
+                        color: $p-600;
                     }
         
                     &_img {
                         overflow: hidden;
                         position: relative;
-                        border-radius: .5rem;
                         margin: 1rem 0 0 0;
                         box-shadow: .1rem .1rem 1rem rgba(0, 0, 0, 0.1);
                         
@@ -242,27 +243,27 @@
                             position: absolute;
                             padding: .5rem 1rem;
                             justify-content: space-around;
-                            background: linear-gradient(10deg, rgb(234, 220, 204) 0%, rgb(237, 225, 212) 100%);
+                            background: linear-gradient(10deg, $gray-100 0%, $white 100%);
         
                             span {
                                 font-weight: bold;
                                 font-size: 1rem;
-                                color: #7C605A;
+                                color: $gray-500;
                             }
                         }
                     }
 
                     &:hover {
                         h4 {
-                            color: $s-300;
+                            color: $gray-400;
                         }
 
                         h5 {
-                            color: $p-400;
+                            color: $p-500;
                         }
 
                         .home_header_highlights_card_img {
-                            outline: solid .3rem $p-400;
+                            outline: solid .3rem $p-500;
                         }
 
                         
@@ -289,7 +290,7 @@
                 }
 
                 h1 {
-                    color: $p-500;
+                    color: $p-600;
                     line-height: 1;
                     margin: 1rem 0;
                     font-weight: 700;
@@ -300,13 +301,13 @@
                 p {
                     font-size: 2.4rem;
                     font-family: $ff-s;
-                    color: $gray-500;
+                    color: $gray-400;
                 }
 
                 h3 {
                     font-size: 1.8rem;
                     font-weight: 700;
-                    color: $s-400;
+                    color: $gray-500;
                 }
             }
 
@@ -334,8 +335,8 @@
                     svg {
                         height: 6rem;
                         margin-bottom: 1.5rem;
-                        fill: $p-500;
-                        border-bottom: solid .5rem $p-500;
+                        fill: $p-600;
+                        border-bottom: solid .5rem $p-600;
                         padding: 0 0 1rem 0;
                     }
 
@@ -348,8 +349,8 @@
 
                     &:hover {
                         svg {
-                            fill: $p-400;
-                            border-bottom: solid .5rem $p-400;
+                            fill: $p-500;
+                            border-bottom: solid .5rem $p-500;
                         }
 
                         h3 {
@@ -385,43 +386,42 @@
                     font-weight: bold;
                     margin: 1rem 0 0 0;
                     padding: .5rem 1rem;
-                    border-left: solid $p-500 .8rem;
+                    border-left: solid $p-600 .8rem;
 
                     h5 {
                         font-size: 1.4rem;
-                        color: $s-400;
+                        color: $gray-500;
                         margin-bottom: .5rem;
                     }
 
                     h4 {
                         font-size: 2.4rem;
                         line-height: 1;
-                        color: $p-500;
+                        color: $p-600;
                     }
                 }
 
                 img {
                     height: 18rem;
                     object-fit: cover;
-                    border-radius: .5rem;
                     box-shadow: .1rem .1rem 1rem rgba(0, 0, 0, 0.1);
                 }
 
                 &:hover {
                     div {
-                        border-left: solid $p-400 .8rem;
+                        border-left: solid $p-500 .8rem;
                     }
 
                     img {
-                        outline: solid .4rem $p-400;
+                        outline: solid .4rem $p-500;
                     }
 
                     h4 {
-                        color: $p-400;
+                        color: $p-500;
                     }
 
                     h5 {
-                        color: $s-300;
+                        color: $gray-400;
                     }
                 }
             }

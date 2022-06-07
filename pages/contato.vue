@@ -48,7 +48,9 @@
     <div class="contato_shop">
       <div class="contato_shop_title">
         <h2>Visite nossa loja</h2>
-        <span>Segunda à sábado / 08:30 - 18:30</span>
+        <span>Segunda à sexta 8:00 - 18:00</span>
+        <span>|</span>
+        <span>Sábado 08:30 - 18:30</span>
       </div>
       <div class="contato_shop_map">
         <nuxt-img format="webp" src="/img/office/office8.jpg" />
@@ -56,7 +58,7 @@
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3670.161227703695!2d-47.1967446!3d-23.091193099999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cf4b4afcd6dc21%3A0x756a56845440c7b1!2sAvenida%20Ve%C3%ADculos%20Indaiatuba!5e0!3m2!1spt-BR!2sbr!4v1651793602801!5m2!1spt-BR!2sbr"
             style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-          <p>Av. Visconde de Indaiatuba, 921 , Vila Vitòria 1 - Indaiatuba/SP</p>
+          <p>Av. Visconde de Indaiatuba, 921 , Vila Vitòria - Indaiatuba/SP</p>
         </div>
       </div>
     </div>
@@ -81,7 +83,7 @@
 
     h2 {
       font-size: 2.8rem;
-      color: $p-500;
+      color: $p-600;
       margin: 0 0 1rem 0;
     }
 
@@ -98,7 +100,7 @@
         text-align: right;
 
         h2 {
-          border-right: solid $p-500 .8rem;
+          border-right: solid $p-600 .8rem;
           padding: .5rem 1rem;
         }
 
@@ -116,7 +118,7 @@
           margin: 2rem 0 0 0;
 
           svg {
-            height: 4rem;
+            height: 3rem;
 
             &:hover {
               fill: $gray-300;
@@ -157,7 +159,7 @@
         }
 
         h2 {
-          border-left: solid $p-500 .8rem;
+          border-left: solid $p-600 .8rem;
           padding: .5rem 1rem;
         }
 
@@ -212,13 +214,17 @@
       
       &_title {
         padding: .5rem 1rem;
-        border-left: solid $p-500 .8rem;
+        border-left: solid $p-600 .8rem;
 
         span {
           font-family: $ff-s;
           font-size: 1.4rem;
           color: $gray-600;
           margin: .5rem 0;
+
+          &:nth-child(odd) {
+            padding: 0 1rem;
+          }
         }
       }
 
