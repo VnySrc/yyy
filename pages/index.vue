@@ -243,12 +243,12 @@
                             position: absolute;
                             padding: .5rem 1rem;
                             justify-content: space-around;
-                            background: linear-gradient(10deg, $gray-100 0%, $white 100%);
+                            background: linear-gradient(10deg, $gray-600 0%, $gray-800 100%);
         
                             span {
                                 font-weight: bold;
                                 font-size: 1rem;
-                                color: $gray-500;
+                                color: $gray-200;
                             }
                         }
                     }

@@ -124,27 +124,13 @@ export default {
             height: 5rem;
             display: block;
             margin: auto;
-
-            #car {
-                fill: $p-600;
-            }
-
-            #veiculos {
-                fill: $p-600;
-            }
     
             @include sm-up {
                 display: inline;
             }
     
             &:hover {
-                #veiculos {
-                    fill: $s-500;
-                }
-
-                #car {
-                    fill: $s-500;
-                }
+                filter: brightness(1.2);
             }
         }
     

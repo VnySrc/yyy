@@ -287,7 +287,7 @@ export default {
             }
 
             h4 {
-                color: $s-400;
+                color: $gray-600;
                 font-size: 2.2rem;
             }
 
@@ -297,7 +297,7 @@ export default {
                 h4 {
                     padding: .5rem 1rem;
                     text-align: left;
-                    border-left: solid $s-400 .5rem;
+                    border-left: solid $gray-600 .5rem;
                     margin: 0 0 4rem 0;
                 }
 
@@ -333,7 +333,7 @@ export default {
                 
                 h4 {
                     padding: .5rem 1rem;
-                    border-right: solid $s-400 .5rem;
+                    border-right: solid $gray-600 .5rem;
                     margin: 0 0 2rem 0;
                 }
 
