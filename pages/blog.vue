@@ -1,92 +1,98 @@
 <template>
     <section class="blog">
-        <div class="blog_cards">
-            <div class="blog_cards_card">
-                <nuxt-link to="/sobre" class="blog_cards_card_main">
-                    <nuxt-img format="webp" src="/img/avenida.jpg" />
-                </nuxt-link>
-                <div class="blog_cards_card_title">
-                    <h5>Avenida Veículos</h5>
-                    <h4>Conheça nossa história de sucesso!</h4>
-                </div>
+        <nuxt-link to="/sobre" class="blog_card">
+            <nuxt-img format="webp" src="/img/avenida.jpg" />
+            <div class="blog_card_title">
+                <h5>Avenida Veículos</h5>
+                <h4>Conheça nossa história de sucesso!</h4>
             </div>
-            <div class="blog_cards_card">
-                <nuxt-link to="/sobre" class="blog_cards_card_main">
-                    <nuxt-img format="webp" src="/img/avenida.jpg" />
-                </nuxt-link>
-                <div class="blog_cards_card_title">
-                    <h5>Avenida Veículos</h5>
-                    <h4>Conheça a história de sucesso!</h4>
-                </div>
+        </nuxt-link>
+        <nuxt-link to="/sobre" class="blog_card">
+            <nuxt-img format="webp" src="/img/avenida.jpg" />
+            <div class="blog_card_title">
+                <h5>Avenida Veículos</h5>
+                <h4>Conheça nossa história de sucesso!</h4>
             </div>
-            <div class="blog_cards_card">
-                <nuxt-link to="/sobre" class="blog_cards_card_main">
-                    <nuxt-img format="webp" src="/img/avenida.jpg" />
-                </nuxt-link>
-                <div class="blog_cards_card_title">
-                    <h5>Avenida Veículos</h5>
-                    <h4>Conheça a história de sucesso!</h4>
-                </div>
+        </nuxt-link>
+        <nuxt-link to="/sobre" class="blog_card">
+            <nuxt-img format="webp" src="/img/avenida.jpg" />
+            <div class="blog_card_title">
+                <h5>Avenida Veículos</h5>
+                <h4>Conheça nossa história de sucesso!</h4>
             </div>
-        </div>
+        </nuxt-link>
     </section>
 </template>
 
 <style lang="scss">
-    .blog {
+.blog {
+    padding: 4rem 1.5rem;
 
-        &_cards {
-            margin: 0 2rem;
-            
-            @include sm-up {
-                gap: 1rem;
-                display: flex;
+    @include sm-up {
+        padding: 6rem 2rem;
+        display: flex;
+        gap: 1rem;
+    }
+
+    @include md {
+        gap: 3rem;
+    }
+
+    &_card {
+        gap: 0.5rem;
+        margin: 0 0 4rem 0;
+        display: flex;
+        flex-direction: column;
+
+        @include sm-up {
+            margin: 0;
+        }
+
+        &_title {
+            text-align: left;
+            font-weight: bold;
+            margin: 1rem 0 0 0;
+            padding: .5rem 1rem;
+            border-left: solid $p-600 .8rem;
+
+            h5 {
+                font-size: 1.4rem;
+                color: $gray-500;
+                margin-bottom: .5rem;
             }
 
-            @include md {
-                gap: 4rem;
+            h4 {
+                font-size: 2.4rem;
+                line-height: 1;
+                color: $p-600;
+            }
+        }
+
+        img {
+            height: 18rem;
+            object-fit: cover;
+            box-shadow: .1rem .1rem 1rem rgba(0, 0, 0, 0.1);
+        }
+
+        &:hover {
+            div {
+                border-left: solid $p-500 .8rem;
             }
 
-            &_card {
-                margin: 4rem 0;
+            img {
+                outline: solid .4rem $p-500;
+            }
 
-                &_title {
-                    margin: 1rem 0;
-                    padding: 0 1rem;
-                    text-align: left;
-                    border-left: solid $p-500 .8rem;
+            h4 {
+                color: $p-500;
+            }
 
-                    h5 {
-                        font-size: 1.4rem;
-                        font-weight: bold;
-                        color: $gray-500;
-                        margin-bottom: .5rem;
-                    }
-
-                    h4 {
-                        font-size: 2.4rem;
-                        font-weight: bold;
-                        line-height: 1;
-                        color: $p-500;
-                    }
-                }
-
-                &_main {
-                    display: flex;
-                    flex-direction: column;
-                    gap: .5rem;
-
-                    height: 20rem;
-
-                    img {
-                        width: 100%;
-                        height: 100%;
-                        object-fit: cover;
-                    }
-                }
+            h5 {
+                color: $gray-400;
             }
         }
     }
+}
 </style>
 
 <script>

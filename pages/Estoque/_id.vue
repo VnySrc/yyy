@@ -205,7 +205,6 @@ export default {
                     img {
                         width: 100%;
                         height: 100%;
-                        border-radius: .5rem;
                         object-fit: cover;
                     }
                 }
@@ -215,7 +214,6 @@ export default {
                         width: 100%;
                         height: 6rem;
                         object-fit: cover;
-                        border-radius: .5rem;
                     }
                 }
             }
@@ -226,15 +224,15 @@ export default {
                 &_titles {
                     margin: 1rem 0;
                     padding-left: 1rem;
-                    border-left: solid $p-500 .8rem;
+                    border-left: solid $p-600 .8rem;
 
                     h2 {
-                        color: $s-400;
+                        color: $gray-500;
                         font-size: 1.4rem;
                     }
         
                     h1 {
-                        color: $p-500;
+                        color: $p-600;
                         font-size: 3.4rem;
                         margin: 0 0 .8rem 0;
                     }
@@ -253,8 +251,7 @@ export default {
                     &_price {
                         width: 100%;
                         padding: 1.5rem 0;
-                        border-radius: .5rem;
-                        background-color: $p-500;
+                        background-color: $p-600;
 
                         h3 {
                             font-size: 2rem;
@@ -265,8 +262,7 @@ export default {
 
                     &_zap {
                         padding: 1.5rem 0;
-                        border-radius: .5rem;
-                        background-color: #0FD34A;
+                        background-color: $p-500;
 
                         svg {
                             fill: $white;
@@ -274,7 +270,7 @@ export default {
                         }
 
                         &:hover {
-                            background-color: #10E851;
+                            background-color: $p-400;
                         }
                     }
                 }
