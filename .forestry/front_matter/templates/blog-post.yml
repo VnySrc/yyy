@@ -1,4 +1,28 @@
 ---
 label: Blog post
 hide_body: false
-fields: []
+fields:
+- name: titulo
+  type: text
+  config:
+    required: true
+  label: Título
+- name: subtitulo
+  type: text
+  config:
+    required: true
+  label: Subtítulo
+- name: banner
+  type: file
+  config:
+    maxSize: 64
+  label: Banner
+- name: artigo
+  type: textarea
+  default: ''
+  config:
+    required: true
+    wysiwyg: true
+    schema:
+      format: markdown
+  label: Artigo
