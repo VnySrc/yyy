@@ -17,3 +17,5 @@ fields:
   config:
     maxSize: 64
   label: Banner
+pages:
+- static/blog/Manutenção automotiva.md
