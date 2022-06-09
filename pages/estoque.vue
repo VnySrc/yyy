@@ -29,9 +29,11 @@
         class="estoque_cards_card"
       >
         <div class="estoque_cards_card_info">
-          <img :src="value.fotos.imagem[0]" />
-          <div class="estoque_cards_card_info_stats">
+          <div class="estoque_cards_card_info_img">
+            <img :src="value.fotos.imagem[0]" />
             <h2>{{ value.marca_descricao }} {{ value.modelo_descricao }}</h2>
+          </div>
+          <div class="estoque_cards_card_info_stats">
             <div>
               <span>{{ value.ano_fabricacao_descricao }}</span>
               <span>-</span>
@@ -234,12 +236,28 @@ export default {
         position: relative;
         box-shadow: 0.2rem 0.2rem 2rem rgba(0, 0, 0, 0.2);
 
-        img {
-          width: 100%;
-          height: 28rem;
-          object-fit: cover;
-          object-position: center;
+        &_img {
+          position: relative;
+
+          img {
+            width: 100%;
+            height: 28rem;
+            object-fit: cover;
+            object-position: center;
+          }
+
+          h2 {
+            color: $p-600;
+            position: absolute;
+            bottom: 0;
+            font-size: 1.8rem;
+            width: 100%;
+            padding: 1rem 1rem 0 1rem;
+            text-align: center;
+            background-color: $gray-100;
+          }
         }
+
 
         &_stats {
           width: 100%;
@@ -247,16 +265,10 @@ export default {
           background: linear-gradient(10deg, $gray-100 0%, $white 100%);
           text-align: center;
 
-          h2 {
-            color: $p-600;
-            font-size: 1.8rem;
-            margin: 0 0 1rem 0;
-          }
-
           div {
             display: flex;
             justify-content: space-around;
-            padding: 0.8rem 0 0 0;
+            padding: 0.5rem 0 0 0;
             border-top: solid 0.1rem $gray-300;
 
             span {

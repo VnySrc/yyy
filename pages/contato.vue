@@ -48,9 +48,12 @@
     <div class="contato_shop">
       <div class="contato_shop_title">
         <h2>Visite nossa loja</h2>
-        <span>Segunda à sexta 8:00 - 18:00</span>
-        <span>|</span>
-        <span>Sábado 08:30 - 18:30</span>
+        <div>
+          <span>Segunda à sexta 8:00 - 18:00</span>
+          <span>|</span>
+          <span>Sábado 08:30 - 18:30</span>
+        </div>
+        <a :href="links.map" target="_blank">Av. Visconde de Indaiatuba, 921 , Vila Vitòria - Indaiatuba/SP</a>
       </div>
       <div class="contato_shop_map">
         <nuxt-img format="webp" src="/img/office/office8.jpg" />
@@ -58,7 +61,6 @@
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3670.161227703695!2d-47.1967446!3d-23.091193099999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cf4b4afcd6dc21%3A0x756a56845440c7b1!2sAvenida%20Ve%C3%ADculos%20Indaiatuba!5e0!3m2!1spt-BR!2sbr!4v1651793602801!5m2!1spt-BR!2sbr"
             style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-          <p>Av. Visconde de Indaiatuba, 921 , Vila Vitòria - Indaiatuba/SP</p>
         </div>
       </div>
     </div>
@@ -79,11 +81,15 @@
 
 <style lang="scss">
   .contato {
-    padding: 4rem 2rem;
+    padding: 4rem 1.5rem;
+
+    @include sm-up {
+      padding: 6rem 2rem;
+    }
 
     h2 {
-      font-size: 2.8rem;
       color: $p-600;
+      font-size: 2.4rem;
       margin: 0 0 1rem 0;
     }
 
@@ -100,7 +106,7 @@
         text-align: right;
 
         h2 {
-          border-right: solid $p-600 .8rem;
+          border-right: solid $p-600 .6rem;
           padding: .5rem 1rem;
         }
 
@@ -109,47 +115,28 @@
         }
 
         p {
-          font-size: 2rem;
+          font-size: 1.8rem;
           font-family: $ff-s;
           color: $gray-500;
         }
 
         &_icons {
-          margin: 2rem 0 0 0;
+          margin: 3rem 0 0 0;
 
           svg {
-            height: 3rem;
+            height: 2.5rem;
+            fill: $gray-600;
 
             &:hover {
-              fill: $gray-300;
+              fill: $p-500;
             }
-          }
-
-          &_whatsapp {
-            fill: #0DC143;
-          }
-
-          &_facebook {
-            fill: $p-500;
-          }
-
-          &_instagram {
-            fill: $s-400;
-          }
-
-          &_tiktok {
-            fill: $gray-800;
-          }
-
-          &_youtube {
-            fill: $s-500;
           }
         }
       }
 
       &_mail {
         p {
-          font-size: 2rem;
+          font-size: 1.8rem;
           font-family: $ff-s;
           color: $gray-500;
 
@@ -159,14 +146,14 @@
         }
 
         h2 {
-          border-left: solid $p-600 .8rem;
+          border-left: solid $p-600 .6rem;
           padding: .5rem 1rem;
         }
 
         &_numbers {
           display: flex;
           flex-wrap: wrap;
-          gap: 2rem;
+          gap: 1rem 5rem;
           margin: 2rem 0 0 0;
 
           @include md {
@@ -214,22 +201,36 @@
       
       &_title {
         padding: .5rem 1rem;
-        border-left: solid $p-600 .8rem;
+        border-left: solid $p-600 .6rem;
 
-        span {
-          font-family: $ff-s;
-          font-size: 1.4rem;
-          color: $gray-600;
-          margin: .5rem 0;
+        div {
+          margin: 0 0 .4rem 0;
 
-          &:nth-child(odd) {
-            padding: 0 1rem;
+          span {
+            font-family: $ff-s;
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: $gray-600;
           }
+        }
+
+
+        a {
+            font-weight: bold;
+            font-family: $ff-s;
+            font-size: 1.2rem;
+            color: $gray-500;
+
+            &:hover {
+                color: $p-500;
+            }
         }
       }
 
       &_map {
         margin: 2rem 0 0 0;
+        border-bottom: solid $p-600 1rem;
+        box-shadow: 0.2rem 0.2rem 2rem rgba(0, 0, 0, 0.1);
 
         @include sm-up {
           display: flex;
@@ -238,16 +239,11 @@
 
         img {
           width: 100%;
-          height: 20rem;
+          height: 22rem;
           object-fit: cover;
-          border-bottom: solid $p-500 .8rem;
 
           @include sm-up {
-            width: 50rem;
-            height: 20rem;
-            margin-right: 2rem;
-            border-bottom: none;
-            border-right: solid $p-500 .8rem;
+            width: 40%;
           }
         }
 
@@ -256,19 +252,12 @@
 
           iframe {
             width: 100%;
-            height: 20rem;
-            margin: 2rem 0 1rem 0;
+            height: 100%;
+            min-height: 20rem;
 
             @include sm-up {
               margin: 0 0 1rem 0;
             }
-          }
-
-          p {
-            color: $s-400;
-            font-size: 1.2rem;
-            font-weight: bold;
-            text-align: right;
           }
         }
       }

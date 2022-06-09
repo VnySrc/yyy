@@ -65,12 +65,38 @@
       flex-direction: column;
       justify-content: space-between;
 
+      &:hover {
+        svg {
+          fill: $p-500;
+        }
+
+        h3 {
+          color: $p-500;
+        }
+
+        p {
+          color: $gray-600;
+        }
+
+        img {
+          border-bottom: solid .8rem $p-500;
+        }
+      }
+
       @include sm-up {
         max-width: 30rem;
+
+        div {
+          height: 22rem;
+        }
       }
 
       div {
+        display: flex;
         text-align: center;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
 
         svg {
           height: 6rem;
