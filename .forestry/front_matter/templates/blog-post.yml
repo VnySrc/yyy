@@ -7,22 +7,13 @@ fields:
   config:
     required: true
   label: Título
-- name: subtitulo
+- name: tag
   type: text
   config:
     required: true
-  label: Subtítulo
+  label: Tag
 - name: banner
   type: file
   config:
     maxSize: 64
   label: Banner
-- name: artigo
-  type: textarea
-  default: ''
-  config:
-    required: true
-    wysiwyg: true
-    schema:
-      format: markdown
-  label: Artigo
