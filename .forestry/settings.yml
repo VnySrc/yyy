@@ -4,14 +4,10 @@ auto_deploy: false
 admin_path: 
 webhook_url: 
 sections:
-- type: directory
+- type: document
   path: content/banner
   label: banner
-  create: documents
   match: "**/*"
-  new_doc_ext: json
-  templates:
-  - banner
 - type: directory
   path: content/blog
   label: blog
