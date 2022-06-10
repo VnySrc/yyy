@@ -5,6 +5,12 @@ admin_path:
 webhook_url: 
 sections:
 - type: directory
+  path: content/banner
+  label: banner
+  create: documents
+  match: "**/*"
+  new_doc_ext: ".json"
+- type: directory
   path: content/blog
   label: blog
   create: all
