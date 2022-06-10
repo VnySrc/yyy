@@ -1,4 +1,8 @@
 ---
 label: banner
 hide_body: true
-fields: []
+fields:
+- name: banner
+  type: image_gallery
+  config: {}
+  label: Banner
