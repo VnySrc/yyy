@@ -1,5 +1,22 @@
 <template>
     <div class="home">
+        <section class="home_banner">
+            <swiper :options="swiperOption">
+                <swiper-slide v-for="value in banner" :key="value.id" class="home_banner_imgs">
+                    <a :href="value.link">
+                        <nuxt-img format="webp" :src="value.imagem" alt="Destaques" />
+                    </a>
+                </swiper-slide>
+                <div
+                    class="swiper-button-next swiper-button-white"
+                    slot="button-next"
+                ></div>
+                <div
+                    class="swiper-button-prev swiper-button-white"
+                    slot="button-prev"
+                ></div>
+            </swiper>
+        </section>
         <section class="home_header">
             <header>
                 <h3>INDAIATUBA - SP</h3>
@@ -79,14 +96,32 @@
 </template>
 
 <script>
-    const xml2js = require('xml2js'),
-          parser = new xml2js.Parser({ explicitRoot: false, explicitArray: false });
+import { Swiper, SwiperSlide } from "vue-awesome-swiper";
+import "swiper/css/swiper.css";
+
+const xml2js = require('xml2js'),
+        parser = new xml2js.Parser({ explicitRoot: false, explicitArray: false });
 
     export default {
         data() {
             return {
-                cars: []
+                cars: [],
+                swiperOption: {
+                    autoplay: {
+                        delay: 5000
+                    },
+                    spaceBetween: 20,
+                    watchOverflow: true,
+                    navigation: {
+                        nextEl: ".swiper-button-next",
+                        prevEl: ".swiper-button-prev",
+                    }
+                }
             }
+        },
+        components: {
+            Swiper,
+            SwiperSlide,
         },
         filters: {
             gas(value) {
@@ -105,6 +140,7 @@
         },
         async asyncData({ $axios, $content }) {
             const blog = await $content("blog").fetch();
+            const banner = await $content("banner").fetch();
             const xml = await $axios.$get()
             const cars = await parser.parseStringPromise(xml)
                 .then(function (res) {
@@ -113,6 +149,7 @@
             return { 
                 message: "",
                 cars,
+                banner,
                 blog
             }
         }
@@ -121,18 +158,34 @@
 
 <style lang="scss">
     .home {
-        padding: 2rem 1.4rem;
+        padding: 4rem 1.4rem;
         max-width: 120rem;
 
         @include md {
-            padding: 2rem 2rem 8rem 2rem;
+            padding: 2rem 2rem 6rem 2rem;
         }
 
+        &_banner {
+            
+            &_imgs {
+                
+                img {
+                    width: 100%;
+                    aspect-ratio: 3 / 1;
+                    object-fit: cover;
+                    border-bottom: solid $p-600 .8rem;
+                    box-shadow: .5rem .5rem 2rem rgba(0, 0, 0, 0.1);
+                }
+            }
+        }
+
+
         &_header {
-            margin-top: 4rem;
+            margin: 2rem 0 0 0;
 
             @include md {
                 display: flex;
+                margin: 4rem 0 0 0;
                 justify-content: space-around;
             }
 

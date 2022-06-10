@@ -212,16 +212,17 @@ export default {
   &_cards {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 3rem;
 
     @include sm-up {
       display: grid;
+      gap: 2rem;
       grid-template-columns: repeat(2, 1fr);
     }
 
     @include md {
       grid-template-columns: repeat(3, 1fr);
-      gap: 3rem 2rem;
+      gap: 3rem;
     }
 
     &_card {

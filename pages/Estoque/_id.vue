@@ -94,10 +94,6 @@ const xml2js = require('xml2js'),
       parser = new xml2js.Parser({explicitRoot: false, explicitArray: false});
 
 export default {
-    components: {
-        Swiper,
-        SwiperSlide,
-    },
     data() {
       return {
         cars: [],
@@ -128,6 +124,10 @@ export default {
         swiperTop.controller.control = swiperThumbs;
         swiperThumbs.controller.control = swiperTop;
         });
+    },
+    components: {
+        Swiper,
+        SwiperSlide,
     },
     filters: {
         price(value) {
