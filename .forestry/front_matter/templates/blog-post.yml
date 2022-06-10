@@ -18,5 +18,5 @@ fields:
     maxSize: 64
   label: Banner
 pages:
-- content/blog/Manutenção automotiva.md
 - content/blog/cuidados_na_chuva.md
+- content/blog/manutenção_automotiva.md
