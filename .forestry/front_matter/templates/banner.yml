@@ -7,6 +7,7 @@ fields:
   config:
     maxSize: 64
   label: Imagem
+  description: 1200 x 400
 - name: link
   type: text
   config:
