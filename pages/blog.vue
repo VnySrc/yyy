@@ -14,13 +14,6 @@
                 <h4>{{ value.titulo }}</h4>
             </div>
         </nuxt-link>
-        <nuxt-link to="/sobre" class="blog_card">
-            <nuxt-img format="webp" src="/img/avenida.jpg" />
-            <div class="blog_card_title">
-                <h5>Avenida Veículos</h5>
-                <h4>Conheça nossa história de sucesso!</h4>
-            </div>
-        </nuxt-link>
     </section>
 </template>
 
@@ -30,6 +23,7 @@
 
     @include sm-up {
         padding: 6rem 2rem;
+        justify-content: space-between;
         display: flex;
         gap: 1rem;
     }
@@ -46,6 +40,11 @@
 
         @include sm-up {
             margin: 0;
+            width: 23rem;
+        }
+
+        @include md {
+            width: 38rem;
         }
 
         &_title {

@@ -57,24 +57,21 @@
         </section>
         <section class="home_blog">
             <nuxt-link to="/sobre" class="home_blog_card">
-                <nuxt-img format="webp" src="/img/avenida.jpg" />
+                <div class="home_blog_card_img">
+                    <nuxt-img format="webp" src="/img/avenida.jpg" />
+                </div>
                 <div class="home_blog_card_title">
                     <h5>Avenida Veículos</h5>
                     <h4>Conheça nossa história de sucesso!</h4>
                 </div>
             </nuxt-link>
-            <nuxt-link to="/sobre" class="home_blog_card">
-                <nuxt-img format="webp" src="/img/avenida.jpg" />
-                <div class="home_blog_card_title">
-                    <h5>Avenida Veículos</h5>
-                    <h4>Conheça nossa história de sucesso!</h4>
+            <nuxt-link :to="`/blog/${value.slug}`" v-for="value in blog" :key="value.id" class="home_blog_card">
+                <div class="home_blog_card_img">
+                    <nuxt-img format="webp" :src="value.banner"/>
                 </div>
-            </nuxt-link>
-            <nuxt-link to="/sobre" class="home_blog_card">
-                <nuxt-img format="webp" src="/img/avenida.jpg" />
                 <div class="home_blog_card_title">
-                    <h5>Avenida Veículos</h5>
-                    <h4>Conheça nossa história de sucesso!</h4>
+                    <h5>{{ value.tag }}</h5>
+                    <h4>{{ value.titulo }}</h4>
                 </div>
             </nuxt-link>
         </section>
@@ -106,13 +103,18 @@
                 return this.cars.slice(0, 4)
             }
         },
-        async asyncData({ $axios }) {
+        async asyncData({ $axios, $content }) {
+            const blog = await $content("blog").fetch();
             const xml = await $axios.$get()
             const cars = await parser.parseStringPromise(xml)
                 .then(function (res) {
                     return res.veiculo
                 })
-            return { cars }
+            return { 
+                message: "",
+                cars,
+                blog
+            }
         }
     }
 </script>
@@ -364,6 +366,7 @@
         &_blog {
             @include sm-up {
                 display: flex;
+                justify-content: space-between;
                 gap: 1rem;
             }
 
@@ -379,6 +382,11 @@
 
                 @include sm-up {
                     margin: 0;
+                    width: 25rem;
+                }
+
+                @include md {
+                    width: 38rem;
                 }
 
                 &_title {
@@ -390,25 +398,31 @@
 
                     h5 {
                         font-size: 1.4rem;
-                        color: $gray-500;
+                        color: $gray-600;
                         margin-bottom: .5rem;
                     }
 
                     h4 {
-                        font-size: 2.4rem;
+                        font-size: 2.2rem;
                         line-height: 1;
                         color: $p-600;
                     }
                 }
 
-                img {
+                &_img {
                     height: 18rem;
-                    object-fit: cover;
                     box-shadow: .1rem .1rem 1rem rgba(0, 0, 0, 0.1);
+
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                    }
                 }
 
+
                 &:hover {
-                    div {
+                    .home_blog_card_title {
                         border-left: solid $p-500 .8rem;
                     }
 
