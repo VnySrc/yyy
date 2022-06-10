@@ -7,11 +7,11 @@
                 <h4>Conheça nossa história de sucesso!</h4>
             </div>
         </nuxt-link>
-        <nuxt-link to="/sobre" class="blog_card">
-            <nuxt-img format="webp" src="/img/avenida.jpg" />
+        <nuxt-link :to="`/blog/${value.slug}`" v-for="value in blog" :key="value.id" class="blog_card">
+            <img :src="value.banner" />
             <div class="blog_card_title">
-                <h5>Avenida Veículos</h5>
-                <h4>Conheça nossa história de sucesso!</h4>
+                <h5>{{ value.tag }}</h5>
+                <h4>{{ value.titulo }}</h4>
             </div>
         </nuxt-link>
         <nuxt-link to="/sobre" class="blog_card">
@@ -101,6 +101,14 @@
             cars() {
                 return this.$store.state.stock.cars
             }
+        },
+        async asyncData({ $content }) {
+            const blog = await $content("blog").fetch();
+
+            return {
+                message: "",
+                blog
+            };
         }
     }
 </script>
