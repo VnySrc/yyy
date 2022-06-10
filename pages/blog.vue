@@ -8,7 +8,7 @@
             </div>
         </nuxt-link>
         <nuxt-link :to="`/blog/${value.slug}`" v-for="value in blog" :key="value.id" class="blog_card">
-            <img :src="value.banner" />
+            <nuxt-img format="webp" :src="value.banner"/>
             <div class="blog_card_title">
                 <h5>{{ value.tag }}</h5>
                 <h4>{{ value.titulo }}</h4>
