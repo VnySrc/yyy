@@ -12,3 +12,5 @@ fields:
   config:
     required: true
   label: Link
+pages:
+- content/banner/loja.json
