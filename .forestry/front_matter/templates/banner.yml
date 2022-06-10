@@ -13,4 +13,5 @@ fields:
     required: true
   label: Link
 pages:
+- content/banner/entrega.json
 - content/banner/loja.json
