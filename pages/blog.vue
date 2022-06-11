@@ -1,7 +1,7 @@
 <template>
     <section class="blog">
         <nuxt-link to="/sobre" class="blog_card">
-            <nuxt-img format="webp" src="/img/avenida.jpg" />
+            <nuxt-img format="webp" src="/office/office0.jpg" />
             <div class="blog_card_title">
                 <h5>Avenida Veículos</h5>
                 <h4>Conheça nossa história de sucesso!</h4>

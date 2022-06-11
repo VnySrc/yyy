@@ -2,9 +2,9 @@
     <div class="home">
         <section class="home_banner">
             <swiper :options="swiperOption">
-                <swiper-slide v-for="value in banner" :key="value.id" class="home_banner_imgs">
+                <swiper-slide v-for="(value, index) in banner" :key="index" class="home_banner_imgs">
                     <a :href="value.link">
-                        <nuxt-img format="webp" :src="value.imagem" alt="Destaques" />
+                        <nuxt-img format="webp" :src="value.imagem" />
                     </a>
                 </swiper-slide>
                 <div
@@ -19,7 +19,7 @@
         </section>
         <section class="home_header">
             <header>
-                <h3>INDAIATUBA - SP</h3>
+                <h2>INDAIATUBA - SP</h2>
                 <h1>Tudo começa com um sonho, mas aqui a gente te ajudar a realizar</h1>
                 <p>Vamos juntos achar um veículo perfeito para você</p>
                 <nuxt-link to="/estoque">
@@ -48,7 +48,7 @@
         </section>
         <section class="home_razoes">
             <div class="home_razoes_text">
-                <h3>COMPRA CERTA</h3>
+                <h2>COMPRA CERTA</h2>
                 <h1>Benefícios de comprar com a Avenida veículos</h1>
                 <p>Atuando no mercado automobilístico, nós da Avenida Veículos buscamos auxiliar nossos clientes afim de
                     encontrar o melhor negócio, agindo como consultores, não somente como simples vendedores.</p>
@@ -75,7 +75,7 @@
         <section class="home_blog">
             <nuxt-link to="/sobre" class="home_blog_card">
                 <div class="home_blog_card_img">
-                    <nuxt-img format="webp" src="/img/avenida.jpg" />
+                    <nuxt-img format="webp" src="/office/office0.jpg" />
                 </div>
                 <div class="home_blog_card_title">
                     <h5>Avenida Veículos</h5>
@@ -147,7 +147,6 @@ const xml2js = require('xml2js'),
                     return res.veiculo
                 })
             return { 
-                message: "",
                 cars,
                 banner,
                 blog
@@ -194,22 +193,18 @@ const xml2js = require('xml2js'),
         
                 h1 {
                     color: $p-600;
-                    line-height: 1.1;
-                    font-weight: bold;
-                    font-size: 3.2rem;
-                    word-spacing: -0.5rem;
-                    margin: .5rem 0 2rem 0;
+                    font-size: 3rem;
+                    margin: 1rem 0;
+                }
+        
+                h2 {
+                    font-size: 2rem;
+                    color: $gray-600;
                 }
         
                 p {
-                    font-size: 2.2rem;
-                    font-family: $ff-s;
-                    color: $gray-400;
-                }
-        
-                h3 {
                     font-size: 2rem;
-                    font-weight: bold;
+                    font-family: $ff-s;
                     color: $gray-500;
                 }
         
@@ -333,7 +328,7 @@ const xml2js = require('xml2js'),
             margin: 6rem 0;
 
             @include md {
-                margin: 8rem 0;
+                margin: 10rem 0;
             }
 
             &_text {
@@ -346,22 +341,18 @@ const xml2js = require('xml2js'),
 
                 h1 {
                     color: $p-600;
-                    line-height: 1;
-                    margin: 1rem 0;
-                    font-weight: 700;
                     font-size: 3rem;
-                    word-spacing: -0.5rem;
+                    margin: .5rem 0 1rem 0;
+                }
+
+                h2 {
+                    font-size: 2rem;
+                    color: $gray-600;
                 }
 
                 p {
-                    font-size: 2.4rem;
+                    font-size: 2rem;
                     font-family: $ff-s;
-                    color: $gray-400;
-                }
-
-                h3 {
-                    font-size: 1.8rem;
-                    font-weight: 700;
                     color: $gray-500;
                 }
             }
@@ -390,8 +381,8 @@ const xml2js = require('xml2js'),
                     svg {
                         height: 6rem;
                         margin-bottom: 1.5rem;
-                        fill: $p-600;
-                        border-bottom: solid .5rem $p-600;
+                        fill: $gray-600;
+                        border-bottom: solid .5rem $gray-500;
                         padding: 0 0 1rem 0;
                     }
 

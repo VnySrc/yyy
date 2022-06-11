@@ -19,32 +19,36 @@
     }
 
     h1 {
-        font-size: 3rem;
-        color: $p-600;
-        margin: 0 0 2rem 0;
-    }
-
-    a {
+      font-size: 3rem;
       color: $p-600;
+      margin: 0 0 2rem 0;
     }
 
     h2 {
-        font-size: 2rem;
-        color: $gray-600;
-        margin: 0 0 1rem 0;
+      font-size: 2rem;
+      color: $gray-600;
+      margin: 0 0 1rem 0;
+      padding: 0 0 0 .5rem;
+      border-left: solid $gray-500 .5rem;
     }
 
-    h6 {
-      font-size: 2.2rem;
+    h3, h4, h5, h6 {
+      font-size: 2rem;
       margin: 2rem 0;
+      border-left: solid $gray-500 .5rem;
+      padding: 0 0 0 .5rem;
       color: $gray-600;
     }
 
     p {
-      color: $gray-600;
-      font-family: $ff-s;
       margin: 1rem 0;
       font-size: 2rem;
+      color: $gray-500;
+      font-family: $ff-s;
+    }
+
+    a {
+      color: $p-600;
     }
 }
 

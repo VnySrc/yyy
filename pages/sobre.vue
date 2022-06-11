@@ -1,7 +1,33 @@
 <template>
   <section class="sobre">
     <div class="sobre_empresa">
-      <nuxt-img format="webp" src="/img/avenida.jpg" />
+      <div class="sobre_empresa_galeria">
+          <swiper
+          :options="swiperOptionTop"
+          ref="swiperTop"
+          >
+              <swiper-slide v-for="(value, index) in office" :key="index" class="sobre_empresa_galeria_img">
+                  <nuxt-img format="webp" :src="value" />
+              </swiper-slide>
+              <div
+                  class="swiper-button-next swiper-button-white"
+                  slot="button-next"
+              ></div>
+              <div
+                  class="swiper-button-prev swiper-button-white"
+                  slot="button-prev"
+              ></div>
+          </swiper>
+          <swiper
+          class="sobre_empresa_galeria_thumbs"
+          :options="swiperOptionThumbs"
+          ref="swiperThumbs"
+          >
+              <swiper-slide v-for="(value, index) in office" :key="index">
+                  <img :src="value" />
+              </swiper-slide>
+          </swiper>
+      </div>
       <div class="sobre_empresa_texto">
         <p>Atuando no mercado automobilístico, nós da Avenida Veículos buscamos auxiliar nossos clientes afim de encontrar o melhor negócio, agindo como consultores, não somente como simples vendedores.</p>
         <p>Nossa Missão é ver a satisfação total dos nossos clientes, realizando nossas transações sempre de forma ágil, transparente e com o melhor custo benefício. Respeito e seriedade na negociação de seu veículo é realmente nosso lema, pois sabemos os transtornos causados por negociações mal orientadas, confusas ou nebulosas.</p>
@@ -51,6 +77,55 @@
   </section>
 </template>
 
+<script>
+import { Swiper, SwiperSlide } from "vue-awesome-swiper";
+import "swiper/css/swiper.css";
+
+    export default {
+      data() {
+        return {
+          office: [
+            "/office/office0.jpg",
+            "/office/office1.jpg",
+            "/office/office2.jpg",
+            "/office/office3.jpg",
+            "/office/office4.jpg",
+            "/office/office5.jpg",
+            "/office/office6.jpg"
+          ],
+          swiperOptionTop: {
+              loop: true,
+              loopedSlides: 5, // looped slides should be the same
+              spaceBetween: 5,
+              navigation: {
+                  nextEl: ".swiper-button-next",
+                  prevEl: ".swiper-button-prev",
+              },
+          },
+          swiperOptionThumbs: {
+              loop: true,
+              loopedSlides: 5, // looped slides should be the same
+              spaceBetween: 5,
+              slidesPerView: "auto",
+              slideToClickedSlide: true
+          }
+        }
+      },
+      mounted() {
+          this.$nextTick(() => {
+          const swiperTop = this.$refs.swiperTop.$swiper;
+          const swiperThumbs = this.$refs.swiperThumbs.$swiper;
+          swiperTop.controller.control = swiperThumbs;
+          swiperThumbs.controller.control = swiperTop;
+          });
+      },
+      components: {
+          Swiper,
+          SwiperSlide,
+      },
+    }
+</script>
+
 <style lang="scss">
 
 .sobre {
@@ -59,14 +134,10 @@
   &_empresa {
     @include md {
       display: flex;
-      gap: 2rem;
+      gap: 4rem;
     }
 
     &_texto {
-      @include md {
-        width: 90rem;
-      }
-
       p {
         font-family: $ff-s;
         font-size: 2rem;
@@ -75,16 +146,48 @@
       }
     }
 
-    img {
-      width: 100%;
-      height: 25rem;
-      object-fit: cover;
-      margin: 0 0 1rem 0;
-      border-bottom: solid $p-600 .8rem;
+    &_galeria {
+      margin: 0 0 2rem 0;
 
       @include md {
-        max-width: 60rem;
-        height: 38rem;
+        max-width: 50%;
+      }
+
+      &_img {
+        height: 30rem;
+
+        @include sm-up {
+          height: 40rem;
+        }
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+
+      &_thumbs {
+          width: 100%;
+          margin: .5rem 0 0 0;
+          box-sizing: border-box;
+          height: 8rem;
+
+          .swiper-slide {
+              width: 25%;
+              height: 100%;
+              opacity: 0.4;
+          }
+
+          .swiper-slide-active {
+              opacity: 1;
+          }
+
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
       }
     }
   }
@@ -123,15 +226,14 @@
         svg {
           fill: $p-600;
           height: 4rem;
-          margin-bottom: 1rem;
         }
 
         h4 {
           font-size: 2rem;
           text-align: center;
-          color: $p-600;
+          color: $gray-600;
           padding: 1rem;
-          border-bottom: solid .5rem $p-600;
+          border-bottom: solid .5rem $gray-500;
         }
       }
     }
@@ -153,14 +255,14 @@
 
         h4 {
           font-size: 2rem;
-          color: $p-600;
+          color: $gray-600;
           padding: 1rem;
-          border-bottom: solid .5rem $p-600;
+          border-bottom: solid .5rem $gray-500;
         }
       }
       
       &_sub {
-        border-left: solid .5rem $s-400;
+        border-left: solid .5rem $gray-300;
         padding-left: 1rem;
         margin: 3rem 0 0 0;
 
@@ -177,12 +279,12 @@
         
         h5 {
           font-size: 2rem;
-          color: $s-400;
+          color: $gray-500;
           margin: 1rem 0;
         }
 
         &:nth-child(odd) {
-          border-right: solid .5rem $s-400;
+          border-right: solid .5rem $gray-300;
           padding-right: 1rem;
           border-left: none;
           padding-left: 0;

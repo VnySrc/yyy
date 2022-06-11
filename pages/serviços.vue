@@ -6,7 +6,7 @@
         <h3>Garantia de até 1 ano inédita entre as lojas de seminovos no Brasil</h3>
         <p>Carros seminovos ou usados com garantia de até 1 ano.</p>
       </div>
-      <nuxt-img format="webp" src="/img/services/warranty.jpg" />
+      <nuxt-img format="webp" src="/services/warranty.jpg" />
     </div>
     <div class="services_service">
       <div>
@@ -14,7 +14,7 @@
         <h3>Financiamento rápido que cabe no seu bolso sem burocracia</h3>
         <p>Diversas opções de financiamento para você comprar seu seminovo com total segurança e rapidez.</p>
       </div>
-      <nuxt-img format="webp" src="/img/services/finance.jpg" />
+      <nuxt-img format="webp" src="/services/finance.jpg" />
     </div>
     <div class="services_service">
       <div>
@@ -23,7 +23,7 @@
         <p>Compre e receba em casa experimente a entrega domiciliar, tenha uma experiência de compra totalmente diferente.
         </p>
       </div>
-      <nuxt-img format="webp" src="/img/services/present.jpg" />
+      <nuxt-img format="webp" src="/services/present.jpg" />
     </div>
     <div class="services_service">
       <div>
@@ -32,7 +32,7 @@
         <p> Todos os nossos carros passam por uma inspeção de até 240 itens para garantir sua qualidade. Além de terem
           Vistoria cautelar.</p>
       </div>
-      <nuxt-img format="webp" src="/img/services/check.jpg" />
+      <nuxt-img format="webp" src="/services/check.jpg" />
     </div>
     <div class="services_service">
       <div>
@@ -40,7 +40,7 @@
         <h3>Melhor Pós-venda</h3>
         <p>Serviço de pós-venda especializado, tenha todo o suporte ao comprar seu seminovo.</p>
       </div>
-      <nuxt-img format="webp" src="/img/services/assistant.jpg" />
+      <nuxt-img format="webp" src="/services/assistant.jpg" />
     </div>
   </section>
 </template>
@@ -137,6 +137,7 @@
         height: 14rem;
         object-fit: cover;
         border-bottom: solid .8rem $p-600;
+        box-shadow: .5rem .5rem 1rem rgba(0, 0, 0, 0.1);
 
         @include md {
           height: 10rem;

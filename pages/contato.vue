@@ -56,7 +56,7 @@
         <a :href="links.map" target="_blank">Av. Visconde de Indaiatuba, 921 , Vila Vitòria - Indaiatuba/SP</a>
       </div>
       <div class="contato_shop_map">
-        <nuxt-img format="webp" src="/img/office/office8.jpg" />
+        <nuxt-img format="webp" src="/office/office0.jpg" />
         <div>
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3670.161227703695!2d-47.1967446!3d-23.091193099999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cf4b4afcd6dc21%3A0x756a56845440c7b1!2sAvenida%20Ve%C3%ADculos%20Indaiatuba!5e0!3m2!1spt-BR!2sbr!4v1651793602801!5m2!1spt-BR!2sbr"

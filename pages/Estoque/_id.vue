@@ -3,11 +3,10 @@
         <div class="cars_info">
             <div class="cars_info_gallery">
                 <swiper
-                class="swiper gallery-top"
                 :options="swiperOptionTop"
                 ref="swiperTop"
                 >
-                    <swiper-slide v-for="(value, index) in carImgs" :key="index" class="cars_info_gallery_imgs">
+                    <swiper-slide v-for="(value, index) in carImgs" :key="index">
                         <img :src="value" />
                     </swiper-slide>
                     <div
@@ -20,19 +19,18 @@
                     ></div>
                 </swiper>
                 <swiper
-                class="swiper gallery-thumbs"
+                class="cars_info_gallery_thumbs"
                 :options="swiperOptionThumbs"
                 ref="swiperThumbs"
                 >
-                    <swiper-slide v-for="(value, index) in carImgs" :key="index" class="cars_info_gallery_thumbs">
+                    <swiper-slide v-for="(value, index) in carImgs" :key="index">
                         <img :src="value" />
                     </swiper-slide>
                 </swiper>
             </div>
             <div class="cars_info_brand">
                 <div class="cars_info_brand_titles">
-                    <h2>{{ car.marca_descricao }}</h2>
-                    <h1>{{ car.modelo_descricao }}</h1>
+                    <h1>{{ car.marca_descricao }} {{ car.modelo_descricao }}</h1>
                     <span>{{ car.versao_descricao }}</span>
                 </div>
                 <div class="cars_info_brand_details">
@@ -102,18 +100,17 @@ export default {
             loopedSlides: 5, // looped slides should be the same
             spaceBetween: 5,
             navigation: {
-            nextEl: ".swiper-button-next",
-            prevEl: ".swiper-button-prev",
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
             },
         },
         swiperOptionThumbs: {
             loop: true,
             loopedSlides: 5, // looped slides should be the same
             spaceBetween: 5,
-            centeredSlides: false,
+            centeredSlides: true,
             slidesPerView: "auto",
-            touchRatio: 0.2,
-            slideToClickedSlide: true,
+            slideToClickedSlide: true
         }
       }
     },
@@ -158,62 +155,54 @@ export default {
 </script>
 
 <style lang="scss">
-    .gallery-thumbs {
-        padding-top: .5rem;
-        width: 100%;
-        box-sizing: border-box;
-    }
-
-    .gallery-thumbs .swiper-slide {
-        width: 25%;
-        height: 100%;
-        opacity: 0.4;
-    }
-
-    .gallery-thumbs .swiper-slide-active {
-        opacity: 1;
-    }
-
     .cars {
         padding: 4rem 1.5rem;
 
         @include md {
             display: flex;
             padding: 4rem 4rem 6rem 4rem;
-            gap: 6rem;
+            gap: 4rem;
         }
 
         &_info {
             @include md {
-                width: 45%;
+                width: 50%;
             }
 
             &_gallery {
-    
 
-                &_imgs {
-                    height: 28rem;
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
 
                     @include sm-up {
-                        height: 40rem;
+                        height: 38rem;
                     }
 
                     @include md {
-                        height: 30rem;
-                    }
-
-                    img {
-                        width: 100%;
                         height: 100%;
-                        object-fit: cover;
                     }
                 }
     
                 &_thumbs {
+                    width: 100%;
+                    margin: .3rem 0 0 0;
+                    box-sizing: border-box;
+
+                    .swiper-slide {
+                        width: 25%;
+                        height: 100%;
+                        opacity: 0.4;
+                    }
+
+                    .swiper-slide-active {
+                        opacity: 1;
+                    }
+
                     img {
                         width: 100%;
-                        height: 6rem;
-                        object-fit: cover;
+                        height: 5rem;
                     }
                 }
             }
@@ -224,15 +213,10 @@ export default {
                 &_titles {
                     margin: 1rem 0;
                     padding-left: 1rem;
-                    border-left: solid $p-600 .8rem;
-
-                    h2 {
-                        color: $gray-500;
-                        font-size: 1.4rem;
-                    }
+                    border-left: solid $gray-500 .8rem;
         
                     h1 {
-                        color: $p-600;
+                        color: $gray-600;
                         font-size: 3.4rem;
                         margin: 0 0 .8rem 0;
                     }
@@ -297,7 +281,7 @@ export default {
                 h4 {
                     padding: .5rem 1rem;
                     text-align: left;
-                    border-left: solid $gray-600 .5rem;
+                    border-left: solid $gray-500 .5rem;
                     margin: 0 0 4rem 0;
                 }
 
@@ -333,7 +317,7 @@ export default {
                 
                 h4 {
                     padding: .5rem 1rem;
-                    border-right: solid $gray-600 .5rem;
+                    border-right: solid $gray-500 .5rem;
                     margin: 0 0 2rem 0;
                 }
 
