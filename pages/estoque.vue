@@ -1,25 +1,31 @@
 <template>
   <div class="estoque">
     <div class="estoque_filter">
-      <select v-model="sortBrand" @change="orderBrand($event)">
-        <option value="">Marca</option>
-        <option v-for="(value, index) in getBrand" :key="index" :value="value">
-          {{ value }}
-        </option>
-      </select>
-      <select v-model="sortModel" @change="orderModel($event)">
-        <option value="">Modelo</option>
-        <option v-for="(value, index) in getModel" :key="index" :value="value">
-          {{ value }}
-        </option>
-      </select>
-      <select v-model="sortType" :change="sortItem">
-        <option value="">A - Z</option>
-        <option value="yearUp">Mais novo</option>
-        <option value="yearDown">Mais velho</option>
-        <option value="priceUp">Maior preço</option>
-        <option value="priceDown">Menor preço</option>
-      </select>
+      <div>
+        <select v-model="sortBrand" @change="orderBrand($event)">
+          <option value="">Marca</option>
+          <option v-for="(value, index) in getBrand" :key="index" :value="value">
+            {{ value }}
+          </option>
+        </select>
+        <select v-model="sortModel" @change="orderModel($event)">
+          <option value="">Modelo</option>
+          <option v-for="(value, index) in getModel" :key="index" :value="value">
+            {{ value }}
+          </option>
+        </select>
+        <select v-model="sortType" :change="sortItem">
+          <option value="" @click="cleanFilter">A - Z</option>
+          <option value="yearUp">Mais novo</option>
+          <option value="yearDown">Mais velho</option>
+          <option value="priceUp">Maior preço</option>
+          <option value="priceDown">Menor preço</option>
+          <option value="price40">Até 40 mil</option>
+          <option value="price50">Até 50 mil</option>
+          <option value="price60">Até 60 mil</option>
+        </select>
+      </div>
+      <button v-show="sortType = sortType" @click="cleanFilter">Limpar filtro</button>
     </div>
     <div class="estoque_cards">
       <nuxt-link
@@ -34,6 +40,7 @@
             <h2>{{ value.marca_descricao }} {{ value.modelo_descricao }}</h2>
           </div>
           <div class="estoque_cards_card_info_stats">
+            <h3>{{ value.valor_final | price }}</h3>
             <div>
               <span>{{ value.ano_fabricacao_descricao }}</span>
               <span>-</span>
@@ -42,7 +49,6 @@
               <span>{{ value.kilometragem | km }}</span>
             </div>
           </div>
-          <h3>{{ value.valor_final | price }}</h3>
         </div>
       </nuxt-link>
     </div>
@@ -120,6 +126,15 @@ export default {
             prev.ano_fabricacao_descricao - curr.ano_fabricacao_descricao
         );
       }
+      if (this.sortType == "price40") {
+        this.cars = this.cars.filter((el) => el.valor_final <= 40000);
+      }
+      if (this.sortType == "price50") {
+        this.cars = this.cars.filter((el) => el.valor_final <= 50000);
+      }
+      if (this.sortType == "price60") {
+        this.cars = this.cars.filter((el) => el.valor_final <= 60000);
+      }
     },
     getBrand() {
       return this.cars
@@ -147,6 +162,9 @@ export default {
         );
       }
     },
+    cleanFilter() {
+      window.location.reload(false);
+    }
   },
   async asyncData({ $axios }) {
     const xml = await $axios.$get();
@@ -171,41 +189,66 @@ export default {
   }
 
   &_filter {
-    display: flex;
     margin: 4rem 0;
-    justify-content: center;
 
     @include md {
-      justify-content: flex-start;
+      display: flex;
     }
 
-    select {
-      width: 100%;
-      border: none;
-      color: $gray-400;
-      padding: 1rem;
-      font-weight: bold;
-      background-color: transparent;
-      text-align: center;
-      cursor: pointer;
-      border: solid 0.2rem $gray-100;
-      max-width: 20rem;
-
-      &:hover {
-        color: $p-500;
-        border: solid 0.2rem $p-500;
+    div {
+      display: flex;
+      justify-content: center;
+  
+      @include md {
+        justify-content: flex-start;
       }
+  
+      select {
+        width: 100%;
+        border: none;
+        color: $gray-400;
+        padding: 1rem;
+        font-weight: bold;
+        background-color: transparent;
+        text-align: center;
+        cursor: pointer;
+        border: solid 0.2rem $gray-100;
+        max-width: 20rem;
 
-      &:nth-child(2) {
-        margin: 0 1rem;
+        @include md {
+          width: 30rem;
+        }
+  
+        &:hover {
+          color: $p-500;
+          border: solid 0.2rem $p-500;
+        }
+  
+        &:nth-child(2) {
+          margin: 0 1rem;
+        }
       }
     }
 
     button {
-      font-size: 2rem;
-      background-color: $gray-300;
-      height: 10rem;
-      width: 10rem;
+      font-size: 1.4rem;
+      font-weight: bold;
+      color: $gray-400;
+      background: transparent;
+      margin: 2rem 0 0 0;
+      cursor: pointer;
+      text-align: center;
+      width: 100%;
+
+      @include md {
+        margin: 0 2rem;
+        width: auto;
+        text-align: left;
+      }
+
+      &:hover {
+        color: $p-500;
+      }
     }
   }
 
@@ -263,7 +306,7 @@ export default {
         &_stats {
           width: 100%;
           padding: 1rem;
-          background: linear-gradient(10deg, $gray-100 0%, $white 100%);
+          background-color: $gray-100;
           text-align: center;
 
           div {
@@ -279,15 +322,15 @@ export default {
               color: $gray-500;
             }
           }
+
+          h3 {
+            padding: 0 0 1rem 0;
+            text-align: center;
+            font-size: 1.8rem;
+            color: $gray-600;
+          }
         }
 
-        h3 {
-          padding: 1rem;
-          text-align: center;
-          font-size: 1.8rem;
-          background: linear-gradient(10deg, $gray-600 0%, $gray-800 100%);
-          color: $gray-200;
-        }
       }
 
       &:hover {
