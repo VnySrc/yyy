@@ -212,7 +212,7 @@ export default {
         background-color: transparent;
         text-align: center;
         cursor: pointer;
-        border: solid 0.2rem $gray-300;
+        border: solid 0.2rem $gray-400;
         max-width: 20rem;
 
         @include md {
@@ -220,8 +220,8 @@ export default {
         }
   
         &:hover {
-          color: $p-500;
-          border: solid 0.2rem $p-500;
+          color: $gray-700;
+          border: solid 0.2rem $gray-700;
         }
   
         &:nth-child(2) {
@@ -334,13 +334,8 @@ export default {
       }
 
       &:hover {
-        h5 {
-          border-left: solid 0.8rem $p-500;
-          color: $p-500;
-        }
-
         .estoque_cards_card_info {
-          outline: solid 0.4rem $p-500;
+          outline: solid 0.4rem $gray-700;
         }
       }
     }

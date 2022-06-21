@@ -172,7 +172,7 @@ const xml2js = require('xml2js'),
                     width: 100%;
                     aspect-ratio: 3 / 1;
                     object-fit: cover;
-                    border-bottom: solid $p-600 .8rem;
+                    border-bottom: solid $gray-700 .8rem;
                     box-shadow: .5rem .5rem 2rem rgba(0, 0, 0, 0.1);
                 }
             }
@@ -192,7 +192,7 @@ const xml2js = require('xml2js'),
                 max-width: 40rem;
         
                 h1 {
-                    color: $p-600;
+                    color: $gray-700;
                     font-size: 3rem;
                     margin: 1rem 0;
                 }
@@ -205,7 +205,7 @@ const xml2js = require('xml2js'),
                 p {
                     font-size: 2.2rem;
                     font-family: $ff-s;
-                    color: $gray-600;
+                    color: $gray-500;
                 }
         
                 a {
@@ -216,13 +216,13 @@ const xml2js = require('xml2js'),
         
                     &:hover {
                         span {
-                            color: $p-500;
+                            color: $gray-600;
                         }
         
                         div {
-                            outline: 0.2rem solid $p-500;
+                            outline: 0.2rem solid $gray-600;
                             outline-offset: 0.2rem;
-                            background-color: $p-500;
+                            background-color: $gray-600;
                         }
                     }
         
@@ -304,16 +304,13 @@ const xml2js = require('xml2js'),
                     }
 
                     &:hover {
-                        h4 {
-                            color: $gray-400;
-                        }
 
                         h5 {
-                            color: $p-500;
+                            color: $gray-800;
                         }
 
                         .home_header_highlights_card_img {
-                            outline: solid .3rem $p-500;
+                            outline: solid .3rem $gray-700;
                         }
 
                         
@@ -340,20 +337,20 @@ const xml2js = require('xml2js'),
                 }
 
                 h1 {
-                    color: $p-600;
+                    color: $gray-700;
                     font-size: 3rem;
                     margin: .5rem 0 1rem 0;
                 }
 
                 h2 {
                     font-size: 2rem;
-                    color: $gray-700;
+                    color: $gray-600;
                 }
 
                 p {
                     font-size: 2rem;
                     font-family: $ff-s;
-                    color: $gray-600;
+                    color: $gray-500;
                 }
             }
 
@@ -382,7 +379,7 @@ const xml2js = require('xml2js'),
                         height: 6rem;
                         margin-bottom: 1.5rem;
                         fill: $gray-600;
-                        border-bottom: solid .5rem $gray-500;
+                        border-bottom: solid .5rem $gray-400;
                         padding: 0 0 1rem 0;
                     }
 
@@ -390,17 +387,13 @@ const xml2js = require('xml2js'),
                         font-size: 1.6rem;
                         font-weight: bold;
                         text-align: center;
-                        color: $gray-500;
+                        color: $gray-600;
                     }
 
                     &:hover {
                         svg {
-                            fill: $p-500;
-                            border-bottom: solid .5rem $p-500;
-                        }
-
-                        h3 {
-                            color: $gray-500;
+                            fill: $gray-700;
+                            border-bottom: solid .5rem $gray-700;
                         }
                     }
                 }
@@ -438,18 +431,18 @@ const xml2js = require('xml2js'),
                     font-weight: bold;
                     margin: 1rem 0 0 0;
                     padding: .5rem 1rem;
-                    border-left: solid $p-600 .8rem;
+                    border-left: solid $gray-400 .8rem;
 
                     h5 {
                         font-size: 1.4rem;
-                        color: $gray-600;
+                        color: $gray-500;
                         margin-bottom: .5rem;
                     }
 
                     h4 {
                         font-size: 2.2rem;
                         line-height: 1;
-                        color: $p-600;
+                        color: $gray-600;
                     }
                 }
 
@@ -467,19 +460,15 @@ const xml2js = require('xml2js'),
 
                 &:hover {
                     .home_blog_card_title {
-                        border-left: solid $p-500 .8rem;
+                        border-left: solid $gray-700 .8rem;
                     }
 
                     img {
-                        outline: solid .4rem $p-500;
+                        outline: solid .4rem $gray-700;
                     }
 
                     h4 {
-                        color: $p-500;
-                    }
-
-                    h5 {
-                        color: $gray-500;
+                        color: $gray-700;
                     }
                 }
             }

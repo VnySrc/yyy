@@ -20,7 +20,7 @@
 
     h1 {
       font-size: 3rem;
-      color: $p-600;
+      color: $gray-700;
       margin: 0 0 2rem 0;
     }
 
@@ -29,13 +29,13 @@
       color: $gray-600;
       margin: 0 0 1rem 0;
       padding: 0 0 0 .5rem;
-      border-left: solid $gray-500 .5rem;
+      border-left: solid $gray-400 .5rem;
     }
 
     h3, h4, h5, h6 {
       font-size: 2rem;
       margin: 2rem 0;
-      border-left: solid $gray-500 .5rem;
+      border-left: solid $gray-400 .5rem;
       padding: 0 0 0 .5rem;
       color: $gray-600;
     }
@@ -48,7 +48,7 @@
     }
 
     a {
-      color: $p-600;
+      color: $gray-700;
     }
 }
 

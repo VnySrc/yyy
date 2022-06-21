@@ -64,13 +64,13 @@ nav {
             }
 
             &:hover {
-                color: $p-500;
+                color: $gray-600;
             }
         }
 
         a.nuxt-link-exact-active {
             font-weight: 800;
-            color: $p-600;
+            color: $gray-700;
         }
 
         .chat {
@@ -82,7 +82,7 @@ nav {
             padding: 2rem;
             cursor: pointer;
             position: fixed;
-            background-color: $p-600;
+            background-color: $gray-600;
             z-index: 2;
 
             @include sm-up {
@@ -95,16 +95,16 @@ nav {
                 display: none;
 
                 @include sm-up {
-                    color: $p-500;
+                    color: $gray-500;
                     display: block;
                 }
             }
 
             &:hover {
-                background-color: $p-500;
+                background-color: $gray-500;
 
                 @include sm-up {
-                    outline: 0.2rem solid $p-500;
+                    outline: 0.2rem solid $gray-500;
                     outline-offset: 0.2rem;
                 }
             }

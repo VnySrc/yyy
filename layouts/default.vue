@@ -56,7 +56,7 @@ export default {
     
     footer {
         padding: 3rem 2rem 8rem 2rem;
-        background: rgba(119, 136, 153, 0.2);
+        background: rgba(119, 136, 153, 0.1);
 
         @include sm-up {
             padding: 3rem 2rem 2rem 2rem;
@@ -86,7 +86,7 @@ export default {
                 h4 {
                     font-weight: bold;
                     font-size: 2.4rem;
-                    color: $p-600;
+                    color: $gray-700;
                     margin-bottom: 2rem;
                 }
         
@@ -97,7 +97,7 @@ export default {
                     color: $gray-500;
     
                     &:hover {
-                        color: $p-500;
+                        color: $gray-700;
                     }
                 }
         
@@ -112,7 +112,7 @@ export default {
                         cursor: pointer;
     
                         &:hover {
-                            fill: $p-500;
+                            fill: $gray-700;
                         }
                     }
                 }
@@ -124,6 +124,14 @@ export default {
             height: 5rem;
             display: block;
             margin: auto;
+
+            #car, #veiculos {
+                fill: $gray-600;
+            }
+
+            #avenida {
+                fill: $gray-700;
+            }
     
             @include sm-up {
                 display: inline;
@@ -146,7 +154,7 @@ export default {
             a {
                 font-weight: bold;
                 font-size: 1.5rem;
-                color: $p-600;
+                color: $gray-700;
     
                 &:hover {
                     color: $p-500;
@@ -155,7 +163,7 @@ export default {
         
             div {
                 height: 0.3rem;
-                background-color: $p-600;
+                background-color: $gray-700;
                 margin: 1rem 0;
             }
         

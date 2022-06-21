@@ -16,15 +16,16 @@
 
   @include md {
     padding: 10rem;
+    height: 40rem;
   }
 
   h2 {
     font-size: 2.4rem;
     font-weight: bold;
-    color: $p-600;
+    color: $gray-600;
     margin-bottom: 2rem;
     padding-left: 1rem;
-    border-left: solid .8rem $p-600;
+    border-left: solid .8rem $gray-400;
   }
 
   p {

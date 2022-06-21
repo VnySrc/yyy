@@ -235,7 +235,7 @@ export default {
                     &_price {
                         width: 100%;
                         padding: 1.5rem 0;
-                        background-color: $p-600;
+                        background-color: $gray-600;
 
                         h3 {
                             font-size: 2rem;
@@ -246,7 +246,7 @@ export default {
 
                     &_zap {
                         padding: 1.5rem 0;
-                        background-color: $p-500;
+                        background-color: $gray-500;
 
                         svg {
                             fill: $white;
@@ -254,7 +254,7 @@ export default {
                         }
 
                         &:hover {
-                            background-color: $p-400;
+                            background-color: $gray-400;
                         }
                     }
                 }
@@ -298,12 +298,12 @@ export default {
                             th {
                                 padding: 1rem;
                                 color: $gray-500;
-                                border-bottom: .2rem $gray-200 solid;
-                                border-right: .2rem $gray-200 solid;
+                                border-bottom: .2rem $gray-400 solid;
+                                border-right: .2rem $gray-400 solid;
                             }
         
                             td {
-                                border-bottom: .2rem $gray-200 solid;
+                                border-bottom: .2rem $gray-400 solid;
                                 color: $gray-500;
                                 padding: 1rem;
                             }

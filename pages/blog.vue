@@ -52,7 +52,7 @@
             font-weight: bold;
             margin: 1rem 0 0 0;
             padding: .5rem 1rem;
-            border-left: solid $p-600 .8rem;
+            border-left: solid $gray-400 .8rem;
 
             h5 {
                 font-size: 1.4rem;
@@ -63,7 +63,7 @@
             h4 {
                 font-size: 2.4rem;
                 line-height: 1;
-                color: $p-600;
+                color: $gray-600;
             }
         }
 
@@ -75,19 +75,15 @@
 
         &:hover {
             div {
-                border-left: solid $p-500 .8rem;
+                border-left: solid $gray-700 .8rem;
             }
 
             img {
-                outline: solid .4rem $p-500;
+                outline: solid .4rem $gray-700;
             }
 
             h4 {
-                color: $p-500;
-            }
-
-            h5 {
-                color: $gray-400;
+                color: $gray-700;
             }
         }
     }

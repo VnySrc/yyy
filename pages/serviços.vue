@@ -67,19 +67,15 @@
 
       &:hover {
         svg {
-          fill: $p-500;
+          fill: $gray-700;
         }
 
         h3 {
-          color: $p-500;
-        }
-
-        p {
-          color: $gray-600;
+          color: $gray-700;
         }
 
         img {
-          border-bottom: solid .8rem $p-500;
+          border-bottom: solid .8rem $gray-700;
         }
       }
 
@@ -107,13 +103,13 @@
         h3 {
           font-size: 2.5rem;
           font-weight: bold;
-          color: $p-600;
+          color: $gray-600;
         }
 
         p {
           font-family: $ff-s;
           font-size: 2.2rem;
-          color: $gray-600;
+          color: $gray-500;
           margin: 1rem 0 2rem 0;
         }
 
@@ -136,7 +132,7 @@
         width: 100%;
         height: 14rem;
         object-fit: cover;
-        border-bottom: solid .8rem $p-600;
+        border-bottom: solid .8rem $gray-600;
         box-shadow: .5rem .5rem 1rem rgba(0, 0, 0, 0.1);
 
         @include md {

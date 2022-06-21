@@ -88,7 +88,7 @@
     }
 
     h2 {
-      color: $p-600;
+      color: $gray-700;
       font-size: 2.4rem;
       margin: 0 0 1rem 0;
     }
@@ -106,7 +106,7 @@
         text-align: right;
 
         h2 {
-          border-right: solid $p-600 .6rem;
+          border-right: solid $gray-400 .6rem;
           padding: .5rem 1rem;
         }
 
@@ -146,7 +146,7 @@
         }
 
         h2 {
-          border-left: solid $p-600 .6rem;
+          border-left: solid $gray-400 .6rem;
           padding: .5rem 1rem;
         }
 
@@ -201,7 +201,7 @@
       
       &_title {
         padding: .5rem 1rem;
-        border-left: solid $p-600 .6rem;
+        border-left: solid $gray-400 .6rem;
 
         div {
           margin: 0 0 .4rem 0;
@@ -229,7 +229,7 @@
 
       &_map {
         margin: 2rem 0 0 0;
-        border-bottom: solid $p-600 1rem;
+        border-bottom: solid $gray-700 1rem;
         box-shadow: 0.2rem 0.2rem 2rem rgba(0, 0, 0, 0.1);
 
         @include sm-up {
