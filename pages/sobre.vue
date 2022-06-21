@@ -231,9 +231,9 @@ import "swiper/css/swiper.css";
         h4 {
           font-size: 2rem;
           text-align: center;
-          color: $gray-600;
+          color: $gray-700;
           padding: 1rem;
-          border-bottom: solid .5rem $gray-500;
+          border-bottom: solid .5rem $gray-700;
         }
       }
     }
@@ -262,7 +262,7 @@ import "swiper/css/swiper.css";
       }
       
       &_sub {
-        border-left: solid .5rem $gray-300;
+        border-left: solid .5rem $gray-600;
         padding-left: 1rem;
         margin: 3rem 0 0 0;
 
@@ -279,12 +279,12 @@ import "swiper/css/swiper.css";
         
         h5 {
           font-size: 2rem;
-          color: $gray-500;
+          color: $gray-600;
           margin: 1rem 0;
         }
 
         &:nth-child(odd) {
-          border-right: solid .5rem $gray-300;
+          border-right: solid .5rem $gray-600;
           padding-right: 1rem;
           border-left: none;
           padding-left: 0;

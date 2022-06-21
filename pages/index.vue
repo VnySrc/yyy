@@ -203,9 +203,9 @@ const xml2js = require('xml2js'),
                 }
         
                 p {
-                    font-size: 2rem;
+                    font-size: 2.2rem;
                     font-family: $ff-s;
-                    color: $gray-500;
+                    color: $gray-600;
                 }
         
                 a {
@@ -229,13 +229,13 @@ const xml2js = require('xml2js'),
                     span {
                         font-size: 1.8rem;
                         font-weight: bold;
-                        color: $p-600;
+                        color: $gray-700;
                     }
         
                     div {
                         padding: 1.2rem;
                         margin-right: 1rem;
-                        background-color: $p-600;
+                        background-color: $gray-700;
         
                         svg {
                             fill: $white;
@@ -270,7 +270,7 @@ const xml2js = require('xml2js'),
     
                     h5 {
                         font-size: 2.8rem;
-                        color: $p-600;
+                        color: $gray-700;
                     }
         
                     &_img {
@@ -293,7 +293,7 @@ const xml2js = require('xml2js'),
                             position: absolute;
                             padding: .5rem 1rem;
                             justify-content: space-around;
-                            background: linear-gradient(10deg, $gray-600 0%, $gray-800 100%);
+                            background: linear-gradient(10deg, $gray-700 0%, $gray-800 100%);
         
                             span {
                                 font-weight: bold;
@@ -347,13 +347,13 @@ const xml2js = require('xml2js'),
 
                 h2 {
                     font-size: 2rem;
-                    color: $gray-600;
+                    color: $gray-700;
                 }
 
                 p {
                     font-size: 2rem;
                     font-family: $ff-s;
-                    color: $gray-500;
+                    color: $gray-600;
                 }
             }
 
@@ -390,7 +390,7 @@ const xml2js = require('xml2js'),
                         font-size: 1.6rem;
                         font-weight: bold;
                         text-align: center;
-                        color: $gray-400;
+                        color: $gray-500;
                     }
 
                     &:hover {
@@ -479,7 +479,7 @@ const xml2js = require('xml2js'),
                     }
 
                     h5 {
-                        color: $gray-400;
+                        color: $gray-500;
                     }
                 }
             }

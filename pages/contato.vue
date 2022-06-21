@@ -170,11 +170,11 @@
             margin: 1rem 0;
             font-weight: bold;
             padding: 0 1rem;
-            border-left: solid $s-400 .5rem;
+            border-left: solid $gray-500 .5rem;
 
             &:hover {
               h3 {
-                color: $s-500;
+                color: $gray-500;
               }
             }
 
@@ -186,7 +186,7 @@
 
             h4 {
               font-size: 1.4rem;
-              color: $s-400;
+              color: $gray-500;
             }
 
             &:hover {

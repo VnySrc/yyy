@@ -56,7 +56,7 @@ export default {
     
     footer {
         padding: 3rem 2rem 8rem 2rem;
-        background: rgba(179, 179, 179, 0.1);
+        background: rgba(119, 136, 153, 0.2);
 
         @include sm-up {
             padding: 3rem 2rem 2rem 2rem;
@@ -92,7 +92,7 @@ export default {
         
                 a {
                     font-size: 1.8rem;
-                    font-family: $ff-s;
+                    font-weight: bold;
                     margin: 0.6rem 0;
                     color: $gray-500;
     
@@ -137,7 +137,6 @@ export default {
         .cabeçalho {
             margin-top: 4rem;
             text-align: center;
-            font-family: $ff-s;
     
             @include sm-up {
                 text-align: right;
@@ -161,7 +160,7 @@ export default {
             }
         
             p {
-                font-weight: 400;
+                font-weight: bold;
                 font-size: 1.4rem;
                 color: $gray-500;
             }

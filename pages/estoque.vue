@@ -3,13 +3,13 @@
     <div class="estoque_filter">
       <div>
         <select v-model="sortBrand" @change="orderBrand($event)">
-          <option value="">Marca</option>
+          <option value="" @click="cleanFilter">Marca</option>
           <option v-for="(value, index) in getBrand" :key="index" :value="value">
             {{ value }}
           </option>
         </select>
         <select v-model="sortModel" @change="orderModel($event)">
-          <option value="">Modelo</option>
+          <option value="" @click="cleanFilter">Modelo</option>
           <option v-for="(value, index) in getModel" :key="index" :value="value">
             {{ value }}
           </option>
@@ -206,13 +206,13 @@ export default {
       select {
         width: 100%;
         border: none;
-        color: $gray-400;
+        color: $gray-500;
         padding: 1rem;
         font-weight: bold;
         background-color: transparent;
         text-align: center;
         cursor: pointer;
-        border: solid 0.2rem $gray-100;
+        border: solid 0.2rem $gray-300;
         max-width: 20rem;
 
         @include md {

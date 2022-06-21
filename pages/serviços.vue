@@ -113,7 +113,7 @@
         p {
           font-family: $ff-s;
           font-size: 2.2rem;
-          color: $gray-500;
+          color: $gray-600;
           margin: 1rem 0 2rem 0;
         }
 
