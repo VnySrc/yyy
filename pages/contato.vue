@@ -56,12 +56,9 @@
         <a :href="links.map" target="_blank">Av. Visconde de Indaiatuba, 921 , Vila Vitòria - Indaiatuba/SP</a>
       </div>
       <div class="contato_shop_map">
-        <nuxt-img format="webp" src="/office/office0.jpg" />
-        <div>
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3670.161227703695!2d-47.1967446!3d-23.091193099999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cf4b4afcd6dc21%3A0x756a56845440c7b1!2sAvenida%20Ve%C3%ADculos%20Indaiatuba!5e0!3m2!1spt-BR!2sbr!4v1651793602801!5m2!1spt-BR!2sbr"
             style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-        </div>
       </div>
     </div>
   </section>
@@ -125,10 +122,10 @@
 
           svg {
             height: 2.5rem;
-            fill: $gray-600;
+            fill: $gray-500;
 
             &:hover {
-              fill: $p-500;
+              fill: $gray-700;
             }
           }
         }
@@ -204,61 +201,40 @@
         border-left: solid $gray-400 .6rem;
 
         div {
-          margin: 0 0 .4rem 0;
+          margin: 0 0 .8rem 0;
 
           span {
-            font-family: $ff-s;
-            font-size: 1.4rem;
+            font-size: 1.2rem;
             font-weight: bold;
             color: $gray-600;
+
+            &:nth-child(2) {
+              margin: 0 .5rem;
+            }
           }
         }
-
 
         a {
             font-weight: bold;
             font-family: $ff-s;
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             color: $gray-500;
 
             &:hover {
-                color: $p-500;
+                color: $gray-700;
             }
         }
       }
 
       &_map {
+        width: 100%;
         margin: 2rem 0 0 0;
-        border-bottom: solid $gray-700 1rem;
+        border-bottom: solid $gray-400 1rem;
         box-shadow: 0.2rem 0.2rem 2rem rgba(0, 0, 0, 0.1);
 
-        @include sm-up {
-          display: flex;
-          justify-content: space-between;
-        }
-
-        img {
+        iframe {
           width: 100%;
-          height: 22rem;
-          object-fit: cover;
-
-          @include sm-up {
-            width: 40%;
-          }
-        }
-
-        div {
-          width: 100%;
-
-          iframe {
-            width: 100%;
-            height: 100%;
-            min-height: 20rem;
-
-            @include sm-up {
-              margin: 0 0 1rem 0;
-            }
-          }
+          height: 30rem;
         }
       }
     }

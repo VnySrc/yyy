@@ -34,13 +34,13 @@
         :key="value.id"
         class="estoque_cards_card"
       >
+        <h1>{{ value.marca_descricao }} {{ value.modelo_descricao }}</h1>
         <div class="estoque_cards_card_info">
           <div class="estoque_cards_card_info_img">
             <img :src="value.fotos.imagem[0]" />
-            <h2>{{ value.marca_descricao }} {{ value.modelo_descricao }}</h2>
+            <h2>{{ value.valor_final | price }}</h2>
           </div>
           <div class="estoque_cards_card_info_stats">
-            <h3>{{ value.valor_final | price }}</h3>
             <div>
               <span>{{ value.ano_fabricacao_descricao }}</span>
               <span>-</span>
@@ -273,6 +273,14 @@ export default {
       min-width: 15rem;
       flex-wrap: nowrap;
 
+      h1 {
+        font-size: 2.4rem;
+        margin: 0 0 1rem 0;
+        color: $gray-700;
+        border-left: solid $gray-400 .6rem;
+        padding: 0 0 0 1rem;
+      }
+
       &_info {
         overflow: hidden;
         display: flex;
@@ -291,35 +299,35 @@ export default {
           }
 
           h2 {
-            color: $p-600;
+            color: $white;
             position: absolute;
             bottom: 0;
             font-size: 1.8rem;
             width: 100%;
             padding: 1rem 1rem 0 1rem;
             text-align: center;
-            background-color: $gray-100;
+            background-color: $gray-700;
           }
         }
 
 
         &_stats {
           width: 100%;
-          padding: 1rem;
-          background-color: $gray-100;
+          padding: .5rem 1rem 1rem 1rem;
+          background-color: $gray-700;
           text-align: center;
 
           div {
             display: flex;
             justify-content: space-around;
             padding: 0.5rem 0 0 0;
-            border-top: solid 0.1rem $gray-300;
+            border-top: solid 0.1rem $gray-500;
 
             span {
               padding-left: 0.8rem;
               font-weight: bold;
               font-size: 1.2rem;
-              color: $gray-500;
+              color: $gray-400;
             }
           }
 

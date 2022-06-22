@@ -157,7 +157,7 @@ export default {
                 color: $gray-700;
     
                 &:hover {
-                    color: $p-500;
+                    color: $gray-500;
                 }
             }
         

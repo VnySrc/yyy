@@ -85,7 +85,7 @@ import "swiper/css/swiper.css";
       data() {
         return {
           office: [
-            "/office/office0.jpg",
+            "/office/office7.jpg",
             "/office/office1.jpg",
             "/office/office2.jpg",
             "/office/office3.jpg",

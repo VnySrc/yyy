@@ -97,6 +97,8 @@ nav {
                 @include sm-up {
                     color: $gray-500;
                     display: block;
+                    outline: 0.2rem solid $gray-500;
+                    outline-offset: 0.2rem;
                 }
             }
 
@@ -120,7 +122,7 @@ nav {
             }
 
             span {
-                color: $p-100;
+                color: $white;
 
                 @include sm-up {
                     display: none;
