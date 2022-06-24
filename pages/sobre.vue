@@ -148,8 +148,6 @@ import "swiper/css/swiper.css";
 
     &_galeria {
       margin: 0 0 2rem 0;
-      background-color: $gray-800;
-      padding: .5rem;
 
       @include md {
         max-width: 50%;
@@ -229,9 +227,9 @@ import "swiper/css/swiper.css";
         h4 {
           font-size: 2rem;
           text-align: center;
-          color: $gray-700;
+          color: $gray-600;
           padding: 1rem;
-          border-bottom: solid .5rem $gray-700;
+          border-bottom: solid .5rem $gray-400;
         }
       }
     }
@@ -259,12 +257,12 @@ import "swiper/css/swiper.css";
           font-size: 2rem;
           color: $gray-600;
           padding: 1rem;
-          border-bottom: solid .5rem $gray-500;
+          border-bottom: solid .5rem $gray-400;
         }
       }
       
       &_sub {
-        border-left: solid .5rem $gray-600;
+        border-left: solid .5rem $gray-400;
         padding-left: 1rem;
         margin: 3rem 0 0 0;
 
@@ -286,7 +284,7 @@ import "swiper/css/swiper.css";
         }
 
         &:nth-child(odd) {
-          border-right: solid .5rem $gray-600;
+          border-right: solid .5rem $gray-400;
           padding-right: 1rem;
           border-left: none;
           padding-left: 0;

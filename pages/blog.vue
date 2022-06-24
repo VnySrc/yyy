@@ -1,14 +1,18 @@
 <template>
     <section class="blog">
         <nuxt-link to="/sobre" class="blog_card">
-            <nuxt-img format="webp" src="/office/office0.jpg" />
+            <div class="blog_card_img">
+                <nuxt-img format="webp" src="/office/office0.jpg" />
+            </div>
             <div class="blog_card_title">
                 <h5>Avenida Veículos</h5>
                 <h4>Conheça nossa história de sucesso!</h4>
             </div>
         </nuxt-link>
         <nuxt-link :to="`/blog/${value.slug}`" v-for="value in blog" :key="value.id" class="blog_card">
-            <nuxt-img format="webp" :src="value.banner"/>
+            <div class="blog_card_img">
+                <nuxt-img format="webp" :src="value.banner"/>
+            </div>
             <div class="blog_card_title">
                 <h5>{{ value.tag }}</h5>
                 <h4>{{ value.titulo }}</h4>
@@ -67,19 +71,26 @@
             }
         }
 
-        img {
+        &_img {
             height: 18rem;
-            object-fit: cover;
-            box-shadow: .1rem .1rem 1rem rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                object-position: center;                object-fit: cover;
+                box-shadow: .1rem .1rem 1rem rgba(0, 0, 0, 0.1);
+            }
         }
 
         &:hover {
-            div {
+            .blog_card_title {
                 border-left: solid $gray-700 .8rem;
             }
 
             img {
-                outline: solid .4rem $gray-700;
+                animation: scaling 3s both;
             }
 
             h4 {

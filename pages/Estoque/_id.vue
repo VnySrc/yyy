@@ -170,8 +170,6 @@ export default {
             }
 
             &_gallery {
-                background-color: $gray-800;
-                padding: .5rem;
 
                 img {
                     width: 100%;
