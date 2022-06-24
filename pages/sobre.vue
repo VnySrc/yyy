@@ -140,14 +140,16 @@ import "swiper/css/swiper.css";
     &_texto {
       p {
         font-family: $ff-s;
-        font-size: 2rem;
-        color: $gray-500;
+        font-size: 2.2rem;
+        color: $gray-600;
         margin: 0 0 1.5rem 0;
       }
     }
 
     &_galeria {
       margin: 0 0 2rem 0;
+      background-color: $gray-800;
+      padding: .5rem;
 
       @include md {
         max-width: 50%;
@@ -176,7 +178,7 @@ import "swiper/css/swiper.css";
           .swiper-slide {
               width: 25%;
               height: 100%;
-              opacity: 0.4;
+              opacity: 0.6;
           }
 
           .swiper-slide-active {
@@ -195,12 +197,8 @@ import "swiper/css/swiper.css";
   &_info {
     margin: 1rem 0 0 0;
 
-    @include md {
-      padding: 0 8rem 0 8rem;
-    }
-
     p {
-      color: $gray-500;
+      color: $gray-600;
       text-align: center;
       font-size: 1.8rem;
       font-family: $ff-s;
@@ -224,7 +222,7 @@ import "swiper/css/swiper.css";
         }
 
         svg {
-          fill: $p-600;
+          fill: $gray-600;
           height: 4rem;
         }
 
@@ -240,6 +238,10 @@ import "swiper/css/swiper.css";
 
 
     &_value {
+      @include sm-up {
+        margin: 8rem 0 0 0;
+      }
+
       &_icon {
         display: flex;
         flex-direction: column;
@@ -248,7 +250,7 @@ import "swiper/css/swiper.css";
         margin: 2rem 0;
 
         svg {
-          fill: $p-600;
+          fill: $gray-600;
           height: 4rem;
           margin-bottom: 1rem;
         }
@@ -271,7 +273,7 @@ import "swiper/css/swiper.css";
         }
 
         p {
-          color: $gray-500;
+          color: $gray-600;
           text-align: left;
           font-size: 1.8rem;
           font-family: $ff-s;

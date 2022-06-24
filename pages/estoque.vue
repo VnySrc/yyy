@@ -38,9 +38,9 @@
         <div class="estoque_cards_card_info">
           <div class="estoque_cards_card_info_img">
             <img :src="value.fotos.imagem[0]" />
-            <h2>{{ value.valor_final | price }}</h2>
           </div>
-          <div class="estoque_cards_card_info_stats">
+          <div class="estoque_cards_card_info_stats animatedFill">
+            <h2>{{ value.valor_final | price }}</h2>
             <div>
               <span>{{ value.ano_fabricacao_descricao }}</span>
               <span>-</span>
@@ -265,7 +265,7 @@ export default {
 
     @include md {
       grid-template-columns: repeat(3, 1fr);
-      gap: 3rem;
+      gap: 6rem 4rem;
     }
 
     &_card {
@@ -276,74 +276,72 @@ export default {
       h1 {
         font-size: 2.4rem;
         margin: 0 0 1rem 0;
-        color: $gray-700;
+        color: $gray-600;
         border-left: solid $gray-400 .6rem;
         padding: 0 0 0 1rem;
       }
 
       &_info {
-        overflow: hidden;
-        display: flex;
-        flex-direction: column;
-        position: relative;
         box-shadow: 0.2rem 0.2rem 2rem rgba(0, 0, 0, 0.2);
+        overflow: hidden;
 
         &_img {
           position: relative;
+          overflow: hidden;
+          height: 22rem;
 
           img {
             width: 100%;
-            height: 28rem;
+            height: 100%;
             object-fit: cover;
-            object-position: center;
-          }
-
-          h2 {
-            color: $white;
             position: absolute;
-            bottom: 0;
-            font-size: 1.8rem;
-            width: 100%;
-            padding: 1rem 1rem 0 1rem;
-            text-align: center;
-            background-color: $gray-700;
+            object-position: center;
           }
         }
 
 
         &_stats {
           width: 100%;
-          padding: .5rem 1rem 1rem 1rem;
-          background-color: $gray-700;
+          padding: 1rem;
           text-align: center;
+
+          background-size: 1000% 1000%;
+          animation: Color 5s ease-in-out infinite;
+          background: linear-gradient(90deg, $gray-500 0%, $gray-600 100%);
+
+          h2 {
+            color: $white;
+            font-size: 1.8rem;
+            padding: 0 0 .5rem 0;
+          }
 
           div {
             display: flex;
-            justify-content: space-around;
             padding: 0.5rem 0 0 0;
+            justify-content: space-around;
             border-top: solid 0.1rem $gray-500;
 
             span {
-              padding-left: 0.8rem;
               font-weight: bold;
               font-size: 1.2rem;
               color: $gray-400;
             }
           }
-
-          h3 {
-            padding: 0 0 1rem 0;
-            text-align: center;
-            font-size: 1.8rem;
-            color: $gray-600;
-          }
         }
-
       }
 
       &:hover {
-        .estoque_cards_card_info {
-          outline: solid 0.4rem $gray-700;
+        .estoque_cards_card_info_stats {
+          background: linear-gradient(90deg, $gray-600 0%, $gray-700 100%);
+        }
+
+        img {
+          animation: scaling 1s both;
+        }
+
+        h1 {
+          border-left: solid $gray-700 .6rem;
+          color: $gray-700;
         }
       }
     }

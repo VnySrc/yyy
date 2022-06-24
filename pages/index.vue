@@ -34,14 +34,14 @@
                     <h4>{{ value.marca_descricao }}</h4>
                     <h5>{{ value.modelo_descricao }}</h5>
                     <div class="home_header_highlights_card_img">
-                        <div class="home_header_highlights_card_img_stats">
-                            <span>{{ value.ano_fabricacao_descricao }}</span>
-                            <span>-</span>
-                            <span>{{ value.combustivel_descricao | gas }}</span>
-                            <span>-</span>
-                            <span>{{ value.valor_final | price }}</span>
-                        </div>
                         <img :src="value.fotos.imagem[0]" />
+                    </div>
+                    <div class="home_header_highlights_card_stats">
+                        <span>{{ value.ano_fabricacao_descricao }}</span>
+                        <span>-</span>
+                        <span>{{ value.combustivel_descricao | gas }}</span>
+                        <span>-</span>
+                        <span>{{ value.valor_final | price }}</span>
                     </div>
                 </nuxt-link>
             </div>
@@ -170,10 +170,15 @@ const xml2js = require('xml2js'),
                 
                 img {
                     width: 100%;
-                    aspect-ratio: 3 / 1;
+                    height: 100%;
                     object-fit: cover;
-                    border-bottom: solid $gray-700 .8rem;
+                    aspect-ratio: 3 / 1;
+                    object-position: center;
                     box-shadow: .5rem .5rem 2rem rgba(0, 0, 0, 0.1);
+
+                    &:hover {
+                        animation: scaling 3s both;
+                    }
                 }
             }
         }
@@ -270,7 +275,7 @@ const xml2js = require('xml2js'),
     
                     h5 {
                         font-size: 2.8rem;
-                        color: $gray-700;
+                        color: $gray-600;
                     }
         
                     &_img {
@@ -278,28 +283,31 @@ const xml2js = require('xml2js'),
                         position: relative;
                         margin: 1rem 0 0 0;
                         box-shadow: .1rem .1rem 1rem rgba(0, 0, 0, 0.1);
+                        height: 12rem;
                         
                         img {
                             width: 100%;
-                            height: 15rem;
+                            height: 100%;
                             object-fit: cover;
-                            object-position: bottom;
+                            object-position: center;
                         }
 
-                        &_stats {
-                            bottom: 0;
-                            width: 100%;
-                            display: flex;
-                            position: absolute;
-                            padding: .5rem 1rem;
-                            justify-content: space-around;
-                            background: linear-gradient(10deg, $gray-700 0%, $gray-800 100%);
-        
-                            span {
-                                font-weight: bold;
-                                font-size: 1rem;
-                                color: $gray-200;
-                            }
+                    }
+
+                    &_stats {
+                        width: 100%;
+                        display: flex;
+                        padding: .5rem 1rem;
+                        justify-content: space-around;
+
+                        background-size: 1000% 1000%;
+                        animation: Color 2s ease-in-out infinite;
+                        background: linear-gradient(90deg, $gray-500 0%, $gray-600 100%);
+    
+                        span {
+                            font-weight: bold;
+                            font-size: 1rem;
+                            color: $gray-300;
                         }
                     }
 
@@ -309,8 +317,12 @@ const xml2js = require('xml2js'),
                             color: $gray-800;
                         }
 
-                        .home_header_highlights_card_img {
-                            outline: solid .3rem $gray-700;
+                        img {
+                            animation: scaling 1s both;
+                        }
+
+                        .home_header_highlights_card_stats {
+                            background: linear-gradient(90deg, $gray-600 0%, $gray-700 100%);
                         }
 
                         
@@ -448,6 +460,7 @@ const xml2js = require('xml2js'),
 
                 &_img {
                     height: 18rem;
+                    overflow: hidden;
                     box-shadow: .1rem .1rem 1rem rgba(0, 0, 0, 0.1);
 
                     img {
@@ -465,6 +478,7 @@ const xml2js = require('xml2js'),
 
                     img {
                         outline: solid .4rem $gray-700;
+                        animation: scaling 1s both;
                     }
 
                     h4 {

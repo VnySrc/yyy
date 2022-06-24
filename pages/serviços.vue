@@ -6,7 +6,9 @@
         <h3>Garantia de até 1 ano inédita entre as lojas de seminovos no Brasil</h3>
         <p>Carros seminovos ou usados com garantia de até 1 ano.</p>
       </div>
-      <nuxt-img format="webp" src="/services/warranty.jpg" />
+      <div class="services_service_img">
+        <nuxt-img format="webp" src="/services/warranty.jpg" />
+      </div>
     </div>
     <div class="services_service">
       <div>
@@ -14,7 +16,9 @@
         <h3>Financiamento rápido que cabe no seu bolso sem burocracia</h3>
         <p>Diversas opções de financiamento para você comprar seu seminovo com total segurança e rapidez.</p>
       </div>
-      <nuxt-img format="webp" src="/services/finance.jpg" />
+      <div class="services_service_img">
+        <nuxt-img format="webp" src="/services/finance.jpg" />
+      </div>
     </div>
     <div class="services_service">
       <div>
@@ -23,7 +27,9 @@
         <p>Compre e receba em casa experimente a entrega domiciliar, tenha uma experiência de compra totalmente diferente.
         </p>
       </div>
-      <nuxt-img format="webp" src="/services/present.jpg" />
+      <div class="services_service_img">
+        <nuxt-img format="webp" src="/services/present.jpg" />
+      </div>
     </div>
     <div class="services_service">
       <div>
@@ -32,7 +38,9 @@
         <p> Todos os nossos carros passam por uma inspeção de até 240 itens para garantir sua qualidade. Além de terem
           Vistoria cautelar.</p>
       </div>
-      <nuxt-img format="webp" src="/services/check.jpg" />
+      <div class="services_service_img">
+        <nuxt-img format="webp" src="/services/check.jpg" />
+      </div>
     </div>
     <div class="services_service">
       <div>
@@ -40,7 +48,9 @@
         <h3>Melhor Pós-venda</h3>
         <p>Serviço de pós-venda especializado, tenha todo o suporte ao comprar seu seminovo.</p>
       </div>
-      <nuxt-img format="webp" src="/services/assistant.jpg" />
+      <div class="services_service_img">
+        <nuxt-img format="webp" src="/services/assistant.jpg" />
+      </div>
     </div>
   </section>
 </template>
@@ -48,8 +58,8 @@
 <style lang="scss">
   .services {
     display: flex;
-    row-gap: 5rem;
-    padding: 6rem 1.5rem;
+    row-gap: 8rem;
+    padding: 6rem 1.5rem 12rem 1.5rem;
     flex-direction: column;
     justify-content: center;
 
@@ -75,16 +85,12 @@
         }
 
         img {
-          border-bottom: solid .8rem $gray-700;
+          animation: scaling 1s both;
         }
       }
 
       @include sm-up {
         max-width: 30rem;
-
-        div {
-          height: 22rem;
-        }
       }
 
       div {
@@ -92,24 +98,21 @@
         text-align: center;
         flex-direction: column;
         align-items: center;
-        justify-content: space-around;
 
         svg {
-          height: 6rem;
-          margin-bottom: 1.5rem;
-          fill: $p-600;
+          fill: $gray-600;
         }
 
         h3 {
-          font-size: 2.5rem;
-          font-weight: bold;
           color: $gray-600;
+          font-size: 2.5rem;
+          margin: 3rem 0 1rem 0;
         }
 
         p {
           font-family: $ff-s;
           font-size: 2.2rem;
-          color: $gray-500;
+          color: $gray-600;
           margin: 1rem 0 2rem 0;
         }
 
@@ -128,15 +131,16 @@
         }
       }
 
-      img {
-        width: 100%;
-        height: 14rem;
-        object-fit: cover;
-        border-bottom: solid .8rem $gray-600;
-        box-shadow: .5rem .5rem 1rem rgba(0, 0, 0, 0.1);
+      &_img {
+        overflow: hidden;
+        height: 12rem;
 
-        @include md {
-          height: 10rem;
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          object-position: center;
+          box-shadow: .5rem .5rem 1rem rgba(0, 0, 0, 0.1);
         }
       }
     }

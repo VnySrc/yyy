@@ -170,6 +170,8 @@ export default {
             }
 
             &_gallery {
+                background-color: $gray-800;
+                padding: .5rem;
 
                 img {
                     width: 100%;
@@ -193,7 +195,7 @@ export default {
                     .swiper-slide {
                         width: 25%;
                         height: 100%;
-                        opacity: 0.4;
+                        opacity: 0.6;
                     }
 
                     .swiper-slide-active {
@@ -213,18 +215,19 @@ export default {
                 &_titles {
                     margin: 1rem 0;
                     padding-left: 1rem;
-                    border-left: solid $gray-500 .8rem;
+                    border-left: solid $gray-400 .8rem;
         
                     h1 {
-                        color: $gray-600;
+                        color: $gray-700;
                         font-size: 3.4rem;
                         margin: 0 0 .8rem 0;
                     }
         
                     span {
                         font-family: $ff-s;
+                        font-weight: bold;
                         font-size: 1.5rem;
-                        color: $gray-500;
+                        color: $gray-600;
                     }
                 }
     
@@ -235,7 +238,7 @@ export default {
                     &_price {
                         width: 100%;
                         padding: 1.5rem 0;
-                        background-color: $gray-600;
+                        background-color: $gray-700;
 
                         h3 {
                             font-size: 2rem;
@@ -246,7 +249,7 @@ export default {
 
                     &_zap {
                         padding: 1.5rem 0;
-                        background-color: $gray-500;
+                        background-color: $gray-600;
 
                         svg {
                             fill: $white;
@@ -271,7 +274,7 @@ export default {
             }
 
             h4 {
-                color: $gray-600;
+                color: $gray-700;
                 font-size: 2.2rem;
             }
 
@@ -281,7 +284,7 @@ export default {
                 h4 {
                     padding: .5rem 1rem;
                     text-align: left;
-                    border-left: solid $gray-500 .5rem;
+                    border-left: solid $gray-400 .5rem;
                     margin: 0 0 4rem 0;
                 }
 
@@ -290,21 +293,21 @@ export default {
                     table-layout: fixed;
                     border-collapse: collapse;
                     text-align: center;
-                    font-size: 1.4rem;
+                    font-size: 1.5rem;
                     font-family: $ff-s;
     
                     tbody {
                         tr {
                             th {
                                 padding: 1rem;
-                                color: $gray-500;
+                                color: $gray-600;
                                 border-bottom: .2rem $gray-400 solid;
                                 border-right: .2rem $gray-400 solid;
                             }
         
                             td {
                                 border-bottom: .2rem $gray-400 solid;
-                                color: $gray-500;
+                                color: $gray-600;
                                 padding: 1rem;
                             }
                         }
@@ -317,14 +320,14 @@ export default {
                 
                 h4 {
                     padding: .5rem 1rem;
-                    border-right: solid $gray-500 .5rem;
+                    border-right: solid $gray-400 .5rem;
                     margin: 0 0 2rem 0;
                 }
 
                 p {
-                    font-size: 1.4rem;
+                    font-size: 1.7rem;
                     font-family: $ff-s;
-                    color: $gray-500;
+                    color: $gray-600;
                 }
             }
         }
