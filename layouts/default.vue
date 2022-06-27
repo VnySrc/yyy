@@ -105,14 +105,17 @@ export default {
                     display: flex;
                     justify-content: space-between;
                     max-width: 20rem;
+                    margin: 2rem 0;
         
                     svg {
-                        width: 2.2rem;
+                        width: 2.6rem;
                         fill: $gray-500;
+                        stroke: $gray-500;
                         cursor: pointer;
     
                         &:hover {
                             fill: $gray-700;
+                            stroke: $gray-700;
                         }
                     }
                 }

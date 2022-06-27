@@ -123,9 +123,15 @@
           svg {
             height: 2.5rem;
             fill: $gray-500;
+            stroke: $gray-500;
+
+            &:nth-child(odd) {
+              margin: 0 1rem;
+            }
 
             &:hover {
               fill: $gray-700;
+              stroke: $gray-700;
             }
           }
         }
