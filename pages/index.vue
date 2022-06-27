@@ -167,12 +167,17 @@ const xml2js = require('xml2js'),
         &_banner {
             
             &_imgs {
+                height: 16rem;
+
+                @include sm-up {
+                    height: auto;
+                    aspect-ratio: 3 / 1;
+                }
                 
                 img {
                     width: 100%;
                     height: 100%;
                     object-fit: cover;
-                    aspect-ratio: 3 / 1;
                     object-position: center;
                     box-shadow: .5rem .5rem 2rem rgba(0, 0, 0, 0.1);
 
