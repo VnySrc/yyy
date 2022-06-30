@@ -78,11 +78,6 @@
 
 <style lang="scss">
   .contato {
-    padding: 4rem 1.5rem;
-
-    @include sm-up {
-      padding: 6rem 2rem;
-    }
 
     h2 {
       color: $gray-700;

@@ -178,18 +178,12 @@ export default {
 
 <style lang="scss">
 .estoque {
-  padding: 0 1.5rem 2rem 1.5rem;
-
-  @include sm-up {
-    padding: 0 2rem 4rem 2rem;
-  }
-
-  @include md {
-    padding: 2rem 2rem 6rem 2rem;
+  @include bg {
+      padding: 8rem;
   }
 
   &_filter {
-    margin: 4rem 0;
+    margin: 0 0 4rem 0;
 
     @include md {
       display: flex;
@@ -266,6 +260,10 @@ export default {
     @include md {
       grid-template-columns: repeat(3, 1fr);
       gap: 6rem 4rem;
+    }
+
+    @include bg {
+      grid-template-columns: repeat(4, 1fr);
     }
 
     &_card {

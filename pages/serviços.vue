@@ -59,7 +59,6 @@
   .services {
     display: flex;
     row-gap: 8rem;
-    padding: 6rem 1.5rem 12rem 1.5rem;
     flex-direction: column;
     justify-content: center;
 

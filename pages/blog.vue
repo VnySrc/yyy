@@ -23,10 +23,7 @@
 
 <style lang="scss">
 .blog {
-    padding: 4rem 1.5rem;
-
     @include sm-up {
-        padding: 6rem 2rem;
         justify-content: space-between;
         display: flex;
         gap: 1rem;

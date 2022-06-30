@@ -239,19 +239,19 @@ export default {
                         background-color: $gray-700;
 
                         h3 {
-                            font-size: 2rem;
                             color: $white;
+                            font-size: 2.5rem;
                             text-align: center;
                         }
                     }
 
                     &_zap {
-                        padding: 1.5rem 0;
+                        padding: 1.5rem;
                         background-color: $gray-600;
 
                         svg {
                             fill: $white;
-                            height: 2rem;
+                            height: 3rem;
                         }
 
                         &:hover {
@@ -261,8 +261,6 @@ export default {
                 }
             }
         }
-
-
 
         &_table {
             margin: 4rem 0;
