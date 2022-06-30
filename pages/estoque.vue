@@ -34,20 +34,14 @@
         :key="value.id"
         class="estoque_cards_card"
       >
-        <h1>{{ value.marca_descricao }} {{ value.modelo_descricao }}</h1>
         <div class="estoque_cards_card_info">
           <div class="estoque_cards_card_info_img">
             <img :src="value.fotos.imagem[0]" />
           </div>
           <div class="estoque_cards_card_info_stats animatedFill">
-            <h2>{{ value.valor_final | price }}</h2>
-            <div>
-              <span>{{ value.ano_fabricacao_descricao }}</span>
-              <span>-</span>
-              <span>{{ value.combustivel_descricao | gas }}</span>
-              <span>-</span>
-              <span>{{ value.kilometragem | km }}</span>
-            </div>
+            <h1>{{ value.marca_descricao }} {{ value.modelo_descricao }}</h1>
+            <h2>{{ value.versao_descricao }}</h2>
+            <h3>{{ value.valor_final | price }}</h3>
           </div>
         </div>
       </nuxt-link>
@@ -87,7 +81,7 @@ export default {
         style: "unit",
         unit: "kilometer",
       }).format(value);
-    },
+    }
   },
   computed: {
     sortItem() {
@@ -178,6 +172,8 @@ export default {
 
 <style lang="scss">
 .estoque {
+  max-width: 100% !important;
+  
   @include bg {
       padding: 8rem;
   }
@@ -200,13 +196,13 @@ export default {
       select {
         width: 100%;
         border: none;
-        color: $gray-500;
+        color: $gray-100;
         padding: 1rem;
         font-weight: bold;
         background-color: transparent;
         text-align: center;
         cursor: pointer;
-        border: solid 0.2rem $gray-400;
+        border: solid 0.2rem $gray-100;
         max-width: 20rem;
 
         @include md {
@@ -214,8 +210,8 @@ export default {
         }
   
         &:hover {
-          color: $gray-700;
-          border: solid 0.2rem $gray-700;
+          color: $gray-400;
+          border: solid 0.2rem $gray-400;
         }
   
         &:nth-child(2) {
@@ -271,16 +267,11 @@ export default {
       min-width: 15rem;
       flex-wrap: nowrap;
 
-      h1 {
-        font-size: 2.4rem;
-        margin: 0 0 1rem 0;
-        color: $gray-600;
-        border-left: solid $gray-400 .6rem;
-        padding: 0 0 0 1rem;
-      }
-
       &_info {
-        box-shadow: 0.2rem 0.2rem 2rem rgba(0, 0, 0, 0.2);
+        border-radius: .2rem;
+        background: linear-gradient(45deg, $gray-100 0%, $gray-200 100%);
+        box-shadow: .1rem .1rem 1rem rgba(0, 0, 0, 0.1);
+        padding: 1rem;
         overflow: hidden;
 
         &_img {
@@ -297,49 +288,47 @@ export default {
           }
         }
 
-
         &_stats {
           width: 100%;
-          padding: 1rem;
+          padding: 1rem 0 0 0;
           text-align: center;
 
-          background-size: 1000% 1000%;
-          animation: Color 5s ease-in-out infinite;
-          background: linear-gradient(90deg, $gray-500 0%, $gray-600 100%);
-
-          h2 {
-            color: $white;
-            font-size: 1.8rem;
-            padding: 0 0 .5rem 0;
+          h1 {
+            font-size: 2.4rem;
+            color: $gray-600;
           }
 
-          div {
-            display: flex;
-            padding: 0.5rem 0 0 0;
-            justify-content: space-around;
-            border-top: solid 0.1rem $gray-500;
+          h2 {
+            color: $gray-500;
+            font-size: 1rem;
+            margin: 1rem 0;
+            flex-wrap: nowrap;
+          }
 
-            span {
-              font-weight: bold;
-              font-size: 1.2rem;
-              color: $gray-400;
-            }
+          h3 {
+            background-color: $p-600;
+            font-size: 2rem;
+            padding: 1rem;
+            color: $white;
           }
         }
       }
 
       &:hover {
-        .estoque_cards_card_info_stats {
-          background: linear-gradient(90deg, $gray-600 0%, $gray-700 100%);
-        }
-
         img {
           animation: scaling 1s both;
         }
 
         h1 {
-          border-left: solid $gray-700 .6rem;
-          color: $gray-700;
+          color: $p-500;
+        }
+
+        h2 {
+          color: $gray-600;
+        }
+
+        h3 {
+          background-color: $p-500;
         }
       }
     }

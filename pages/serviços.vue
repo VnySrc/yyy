@@ -57,6 +57,7 @@
 
 <style lang="scss">
   .services {
+    max-width: 100% !important;
     display: flex;
     row-gap: 8rem;
     flex-direction: column;

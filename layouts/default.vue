@@ -1,6 +1,8 @@
 <template>
     <div class="site">
-        <nav class="site_nav" :class="{ site_nav_alt: homePage }">
+        <section class="site_banner" v-show="banner === true">
+        </section>
+        <nav class="site_nav" :class="{ site_nav_alt: banner }">
             <nuxt-link to="/" class="site_nav_logo"><IconsLogo /></nuxt-link>
             <div class="site_nav_menu">
                 <nuxt-link to="/">Home</nuxt-link>
@@ -54,8 +56,8 @@ import { mapState } from "vuex";
 export default {
     computed: {
          ...mapState('links', ['links']),
-         homePage() {
-            if(this.$route.path == "/") {
+         banner() {
+            if(this.$route.path == "/" || this.$route.path == "/estoque" ) {
                 return true
             } else {
                 return false
@@ -66,11 +68,20 @@ export default {
 </script>
 
 <style lang="scss">
+.none {
+    display: none;
+}
+
 .site {
     font-family: $ff-primary;
-
-    background: rgb(213,218,223);
-    background: linear-gradient(45deg, $gray-200 0%, $gray-300 50%, $gray-200 100%);
+        
+    &_banner {
+        width: 100%;
+        z-index: -1;
+        height: 50vh;
+        position: absolute;
+        background: linear-gradient(0deg, $p-700 0%, $p-800 100%);
+    }
 
     &_nav {
         width: 100%;
@@ -109,7 +120,7 @@ export default {
             align-items: center;
 
             a {
-                font-weight: 500;
+                font-weight: bold;
                 font-size: 1.6rem;
                 color: $gray-400;
 
@@ -138,7 +149,7 @@ export default {
                 padding: 2rem;
                 cursor: pointer;
                 position: fixed;
-                background: linear-gradient(45deg, $p-700 0%, $p-800 100%);
+                background-color: $gray-600;
                 z-index: 2;
 
                 @include sm-up {
@@ -188,11 +199,9 @@ export default {
         }
 
         &_alt {
-            position: absolute;
-
             .site_nav_logo {
                 #car, #veiculos {
-                    fill: $gray-300;
+                    fill: $gray-400;
                 }
 
                 #avenida {
@@ -202,7 +211,7 @@ export default {
 
             .site_nav_menu {
                 a {
-                    color: $gray-400;
+                    color: $gray-500;
 
                     &:hover {
                         color: $gray-100;
@@ -210,28 +219,34 @@ export default {
                 }
 
                 a.nuxt-link-exact-active {
-                    font-weight: bold;
                     color: $gray-100;
                 }
             }
 
             .site_nav_menu_chat {
-                background: $gray-300;
-
-                svg {
-                    fill: $gray-600;
+                @include sm-up {
+                    background: $gray-300;
+    
+                    svg {
+                        fill: $gray-500;
+                    }
+    
+                    &:hover {
+                        background-color: $gray-200;
+    
+                        @include sm-up {
+                            outline: 0.2rem solid $gray-200;
+                            outline-offset: 0.4rem;
+                        }
+                    }
                 }
-
-                &:hover {
-                    background-color: $gray-200;
-                }
-                
             }
         }
     }
 
     &_content {
         margin: 0 auto;
+        max-width: 120rem;
         padding: 6rem 1.5rem;
 
         @include md {
