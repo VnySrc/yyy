@@ -148,6 +148,7 @@ const xml2js = require('xml2js'),
                 div {
                     padding: 1.2rem;
                     margin-right: 1.5rem;
+                    border-radius: .5rem;
                     background-color: $gray-100;
     
                     svg {
@@ -157,13 +158,17 @@ const xml2js = require('xml2js'),
 
                 &:hover {
                     span {
-                        color: $gray-100;
+                        filter: brightness(1.2);
+                    }
+
+                    svg {
+                        fill: $p-600;
                     }
     
                     div {
                         outline: 0.2rem solid $gray-200;
                         outline-offset: 0.4rem;
-                        background-color: $gray-200;
+                        filter: brightness(1.2);
                     }
                 }
             }
@@ -186,7 +191,7 @@ const xml2js = require('xml2js'),
                     padding: 1rem;
                     flex: 1 1 auto;
                     text-align: center;
-                    border-radius: .2rem;
+                    border-radius: .5rem;
                     box-shadow: .1rem .1rem 1rem rgba(0, 0, 0, 0.1);
                     background: linear-gradient(45deg, $gray-100 0%, $gray-200 100%);
 
@@ -205,7 +210,7 @@ const xml2js = require('xml2js'),
                         overflow: hidden;
                         position: relative;
                         margin: 0 0 1rem 0;
-                        height: 12rem;
+                        height: 16rem;
                         
                         img {
                             width: 100%;
@@ -276,7 +281,7 @@ const xml2js = require('xml2js'),
 
                 h2 {
                     font-size: 2rem;
-                    color: $s-400;
+                    color: $gray-600;
                 }
 
                 p {
@@ -287,7 +292,7 @@ const xml2js = require('xml2js'),
             }
 
             &_cards {
-                gap: 2rem;
+                gap: 1rem;
                 width: 100%;
                 display: flex;
                 flex-wrap: wrap;
@@ -301,21 +306,19 @@ const xml2js = require('xml2js'),
                     flex: 1 1 auto;
                     width: 15rem;
                     display: flex;
-                    padding: 1rem;
-                    aspect-ratio: 1 / 1;
+                    padding: 4rem 1rem;
                     align-items: center;
                     flex-direction: column;
-                    justify-content: center;
-                    border-radius: .2rem;
+                    justify-content: space-around;
+                    border-radius: .5rem;
                     background: linear-gradient(45deg, $gray-100 0%, $gray-200 100%);
                     box-shadow: .1rem .1rem 1rem rgba(0, 0, 0, 0.1);
 
 
                     svg {
-                        height: 6rem;
+                        height: 8rem;
                         margin-bottom: 1.5rem;
                         fill: $p-600;
-                        border-bottom: solid .5rem $gray-400;
                         padding: 0 0 1rem 0;
                     }
 
@@ -329,7 +332,6 @@ const xml2js = require('xml2js'),
                     &:hover {
                         svg {
                             fill: $gray-700;
-                            border-bottom: solid .5rem $gray-700;
                         }
                     }
                 }
@@ -352,6 +354,9 @@ const xml2js = require('xml2js'),
                 margin: 4rem 0;
                 display: flex;
                 flex-direction: column;
+                padding: 1rem;
+                border-radius: .5rem;
+                background: linear-gradient(45deg, $gray-100 0%, $gray-200 100%);
 
                 @include sm-up {
                     margin: 0;

@@ -23,25 +23,34 @@
 
 <style lang="scss">
 .blog {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
     @include sm-up {
+        flex-direction: row;
         justify-content: space-between;
-        display: flex;
-        gap: 1rem;
     }
 
     @include md {
-        gap: 3rem;
+        padding-top: 12rem;
+    }
+
+    @include bg {
+        padding-top: 22rem;
     }
 
     &_card {
-        gap: 0.5rem;
-        margin: 0 0 4rem 0;
         display: flex;
+        padding: 1rem;
+        border-radius: .5rem;
+        background: linear-gradient(45deg, $gray-100 0%, $gray-200 100%);
         flex-direction: column;
+        justify-content: space-between;
 
         @include sm-up {
             margin: 0;
-            width: 23rem;
+            width: 28rem;
         }
 
         @include md {
@@ -53,6 +62,10 @@
             font-weight: bold;
             margin: 1rem 0 0 0;
             padding: .5rem 1rem;
+            flex: 1 1 auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
             border-left: solid $gray-400 .8rem;
 
             h5 {

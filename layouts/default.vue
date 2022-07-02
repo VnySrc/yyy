@@ -57,7 +57,7 @@ export default {
     computed: {
          ...mapState('links', ['links']),
          banner() {
-            if(this.$route.path == "/" || this.$route.path == "/estoque" ) {
+            if(this.$route.path == "/" || this.$route.path == "/estoque" || this.$route.path == "/blog" ) {
                 return true
             } else {
                 return false
@@ -149,6 +149,7 @@ export default {
                 padding: 2rem;
                 cursor: pointer;
                 position: fixed;
+                border-radius: .5rem;
                 background-color: $gray-600;
                 z-index: 2;
 
@@ -233,6 +234,10 @@ export default {
     
                     &:hover {
                         background-color: $gray-200;
+
+                        svg {
+                            fill: $p-600;
+                        }
     
                         @include sm-up {
                             outline: 0.2rem solid $gray-200;
