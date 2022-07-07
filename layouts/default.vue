@@ -57,7 +57,7 @@ export default {
     computed: {
          ...mapState('links', ['links']),
          banner() {
-            if(this.$route.path == "/" || this.$route.path == "/estoque" || this.$route.path == "/blog" ) {
+            if(this.$route.path == "/" || this.$route.path == "/estoque" || this.$route.path == "/servi%C3%A7os" || this.$route.path == "/blog" ) {
                 return true
             } else {
                 return false
@@ -149,11 +149,12 @@ export default {
                 padding: 2rem;
                 cursor: pointer;
                 position: fixed;
-                border-radius: .5rem;
-                background-color: $gray-600;
+                background: linear-gradient(0deg, $p-700 0%, $p-800 100%);
                 z-index: 2;
 
                 @include sm-up {
+                    border-radius: .5rem;
+                    background: $gray-600;
                     display: block;
                     position: relative;
                     width: auto;
@@ -251,11 +252,11 @@ export default {
 
     &_content {
         margin: 0 auto;
-        max-width: 120rem;
+        max-width: 140rem;
         padding: 6rem 1.5rem;
 
         @include md {
-            padding: 8rem 2rem 14rem 2rem;
+            padding: 8rem 0 14rem 0;
         }
     }
     
@@ -331,14 +332,6 @@ export default {
             height: 5rem;
             display: block;
             margin: auto;
-
-            #car, #veiculos {
-                fill: $gray-600;
-            }
-
-            #avenida {
-                fill: $gray-700;
-            }
     
             @include sm-up {
                 display: inline;
@@ -361,23 +354,24 @@ export default {
             a {
                 font-weight: bold;
                 font-size: 1.5rem;
-                color: $gray-700;
+                color: $p-700;
     
                 &:hover {
-                    color: $gray-500;
+                    filter: brightness(1.2);
                 }
             }
         
             div {
                 height: 0.3rem;
-                background-color: $gray-700;
+                background-color: $p-600;
                 margin: 1rem 0;
             }
         
             p {
                 font-weight: bold;
                 font-size: 1.4rem;
-                color: $gray-500;
+                margin: .5rem 0 0 0;
+                color: $gray-600;
             }
         }
     }

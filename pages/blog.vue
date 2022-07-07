@@ -83,6 +83,7 @@
 
         &_img {
             height: 18rem;
+            border-radius: .5rem;
             overflow: hidden;
 
             img {

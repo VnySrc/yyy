@@ -270,7 +270,7 @@ export default {
             }
 
             h4 {
-                color: $gray-700;
+                color: $p-600;
                 font-size: 2.2rem;
             }
 

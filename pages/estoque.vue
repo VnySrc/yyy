@@ -268,7 +268,7 @@ export default {
       flex-wrap: nowrap;
 
       &_info {
-        border-radius: .2rem;
+        border-radius: .5rem;
         background: linear-gradient(45deg, $gray-100 0%, $gray-200 100%);
         box-shadow: .1rem .1rem 1rem rgba(0, 0, 0, 0.1);
         padding: 1rem;
@@ -277,6 +277,7 @@ export default {
         &_img {
           position: relative;
           overflow: hidden;
+          border-radius: .5rem;
           height: 22rem;
 
           img {
@@ -307,6 +308,7 @@ export default {
 
           h3 {
             background-color: $p-600;
+            border-radius: .5rem;
             font-size: 2rem;
             padding: 1rem;
             color: $white;

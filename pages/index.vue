@@ -191,6 +191,7 @@ const xml2js = require('xml2js'),
                     padding: 1rem;
                     flex: 1 1 auto;
                     text-align: center;
+                    width: 15rem;
                     border-radius: .5rem;
                     box-shadow: .1rem .1rem 1rem rgba(0, 0, 0, 0.1);
                     background: linear-gradient(45deg, $gray-100 0%, $gray-200 100%);
@@ -209,8 +210,13 @@ const xml2js = require('xml2js'),
                     &_img {
                         overflow: hidden;
                         position: relative;
+                        border-radius: .5rem;
                         margin: 0 0 1rem 0;
-                        height: 16rem;
+                        height: 12rem;
+
+                        @include md {
+                            height: 16rem;
+                        }
                         
                         img {
                             width: 100%;
@@ -274,7 +280,7 @@ const xml2js = require('xml2js'),
                 }
 
                 h1 {
-                    color: $gray-700;
+                    color: $p-600;
                     font-size: 3rem;
                     margin: .5rem 0 1rem 0;
                 }
@@ -376,7 +382,7 @@ const xml2js = require('xml2js'),
 
                     h5 {
                         font-size: 1.4rem;
-                        color: $gray-500;
+                        color: $s-400;
                         margin-bottom: .5rem;
                     }
 
@@ -390,6 +396,7 @@ const xml2js = require('xml2js'),
                 &_img {
                     height: 18rem;
                     overflow: hidden;
+                    border-radius: .5rem;
                     box-shadow: .1rem .1rem 1rem rgba(0, 0, 0, 0.1);
 
                     img {

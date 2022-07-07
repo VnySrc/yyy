@@ -80,7 +80,7 @@
   .contato {
 
     h2 {
-      color: $gray-700;
+      color: $p-600;
       font-size: 2.4rem;
       margin: 0 0 1rem 0;
     }
@@ -168,7 +168,7 @@
             margin: 1rem 0;
             font-weight: bold;
             padding: 0 1rem;
-            border-left: solid $gray-500 .5rem;
+            border-left: solid $s-300 .5rem;
 
             &:hover {
               h3 {
@@ -184,7 +184,7 @@
 
             h4 {
               font-size: 1.4rem;
-              color: $gray-500;
+              color: $s-400;
             }
 
             &:hover {
