@@ -38,10 +38,14 @@
           <div class="estoque_cards_card_info_img">
             <img :src="value.fotos.imagem[0]" />
           </div>
-          <div class="estoque_cards_card_info_stats animatedFill">
+          <div class="estoque_cards_card_info_stats">
             <h1>{{ value.marca_descricao }} {{ value.modelo_descricao }}</h1>
             <h2>{{ value.versao_descricao }}</h2>
             <h3>{{ value.valor_final | price }}</h3>
+            <div>
+              <span>{{ value.ano_fabricacao_descricao }}</span>
+              <span>{{ value.kilometragem | km }}</span>
+            </div>
           </div>
         </div>
       </nuxt-link>
@@ -292,7 +296,7 @@ export default {
         &_stats {
           width: 100%;
           padding: 1rem 0 0 0;
-          text-align: center;
+          text-align: left;
 
           h1 {
             font-size: 2.4rem;
@@ -307,11 +311,21 @@ export default {
           }
 
           h3 {
-            background-color: $p-600;
-            border-radius: .5rem;
+            margin: 3rem 0 0 0;
             font-size: 2rem;
-            padding: 1rem;
-            color: $white;
+            color: $gray-500;
+          }
+
+          div {
+            display: flex;
+            justify-content: space-between;
+
+            span {
+              font-size: 1.6rem;
+              font-weight: bold;
+              margin: 1rem 0 0 0;
+              color: $gray-400;
+            }
           }
         }
       }
@@ -327,10 +341,6 @@ export default {
 
         h2 {
           color: $gray-600;
-        }
-
-        h3 {
-          background-color: $p-500;
         }
       }
     }

@@ -29,7 +29,7 @@
 
     @include sm-up {
         flex-direction: row;
-        justify-content: space-between;
+        justify-content: space-evenly;
     }
 
     @include md {
@@ -70,7 +70,7 @@
 
             h5 {
                 font-size: 1.4rem;
-                color: $gray-500;
+                color: $s-400;
                 margin-bottom: .5rem;
             }
 
