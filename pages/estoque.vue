@@ -271,7 +271,6 @@ export default {
 
     &_card {
       min-width: 15rem;
-      max-width: 40rem;
 
       &_info {
         height: 100%;
