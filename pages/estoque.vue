@@ -303,7 +303,7 @@ export default {
           }
 
           h2 {
-            color: $gray-500;
+            color: $s-400;
             font-size: 1rem;
             margin: 1rem 0;
             flex-wrap: nowrap;

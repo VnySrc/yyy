@@ -287,7 +287,7 @@ const xml2js = require('xml2js'),
 
                 h2 {
                     font-size: 2rem;
-                    color: $gray-600;
+                    color: $s-400;
                 }
 
                 p {
