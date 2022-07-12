@@ -261,6 +261,7 @@ export default {
     
     footer {
         padding: 1.5rem 1.5rem 8rem 1.5rem;
+        background: rgba(161, 161, 161, 0.1);
 
         @include sm-up {
             padding: 2rem;

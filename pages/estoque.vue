@@ -231,8 +231,12 @@ export default {
     }
 
     button {
-      color: $gray-400;
+      color: $gray-600;
+      font-weight: bold;
       cursor: pointer;
+      padding: 1rem;
+      margin: 1rem 0 0 0;
+      border-radius: 5rem;
       text-align: center;
 
       @include md {
