@@ -38,12 +38,15 @@
           <div class="estoque_cards_card_info_img">
             <img :src="value.fotos.imagem[0]" />
           </div>
-          <div class="estoque_cards_card_info_stats">
+          <div class="estoque_cards_card_info_title">
             <h1>{{ value.marca_descricao }} {{ value.modelo_descricao }}</h1>
             <h2>{{ value.versao_descricao }}</h2>
+          </div>
+          <div class="estoque_cards_card_info_price">
             <h3>{{ value.valor_final | price }}</h3>
             <div>
               <span>{{ value.ano_fabricacao_descricao }}</span>
+              <span>{{ value.combustivel_descricao | gas }}</span>
               <span>{{ value.kilometragem | km }}</span>
             </div>
           </div>
@@ -183,7 +186,7 @@ export default {
   }
 
   &_filter {
-    margin: 0 0 4rem 0;
+    margin: 0 0 3rem 0;
 
     @include md {
       display: flex;
@@ -192,29 +195,33 @@ export default {
     div {
       display: flex;
       justify-content: center;
+      background-color: $white;
+      border-radius: 5rem;
+      padding: 1rem;
+
+      @include sm-up {
+        width: fit-content;
+      }
   
       @include md {
         justify-content: flex-start;
       }
   
       select {
-        color: $gray-100;
+        color: $gray-600;
         border: none;
-        padding: 1rem;
         font-weight: bold;
+        font-size: 1.2rem;
         background-color: transparent;
         text-align: center;
         cursor: pointer;
-        border-bottom: solid 0.2rem $gray-100;
-        max-width: 20rem;
 
         @include md {
-          width: 30rem;
+          width: 20rem;
         }
   
         &:hover {
-          color: $gray-400;
-          border-bottom: solid 0.2rem $gray-400;
+          color: $p-600;
         }
   
         &:nth-child(2) {
@@ -224,18 +231,11 @@ export default {
     }
 
     button {
-      font-size: 1.4rem;
-      font-weight: bold;
       color: $gray-400;
-      background: transparent;
-      margin: 2rem 0 0 0;
       cursor: pointer;
       text-align: center;
-      width: 100%;
 
       @include md {
-        margin: 0 2rem;
-        width: auto;
         text-align: left;
       }
 
@@ -258,7 +258,7 @@ export default {
 
     @include md {
       grid-template-columns: repeat(3, 1fr);
-      gap: 4rem;
+      gap: 3rem;
     }
 
     @include bg {
@@ -268,20 +268,24 @@ export default {
     &_card {
       min-width: 15rem;
       max-width: 40rem;
-      flex-wrap: nowrap;
 
       &_info {
+        height: 100%;
+        padding: 1rem;
+        overflow: hidden;
         border-radius: .5rem;
         background: linear-gradient(45deg, $gray-100 0%, $gray-200 100%);
         box-shadow: .1rem .1rem 1rem rgba(0, 0, 0, 0.1);
-        padding: 1rem;
-        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
 
         &_img {
           position: relative;
           overflow: hidden;
           border-radius: .5rem;
           height: 22rem;
+          margin: 0 0 1rem 0;
 
           img {
             width: 100%;
@@ -292,35 +296,41 @@ export default {
           }
         }
 
-        &_stats {
-          width: 100%;
-          padding: 1rem 0 0 0;
-          text-align: left;
-
+        &_title {
           h1 {
-            font-size: 2.4rem;
+            font-size: 2.2rem;
             color: $gray-600;
           }
 
           h2 {
-            color: $s-400;
-            font-size: 1rem;
-            margin: 1rem 0;
+            color: $gray-500;
+            font-size: 1.2rem;
+            margin: .5rem 0 0 0;
             flex-wrap: nowrap;
           }
+        }
+
+        &_price {
+          width: 100%;
+          display: flex;
+          padding: 1rem 0 0 0;
+          flex-direction: column;
 
           h3 {
-            margin: 3rem 0 0 0;
+            margin: 4rem 0 0 0;
+            padding: 0 0 1rem 0;
             font-size: 2rem;
-            color: $gray-500;
+            text-align: center;
+            border-bottom: solid $gray-300 .2rem;
+            color: $gray-700;
           }
 
           div {
             display: flex;
-            justify-content: space-between;
+            justify-content: space-around;
 
             span {
-              font-size: 1.6rem;
+              font-size: 1.4rem;
               font-weight: bold;
               margin: 1rem 0 0 0;
               color: $gray-400;
@@ -336,10 +346,6 @@ export default {
 
         h1 {
           color: $p-500;
-        }
-
-        h2 {
-          color: $gray-600;
         }
       }
     }

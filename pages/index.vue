@@ -16,9 +16,7 @@
                     <h5>{{ value.modelo_descricao }}</h5>
                     <div class="home_header_highlights_card_stats">
                         <span>{{ value.ano_fabricacao_descricao }}</span>
-                        <span>-</span>
                         <span>{{ value.combustivel_descricao | gas }}</span>
-                        <span>-</span>
                         <span>{{ value.kilometragem | km }}</span>
                     </div>
                 </nuxt-link>
@@ -199,7 +197,7 @@ const xml2js = require('xml2js'),
                     h4 {
                         color: $gray-500;
                         font-weight: 400;
-                        font-size: 1.6rem;
+                        font-size: 1.4rem;
                     }
     
                     h5 {
@@ -230,8 +228,10 @@ const xml2js = require('xml2js'),
                     &_stats {
                         width: 100%;
                         display: flex;
-                        margin: 1rem 0 0 0;
-                        justify-content: space-evenly;
+                        margin: .5rem 0 0 0;
+                        padding: 1rem 0 0 0;
+                        border-top: solid $gray-300 .2rem;
+                        justify-content: space-around;
 
                         background-size: 1000% 1000%;
                         animation: Color 2s ease-in-out infinite;
@@ -239,7 +239,7 @@ const xml2js = require('xml2js'),
                         span {
                             font-weight: bold;
                             font-size: 1rem;
-                            color: $gray-500;
+                            color: $gray-400;
                         }
                     }
 
@@ -287,7 +287,7 @@ const xml2js = require('xml2js'),
 
                 h2 {
                     font-size: 2rem;
-                    color: $s-400;
+                    color: $gray-600;
                 }
 
                 p {
@@ -357,7 +357,7 @@ const xml2js = require('xml2js'),
             }
 
             &_card {
-                margin: 4rem 0;
+                margin: 2rem 0;
                 display: flex;
                 flex-direction: column;
                 padding: 1rem;

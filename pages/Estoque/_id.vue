@@ -212,21 +212,20 @@ export default {
             &_brand {
                 
                 &_titles {
-                    margin: 1rem 0;
-                    padding-left: 1rem;
+                    margin: 1rem 0 2rem 0;
+                    padding: 1rem;
                     border-left: solid $gray-400 .8rem;
         
                     h1 {
-                        color: $p-600;
+                        color: $gray-700;
                         font-size: 3.4rem;
                         margin: 0 0 .5rem 0;
                     }
         
                     span {
-                        font-family: $ff-s;
                         font-weight: bold;
-                        font-size: 1.5rem;
-                        color: $gray-600;
+                        font-size: 1.8rem;
+                        color: $gray-500;
                     }
                 }
     
@@ -237,7 +236,7 @@ export default {
                     &_price {
                         width: 100%;
                         padding: 1.5rem 0;
-                        background-color: $gray-600;
+                        background-color: $p-600;
                         border-radius: .5rem;
 
                         h3 {
@@ -249,16 +248,18 @@ export default {
 
                     &_zap {
                         padding: 1.5rem;
-                        background-color: $gray-500;
+                        background-color: $p-500;
                         border-radius: .5rem;
+                        margin: auto;
+                        display: block;
 
                         svg {
                             fill: $white;
-                            width: 2.8rem;
+                            height: 3rem;
                         }
 
                         &:hover {
-                            background-color: $gray-400;
+                            background-color: $p-400;
                         }
                     }
                 }
@@ -273,7 +274,7 @@ export default {
             }
 
             h4 {
-                color: $p-600;
+                color: $p-700;
                 font-size: 2.2rem;
             }
 
@@ -293,21 +294,20 @@ export default {
                     border-collapse: collapse;
                     text-align: center;
                     font-size: 1.5rem;
-                    font-family: $ff-s;
     
                     tbody {
                         tr {
                             th {
-                                padding: 1rem;
-                                color: $gray-600;
+                                padding: 2rem;
+                                color: $gray-700;
                                 border-bottom: .2rem $gray-400 solid;
                                 border-right: .2rem $gray-400 solid;
                             }
         
                             td {
                                 border-bottom: .2rem $gray-400 solid;
-                                color: $gray-600;
-                                padding: 1rem;
+                                color: $gray-700;
+                                padding: 2rem;
                             }
                         }
                     }
@@ -324,7 +324,7 @@ export default {
                 }
 
                 p {
-                    font-size: 1.7rem;
+                    font-size: 1.8rem;
                     font-family: $ff-s;
                     color: $gray-600;
                 }
