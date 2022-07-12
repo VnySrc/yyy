@@ -20,13 +20,13 @@
 
     h1 {
       font-size: 3rem;
-      color: $gray-700;
+      color: $p-600;
       margin: 0 0 2rem 0;
     }
 
     h2 {
       font-size: 2rem;
-      color: $gray-600;
+      color: $s-400;
       margin: 0 0 1rem 0;
       padding: 0 0 0 .5rem;
       border-left: solid $gray-400 .5rem;
@@ -37,7 +37,7 @@
       margin: 2rem 0;
       border-left: solid $gray-400 .5rem;
       padding: 0 0 0 .5rem;
-      color: $gray-600;
+      color: $gray-700;
     }
 
     p {

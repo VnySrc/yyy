@@ -163,6 +163,7 @@ import "swiper/css/swiper.css";
         img {
           width: 100%;
           height: 100%;
+          border-radius: .5rem;
           object-fit: cover;
         }
       }
@@ -186,6 +187,7 @@ import "swiper/css/swiper.css";
           img {
             width: 100%;
             height: 100%;
+            border-radius: .5rem;
             object-fit: cover;
           }
       }
@@ -220,14 +222,14 @@ import "swiper/css/swiper.css";
         }
 
         svg {
-          fill: $gray-600;
+          fill: $p-700;
           height: 4rem;
         }
 
         h4 {
           font-size: 2rem;
           text-align: center;
-          color: $gray-600;
+          color: $p-600;
           padding: 1rem;
           border-bottom: solid .5rem $gray-400;
         }
@@ -248,14 +250,14 @@ import "swiper/css/swiper.css";
         margin: 2rem 0;
 
         svg {
-          fill: $gray-600;
+          fill: $p-700;
           height: 4rem;
           margin-bottom: 1rem;
         }
 
         h4 {
           font-size: 2rem;
-          color: $gray-600;
+          color: $p-600;
           padding: 1rem;
           border-bottom: solid .5rem $gray-400;
         }
@@ -279,7 +281,7 @@ import "swiper/css/swiper.css";
         
         h5 {
           font-size: 2rem;
-          color: $gray-600;
+          color: $s-400;
           margin: 1rem 0;
         }
 

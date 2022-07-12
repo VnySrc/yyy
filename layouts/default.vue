@@ -1,7 +1,7 @@
 <template>
     <div class="site">
         <section class="site_banner" v-show="banner === true">
-            <nuxt-img format="webp" src="/dreams.jpg" />
+            <nuxt-img format="webp" src="/banner.jpg" />
         </section>
         <nav class="site_nav" :class="{ site_nav_alt: banner }">
             <nuxt-link to="/" class="site_nav_logo"><IconsLogo /></nuxt-link>
@@ -81,7 +81,6 @@ export default {
         z-index: -1;
         height: 50vh;
         position: absolute;
-        background: linear-gradient(0deg, $p-700 0%, $p-800 100%);
 
         img {
             height: 100%;
@@ -97,7 +96,6 @@ export default {
         margin: auto;
         flex-direction: column;
         justify-content: center;
-        background: linear-gradient(0deg, transparent 0%, rgba(0, 0, 0, 0.4) 50%, rgba(0, 0, 0, 0.6) 100%);
 
         @include md {
             flex-direction: row;
@@ -210,6 +208,7 @@ export default {
         }
 
         &_alt {
+            background: linear-gradient(0deg, transparent 0%, rgba(0, 0, 0, 0.4) 50%, rgba(0, 0, 0, 0.6) 100%);
 
             .site_nav_menu {
                 a {
@@ -256,7 +255,7 @@ export default {
         padding: 6rem 1.5rem;
 
         @include md {
-            padding: 8rem 0 14rem 0;
+            padding: 8rem 2rem 14rem 2rem;
         }
     }
     

@@ -22,7 +22,7 @@
   h2 {
     font-size: 2.4rem;
     font-weight: bold;
-    color: $gray-600;
+    color: $p-600;
     margin-bottom: 2rem;
     padding-left: 1rem;
     border-left: solid .8rem $gray-400;

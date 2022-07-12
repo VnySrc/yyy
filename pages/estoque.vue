@@ -176,10 +176,10 @@ export default {
 
 <style lang="scss">
 .estoque {
-  max-width: 100% !important;
-  
+
   @include bg {
-      padding: 8rem;
+    max-width: 100% !important;
+    padding: 8rem;
   }
 
   &_filter {
@@ -198,15 +198,14 @@ export default {
       }
   
       select {
-        width: 100%;
-        border: none;
         color: $gray-100;
+        border: none;
         padding: 1rem;
         font-weight: bold;
         background-color: transparent;
         text-align: center;
         cursor: pointer;
-        border: solid 0.2rem $gray-100;
+        border-bottom: solid 0.2rem $gray-100;
         max-width: 20rem;
 
         @include md {
@@ -215,7 +214,7 @@ export default {
   
         &:hover {
           color: $gray-400;
-          border: solid 0.2rem $gray-400;
+          border-bottom: solid 0.2rem $gray-400;
         }
   
         &:nth-child(2) {
@@ -259,7 +258,7 @@ export default {
 
     @include md {
       grid-template-columns: repeat(3, 1fr);
-      gap: 6rem 4rem;
+      gap: 4rem;
     }
 
     @include bg {
@@ -267,8 +266,8 @@ export default {
     }
 
     &_card {
-      flex: 1 1 auto;
       min-width: 15rem;
+      max-width: 40rem;
       flex-wrap: nowrap;
 
       &_info {

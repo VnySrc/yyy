@@ -170,17 +170,17 @@ export default {
             }
 
             &_gallery {
-
                 img {
                     width: 100%;
                     height: 100%;
                     object-fit: cover;
+                    border-radius: .5rem;
 
                     @include sm-up {
                         height: 38rem;
                     }
 
-                    @include md {
+                    @include bg {
                         height: 100%;
                     }
                 }
@@ -189,6 +189,7 @@ export default {
                     width: 100%;
                     margin: .3rem 0 0 0;
                     box-sizing: border-box;
+                    border-radius: .5rem;
 
                     .swiper-slide {
                         width: 25%;
@@ -216,9 +217,9 @@ export default {
                     border-left: solid $gray-400 .8rem;
         
                     h1 {
-                        color: $gray-700;
+                        color: $p-600;
                         font-size: 3.4rem;
-                        margin: 0 0 .8rem 0;
+                        margin: 0 0 .5rem 0;
                     }
         
                     span {
@@ -236,7 +237,8 @@ export default {
                     &_price {
                         width: 100%;
                         padding: 1.5rem 0;
-                        background-color: $gray-700;
+                        background-color: $gray-600;
+                        border-radius: .5rem;
 
                         h3 {
                             color: $white;
@@ -247,11 +249,12 @@ export default {
 
                     &_zap {
                         padding: 1.5rem;
-                        background-color: $gray-600;
+                        background-color: $gray-500;
+                        border-radius: .5rem;
 
                         svg {
                             fill: $white;
-                            height: 3rem;
+                            width: 2.8rem;
                         }
 
                         &:hover {
