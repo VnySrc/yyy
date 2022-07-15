@@ -48,6 +48,38 @@
                 </nuxt-link>
             </div>
         </section>
+        <section class="home_clients">
+            <div class="home_clients_person">
+                <div class="home_clients_person_img">
+                    <nuxt-img format="webp" src="/people/person.jpg" />
+                </div>
+                <div class="home_clients_person_info">
+                    <h4>⭐⭐⭐⭐⭐</h4>
+                    <h3>Flávio Santos</h3>
+                    <p>"Atendimento excelente! E carros com procedência já é o terceiro carro que compro com eles, Renato e Eric estão de PARABÉNS!"</p>
+                </div>
+            </div>
+            <div class="home_clients_person">
+                <div class="home_clients_person_img">
+                    <nuxt-img format="webp" src="/people/person1.jpg" />
+                </div>
+                <div class="home_clients_person_info">
+                    <h4>⭐⭐⭐⭐⭐</h4>
+                    <h3>Carol Corrêa</h3>
+                    <p>"Ambiente excelente, organizado, bem higienizado, com atendimento atencioso, valores e condições de compra dentro de uma realidade. Recomendado!"</p>
+                </div>
+            </div>
+            <div class="home_clients_person">
+                <div class="home_clients_person_img">
+                    <nuxt-img format="webp" src="/people/person2.jpg" />
+                </div>
+                <div class="home_clients_person_info">
+                    <h4>⭐⭐⭐⭐⭐</h4>
+                    <h3>Júlio Rocha</h3>
+                    <p>"Bom diaa... Gostaria de agradecer todo o empenho, profissionalismo, respeito e seriedade com que vocês realizam seus trabalhos. Depois que falei com vocês, a determinação em nos ajudar a resolver  trouxe paz e tranquilidade. Obg"</p>
+                </div>
+            </div>
+        </section>
         <section class="home_blog">
             <nuxt-link to="/sobre" class="home_blog_card">
                 <div class="home_blog_card_img">
@@ -339,6 +371,63 @@ const xml2js = require('xml2js'),
                         svg {
                             fill: $gray-700;
                         }
+                    }
+                }
+            }
+        }
+
+        &_clients {
+            gap: 2rem;
+            display: flex;
+            margin: 0 0 10rem 0;
+            flex-direction: column;
+            
+            @include sm-up {
+                flex-direction: row;
+                align-content: space-between;
+                justify-content: space-around;
+
+                &_person {
+                    width: 30rem;
+                }
+            }
+
+            &_person {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                &_img {
+                    width: 15rem;
+                    overflow: hidden;
+                    border-radius: 50%;
+                    box-shadow: .2rem .2rem 1rem rgba(0, 0, 0, 0.1);
+
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                    }
+                }
+
+                &_info {
+                    text-align: center;
+                    padding: 2rem;
+
+                    h4 {
+                        font-size: 1.4rem;
+                    }
+
+                    h3 {
+                        font-size: 2rem;
+                        margin: 1rem 0;
+                        color: $p-600;
+                    }
+
+                    p {
+                        font-size: 1.4rem;
+                        color: $gray-600;
+                        font-family: $ff-s;
                     }
                 }
             }
