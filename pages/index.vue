@@ -396,7 +396,7 @@ const xml2js = require('xml2js'),
                 margin-bottom: 6rem;
 
                 @include lg {
-                    padding-left: 26rem;
+                    padding-right: 26rem;
                 }
 
                 h2 {
