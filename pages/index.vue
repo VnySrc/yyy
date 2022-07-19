@@ -49,56 +49,68 @@
             </div>
         </section>
         <section class="home_clients">
-            <div class="home_clients_person">
-                <div class="home_clients_person_img">
-                    <nuxt-img format="webp" src="/people/person.jpg" />
-                </div>
-                <div class="home_clients_person_info">
-                    <h4>⭐⭐⭐⭐⭐</h4>
-                    <h3>Flávio Santos</h3>
-                    <p>"Atendimento excelente! E carros com procedência já é o terceiro carro que compro com eles, Renato e Eric estão de PARABÉNS!"</p>
-                </div>
+            <div class="home_clients_text">
+                <h2>Confira a opinião de alguns de nossos clientes</h2>
+                <p>Cerca de 80% de nossos clientes chegam através de recomendação direta. Por isso nos focamos em um atendimento personalizado, para que clientes satisfeitos tragam mais clientes.</p>
             </div>
-            <div class="home_clients_person">
-                <div class="home_clients_person_img">
-                    <nuxt-img format="webp" src="/people/person1.jpg" />
+            <div class="home_clients_persons">
+                <div class="home_clients_persons_person">
+                    <div class="home_clients_persons_person_img">
+                        <nuxt-img format="webp" src="/people/person.jpg" />
+                    </div>
+                    <div class="home_clients_persons_person_info">
+                        <h4>⭐⭐⭐⭐⭐</h4>
+                        <h3>Flávio Santos</h3>
+                        <p>"Atendimento excelente! E carros com procedência já é o terceiro carro que compro com eles, Renato e Eric estão de PARABÉNS!"</p>
+                    </div>
                 </div>
-                <div class="home_clients_person_info">
-                    <h4>⭐⭐⭐⭐⭐</h4>
-                    <h3>Carol Corrêa</h3>
-                    <p>"Ambiente excelente, organizado, bem higienizado, com atendimento atencioso, valores e condições de compra dentro de uma realidade. Recomendado!"</p>
+                <div class="home_clients_persons_person">
+                    <div class="home_clients_persons_person_img">
+                        <nuxt-img format="webp" src="/people/person1.jpg" />
+                    </div>
+                    <div class="home_clients_persons_person_info">
+                        <h4>⭐⭐⭐⭐⭐</h4>
+                        <h3>Carol Corrêa</h3>
+                        <p>"Ambiente excelente, organizado, bem higienizado, com atendimento atencioso, valores e condições de compra dentro de uma realidade. Recomendado!"</p>
+                    </div>
                 </div>
-            </div>
-            <div class="home_clients_person">
-                <div class="home_clients_person_img">
-                    <nuxt-img format="webp" src="/people/person2.jpg" />
-                </div>
-                <div class="home_clients_person_info">
-                    <h4>⭐⭐⭐⭐⭐</h4>
-                    <h3>Júlio Rocha</h3>
-                    <p>"Bom diaa... Gostaria de agradecer todo o empenho, profissionalismo, respeito e seriedade com que vocês realizam seus trabalhos. Depois que falei com vocês, a determinação em nos ajudar a resolver  trouxe paz e tranquilidade. Obg"</p>
+                <div class="home_clients_persons_person">
+                    <div class="home_clients_persons_person_img">
+                        <nuxt-img format="webp" src="/people/person2.jpg" />
+                    </div>
+                    <div class="home_clients_persons_person_info">
+                        <h4>⭐⭐⭐⭐⭐</h4>
+                        <h3>Júlio Rocha</h3>
+                        <p>"Bom diaa... Gostaria de agradecer todo o empenho, profissionalismo, respeito e seriedade com que vocês realizam seus trabalhos. Depois que falei com vocês, a determinação em nos ajudar a resolver  trouxe paz e tranquilidade. Obg"</p>
+                    </div>
                 </div>
             </div>
         </section>
         <section class="home_blog">
-            <nuxt-link to="/sobre" class="home_blog_card">
-                <div class="home_blog_card_img">
-                    <nuxt-img format="webp" src="/office/office0.jpg" />
-                </div>
-                <div class="home_blog_card_title">
-                    <h5>Avenida Veículos</h5>
-                    <h4>Conheça nossa história de sucesso!</h4>
-                </div>
-            </nuxt-link>
-            <nuxt-link :to="`/blog/${value.slug}`" v-for="value in blog" :key="value.id" class="home_blog_card">
-                <div class="home_blog_card_img">
-                    <nuxt-img format="webp" :src="value.banner"/>
-                </div>
-                <div class="home_blog_card_title">
-                    <h5>{{ value.tag }}</h5>
-                    <h4>{{ value.titulo }}</h4>
-                </div>
-            </nuxt-link>
+            <div class="home_blog_text">
+                <h2>Confira os artigos do blog</h2>
+                <p>Pensando em você criamos com exclusividade artigos com as últimas novidades do mundo automotivo e dicas de cuidados com o veículo.</p>
+            </div>
+            <div class="home_blog_cards">
+                <nuxt-link to="/sobre" class="home_blog_cards_card">
+                    <div class="home_blog_cards_card_img">
+                        <nuxt-img format="webp" src="/office/office0.jpg" />
+                    </div>
+                    <div class="home_blog_cards_card_title">
+                        <h5>Avenida Veículos</h5>
+                        <h4>Conheça nossa história de sucesso!</h4>
+                    </div>
+                </nuxt-link>
+                <nuxt-link :to="`/blog/${value.slug}`" v-for="value in blog" :key="value.id" class="home_blog_cards_card">
+                    <div class="home_blog_cards_card_img">
+                        <nuxt-img format="webp" :src="value.banner"/>
+                    </div>
+                    <div class="home_blog_cards_card_title">
+                        <h5>{{ value.tag }}</h5>
+                        <h4>{{ value.titulo }}</h4>
+                    </div>
+                </nuxt-link>
+            </div>
         </section>
     </div>
 </template>
@@ -377,140 +389,188 @@ const xml2js = require('xml2js'),
         }
 
         &_clients {
-            gap: 2rem;
-            display: flex;
             margin: 0 0 10rem 0;
-            flex-direction: column;
-            
-            @include sm-up {
-                flex-direction: row;
-                align-content: space-between;
-                justify-content: space-around;
 
-                &_person {
-                    width: 30rem;
+            &_text {
+                text-align: left;
+                margin-bottom: 6rem;
+
+                @include lg {
+                    padding-left: 26rem;
+                }
+
+                h2 {
+                    font-size: 2rem;
+                    color: $gray-600;
+                    margin: 0 0 1rem 0;
+                }
+
+                p {
+                    font-size: 2rem;
+                    font-family: $ff-s;
+                    color: $gray-500;
                 }
             }
 
-            &_person {
+            &_persons {
+                gap: 2rem;
                 display: flex;
                 flex-direction: column;
-                align-items: center;
+            
+                @include sm-up {
+                    flex-direction: row;
+                    align-content: space-between;
+                    justify-content: space-around;
 
-                &_img {
-                    width: 15rem;
-                    overflow: hidden;
-                    border-radius: 50%;
-                    box-shadow: .2rem .2rem 1rem rgba(0, 0, 0, 0.1);
-
-                    img {
-                        width: 100%;
-                        height: 100%;
-                        object-fit: cover;
+                    &_person {
+                        width: 30rem;
                     }
                 }
 
-                &_info {
-                    text-align: center;
-                    padding: 2rem;
+                &_person {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
 
-                    h4 {
-                        font-size: 1.4rem;
+                    &_img {
+                        width: 15rem;
+                        overflow: hidden;
+                        border-radius: 50%;
+                        box-shadow: .2rem .2rem 1rem rgba(0, 0, 0, 0.1);
+
+                        img {
+                            width: 100%;
+                            height: 100%;
+                            object-fit: cover;
+                        }
                     }
 
-                    h3 {
-                        font-size: 2rem;
-                        margin: 1rem 0;
-                        color: $p-600;
-                    }
+                    &_info {
+                        text-align: center;
+                        padding: 2rem;
 
-                    p {
-                        font-size: 1.4rem;
-                        color: $gray-600;
-                        font-family: $ff-s;
+                        h4 {
+                            font-size: 1.4rem;
+                        }
+
+                        h3 {
+                            font-size: 2rem;
+                            margin: 1rem 0;
+                            color: $p-600;
+                        }
+
+                        p {
+                            font-size: 1.4rem;
+                            color: $gray-600;
+                            font-family: $ff-s;
+                        }
                     }
                 }
             }
+
         }
 
         &_blog {
+            &_text {
+                text-align: right;
+                margin-bottom: 6rem;
 
-            @include sm-up {
-                display: flex;
-                justify-content: space-between;
-                gap: 1rem;
+                @include lg {
+                    padding-left: 26rem;
+                }
+
+                h2 {
+                    font-size: 2rem;
+                    color: $gray-600;
+                    margin: 0 0 1rem 0;
+                }
+
+                p {
+                    font-size: 2rem;
+                    font-family: $ff-s;
+                    color: $gray-500;
+                }
             }
 
-            @include md {
-                gap: 3rem;
-            }
-
-            &_card {
-                margin: 2rem 0;
-                display: flex;
-                flex-direction: column;
-                padding: 1rem;
-                border-radius: .5rem;
-                background: linear-gradient(45deg, $gray-100 0%, $gray-200 100%);
-
+            &_cards {
                 @include sm-up {
-                    margin: 0;
-                    width: 25rem;
+                    display: flex;
+                    justify-content: space-between;
+                    gap: 1rem;
                 }
 
                 @include md {
-                    width: 38rem;
+                    gap: 3rem;
                 }
 
-                &_title {
-                    text-align: left;
-                    font-weight: bold;
-                    margin: 1rem 0 0 0;
-                    padding: .5rem 1rem;
-                    border-left: solid $gray-400 .8rem;
-
-                    h5 {
-                        font-size: 1.4rem;
-                        color: $s-400;
-                        margin-bottom: .5rem;
-                    }
-
-                    h4 {
-                        font-size: 2.2rem;
-                        line-height: 1;
-                        color: $gray-600;
-                    }
-                }
-
-                &_img {
-                    height: 18rem;
-                    overflow: hidden;
+                &_card {
+                    margin: 2rem 0;
+                    display: flex;
+                    flex-direction: column;
+                    padding: 1rem;
                     border-radius: .5rem;
-                    box-shadow: .1rem .1rem 1rem rgba(0, 0, 0, 0.1);
+                    background: linear-gradient(45deg, $gray-100 0%, $gray-200 100%);
 
-                    img {
-                        width: 100%;
-                        height: 100%;
-                        object-fit: cover;
-                    }
-                }
-
-
-                &:hover {
-                    .home_blog_card_title {
-                        border-left: solid $gray-700 .8rem;
+                    @include sm-up {
+                        margin: 0;
+                        width: 25rem;
                     }
 
-                    img {
-                        outline: solid .4rem $gray-700;
-                        animation: scaling 1s both;
+                    @include md {
+                        width: 38rem;
                     }
 
-                    h4 {
-                        color: $gray-700;
+                    &_title {
+                        text-align: left;
+                        font-weight: bold;
+                        margin: 1rem 0 0 0;
+                        padding: .5rem 1rem;
+                        border-left: solid $gray-400 .8rem;
+
+                        h5 {
+                            font-size: 1.4rem;
+                            color: $s-400;
+                            margin-bottom: .5rem;
+                        }
+
+                        h4 {
+                            font-size: 2.2rem;
+                            line-height: 1;
+                            color: $gray-600;
+                        }
+                    }
+
+                    &_img {
+                        height: 18rem;
+                        overflow: hidden;
+                        border-radius: .5rem;
+                        box-shadow: .1rem .1rem 1rem rgba(0, 0, 0, 0.1);
+
+                        img {
+                            width: 100%;
+                            height: 100%;
+                            object-fit: cover;
+                        }
+                    }
+
+
+                    &:hover {
+                        .home_blog_card_title {
+                            border-left: solid $gray-700 .8rem;
+                        }
+
+                        img {
+                            outline: solid .4rem $gray-700;
+                            animation: scaling 1s both;
+                        }
+
+                        h4 {
+                            color: $gray-700;
+                        }
                     }
                 }
             }
+
         }
     }
 </style>
