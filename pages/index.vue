@@ -15,7 +15,7 @@
                     <h4>{{ value.marca_descricao }}</h4>
                     <h5>{{ value.modelo_descricao }}</h5>
                     <div class="home_header_highlights_card_stats">
-                        <span>{{ value.ano_fabricacao_descricao }}</span>
+                        <span>{{ value.ano_fabricacao_descricao }} / {{ value.ano_modelo_descricao }}</span>
                         <span>{{ value.combustivel_descricao | gas }}</span>
                         <span>{{ value.kilometragem | km }}</span>
                     </div>
@@ -76,7 +76,7 @@
                 </div>
                 <div class="home_clients_persons_person">
                     <div class="home_clients_persons_person_img">
-                        <nuxt-img format="webp" src="/people/person2.jpg" />
+                        <nuxt-img format="webp" src="/people/index.jpg" />
                     </div>
                     <div class="home_clients_persons_person_info">
                         <h4>⭐⭐⭐⭐⭐</h4>
@@ -94,7 +94,7 @@
             <div class="home_blog_cards">
                 <nuxt-link to="/sobre" class="home_blog_cards_card">
                     <div class="home_blog_cards_card_img">
-                        <nuxt-img format="webp" src="/office/office0.jpg" />
+                        <nuxt-img format="webp" src="/office/office7.jpg" />
                     </div>
                     <div class="home_blog_cards_card_title">
                         <h5>Avenida Veículos</h5>

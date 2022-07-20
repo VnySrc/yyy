@@ -45,7 +45,7 @@
           <div class="estoque_cards_card_info_price">
             <h3>{{ value.valor_final | price }}</h3>
             <div>
-              <span>{{ value.ano_fabricacao_descricao }}</span>
+              <span>{{ value.ano_fabricacao_descricao }} / {{ value.ano_modelo_descricao }}</span>
               <span>{{ value.combustivel_descricao | gas }}</span>
               <span>{{ value.kilometragem | km }}</span>
             </div>

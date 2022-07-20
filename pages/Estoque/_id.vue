@@ -50,7 +50,7 @@
                     <tbody>
                         <tr>
                             <th>Ano</th>
-                            <td>{{ car.ano_fabricacao_descricao }}</td>
+                            <td>{{ car.ano_fabricacao_descricao }} / {{ car.ano_modelo_descricao }}</td>
                         </tr>
                         <tr>
                             <th>Quilometragem</th>
@@ -63,10 +63,6 @@
                         <tr>
                             <th>Transmisão</th>
                             <td>{{ car.cambio_descricao }}</td>
-                        </tr>
-                        <tr>
-                            <th>Portas</th>
-                            <td>{{ car.porta_id }}</td>
                         </tr>
                         <tr>
                             <th>Cor</th>
