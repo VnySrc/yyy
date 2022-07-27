@@ -230,7 +230,6 @@
       &_map {
         width: 100%;
         margin: 2rem 0 0 0;
-        border-bottom: solid $gray-400 1rem;
         box-shadow: 0.2rem 0.2rem 2rem rgba(0, 0, 0, 0.1);
 
         iframe {
