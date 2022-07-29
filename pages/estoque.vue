@@ -25,7 +25,6 @@
           <option value="price60">Até 60 mil</option>
         </select>
       </div>
-      <button v-show="sortType = sortType" @click="cleanFilter">Limpar filtro</button>
     </div>
     <div class="estoque_cards">
       <nuxt-link
@@ -227,24 +226,6 @@ export default {
         &:nth-child(2) {
           margin: 0 1rem;
         }
-      }
-    }
-
-    button {
-      color: $gray-600;
-      font-weight: bold;
-      cursor: pointer;
-      padding: 1rem;
-      margin: 1rem 0 0 0;
-      border-radius: 5rem;
-      text-align: center;
-
-      @include md {
-        text-align: left;
-      }
-
-      &:hover {
-        color: $p-500;
       }
     }
   }
