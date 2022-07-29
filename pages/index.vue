@@ -76,7 +76,7 @@
                 </div>
                 <div class="home_clients_persons_person">
                     <div class="home_clients_persons_person_img">
-                        <nuxt-img format="webp" src="/people/index.jpg" />
+                        <nuxt-img format="webp" src="/people/person2.jpg" />
                     </div>
                     <div class="home_clients_persons_person_info">
                         <h4>⭐⭐⭐⭐⭐</h4>
@@ -94,7 +94,7 @@
             <div class="home_blog_cards">
                 <nuxt-link to="/sobre" class="home_blog_cards_card">
                     <div class="home_blog_cards_card_img">
-                        <nuxt-img format="webp" src="/office/office7.jpg" />
+                        <nuxt-img format="webp" src="/office/office.jpg" />
                     </div>
                     <div class="home_blog_cards_card_title">
                         <h5>Avenida Veículos</h5>
@@ -434,6 +434,7 @@ const xml2js = require('xml2js'),
 
                     &_img {
                         width: 15rem;
+                        height: 15rem;
                         overflow: hidden;
                         border-radius: 50%;
                         box-shadow: .2rem .2rem 1rem rgba(0, 0, 0, 0.1);
@@ -442,6 +443,7 @@ const xml2js = require('xml2js'),
                             width: 100%;
                             height: 100%;
                             object-fit: cover;
+                            object-position: center;
                         }
                     }
 
@@ -463,6 +465,12 @@ const xml2js = require('xml2js'),
                             font-size: 1.4rem;
                             color: $gray-600;
                             font-family: $ff-s;
+                        }
+                    }
+
+                    &:hover {
+                        img {
+                            animation: scaling 1s both;
                         }
                     }
                 }

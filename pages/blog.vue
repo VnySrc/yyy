@@ -2,7 +2,7 @@
     <section class="blog">
         <nuxt-link to="/sobre" class="blog_card">
             <div class="blog_card_img">
-                <nuxt-img format="webp" src="/office/office7.jpg" />
+                <nuxt-img format="webp" src="/office/office.jpg" />
             </div>
             <div class="blog_card_title">
                 <h5>Avenida Veículos</h5>
@@ -101,7 +101,7 @@
             }
 
             img {
-                animation: scaling 3s both;
+                animation: scaling 1s both;
             }
 
             h4 {

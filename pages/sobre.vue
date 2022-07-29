@@ -6,7 +6,7 @@
           :options="swiperOptionTop"
           ref="swiperTop"
           >
-              <swiper-slide v-for="(value, index) in office" :key="index" class="sobre_empresa_galeria_img">
+              <swiper-slide v-for="value in office" :key="value.id" class="sobre_empresa_galeria_img">
                   <nuxt-img format="webp" :src="value" />
               </swiper-slide>
               <div
@@ -23,7 +23,7 @@
           :options="swiperOptionThumbs"
           ref="swiperThumbs"
           >
-              <swiper-slide v-for="(value, index) in office" :key="index">
+              <swiper-slide v-for="value in office" :key="value.id">
                   <img :src="value" />
               </swiper-slide>
           </swiper>
@@ -85,13 +85,18 @@ import "swiper/css/swiper.css";
       data() {
         return {
           office: [
-            "/office/office7.jpg",
+            "/office/office.jpg",
             "/office/office1.jpg",
             "/office/office2.jpg",
             "/office/office3.jpg",
             "/office/office4.jpg",
             "/office/office5.jpg",
-            "/office/office6.jpg"
+            "/office/office6.jpg",
+            "/office/office7.jpg",
+            "/office/office8.jpg",
+            "/office/office9.jpg",
+            "/office/office10.jpg",
+            "/office/office11.jpg"
           ],
           swiperOptionTop: {
               loop: true,
