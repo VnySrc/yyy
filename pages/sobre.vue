@@ -82,6 +82,10 @@ import { Swiper, SwiperSlide } from "vue-awesome-swiper";
 import "swiper/css/swiper.css";
 
     export default {
+      head: {
+          title: 'Avenida Veículos',
+          titleTemplate: 'Conheça nossa história de sucesso | %s'
+      },
       data() {
         return {
           office: [

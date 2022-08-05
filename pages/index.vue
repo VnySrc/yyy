@@ -117,48 +117,48 @@
 
 <script>
 const xml2js = require('xml2js'),
-        parser = new xml2js.Parser({ explicitRoot: false, explicitArray: false });
+      parser = new xml2js.Parser({ explicitRoot: false, explicitArray: false });
 
-    export default {
-        data() {
-            return {
-                cars: []
-            }
+export default {
+    data() {
+        return {
+            cars: []
+        }
+    },
+    filters: {
+        gas(value) {
+            if ( value === `Gasolina e álcool` ) {
+                return `Flex`
+            } else { return value }
         },
-        filters: {
-            gas(value) {
-                if ( value === `Gasolina e álcool` ) {
-                    return `Flex`
-                } else { return value }
-            },
-            price(value) {
-                return Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(value)
-            },
-            km(value) {
-                return Intl.NumberFormat("pt-BR", {
-                    style: "unit",
-                    unit: "kilometer",
-                }).format(value);
-            }
+        price(value) {
+            return Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(value)
         },
-        computed: {
-            car() {
-                return this.cars.slice(0, 4)
-            }
-        },
-        async asyncData({ $axios, $content }) {
-            const blog = await $content("blog").fetch();
-            const xml = await $axios.$get()
-            const cars = await parser.parseStringPromise(xml)
-                .then(function (res) {
-                    return res.veiculo
-                })
-            return { 
-                cars,
-                blog
-            }
+        km(value) {
+            return Intl.NumberFormat("pt-BR", {
+                style: "unit",
+                unit: "kilometer",
+            }).format(value);
+        }
+    },
+    computed: {
+        car() {
+            return this.cars.slice(0, 4)
+        }
+    },
+    async asyncData({ $axios, $content }) {
+        const blog = await $content("blog").fetch();
+        const xml = await $axios.$get()
+        const cars = await parser.parseStringPromise(xml)
+            .then(function (res) {
+                return res.veiculo
+            })
+        return { 
+            cars,
+            blog
         }
     }
+}
 </script>
 
 <style lang="scss">

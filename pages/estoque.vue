@@ -68,6 +68,10 @@ export default {
       sortBrand: "",
     };
   },
+  head: {
+      title: 'Avenida Veículos',
+      titleTemplate: 'Confira nosso estoque | %s'
+  },
   filters: {
     gas(value) {
       if (value === `Gasolina e álcool`) {

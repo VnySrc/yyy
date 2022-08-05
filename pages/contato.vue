@@ -70,6 +70,10 @@
   } from "vuex";
 
   export default {
+    head: {
+        title: 'Avenida Veículos',
+        titleTemplate: 'Entre em contato | %s'
+    },
     computed: {
       ...mapState('links', ['links'])
     }

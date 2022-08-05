@@ -13,11 +13,11 @@ export default {
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       {
-        hid: 'avenida',
-        name: 'description',
-        content: 'Seminovos em Indaiatuba - São Paulo'
+          hid: 'avenida',
+          name: 'description',
+          content: 'Atuando no mercado automobilístico, nós da Avenida Veículos buscamos auxiliar nossos clientes afim de encontrar o melhor negócio, agindo como consultores, não somente como simples vendedores.'
       }
-    ],
+    ]
   },
 
   axios: {

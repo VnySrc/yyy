@@ -114,6 +114,10 @@
 
 <script>
     export default {
+        head: {
+            title: 'Avenida Veículos',
+            titleTemplate: 'Confira os artigos do blog | %s'
+        },
         computed: {
             cars() {
                 return this.$store.state.stock.cars

@@ -40,6 +40,15 @@
   </section>
 </template>
 
+<script>
+export default {
+  head: {
+      title: 'Avenida Veículos',
+      titleTemplate: 'Benefícios de comprar com a Avenida veículos | %s'
+  }
+}
+</script>
+
 <style lang="scss">
   .services {
     gap: 2rem;
