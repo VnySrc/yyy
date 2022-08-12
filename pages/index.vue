@@ -32,7 +32,7 @@
             <div class="home_razoes_cards">
                 <nuxt-link to="/serviços" class="home_razoes_cards_card">
                         <iconsShield />
-                        <h3>Garantia de até um ano</h3>
+                        <h3>Garantia de até dois anos</h3>
                 </nuxt-link>
                 <nuxt-link to="/serviços" class="home_razoes_cards_card">
                         <iconsDeal />

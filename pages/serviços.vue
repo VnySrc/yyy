@@ -3,9 +3,9 @@
     <div class="services_card">
       <div>
         <iconsShield />
-        <h3>Garantia de até 1 ano inédita entre as lojas de seminovos no Brasil</h3>
+        <h3>Garantia de até 2 anos inédita entre as lojas de seminovos no Brasil</h3>
       </div>
-      <p>Carros seminovos ou usados com garantia de até 1 ano.</p>
+      <p>Carros seminovos ou usados com garantia de até dois anos.</p>
     </div>
     <div class="services_card">
       <div>
