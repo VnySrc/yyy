@@ -7,7 +7,7 @@
           ref="swiperTop"
           >
               <swiper-slide v-for="value in office" :key="value.id" class="sobre_empresa_galeria_img">
-                  <nuxt-img format="webp" :src="value" />
+                  <nuxt-img format="webp" :src="value" loading="lazy" placeholder />
               </swiper-slide>
               <div
                   class="swiper-button-next swiper-button-white"
@@ -24,7 +24,7 @@
           ref="swiperThumbs"
           >
               <swiper-slide v-for="value in office" :key="value.id">
-                  <img :src="value" />
+                  <nuxt-img format="webp" :src="value" loading="lazy" placeholder />
               </swiper-slide>
           </swiper>
       </div>

@@ -35,7 +35,7 @@
       >
         <div class="estoque_cards_card_info">
           <div class="estoque_cards_card_info_img">
-            <img :src="value.fotos.imagem[0]" />
+            <img :src="value.fotos.imagem[0]" loading="lazy" />
           </div>
           <div class="estoque_cards_card_info_title">
             <h1>{{ value.marca_descricao }} {{ value.modelo_descricao }}</h1>

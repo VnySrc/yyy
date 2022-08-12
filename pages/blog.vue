@@ -11,7 +11,7 @@
         </nuxt-link>
         <nuxt-link :to="`/blog/${value.slug}`" v-for="value in blog" :key="value.id" class="blog_card">
             <div class="blog_card_img">
-                <nuxt-img format="webp" :src="value.banner"/>
+                <nuxt-img format="webp" :src="value.banner" loading="lazy" placeholder />
             </div>
             <div class="blog_card_title">
                 <h5>{{ value.tag }}</h5>

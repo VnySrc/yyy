@@ -10,7 +10,7 @@
             <div class="home_header_highlights">
                 <nuxt-link :to="`/estoque/${value.id}`" v-for="value in car" :key="value.id" class="home_header_highlights_card">
                     <div class="home_header_highlights_card_img">
-                        <img :src="value.fotos.imagem[0]" />
+                        <img :src="value.fotos.imagem[0]" loading="lazy" />
                     </div>
                     <h4>{{ value.marca_descricao }}</h4>
                     <h5>{{ value.modelo_descricao }}</h5>
@@ -94,7 +94,7 @@
             <div class="home_blog_cards">
                 <nuxt-link to="/sobre" class="home_blog_cards_card">
                     <div class="home_blog_cards_card_img">
-                        <nuxt-img format="webp" src="/office/office.jpg" />
+                        <nuxt-img format="webp" src="/office/office.jpg" loading="lazy" placeholder />
                     </div>
                     <div class="home_blog_cards_card_title">
                         <h5>Avenida Veículos</h5>
@@ -103,7 +103,7 @@
                 </nuxt-link>
                 <nuxt-link :to="`/blog/${value.slug}`" v-for="value in blog" :key="value.id" class="home_blog_cards_card">
                     <div class="home_blog_cards_card_img">
-                        <nuxt-img format="webp" :src="value.banner"/>
+                        <nuxt-img format="webp" :src="value.banner" loading="lazy" placeholder />
                     </div>
                     <div class="home_blog_cards_card_title">
                         <h5>{{ value.tag }}</h5>

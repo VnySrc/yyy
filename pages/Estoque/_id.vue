@@ -7,7 +7,7 @@
                 ref="swiperTop"
                 >
                     <swiper-slide v-for="(value, index) in carImgs" :key="index">
-                        <img :src="value" />
+                        <img :src="value" loading="lazy" />
                     </swiper-slide>
                     <div
                         class="swiper-button-next swiper-button-white"
@@ -24,7 +24,7 @@
                 ref="swiperThumbs"
                 >
                     <swiper-slide v-for="(value, index) in carImgs" :key="index">
-                        <img :src="value" />
+                        <img :src="value" loading="lazy" />
                     </swiper-slide>
                 </swiper>
             </div>
