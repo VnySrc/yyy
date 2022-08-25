@@ -50,6 +50,8 @@
         </footer>
     </div>
 </template>
+    <div id="fb-root"></div>
+
 
 <script>
 import { mapState } from "vuex";

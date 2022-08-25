@@ -2,12 +2,17 @@
   <section class="sobre">
     <div class="sobre_empresa">
       <div class="sobre_empresa_galeria">
+        <div id="modal-id" class="invisible" onclick="this.setAttribute('class', 'invisible')">
+          <div class="modal-img">
+              <img id="modal-img-id" src= "/office/office2.jpg"/>
+          </div>
+        </div>
           <swiper
           :options="swiperOptionTop"
           ref="swiperTop"
           >
               <swiper-slide v-for="value in office" :key="value.id" class="sobre_empresa_galeria_img">
-                  <nuxt-img format="webp" :src="value" loading="lazy" placeholder />
+                  <nuxt-img onclick="document.getElementById('modal-id').setAttribute('class', 'modal'), document.getElementById('modal-img-id').setAttribute('src', this.src)" format="webp" :src="value" loading="lazy" placeholder />
               </swiper-slide>
               <div
                   class="swiper-button-next swiper-button-white"
@@ -24,7 +29,7 @@
           ref="swiperThumbs"
           >
               <swiper-slide v-for="value in office" :key="value.id">
-                  <nuxt-img format="webp" :src="value" loading="lazy" placeholder />
+                  <nuxt-img class="slides" format="webp" :src="value" loading="lazy" placeholder />
               </swiper-slide>
           </swiper>
       </div>
@@ -101,6 +106,7 @@ import "swiper/css/swiper.css";
             "/office/office9.jpg",
             "/office/office10.jpg",
             "/office/office11.jpg"
+            
           ],
           swiperOptionTop: {
               loop: true,
@@ -132,10 +138,45 @@ import "swiper/css/swiper.css";
           Swiper,
           SwiperSlide,
       },
+       methods: {
+    teste(e) {
+      console.log(this)
+    }
+  },
     }
 </script>
 
 <style lang="scss">
+.modal{
+    position: fixed;
+    visibility: visible;
+    opacity: 1;
+    z-index: 999;
+  width: 100vw;
+height: 100vh;
+background-color: rgba(0, 0, 0, .7);
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+margin-top: -150px;
+transition: 2s;
+margin-left: -20px;
+margin-top: -150px;
+}
+.modal-img{ 
+   
+}
+.modal-img img { 
+ width: 75vw;
+height: 75vh;
+  
+}
+
+.invisible {
+  display: none;
+}
+
 
 .sobre {
   padding: 4rem 2rem;
