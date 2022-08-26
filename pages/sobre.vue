@@ -12,7 +12,7 @@
           ref="swiperTop"
           >
               <swiper-slide v-for="value in office" :key="value.id" class="sobre_empresa_galeria_img">
-                  <nuxt-img onclick="document.getElementById('modal-id').setAttribute('class', 'modal'), document.getElementById('modal-img-id').setAttribute('src', this.src)" format="webp" :src="value" loading="lazy" placeholder />
+                  <img onclick="document.getElementById('modal-id').setAttribute('class', 'modal'), document.getElementById('modal-img-id').setAttribute('src', this.src)" :src="value" placeholder />
               </swiper-slide>
               <div
                   class="swiper-button-next swiper-button-white"
@@ -29,7 +29,7 @@
           ref="swiperThumbs"
           >
               <swiper-slide v-for="value in office" :key="value.id">
-                  <nuxt-img class="slides" format="webp" :src="value" loading="lazy" placeholder />
+                  <img class="slides" :src="value" placeholder />
               </swiper-slide>
           </swiper>
       </div>
@@ -94,28 +94,29 @@ import "swiper/css/swiper.css";
       data() {
         return {
            office: [
-            "office/office-1.jpg",
-            "office/office-2.jpg",
-            "office/office-3.jpg",
-            "office/office-4.jpg",
-            "office/office-5.jpg",
-            "office/office-6.jpg",
-            "office/office-7.jpg",
-            "office/office-8.jpg",
-            "office/office-9.jpg",
-            "office/office-11.jpg",
-             "office/office-12.jpg",
-            "office/office-13.jpg",
-            "office/office-14.jpg",
-            "office/office-15.jpg",
-            "office/office-16.jpg",
-            "office/office-17.jpg",
-            "office/office-18.jpg",
-            "office/office-19.jpg",
-            "office/office-20.jpg",
-            "office/office-21.jpg",
-            "office/office-22.jpg",
-          ],
+              "https://iili.io/4CVpj9.jpg",
+              "https://iili.io/4CVmT7.md.jpg",
+              "https://iili.io/4CVyQe.md.jpg",
+              "https://iili.io/4CWHCu.md.jpg",
+              "https://iili.io/4CWJEb.jpg",
+              "https://iili.io/4CWd4j.jpg",
+              "https://iili.io/4CW33x.jpg",
+              "https://iili.io/4CWFYQ.md.jpg",
+              "https://iili.io/4CWfyB.md.jpg",
+              "https://iili.io/4CWKvV.jpg",
+              "https://iili.io/4CWBTP.jpg",
+              "https://iili.io/4CWCj1.md.jpg",
+              "https://iili.io/4CWxCg.jpg",
+              "https://iili.io/4CWzGa.md.jpg",
+              "https://iili.io/4CWu3v.jpg",
+              "https://iili.io/4CWI6J.md.jpg",
+              "https://iili.io/4CWAaR.jpg",
+              "https://iili.io/4CWRvp.jpg",
+              "https://iili.io/4CW5yN.md.jpg",
+              "https://iili.io/4CWYuI.jpg",
+              "https://iili.io/4CWajt.md.jpg",
+        ],
+
           swiperOptionTop: {
               loop: true,
               loopedSlides: 5, // looped slides should be the same
@@ -156,28 +157,26 @@ import "swiper/css/swiper.css";
 
 <style lang="scss">
 .modal{
-    position: fixed;
-    visibility: visible;
-    opacity: 1;
-    z-index: 999;
-  width: 100vw;
-height: 100vh;
-background-color: rgba(0, 0, 0, .7);
-display: flex;
-flex-direction: row;
-justify-content: center;
-align-items: center;
-margin-top: -150px;
-transition: 2s;
-margin-left: -20px;
-margin-top: -150px;
+   position: fixed;
+            z-index: 100;
+            width: 300px;
+            height: 200px;
+            padding: 20px;
+            //background-color: rgba(0,0,0,0.7);
+            
+            /* Center the dialog */
+            top: 50%;
+            left: 50%;
+            transform: translate(-37%, -50%);
+            width: 80%;
+            height: 80%;
 }
 .modal-img{ 
    
 }
 .modal-img img { 
- width: 75vw;
-height: 75vh;
+ width: 70%;
+height: 70%;
   
 }
 

@@ -37,7 +37,8 @@
                     <div class="cars_info_brand_details_price">
                         <h3>{{ car.valor_final | price }}</h3>
                     </div>
-                    <a :href="'https://api.whatsapp.com/send?phone=5519997976865&text=Ol%C3%A1%20%F0%9F%98%80%2C%20tenho%20interesse%20no%20produto%20' +car.marca_descricao+ '%20%20' +car.modelo_descricao+ '%0ANome%3A%20' +car.marca_descricao+ '%20%20' +car.modelo_descricao+ '%0AVers%C3%A3o%3A%20' +car.versao_descricao+ '%0AAno%3A%20' +car.ano_fabricacao_descricao+'/'+car.ano_modelo_descricao+'%0APre%C3%A7o%3A%20' +Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(car.valor_final) || price+ '%0ALink%3A%20https%3A%2F%2Fwww.google.com'" class="cars_info_brand_details_zap">
+                    <!--<a :href="'https://api.whatsapp.com/send?phone=5519997976865&text=Ol%C3%A1%20%F0%9F%98%80%2C%20tenho%20interesse%20no%20produto%20' +car.marca_descricao+ '%20%20' +car.modelo_descricao+ '%0ANome%3A%20' +car.marca_descricao+ '%20%20' +car.modelo_descricao+ '%0AVers%C3%A3o%3A%20' +car.versao_descricao+ '%0AAno%3A%20' +car.ano_fabricacao_descricao+'/'+car.ano_modelo_descricao+'%0APre%C3%A7o%3A%20' +Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(car.valor_final) || price" class="cars_info_brand_details_zap">-->
+                    <a :href="'https://api.whatsapp.com/send?phone=5519997976865&text=Olá%2C%20tenho%20interesse%20neste%20veículo%20que%20vi%20no%20seu%20%23Estoque%0ANome%3A%20' +car.marca_descricao+ '%20%20' +car.modelo_descricao + '%0AAno%3A%20' +car.ano_fabricacao_descricao+'/'+car.ano_modelo_descricao+'%0APre%C3%A7o%3A%20' + Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(car.valor_final) +'%0ALink%3A%20' + url " class="cars_info_brand_details_zap">
                         <IconsWhatsapp />
                     </a>
                 </div>
@@ -90,6 +91,7 @@ const xml2js = require('xml2js'),
 export default {
     data() {
       return {
+        url: '',
         cars: [],
         swiperOptionTop: {
             loop: true,
@@ -111,6 +113,7 @@ export default {
       }
     },
     mounted() {
+        this.url = window.location.href
         this.$nextTick(() => {
         const swiperTop = this.$refs.swiperTop.$swiper;
         const swiperThumbs = this.$refs.swiperThumbs.$swiper;
@@ -138,6 +141,9 @@ export default {
         carImgs() {
             return this.car.fotos.imagem
         }
+    },
+    methods: {
+       
     },
     async asyncData({ $axios }) {
         const xml = await $axios.$get()

@@ -96,17 +96,7 @@ export default {
   computed: {
     sortItem() {
       if (this.sortType == "") {
-        this.cars = this.cars.sort(function (a, b) {
-          var nameA = a.marca_descricao.toUpperCase();
-          var nameB = b.marca_descricao.toUpperCase();
-          if (nameA < nameB) {
-            return -1;
-          }
-          if (nameA > nameB) {
-            return 1;
-          }
-          return 0;
-        });
+                this.cars = this.cars.sort((livroA, livroB) => livroA['marca_descricao'] > livroB['marca_descricao'] ? 1 : -1);
       }
       if (this.sortType == "priceUp") {
         this.cars = this.cars.sort(
@@ -157,6 +147,7 @@ export default {
         this.cars = this.cars.filter(
           (el) => el.modelo_descricao === event.target.value
         );
+        this.cars = this.cars.sort((livroA, livroB) => livroA['modelo_descricao'] > livroB['modelo_descricao'] ? 1 : -1);
       }
     },
     orderBrand(event) {
@@ -164,6 +155,7 @@ export default {
         this.cars = this.cars.filter(
           (el) => el.marca_descricao === event.target.value
         );
+        this.cars = this.cars.sort((livroA, livroB) => livroA['modelo_descricao'] > livroB['modelo_descricao'] ? 1 : -1);
       }
     },
     cleanFilter() {
