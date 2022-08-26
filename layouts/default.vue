@@ -50,7 +50,6 @@
         </footer>
     </div>
 </template>
-    <div id="fb-root"></div>
 
 
 <script>

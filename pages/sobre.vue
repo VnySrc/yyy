@@ -105,8 +105,18 @@ import "swiper/css/swiper.css";
             "/office/office8.jpg",
             "/office/office9.jpg",
             "/office/office10.jpg",
-            "/office/office11.jpg"
-            
+            "/office/office11.jpg",
+             "/office/office12.jpg",
+            "/office/office13.jpg",
+            "/office/office14.jpg",
+            "/office/office15.jpg",
+            "/office/office16.jpg",
+            "/office/office17.jpg",
+            "/office/office18.jpg",
+            "/office/office19.jpg",
+            "/office/office20.jpg",
+            "/office/office21.jpg",
+            "/office/office22.jpg",
           ],
           swiperOptionTop: {
               loop: true,
