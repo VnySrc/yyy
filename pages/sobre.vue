@@ -28,6 +28,8 @@
           :options="swiperOptionThumbs"
           ref="swiperThumbs"
           >
+
+          
               <swiper-slide v-for="value in office" :key="value.id">
                   <img class="slides" :src="value" placeholder />
               </swiper-slide>
