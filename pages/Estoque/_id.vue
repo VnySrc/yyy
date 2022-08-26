@@ -37,9 +37,9 @@
                     <div class="cars_info_brand_details_price">
                         <h3>{{ car.valor_final | price }}</h3>
                     </div>
-                    <nuxt-link to="/contato" class="cars_info_brand_details_zap">
+                    <a :href="'https://api.whatsapp.com/send?phone=5581994035159&text=Ol%C3%A1%20%F0%9F%98%80%2C%20tenho%20interesse%20no%20produto%20' +car.marca_descricao+ '%20%20' +car.modelo_descricao+ '%0ANome%3A%20' +car.marca_descricao+ '%20%20' +car.modelo_descricao+ '%0AVers%C3%A3o%3A%20' +car.versao_descricao+ '%0AAno%3A%20' +car.ano_fabricacao_descricao+'/'+car.ano_modelo_descricao+'%0APre%C3%A7o%3A%20' +Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(car.valor_final) || price+ '%0ALink%3A%20https%3A%2F%2Fwww.google.com'" class="cars_info_brand_details_zap">
                         <IconsWhatsapp />
-                    </nuxt-link>
+                    </a>
                 </div>
             </div>
         </div>
