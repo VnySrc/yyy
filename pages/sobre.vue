@@ -12,7 +12,7 @@
           ref="swiperTop"
           >
               <swiper-slide v-for="value in office" :key="value.id" class="sobre_empresa_galeria_img">
-                  <img onclick="document.getElementById('modal-id').setAttribute('class', 'modal'), document.getElementById('modal-img-id').setAttribute('src', this.src)" :src="value" placeholder />
+                  <img onclick=" (e) => console.log(e), document.getElementById('modal-id').setAttribute('class', 'modal'), document.getElementById('modal-img-id').setAttribute('src', this.src)" :src="value" placeholder />
               </swiper-slide>
               <div
                   class="swiper-button-next swiper-button-white"
@@ -28,8 +28,6 @@
           :options="swiperOptionThumbs"
           ref="swiperThumbs"
           >
-
-          
               <swiper-slide v-for="value in office" :key="value.id">
                   <img class="slides" :src="value" placeholder />
               </swiper-slide>
@@ -177,8 +175,8 @@ import "swiper/css/swiper.css";
    
 }
 .modal-img img { 
- width: 70%;
-height: 70%;
+ width: 75%;
+height: 90%;
   
 }
 
