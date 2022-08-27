@@ -163,7 +163,14 @@ export default {
     }
   },
   async asyncData({ $axios }) {
-    const xml = await $axios.$get();
+    setInterval(async () => {
+       const xml = await $axios.$get();
+    const cars = await parser.parseStringPromise(xml).then(function (res) {
+      return res.veiculo;
+    });
+    return { cars };
+    }, 5000);
+     const xml = await $axios.$get();
     const cars = await parser.parseStringPromise(xml).then(function (res) {
       return res.veiculo;
     });
