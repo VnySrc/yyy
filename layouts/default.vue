@@ -1,5 +1,4 @@
 <template>
-<meta name="facebook-domain-verification" content="n2p890nsirhpvwm80jfag4cjwwlpkq" />
     <div class="site">
         <section class="site_banner" v-show="banner === true">
             <nuxt-img format="webp" src="/banner.jpg" />
