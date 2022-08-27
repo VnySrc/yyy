@@ -51,16 +51,7 @@
     </div>
 </template>
     <div id="fb-root"></div>
-    <!-- Global site tag (gtag.js) - Google Ads: 723781736 -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-723781736"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'AW-723781736');
-</script>
-
+    
 <script>
 import { mapState } from "vuex";
 
