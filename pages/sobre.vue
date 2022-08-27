@@ -4,7 +4,7 @@
       <div class="sobre_empresa_galeria">
         <div id="modal-id" class="invisible" onclick="this.setAttribute('class', 'invisible')">
           <div class="modal-img">
-              <img id="modal-img-id" src= "/office/office2.jpg"/>
+              <img id="modal-img-id" src= ""/>
           </div>
         </div>
           <swiper
@@ -184,6 +184,13 @@ height: 90%;
   display: none;
 }
 
+@media (max-width: 950px)
+{
+  .modal
+   {
+    display: none;
+   }
+}
 
 .sobre {
   padding: 4rem 2rem;
