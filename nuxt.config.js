@@ -48,7 +48,6 @@ export default {
     'render:route': (_url, result) => {
       result.html = result.html
         .replace(/ data-n-head=".*?"/gi, '')
-        .replace(/ data-hid=".*?"/gi, '')
     }
   },
   plugins: [
