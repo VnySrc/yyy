@@ -112,60 +112,6 @@ export default {
         }
       }
     },
-    head: {
-    //title: 'Default App Title',
-   // titleTemplate: '%s | vue-meta Example App',
-   // htmlAttrs: {
-   //   lang: 'en-US'
-   // },
-   script: [
-   { innerHTML: `
-    {
-  "@context":"https://schema.org",
-  "@type":"Product",
-  "productID":"facebook_tshirt_001",
-  "name":"Facebook T-Shirt",
-  "description":"Unisex Facebook T-shirt, Small",
-  "url":"https://example.org/facebook",
-  "image":"https://example.org/facebook.jpg",
-  "brand":"facebook",
-  "offers": [
-    {
-      "@type": "Offer",
-      "price": "7.99",
-      "priceCurrency": "USD",
-      "itemCondition": "https://schema.org/NewCondition",
-      "availability": "https://schema.org/InStock"
-    }
-  ],
-  "additionalProperty": [{
-    "@type": "PropertyValue",
-    "propertyID": "item_group_id",
-    "value": "fb_tshirts"
-  }]
-}
-      `,
-      type: "application/ld+json"
-    }
-   ],
-
-    meta: [
-    {property:"og:title", content: "car"},
-    {property:"og:description", content:"Unisex Facebook T-shirt, Small"},
-    {property:"og:url", content:"https://example.org/facebook"},
-    {property:"og:image", content:"https://example.org/facebook.jpg"},
-    {property:"product:brand", content:"Facebook"},
-    {property:"product:availability", content:"in stock"},
-    {property:"product:condition", content:"new"},
-    {property:"product:price:amount", content:"7.99"},
-    {property:"product:price:currency", content:"BRL"},
-    {property:"product:retailer_item_id", content:"facebook_tshirt_001"},
-    {property:"product:item_group_id", content:"fb_tshirts"},
-    //{ charset: 'utf-8' },
-   // { name: 'description', content: 'An example Vue application with vue-meta.' },
-    // { name: 'viewport', content: 'width=device-width, initial-scale=1' }
-    ]
-  },
     mounted() {
         this.url = window.location.href
         this.$nextTick(() => {
