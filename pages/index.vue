@@ -94,7 +94,7 @@
             <div class="home_blog_cards">
                 <nuxt-link to="/sobre" class="home_blog_cards_card">
                     <div class="home_blog_cards_card_img">
-                        <img src="../static/office/frontal.jpg" loading="lazy" placeholder />
+                        <img src="https://iili.io/4XWtDu.jpg" loading="lazy" placeholder />
                     </div>
                     <div class="home_blog_cards_card_title">
                         <h5>Avenida Veículos</h5>

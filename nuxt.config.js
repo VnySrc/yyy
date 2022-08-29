@@ -31,7 +31,7 @@ export default {
       {
         hid: 'og:image',
         property: 'og:image',
-        content: 'https://avenidaveiculosindaiatuba.com.br/_vercel/image?url=/office/office.jpg&w=1536&q=100'
+        content: 'https://iili.io/4XWtDu.jpg'
       },
       {
         hid: 'og:url',
