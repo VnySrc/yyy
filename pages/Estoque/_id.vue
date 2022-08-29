@@ -144,6 +144,8 @@ export default {
     },
     methods: {
        
+
+        
     },
     async asyncData({ $axios }) {
         const xml = await $axios.$get()
