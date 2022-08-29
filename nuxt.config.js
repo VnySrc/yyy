@@ -52,10 +52,12 @@ export default {
   },
   script:[      
     //{src:'pixel.js', type: 'text/javascript'}
+    {src: "https://www.googletagmanager.com/gtag/js?id=AW-723781736"}
   ],
   plugins: [
     { src: '~/plugins/vue-fb-customer-chat.js', ssr: false },
-    { src: '~/plugins/facebook-events.js' }
+    { src: '~/plugins/facebook-events.js' },
+    { src: '~/plugins/google-analytcs.js'},
   ],
   axios: {
     baseURL: 'https://integreauto.com.br/anuncios/listaAnunciosParceiros/17/1931.xml',

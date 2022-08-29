@@ -96,7 +96,7 @@ export default {
   computed: {
     sortItem() {
       if (this.sortType == "") {
-                this.cars = this.cars.sort((livroA, livroB) => livroA['marca_descricao'] > livroB['marca_descricao'] ? 1 : -1);
+           //     this.cars = this.cars.sort((livroA, livroB) => livroA['marca_descricao'] > livroB['marca_descricao'] ? 1 : -1);
       }
       if (this.sortType == "priceUp") {
         this.cars = this.cars.sort(
@@ -133,12 +133,14 @@ export default {
     getBrand() {
       return this.cars
         .map((el) => el.marca_descricao)
+        .sort()
         .filter((value, index, arr) => arr.indexOf(value) === index);
     },
     getModel() {
       return this.cars
         .map((el) => el.modelo_descricao)
-        .filter((value, index, arr) => arr.indexOf(value) === index);
+        .sort()
+        .filter((value, index, arr) => arr.indexOf(value) === index)
     },
   },
   methods: {
@@ -147,7 +149,7 @@ export default {
         this.cars = this.cars.filter(
           (el) => el.modelo_descricao === event.target.value
         );
-        this.cars = this.cars.sort((livroA, livroB) => livroA['modelo_descricao'] > livroB['modelo_descricao'] ? -1 : 1);
+       // this.cars = this.cars.sort((livroA, livroB) => livroA['modelo_descricao'] > livroB['modelo_descricao'] ? -1 : 1);
       }
     },
     orderBrand(event) {
@@ -155,7 +157,7 @@ export default {
         this.cars = this.cars.filter(
           (el) => el.marca_descricao === event.target.value
         );
-        this.cars = this.cars.sort((livroA, livroB) => livroA['modelo_descricao'] > livroB['modelo_descricao'] ? -1 : 1);
+      //  this.cars = this.cars.sort((livroA, livroB) => livroA['modelo_descricao'] > livroB['modelo_descricao'] ? -1 : 1);
       }
     },
     cleanFilter() {
