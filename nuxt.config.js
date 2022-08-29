@@ -28,11 +28,11 @@ export default {
         property: 'og:type',
         content: 'website',
       },
-      {
-        hid: 'og:image',
-        property: 'og:image',
-        content: 'https://iili.io/4XWtDu.jpg'
-      },
+      //{
+     //   hid: 'og:image',
+      //  property: 'og:image',
+     //   content: 'https://iili.io/4XWtDu.jpg'
+    //  },
       {
         hid: 'og:url',
         property: 'og:url',

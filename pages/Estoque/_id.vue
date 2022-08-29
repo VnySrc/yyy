@@ -7,7 +7,7 @@
                 ref="swiperTop"
                 >
                     <swiper-slide v-for="(value, index) in carImgs" :key="index">
-                        <img :src="value" loading="lazy" />
+                        <img id="texte" :src="value" loading="lazy" />
                     </swiper-slide>
                     <div
                         class="swiper-button-next swiper-button-white"
@@ -91,6 +91,7 @@ try {
 catch (err) {
     console.log("")
 }
+let carImgsH
 
 const xml2js = require('xml2js'),
       parser = new xml2js.Parser({explicitRoot: false, explicitArray: false});
@@ -98,6 +99,7 @@ const xml2js = require('xml2js'),
 export default {
     data() {
       return {
+        carImgsH:'',
         url: '',
         cars: [],
         swiperOptionTop: {
@@ -119,7 +121,17 @@ export default {
         }
       }
     },
+    head: {
+        meta: [
+            {property: "og:image", content: `${carImgsH}`},
+            {property: "og:image:type", content: "image/jpg"},
+            {property:"og:image:width", content:"1280"},
+            {property: "og:image:height", content: "720"},
+        ]
+    },
     mounted() {
+        document.querySelector('meta[property="og:image"]').content =  this.carImgs[0]
+        console.log(this.carImgs[0])
         this.url = window.location.href
         this.$nextTick(() => {
         const swiperTop = this.$refs.swiperTop.$swiper;
@@ -146,6 +158,7 @@ export default {
             return this.cars.find(el => el.id === this.$route.params.id)
         },
         carImgs() {
+            
             return this.car.fotos.imagem
         }
     },
