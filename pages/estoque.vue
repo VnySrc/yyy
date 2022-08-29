@@ -147,7 +147,7 @@ export default {
         this.cars = this.cars.filter(
           (el) => el.modelo_descricao === event.target.value
         );
-        this.cars = this.cars.sort((livroA, livroB) => livroA['modelo_descricao'] > livroB['modelo_descricao'] ? 1 : -1);
+        this.cars = this.cars.sort((livroA, livroB) => livroA['modelo_descricao'] > livroB['modelo_descricao'] ? -1 : 1);
       }
     },
     orderBrand(event) {
@@ -155,7 +155,7 @@ export default {
         this.cars = this.cars.filter(
           (el) => el.marca_descricao === event.target.value
         );
-        this.cars = this.cars.sort((livroA, livroB) => livroA['modelo_descricao'] > livroB['modelo_descricao'] ? 1 : -1);
+        this.cars = this.cars.sort((livroA, livroB) => livroA['modelo_descricao'] > livroB['modelo_descricao'] ? -1 : 1);
       }
     },
     cleanFilter() {
@@ -169,7 +169,7 @@ export default {
       return res.veiculo;
     });
     return { cars };
-    }, 5000);
+    }, 60000);
      const xml = await $axios.$get();
     const cars = await parser.parseStringPromise(xml).then(function (res) {
       return res.veiculo;

@@ -12,7 +12,7 @@ export default {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { name: 'facebook-domain-verification', content: 'n2p890nsirhpvwm80jfag4cjwwlpkq'},
+      { name:"facebook-domain-verification", content:"n2p890nsirhpvwm80jfag4cjwwlpkq"},
       {
         hid: 'og:title',
         property: 'og:title',
@@ -43,6 +43,13 @@ export default {
         content: 'pt-br'
       }
     ]
+  },
+  hooks: {
+    'render:route': (_url, result) => {
+      result.html = result.html
+        .replace(/ data-n-head=".*?"/gi, '')
+        .replace(/ data-hid=".*?"/gi, '')
+    }
   },
   plugins: [
     { src: '~/plugins/vue-fb-customer-chat.js', ssr: false }

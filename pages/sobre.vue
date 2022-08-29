@@ -29,7 +29,7 @@
           ref="swiperThumbs"
           >
               <swiper-slide v-for="value in office" :key="value.id">
-                  <img class="slides" :src="value" placeholder />
+                  <img class="slides" :src="value" loading="lazy" placeholder />
               </swiper-slide>
           </swiper>
       </div>
@@ -115,6 +115,7 @@ import "swiper/css/swiper.css";
               "https://iili.io/4CW5yN.md.jpg",
               "https://iili.io/4CWYuI.jpg",
               "https://iili.io/4CWajt.md.jpg",
+              "https://iili.io/4XWtDu.jpg"
         ],
 
           swiperOptionTop: {
