@@ -22,9 +22,6 @@
 </template>
 
 
-
-
-
 <style lang="scss">
 .blog {
     display: flex;
