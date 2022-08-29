@@ -44,12 +44,6 @@ export default {
       }
     ]
   },
-  hooks: {
-    'render:route': (_url, result) => {
-      result.html = result.html
-        .replace(/ data-n-head=".*?"/gi, '')
-    }
-  },
   plugins: [
     { src: '~/plugins/vue-fb-customer-chat.js', ssr: false }
   ],
