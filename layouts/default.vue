@@ -26,7 +26,7 @@
                     <nuxt-link to="/sobre">Sobre a empresa</nuxt-link>
                 </div>
                 <div class="footer_contato">
-                    <h4>Entre em contato</h4>
+                    <h4 onclick="fbq('track', 'Contact')">Entre em contato</h4>
                     <a href="tel:+551938350800">Loja - (19) 3835-0800</a>
                     <a :href="links.adm" target="_blank">ADM - (19) 99221-4727</a>
                     <a :href="links.vendas" target="_blank">Vendas - (19) 99797-6865</a>

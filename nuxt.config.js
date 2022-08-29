@@ -50,8 +50,12 @@ export default {
         .replace(/ data-n-head=".*?"/gi, '')
     }
   },
+  script:[      
+    //{src:'pixel.js', type: 'text/javascript'}
+  ],
   plugins: [
-    { src: '~/plugins/vue-fb-customer-chat.js', ssr: false }
+    { src: '~/plugins/vue-fb-customer-chat.js', ssr: false },
+    { src: '~/plugins/facebook-events.js' }
   ],
   axios: {
     baseURL: 'https://integreauto.com.br/anuncios/listaAnunciosParceiros/17/1931.xml',

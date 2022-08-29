@@ -141,6 +141,11 @@ export default {
             }).format(value);
         }
     },
+    mounted () {
+        let meta = document.querySelector('[property="og:title"]');
+
+        meta.setAttribute('content', "tituluzinnnnnnnnnnnnnnnnnnnnnnnnnnnnnn")
+    },
     computed: {
         car() {
             return this.cars.slice(0, 4)

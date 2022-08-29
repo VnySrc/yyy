@@ -85,6 +85,13 @@ import { mapState } from "vuex";
 import { Swiper, SwiperSlide } from "vue-awesome-swiper";
 import "swiper/css/swiper.css";
 
+try {
+    fbq('track', 'ViewContent');
+}
+catch (err) {
+    console.log("")
+}
+
 const xml2js = require('xml2js'),
       parser = new xml2js.Parser({explicitRoot: false, explicitArray: false});
 
