@@ -1,5 +1,14 @@
 <template>
-    <div class="cars">
+<div class="cars">
+    <div itemscope itemtype="http://schema.org/Product">
+        <meta itemprop="brand" :content="car.marca_descricao"> //
+        <meta itemprop="name" :content='car.marca_descricao+" "+car.modelo_descricao'>//
+        <meta itemprop="description" :content= 'car.versao_descricao' >//
+        <meta itemprop="productID" :content="car.tipo_id">
+        <meta itemprop="url" :content="url">
+        <meta itemprop="image" :content="car.fotos.imagem[0]">//
+        <meta itemprop="price" :content="Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(car.valor_final)">//
+</div>
         <div class="cars_info">
             <div class="cars_info_gallery">
                 <swiper
@@ -99,7 +108,6 @@ const xml2js = require('xml2js'),
 export default {
     data() {
       return {
-        carImgsH:'',
         url: '',
         cars: [],
         swiperOptionTop: {
@@ -130,7 +138,11 @@ export default {
         ]
     },
     mounted() {
+        setTimeout(() => {
         document.querySelector('meta[property="og:image"]').content =  this.carImgs[0]
+        this.carImgsH =  this.carImgs[0]
+        
+        }, 1000);
         console.log(this.carImgs[0])
         this.url = window.location.href
         this.$nextTick(() => {
