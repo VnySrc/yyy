@@ -1,14 +1,23 @@
 <template>
 <div class="cars">
     <div itemscope itemtype="http://schema.org/Product">
-        <meta itemprop="brand" :content="car.marca_descricao"> //
-        <meta itemprop="name" :content='car.marca_descricao+" "+car.modelo_descricao'>//
-        <meta itemprop="description" :content= 'car.versao_descricao' >//
-        <meta itemprop="productID" :content="car.tipo_id">
-        <meta itemprop="url" :content="url">
-        <meta itemprop="image" :content="car.fotos.imagem[0]">//
-        <meta itemprop="price" :content="Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(car.valor_final)">//
-</div>
+            <meta itemprop="brand" :content="car.marca_descricao">
+            <meta itemprop="name" :content='car.marca_descricao+" "+car.modelo_descricao'>
+            <meta itemprop="description" :content= 'car.versao_descricao' >
+            <meta itemprop="productID" :content="car.tipo_id">
+            <meta itemprop="url" :content="url">
+            <meta itemprop="image" :content="car.fotos.imagem[0]">
+        <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+            <meta itemprop="availability" content="in stock">
+            <meta itemprop="price" :content="Intl.NumberFormat('pt-BR').format(car.valor_final)+' '+BRL">
+            <meta itemprop="priceCurrency" content="BRL">
+        </div>
+            <!--
+            <div itemprop="value" itemscope itemtype="http://schema.org/PropertyValue">
+            <span itemprop="propertyID" content="item_group_id"></span>
+            <meta itemprop="value" content="fb_tshirts"></meta> 
+            </div>-->
+    </div>
         <div class="cars_info">
             <div class="cars_info_gallery">
                 <swiper
