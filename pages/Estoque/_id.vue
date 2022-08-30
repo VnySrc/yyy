@@ -9,7 +9,7 @@
             <meta itemprop="image" :content="car.fotos.imagem[0]">
             <div itemprop="value" itemscope itemtype="http://schema.org/PropertyValue">
             <span itemprop="propertyID" content="item_group_id"></span>
-            <meta itemprop="value" content="cars"></meta>
+            <meta itemprop="value" content="cars">
         </div>
         <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
             <meta itemprop="availability" content="in stock">
