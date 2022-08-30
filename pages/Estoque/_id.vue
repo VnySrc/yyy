@@ -18,14 +18,7 @@
             <meta itemprop="itemCondition" content="new">
         </div>
     </div>
-            <!--
-            
 
-            <div itemprop="value" itemscope itemtype="http://schema.org/PropertyValue">
-            <span itemprop="propertyID" content="item_group_id"></span>
-            <meta itemprop="value" content="fb_tshirts"></meta> 
-            </div>-->
-    </div>
         <div class="cars_info">
             <div class="cars_info_gallery">
                 <swiper
