@@ -7,12 +7,20 @@
             <meta itemprop="productID" :content="car.tipo_id">
             <meta itemprop="url" :content="url">
             <meta itemprop="image" :content="car.fotos.imagem[0]">
+            <div itemprop="value" itemscope itemtype="http://schema.org/PropertyValue">
+            <span itemprop="propertyID" content="item_group_id"></span>
+            <meta itemprop="value" content="cars"></meta>
+        </div>
         <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
             <meta itemprop="availability" content="in stock">
             <meta itemprop="price" :content="Intl.NumberFormat('pt-BR').format(car.valor_final).toString()">
             <meta itemprop="priceCurrency" content="BRL">
+            <meta itemprop="itemCondition" content="new">
         </div>
+    </div>
             <!--
+            
+
             <div itemprop="value" itemscope itemtype="http://schema.org/PropertyValue">
             <span itemprop="propertyID" content="item_group_id"></span>
             <meta itemprop="value" content="fb_tshirts"></meta> 
