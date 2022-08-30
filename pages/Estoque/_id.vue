@@ -1,9 +1,9 @@
 <template>
 <div class="cars">
     <div itemscope itemtype="http://schema.org/Product">
-            <meta itemprop="brand" :content="car.marca_descricao">
-            <meta itemprop="name" :content='car.marca_descricao+" "+car.modelo_descricao'>
-            <meta itemprop="description" :content= 'car.versao_descricao' >
+            <meta itemprop="brand" :content="car.marca_descricao.toLowerCase()">
+            <meta itemprop="name" :content='car.marca_descricao.toLowerCase()+" "+car.modelo_descricao.toLowerCase()'>
+            <meta itemprop="description" :content= 'car.versao_descricao.toLowerCase()' >
             <meta itemprop="productID" :content="car.tipo_id">
             <meta itemprop="url" :content="url">
             <meta itemprop="image" :content="car.fotos.imagem[0]">
