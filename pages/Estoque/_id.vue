@@ -9,7 +9,7 @@
             <meta itemprop="image" :content="car.fotos.imagem[0]">
         <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
             <meta itemprop="availability" content="in stock">
-            <meta itemprop="price" :content="Intl.NumberFormat('pt-BR').format(car.valor_final).toString()+' '+'BRL'">
+            <meta itemprop="price" :content="Intl.NumberFormat('pt-BR').format(car.valor_final).toString()">
             <meta itemprop="priceCurrency" content="BRL">
         </div>
             <!--
