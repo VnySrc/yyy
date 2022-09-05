@@ -100,37 +100,45 @@ export default {
   computed: {
     sortItem() {
       if (this.sortType == "") {
-           //     this.cars = this.cars.sort((livroA, livroB) => livroA['marca_descricao'] > livroB['marca_descricao'] ? 1 : -1);
+         // this.setFiltersToDefaultValueByBrand
+         // this.cars = this.cars.sort((carroA, carroB) => carroA['marca_descricao'] > carroB['marca_descricao'] ? 1 : -1);
       }
       if (this.sortType == "priceUp") {
-        this.cars = this.defaultcars.sort(
+        this.setFiltersToDefaultValueByBrand
+        this.cars = this.cars.sort(
           (prev, curr) => curr.valor_final - prev.valor_final
         );
       }
       if (this.sortType == "priceDown") {
-        this.cars = this.defaultcars.sort(
+        this.setFiltersToDefaultValueByBrand
+        this.cars = this.cars.sort(
           (prev, curr) => prev.valor_final - curr.valor_final
         );
       }
       if (this.sortType == "yearUp") {
-        this.cars = this.defaultcars.sort(
+        this.setFiltersToDefaultValueByBrand
+        this.cars = this.cars.sort(
           (prev, curr) =>
             curr.ano_fabricacao_descricao - prev.ano_fabricacao_descricao
         );
       }
       if (this.sortType == "yearDown") {
-        this.cars = this.defaultcars.sort(
+        this.setFiltersToDefaultValueByBrand
+        this.cars = this.cars.sort(
           (prev, curr) =>
             prev.ano_fabricacao_descricao - curr.ano_fabricacao_descricao
         );
       }
       if (this.sortType == "price40") {
-        this.cars = this.defaultcars.filter((el) => el.valor_final <= 40000);
+        this.setFiltersToDefaultValueByBrand
+        this.cars = this.cars.filter((el) => el.valor_final <= 40000);
       }
       if (this.sortType == "price50") {
-        this.cars = this.defaultcars.filter((el) => el.valor_final <= 50000);
+        this.setFiltersToDefaultValueByBrand
+        this.cars = this.cars.filter((el) => el.valor_final <= 50000);
       }
       if (this.sortType == "price60") {
+        this.setFiltersToDefaultValueByBrand
         this.cars = this.defaultcars.filter((el) => el.valor_final <= 60000);
       }
     },
@@ -145,6 +153,16 @@ export default {
         .map((el) => el.modelo_descricao)
       .sort()
       .filter((value, index, arr) => arr.indexOf(value) === index)
+    },
+    setFiltersToDefaultValueByBrand () {
+      const urlParams = new URLSearchParams(window.location.search);
+      let thismarca = urlParams.get('marca');
+
+        if (thismarca !== null && thismarca !== undefined) {
+          this.cars = this.defaultcars.filter(
+          (el) => el.marca_descricao.split(' ').join('') === thismarca
+        );
+        }
     },
   },
   mounted () {
@@ -169,6 +187,7 @@ export default {
     }
   },
   methods: {
+  
     cleanAllFilters () {
       this.cars = this.defaultcars
     },
