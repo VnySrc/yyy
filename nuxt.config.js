@@ -30,6 +30,8 @@ export default {
     { src: '~/plugins/vue-fb-customer-chat.js', ssr: false },
     { src: '~/plugins/facebook-events.js' },
     { src: '~/plugins/google-analytcs.js'},
+    {src: '~/plugins/gtm.js'}
+
   ],
   axios: {
     baseURL: 'https://integreauto.com.br/anuncios/listaAnunciosParceiros/17/1931.xml',
@@ -38,14 +40,19 @@ export default {
 
   buildModules: [
     '@nuxtjs/style-resources',
-    '@nuxt/image'
+    '@nuxt/image',
   ],
 
   modules: [
     '@nuxtjs/axios',
-    '@nuxt/content'
+    '@nuxt/content',
+    "@nuxtjs/gtm",
   ],
-
+  gtm: {
+    id: 'AW-723781736',
+    enabled: true,
+    autoInit: true,
+  },
   styleResources: {
     scss: ['./assets/scss/main.scss']
   }

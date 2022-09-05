@@ -143,8 +143,6 @@ export default {
     },
     mounted () {
         let meta = document.querySelector('[property="og:title"]');
-
-        meta.setAttribute('content', "tituluzinnnnnnnnnnnnnnnnnnnnnnnnnnnnnn")
     },
     computed: {
         car() {

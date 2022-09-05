@@ -24,6 +24,9 @@
           <option value="price50">Até 50 mil</option>
           <option value="price60">Até 60 mil</option>
         </select>
+        <span @click="cleanAllFilters" @change="orderModel($event)">
+          Limpar Filtros
+        </span>
       </div>
     </div>
     <div class="estoque_cards">
@@ -58,11 +61,12 @@
 <script>
 const xml2js = require("xml2js"),
   parser = new xml2js.Parser({ explicitRoot: false, explicitArray: false });
-
+  
 export default {
   data() {
     return {
       cars: [],
+      defaultcars: [],
       sortType: "",
       sortModel: "",
       sortBrand: "",
@@ -99,65 +103,110 @@ export default {
            //     this.cars = this.cars.sort((livroA, livroB) => livroA['marca_descricao'] > livroB['marca_descricao'] ? 1 : -1);
       }
       if (this.sortType == "priceUp") {
-        this.cars = this.cars.sort(
+        this.cars = this.defaultcars.sort(
           (prev, curr) => curr.valor_final - prev.valor_final
         );
       }
       if (this.sortType == "priceDown") {
-        this.cars = this.cars.sort(
+        this.cars = this.defaultcars.sort(
           (prev, curr) => prev.valor_final - curr.valor_final
         );
       }
       if (this.sortType == "yearUp") {
-        this.cars = this.cars.sort(
+        this.cars = this.defaultcars.sort(
           (prev, curr) =>
             curr.ano_fabricacao_descricao - prev.ano_fabricacao_descricao
         );
       }
       if (this.sortType == "yearDown") {
-        this.cars = this.cars.sort(
+        this.cars = this.defaultcars.sort(
           (prev, curr) =>
             prev.ano_fabricacao_descricao - curr.ano_fabricacao_descricao
         );
       }
       if (this.sortType == "price40") {
-        this.cars = this.cars.filter((el) => el.valor_final <= 40000);
+        this.cars = this.defaultcars.filter((el) => el.valor_final <= 40000);
       }
       if (this.sortType == "price50") {
-        this.cars = this.cars.filter((el) => el.valor_final <= 50000);
+        this.cars = this.defaultcars.filter((el) => el.valor_final <= 50000);
       }
       if (this.sortType == "price60") {
-        this.cars = this.cars.filter((el) => el.valor_final <= 60000);
+        this.cars = this.defaultcars.filter((el) => el.valor_final <= 60000);
       }
     },
     getBrand() {
-      return this.cars
+      return this.defaultcars
         .map((el) => el.marca_descricao)
-        .sort()
+       .sort()
         .filter((value, index, arr) => arr.indexOf(value) === index);
     },
     getModel() {
       return this.cars
         .map((el) => el.modelo_descricao)
-        .sort()
-        .filter((value, index, arr) => arr.indexOf(value) === index)
+      .sort()
+      .filter((value, index, arr) => arr.indexOf(value) === index)
     },
   },
+  mounted () {
+    const urlParams = new URLSearchParams(window.location.search);
+    const marca = urlParams.get('marca');
+    const modelo = urlParams.get('modelo');
+    this.defaultcars = this.cars
+
+    if (marca !== null) {
+      this.defaultcars = this.cars
+      this.cars = this.cars.filter(
+          (el) => el.marca_descricao.split(' ').join('') === marca
+        );
+    }
+    //if (marca !== null && modelo !== null) {
+    //  this.cars = this.cars.filter(
+    //      (el) => el.modelo_descricao === modelo
+    //    );
+   // }
+    
+    else {
+    }
+  },
   methods: {
+    cleanAllFilters () {
+      this.cars = this.defaultcars
+    },
     orderModel(event) {
       if (this.sortModel == event.target.value) {
-        this.cars = this.cars.filter(
+        this.cars = this.defaultcars.filter(
           (el) => el.modelo_descricao === event.target.value
         );
+          const urlParams = new URLSearchParams(window.location.search);
+          const modelo = urlParams.get('modelo');
+          if (modelo) {
+            urlParams.delete("modelo")
+            urlParams.set("modelo", event.target.value.split(' ').join(''))
+          }else {
+            urlParams.append("modelo", event.target.value.split(' ').join(''))
+          }
+          //window.location.search = urlParams
        // this.cars = this.cars.sort((livroA, livroB) => livroA['modelo_descricao'] > livroB['modelo_descricao'] ? -1 : 1);
       }
     },
     orderBrand(event) {
       if (this.sortBrand == event.target.value) {
-        this.cars = this.cars.filter(
+        this.cars = this.defaultcars.filter(
           (el) => el.marca_descricao === event.target.value
         );
-      //  this.cars = this.cars.sort((livroA, livroB) => livroA['modelo_descricao'] > livroB['modelo_descricao'] ? -1 : 1);
+          const urlParams = new URLSearchParams(window.location.search);
+          const marca = urlParams.get('marca');
+          if (marca) {
+            urlParams.delete("marca")
+            urlParams.set("marca", event.target.value.split(' ').join(''))
+          }else {
+            urlParams.append("marca", event.target.value.split(' ').join(''))
+          }
+          let state = history.state;
+	        let title = document.title;
+	        let url = window.location.origin + window.location.pathname +"?"+ encodeURI(urlParams);
+          history.pushState(state, title, url);
+          //  this.cars = this.cars.sort((livroA, livroB) => livroA['modelo_descricao'] > livroB['modelo_descricao'] ? -1 : 1);
       }
     },
     cleanFilter() {
@@ -210,7 +259,27 @@ export default {
       @include md {
         justify-content: flex-start;
       }
+      span {
+        color: $gray-600;
+        border: none;
+        font-weight: bold;
+        font-size: 1.2rem;
+        background-color: transparent;
+        text-align: center;
+        cursor: pointer;
+
+        @include md {
+          width: 20rem;
+        }
   
+        &:hover {
+          color: $p-600;
+        }
+  
+        &:nth-child(2) {
+          margin: 0 1rem;
+        }
+      }
       select {
         color: $gray-600;
         border: none;
@@ -234,6 +303,7 @@ export default {
       }
     }
   }
+  
 
   &_cards {
     display: flex;
