@@ -10,6 +10,7 @@
             <div itemprop="value" itemscope itemtype="http://schema.org/PropertyValue">
             <span itemprop="propertyID" content="item_group_id"></span>
             <meta itemprop="value" content="cars">
+            <meta property="og:image" itemprop="og:image" :content="car.fotos.imagem[0]">
         </div>
         <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
             <meta itemprop="availability" content="in stock">
@@ -141,18 +142,18 @@ export default {
     },
     head: {
         meta: [
-            {property: "og:image", content: `${carImgsH}`},
-           {property: "og:image:type", content: "image/jpg"},
-           {property:"og:image:width", content:"1280"},
-           {property: "og:image:height", content: "720"},
+       // {property: "og:image", content: `${carImgsH}`},
+         //   {property: "og:image:type", content: "image/jpg"},
+           // {property:"og:image:width", content:"1280"},
+          //  {property: "og:image:height", content: "720"},
         ]
     },
     mounted() {
         setTimeout(() => {
-       document.querySelector('meta[property="og:image"]').content =  this.carImgs[0]
+       // document.querySelector('meta[property="og:image"]').content =  this.carImgs[0]
         this.carImgsH =  this.carImgs[0]
         
-        }, 100);
+        }, 1000);
         console.log(this.carImgs[0])
         this.url = window.location.href
         this.$nextTick(() => {
