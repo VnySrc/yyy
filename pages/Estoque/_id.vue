@@ -141,18 +141,18 @@ export default {
     },
     head: {
         meta: [
-       // {property: "og:image", content: `${carImgsH}`},
-         //   {property: "og:image:type", content: "image/jpg"},
-           // {property:"og:image:width", content:"1280"},
-          //  {property: "og:image:height", content: "720"},
+            {property: "og:image", content: `${carImgsH}`},
+           {property: "og:image:type", content: "image/jpg"},
+           {property:"og:image:width", content:"1280"},
+           {property: "og:image:height", content: "720"},
         ]
     },
     mounted() {
         setTimeout(() => {
-       // document.querySelector('meta[property="og:image"]').content =  this.carImgs[0]
+       document.querySelector('meta[property="og:image"]').content =  this.carImgs[0]
         this.carImgsH =  this.carImgs[0]
         
-        }, 1000);
+        }, 100);
         console.log(this.carImgs[0])
         this.url = window.location.href
         this.$nextTick(() => {
