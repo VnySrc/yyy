@@ -72,6 +72,7 @@ export default {
       sortType: "",
       sortModel: "",
       sortBrand: "",
+      thisCarBrand: "",
     };
   },
   head: {
@@ -230,7 +231,8 @@ export default {
         .filter((value, index, arr) => arr.indexOf(value) === index);
     },
     getModel() {
-      return this.cars
+      return this.defaultcars
+       .filter(el => el.marca_descricao === this.thisCarBrand)
         .map((el) => el.modelo_descricao)
       .sort()
       .filter((value, index, arr) => arr.indexOf(value) === index)
@@ -344,6 +346,7 @@ export default {
         this.cars = this.defaultcars.filter(
           (el) => el.marca_descricao === event.target.value
         );
+        this.thisCarBrand = event.target.value
           const urlParams = new URLSearchParams(window.location.search);
           const marca = urlParams.get('marca');
           if (marca) {
