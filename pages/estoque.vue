@@ -231,11 +231,19 @@ export default {
         .filter((value, index, arr) => arr.indexOf(value) === index);
     },
     getModel() {
-      return this.defaultcars
+      if (this.thisCarBrand === "") {
+        return this.defaultcars
+        .map((el) => el.modelo_descricao)
+        .sort()
+        .filter((value, index, arr) => arr.indexOf(value) === index)
+      }
+      else {
+        return this.defaultcars
        .filter(el => el.marca_descricao === this.thisCarBrand)
         .map((el) => el.modelo_descricao)
       .sort()
       .filter((value, index, arr) => arr.indexOf(value) === index)
+      }
     },
     setFiltersToDefaultValueByBrand () {
       const urlParams = new URLSearchParams(window.location.search);
