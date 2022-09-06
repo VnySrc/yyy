@@ -315,6 +315,7 @@ export default {
   
     cleanAllFilters () {
       this.cars = this.defaultcars
+      this.thisCarBrand = ""
       const urlParams = new URLSearchParams(window.location.search);
       urlParams.delete('marca');
       urlParams.delete('modelo');
