@@ -20,6 +20,7 @@
           <option value="yearDown">Mais velho</option>
           <option value="priceUp">Maior preço</option>
           <option value="priceDown">Menor preço</option>
+          <option value="kmDown">Menor Km</option>
           <option value="price40">Até 40 mil</option>
           <option value="price50">Até 50 mil</option>
           <option value="price60">Até 60 mil</option>
@@ -29,8 +30,9 @@
         </span>
       </div>
     </div>
+    <!--?img=${value.fotos.imagem[0]} -->
     <div class="estoque_cards">
-      <nuxt-link
+      <nuxt-link 
         :to="`/estoque/${value.id}`"
         v-for="value in cars"
         :key="value.id"
@@ -38,7 +40,7 @@
       >
         <div class="estoque_cards_card_info">
           <div class="estoque_cards_card_info_img">
-            <img :src="value.fotos.imagem[0]" loading="lazy" />
+            <img :src="value.fotos.imagem[0]" loading="lazy"/> <!-- onclick="localStorage? localStorage.imgUrl = this.src : return" -->
           </div>
           <div class="estoque_cards_card_info_title">
             <h1>{{ value.marca_descricao }} {{ value.modelo_descricao }}</h1>
@@ -101,19 +103,37 @@ export default {
     sortItem() {
       if (this.sortType == "") {
          // this.setFiltersToDefaultValueByBrand
-         // this.cars = this.cars.sort((carroA, carroB) => carroA['marca_descricao'] > carroB['marca_descricao'] ? 1 : -1);
+         //this.cars = this.cars.sort((carroA, carroB) => carroA.marca_descricao > carroB.marca_descricao ? -1 : true);
       }
       if (this.sortType == "priceUp") {
         this.setFiltersToDefaultValueByBrand
         this.cars = this.cars.sort(
           (prev, curr) => curr.valor_final - prev.valor_final
         );
+        const urlParams = new URLSearchParams(window.location.search);
+            urlParams.delete("year")
+            urlParams.delete("price")
+            urlParams.delete("km")
+            urlParams.set("price", "up")
+          let state = history.state;
+	        let title = document.title;
+	        let url = window.location.origin + window.location.pathname +"?"+ encodeURI(urlParams);
+          history.pushState(state, title, url);
       }
       if (this.sortType == "priceDown") {
         this.setFiltersToDefaultValueByBrand
         this.cars = this.cars.sort(
           (prev, curr) => prev.valor_final - curr.valor_final
         );
+        const urlParams = new URLSearchParams(window.location.search);
+            urlParams.delete("year")
+            urlParams.delete("price")
+            urlParams.delete("km")
+            urlParams.set("price", "down")
+          let state = history.state;
+	        let title = document.title;
+	        let url = window.location.origin + window.location.pathname +"?"+ encodeURI(urlParams);
+          history.pushState(state, title, url);
       }
       if (this.sortType == "yearUp") {
         this.setFiltersToDefaultValueByBrand
@@ -121,6 +141,16 @@ export default {
           (prev, curr) =>
             curr.ano_fabricacao_descricao - prev.ano_fabricacao_descricao
         );
+        const urlParams = new URLSearchParams(window.location.search);
+            urlParams.delete("year")
+            urlParams.delete("price")
+            urlParams.delete("km")
+            urlParams.set("year", "up")
+          let state = history.state;
+	        let title = document.title;
+	        let url = window.location.origin + window.location.pathname +"?"+ encodeURI(urlParams);
+          history.pushState(state, title, url);
+
       }
       if (this.sortType == "yearDown") {
         this.setFiltersToDefaultValueByBrand
@@ -128,18 +158,69 @@ export default {
           (prev, curr) =>
             prev.ano_fabricacao_descricao - curr.ano_fabricacao_descricao
         );
+        const urlParams = new URLSearchParams(window.location.search);
+            urlParams.delete("year")
+            urlParams.delete("price")
+            urlParams.delete("km")
+            urlParams.set("year", "down")
+          let state = history.state;
+	        let title = document.title;
+	        let url = window.location.origin + window.location.pathname +"?"+ encodeURI(urlParams);
+          history.pushState(state, title, url);
+
       }
       if (this.sortType == "price40") {
         this.setFiltersToDefaultValueByBrand
         this.cars = this.cars.filter((el) => el.valor_final <= 40000);
+        const urlParams = new URLSearchParams(window.location.search);
+            urlParams.delete("year")
+            urlParams.delete("price")
+            urlParams.delete("km")
+            urlParams.set("price", "40")
+          let state = history.state;
+	        let title = document.title;
+	        let url = window.location.origin + window.location.pathname +"?"+ encodeURI(urlParams);
+          history.pushState(state, title, url);
       }
       if (this.sortType == "price50") {
         this.setFiltersToDefaultValueByBrand
         this.cars = this.cars.filter((el) => el.valor_final <= 50000);
+        const urlParams = new URLSearchParams(window.location.search);
+            urlParams.delete("year")
+            urlParams.delete("price")
+            urlParams.delete("km")
+            urlParams.set("price", "50")
+          let state = history.state;
+	        let title = document.title;
+	        let url = window.location.origin + window.location.pathname +"?"+ encodeURI(urlParams);
+          history.pushState(state, title, url);
       }
       if (this.sortType == "price60") {
         this.setFiltersToDefaultValueByBrand
-        this.cars = this.defaultcars.filter((el) => el.valor_final <= 60000);
+        this.cars = this.cars.filter((el) => el.valor_final <= 60000);
+        const urlParams = new URLSearchParams(window.location.search);
+            urlParams.delete("year")
+            urlParams.delete("price")
+            urlParams.delete("km")
+            urlParams.set("price", "50")
+          let state = history.state;
+	        let title = document.title;
+	        let url = window.location.origin + window.location.pathname +"?"+ encodeURI(urlParams);
+          history.pushState(state, title, url);
+      }
+      if (this.sortType == "kmDown") {
+        this.setFiltersToDefaultValueByBrand
+        this.cars = this.cars.sort((carA, carB) => parseInt(carA.kilometragem)  < parseInt(carB.kilometragem) ? -1 : true)
+
+        const urlParams = new URLSearchParams(window.location.search);
+            urlParams.delete("year")
+            urlParams.delete("price")
+            urlParams.delete("km")
+            urlParams.set("km", "down")
+          let state = history.state;
+	        let title = document.title;
+	        let url = window.location.origin + window.location.pathname +"?"+ encodeURI(urlParams);
+          history.pushState(state, title, url);
       }
     },
     getBrand() {
@@ -164,11 +245,20 @@ export default {
         );
         }
     },
+
+    clearPriceAndYaearFiltersAndSetToSearchParam (type, value) {
+     
+    }
   },
   mounted () {
     const urlParams = new URLSearchParams(window.location.search);
     const marca = urlParams.get('marca');
     const modelo = urlParams.get('modelo');
+    const price = urlParams.get('price');
+    const year = urlParams.get('year');
+    const km = urlParams.get('km');
+    
+    
     this.defaultcars = this.cars
 
     if (marca !== null) {
@@ -177,19 +267,55 @@ export default {
           (el) => el.marca_descricao.split(' ').join('') === marca
         );
     }
-    //if (marca !== null && modelo !== null) {
-    //  this.cars = this.cars.filter(
-    //      (el) => el.modelo_descricao === modelo
-    //    );
-   // }
-    
-    else {
+   if (marca !== null && modelo !== null) {
+     this.cars = this.cars.filter(
+         (el) => el.modelo_descricao.split(' ').join('') === modelo
+       );
+   }
+
+    if (price == "up" ) {
+      this.sortType = "priceUp"
     }
+    else if (price == "down") {
+      this.sortType = "priceDown"
+    }
+    else if (price == "40") {
+      this.sortType = "price40"
+    }
+    else if (price == "50") {
+      this.sortType = "price50"
+    }
+    else if (price == "60") {
+      this.sortType = "price60"
+    }
+
+    else if (year == "up") {
+      this.sortType = "yearUp"
+    }
+    else if (year == "down") {
+      this.sortType = "yearDown"
+    }
+    else if (km == "down") {
+      this.sortType = "kmDown"
+    }
+   
+    this.sortItem
   },
   methods: {
   
     cleanAllFilters () {
       this.cars = this.defaultcars
+      const urlParams = new URLSearchParams(window.location.search);
+      urlParams.delete('marca');
+      urlParams.delete('modelo');
+      urlParams.delete("year")
+      urlParams.delete("price")
+      urlParams.delete("km")
+
+      let state = history.state;
+	        let title = document.title;
+	        let url = window.location.origin + window.location.pathname +"?"+ encodeURI(urlParams);
+          history.pushState(state, title, url);
     },
     orderModel(event) {
       if (this.sortModel == event.target.value) {
@@ -204,12 +330,17 @@ export default {
           }else {
             urlParams.append("modelo", event.target.value.split(' ').join(''))
           }
-          //window.location.search = urlParams
+          let state = history.state;
+	        let title = document.title;
+	        let url = window.location.origin + window.location.pathname +"?"+ encodeURI(urlParams);
+          history.pushState(state, title, url);
        // this.cars = this.cars.sort((livroA, livroB) => livroA['modelo_descricao'] > livroB['modelo_descricao'] ? -1 : 1);
       }
     },
     orderBrand(event) {
       if (this.sortBrand == event.target.value) {
+        this.cars = this.defaultcars
+        this.sortModel = ""
         this.cars = this.defaultcars.filter(
           (el) => el.marca_descricao === event.target.value
         );
@@ -217,6 +348,8 @@ export default {
           const marca = urlParams.get('marca');
           if (marca) {
             urlParams.delete("marca")
+            urlParams.delete("modelo")
+            this.cleanAllFilters
             urlParams.set("marca", event.target.value.split(' ').join(''))
           }else {
             urlParams.append("marca", event.target.value.split(' ').join(''))

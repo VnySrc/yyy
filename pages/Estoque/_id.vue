@@ -111,6 +111,18 @@ catch (err) {
     console.log("")
 }
 let carImgsH
+let gg = [
+    {id:1},
+    {id:2}
+]
+function ff () {
+    try {
+        return 
+    }catch(err) {
+        console.error(err)
+    return ""
+    }
+}
 
 const xml2js = require('xml2js'),
       parser = new xml2js.Parser({explicitRoot: false, explicitArray: false});
@@ -141,18 +153,19 @@ export default {
     },
     head: {
         meta: [
-       {property: "og:image", content: `${carImgsH}`},
-           {property: "og:image:type", content: "image/jpg"},
-           {property:"og:image:width", content:"1280"},
-           {property: "og:image:height", content: "720"},
+        {property: "og:image", content: `${new URLSearchParams(window.location.search).get("img")}`}, // localStorage.getItem("imgUrl")
+          {property: "og:image:type", content: "image/jpg"},
+          {property:"og:image:width", content:"1280"},
+          {property: "og:image:height", content: "720"},
         ]
     },
     mounted() {
         setTimeout(() => {
-        document.querySelector('meta[property="og:image"]').content =  this.carImgs[0]
+        // document.querySelector('meta[property="og:image"]').content =  this.carImgs[0]
         this.carImgsH =  this.carImgs[0]
         
-        }, 300);
+        }, 1000);
+        console.log()
         console.log(this.carImgs[0])
         this.url = window.location.href
         this.$nextTick(() => {
