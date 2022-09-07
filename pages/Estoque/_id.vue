@@ -18,7 +18,6 @@
             <meta itemprop="itemCondition" content="new">
         </div>
     </div>
-
         <div class="cars_info">
             <div class="cars_info_gallery">
                 <swiper
