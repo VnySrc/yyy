@@ -47,7 +47,6 @@
                     </swiper-slide>
                 </swiper>
             </div>
-            
             <div class="cars_info_brand">
                 <div class="cars_info_brand_titles">
                     <h1>{{ car.marca_descricao }} {{ car.modelo_descricao }}</h1>
