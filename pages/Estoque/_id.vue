@@ -154,10 +154,10 @@ export default {
     },
     head: {
         meta: [
-        {property: "og:image", content: `${new URLSearchParams(window.location.search).get("img")}`}, // localStorage.getItem("imgUrl")
-          {property: "og:image:type", content: "image/jpg"},
-          {property:"og:image:width", content:"1280"},
-          {property: "og:image:height", content: "720"},
+       // {property: "og:image", content: `${new URLSearchParams(window.location.search).get("img")}`}, // localStorage.getItem("imgUrl")
+     //     {property: "og:image:type", content: "image/jpg"},
+      //    {property:"og:image:width", content:"1280"},
+       //   {property: "og:image:height", content: "720"},
         ]
     },
     mounted() {
