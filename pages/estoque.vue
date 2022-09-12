@@ -435,12 +435,16 @@ export default {
         @include md {
           width: 20rem;
         }
+        
   
         &:hover {
           color: $p-600;
         }
   
         &:nth-child(2) {
+          @include sm {
+            margin: 0 1px;
+        }
           margin: 0 1rem;
         }
       }
@@ -455,6 +459,9 @@ export default {
 
         @include md {
           width: 20rem;
+        }
+        @include sm {
+            width: 25%;
         }
   
         &:hover {
