@@ -63,7 +63,8 @@
 <script>
 const xml2js = require("xml2js"),
   parser = new xml2js.Parser({ explicitRoot: false, explicitArray: false });
-  
+const axios = require("axios").default
+
 export default {
   data() {
     return {
@@ -379,16 +380,26 @@ export default {
   },
   async asyncData({ $axios }) {
     setInterval(async () => {
-       const xml = await $axios.$get();
-    const cars = await parser.parseStringPromise(xml).then(function (res) {
+      const xml = await axios.get("https://integreauto.com.br/anuncios/listaAnunciosParceiros/17/1931.xml", {
+      headers: {
+        "Accept": "application/json, text/plain, */*"
+      }
+    });
+    const cars = await parser.parseStringPromise(xml.data).then(function (res) {
       return res.veiculo;
     });
+    console.log(cars.length)
     return { cars };
     }, 60000);
-     const xml = await $axios.$get();
-    const cars = await parser.parseStringPromise(xml).then(function (res) {
+    const xml = await axios.get("https://integreauto.com.br/anuncios/listaAnunciosParceiros/17/1931.xml", {
+      headers: {
+        "Accept": "application/json, text/plain, */*"
+      }
+    });
+    const cars = await parser.parseStringPromise(xml.data).then(function (res) {
       return res.veiculo;
     });
+    console.log(cars.length)
     return { cars };
   },
 };
