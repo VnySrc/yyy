@@ -26,7 +26,7 @@
           <option value="price60">Até 60 mil</option>
         </select>
         <span @click="cleanAllFilters" @change="orderModel($event)">
-          Limpar Filtros ss
+          Limpar Filtros
         </span>
       </div>
     </div>
@@ -379,7 +379,6 @@ export default {
     }
   },
   async asyncData({ $axios }) {
-    alert("FOI1")
     setInterval(async () => {
       const xml = await axios.get("https://integreauto.com.br/anuncios/listaAnunciosParceiros/17/1931.xml", {
       headers: {
@@ -389,9 +388,7 @@ export default {
     const cars = await parser.parseStringPromise(xml.data).then(function (res) {
       return res.veiculo;
     });
-    alert(cars.length)
     console.log(cars.length)
-    console.error(cars.length)
     return { cars };
     }, 7000);
     const xml = await axios.get("https://integreauto.com.br/anuncios/listaAnunciosParceiros/17/1931.xml", {
@@ -402,9 +399,7 @@ export default {
     const cars = await parser.parseStringPromise(xml.data).then(function (res) {
       return res.veiculo;
     });
-    alert(cars.length)
     console.log(cars.length)
-    console.error(cars.length)
     return { cars };
   },
 };
