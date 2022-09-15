@@ -379,7 +379,6 @@ export default {
     }
   },
   async asyncData({ $axios }) {
-    alert("FOI11")
     setInterval(async () => {
       const xml = await axios.get("https://integreauto.com.br/anuncios/listaAnunciosParceiros/17/1931.xml", {
       headers: {
