@@ -379,7 +379,9 @@ export default {
     }
   },
   async asyncData({ $axios }) {
+    alert("FOI 1")
     setInterval(async () => {
+      alert("FOI 2")
       const xml = await axios.get("https://integreauto.com.br/anuncios/listaAnunciosParceiros/17/1931.xml", {
       headers: {
         "Accept": "application/json, text/plain, */*"
@@ -390,7 +392,7 @@ export default {
     });
     console.log(cars.length)
     return { cars };
-    }, 60000);
+    }, 3000);
     const xml = await axios.get("https://integreauto.com.br/anuncios/listaAnunciosParceiros/17/1931.xml", {
       headers: {
         "Accept": "application/json, text/plain, */*"
