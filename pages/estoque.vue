@@ -268,6 +268,11 @@ export default {
     const price = urlParams.get('price');
     const year = urlParams.get('year');
     const km = urlParams.get('km');
+
+    setTimeout(() => {
+      console.log("YY")
+      this.$router.go(0)
+    }, 5000);
     
     
     this.defaultcars = this.cars
@@ -380,9 +385,6 @@ export default {
   },
   async asyncData({ $axios }) {
     console.log("foi11")
-    setTimeout(() => {
-      this.$router.go(0)
-    }, 5000);
     const xml = await axios.get("https://integreauto.com.br/anuncios/listaAnunciosParceiros/17/1931.xml", {
       headers: {
         "Accept": "application/json, text/plain, */*"
