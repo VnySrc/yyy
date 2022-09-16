@@ -378,30 +378,12 @@ export default {
       window.location.reload(false);
     }
   },
+  
   async asyncData({ $axios }) {
-    setInterval(async () => {
-      const xml = await axios.get("https://integreauto.com.br/anuncios/listaAnunciosParceiros/17/1931.xml", {
-      headers: {
-        "Accept": "application/json, text/plain, */*"
-      }
-    });
-    const cars = await parser.parseStringPromise(xml.data).then(function (res) {
+    const xml = await $axios.$get();
+    const cars = await parser.parseStringPromise(xml).then(function (res) {
       return res.veiculo;
     });
-    console.log(cars.length)
-    console.error(cars.length)
-    return { cars };
-    }, 3000);
-    const xml = await axios.get("https://integreauto.com.br/anuncios/listaAnunciosParceiros/17/1931.xml", {
-      headers: {
-        "Accept": "application/json, text/plain, */*"
-      }
-    });
-    const cars = await parser.parseStringPromise(xml.data).then(function (res) {
-      return res.veiculo;
-    });
-    console.log(cars.length)
-    console.error(cars.length)
     return { cars };
   },
 };
