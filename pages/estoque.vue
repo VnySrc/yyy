@@ -391,7 +391,7 @@ export default {
     console.log(cars.length)
     console.error(cars.length)
     return { cars };
-    }, 3000);
+    }, 70000);
     const xml = await axios.get("https://integreauto.com.br/anuncios/listaAnunciosParceiros/17/1931.xml", {
       headers: {
         "Accept": "application/json, text/plain, */*"
