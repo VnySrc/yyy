@@ -271,7 +271,6 @@ export default {
 
     setTimeout(() => {
       this.reUpdate()
-      //this.$router.go(0)
     }, 5000);
     
     
@@ -322,6 +321,7 @@ export default {
     reUpdate() {
       console.log("YY")
       this.$forceUpdate()
+      this.$router.go(0)
     },
   
     cleanAllFilters () {
