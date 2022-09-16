@@ -270,8 +270,8 @@ export default {
     const km = urlParams.get('km');
 
     setTimeout(() => {
-      console.log("YY")
-      this.$router.go(0)
+      this.reUpdate()
+      //this.$router.go(0)
     }, 5000);
     
     
@@ -318,6 +318,11 @@ export default {
     this.sortItem
   },
   methods: {
+
+    reUpdate() {
+      console.log("YY")
+      this.$forceUpdate()
+    },
   
     cleanAllFilters () {
       this.cars = this.defaultcars
