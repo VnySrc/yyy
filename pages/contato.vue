@@ -63,7 +63,6 @@
     </div>
   </section>
 </template>
-
 <script>
   import {
     mapState
