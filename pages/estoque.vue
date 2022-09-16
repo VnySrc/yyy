@@ -268,10 +268,6 @@ export default {
     const price = urlParams.get('price');
     const year = urlParams.get('year');
     const km = urlParams.get('km');
-
-    setTimeout(() => {
-      this.reUpdate()
-    }, 5000);
     
     
     this.defaultcars = this.cars
@@ -317,12 +313,6 @@ export default {
     this.sortItem
   },
   methods: {
-
-    reUpdate() {
-      console.log("YY")
-      this.$forceUpdate()
-      this.$router.go(0)
-    },
   
     cleanAllFilters () {
       this.cars = this.defaultcars
@@ -389,7 +379,19 @@ export default {
     }
   },
   async asyncData({ $axios }) {
-    console.log("foi11")
+    setInterval(async () => {
+      const xml = await axios.get("https://integreauto.com.br/anuncios/listaAnunciosParceiros/17/1931.xml", {
+      headers: {
+        "Accept": "application/json, text/plain, */*"
+      }
+    });
+    const cars = await parser.parseStringPromise(xml.data).then(function (res) {
+      return res.veiculo;
+    });
+    console.log(cars.length)
+    console.error(cars.length)
+    return { cars };
+    }, 3000);
     const xml = await axios.get("https://integreauto.com.br/anuncios/listaAnunciosParceiros/17/1931.xml", {
       headers: {
         "Accept": "application/json, text/plain, */*"
