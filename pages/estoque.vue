@@ -269,7 +269,6 @@ export default {
     const year = urlParams.get('year');
     const km = urlParams.get('km');
     
-    
     this.defaultcars = this.cars
 
     if (marca !== null) {
@@ -378,7 +377,7 @@ export default {
       window.location.reload(false);
     }
   },
-  
+
   async asyncData({ $axios }) {
     const xml = await $axios.$get();
     const cars = await parser.parseStringPromise(xml).then(function (res) {
