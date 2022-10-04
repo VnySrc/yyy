@@ -47,7 +47,7 @@
             <h2>{{ value.versao_descricao }}</h2>
           </div>
           <div class="estoque_cards_card_info_price">
-            <h3>{{ value.valor_final | price }}</h3>
+            <h3><span class="promotion">  {{ Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(value.valor_de) }} </span> <span class="arrow"> ></span> {{ value.valor_final | price }}</h3>
             <div>
               <span>{{ value.ano_fabricacao_descricao }} / {{ value.ano_modelo_descricao }}</span>
               <span>{{ value.combustivel_descricao | gas }}</span>
@@ -574,5 +574,15 @@ export default {
       }
     }
   }
+  
+  .promotion {
+            text-decoration: line-through;
+            font-size: 20px;
+            color: #EF233C;
+        }
+        .arrow {
+            font-size: 20px;
+            color:#EF233C;
+    }
 }
 </style>

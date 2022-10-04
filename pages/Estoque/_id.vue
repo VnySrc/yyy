@@ -55,7 +55,7 @@
                 </div>
                 <div class="cars_info_brand_details">
                     <div class="cars_info_brand_details_price">
-                        <h3>{{ car.valor_final | price }}</h3>
+                        <h3><span class="promotion">  {{ Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(car.valor_de) }} </span> <span class="arrow"> ></span> {{ car.valor_final | price }}</h3>
                     </div>
                     <!--<a :href="'https://api.whatsapp.com/send?phone=5519997976865&text=Ol%C3%A1%20%F0%9F%98%80%2C%20tenho%20interesse%20no%20produto%20' +car.marca_descricao+ '%20%20' +car.modelo_descricao+ '%0ANome%3A%20' +car.marca_descricao+ '%20%20' +car.modelo_descricao+ '%0AVers%C3%A3o%3A%20' +car.versao_descricao+ '%0AAno%3A%20' +car.ano_fabricacao_descricao+'/'+car.ano_modelo_descricao+'%0APre%C3%A7o%3A%20' +Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(car.valor_final) || price" class="cars_info_brand_details_zap">-->
                     <a :href="'https://api.whatsapp.com/send?phone=5519997976865&text=Olá%2C%20tenho%20interesse%20neste%20veículo%20que%20vi%20no%20seu%20%23Estoque%0ANome%3A%20' +car.marca_descricao+ '%20%20' +car.modelo_descricao + '%0AAno%3A%20' +car.ano_fabricacao_descricao+'/'+car.ano_modelo_descricao+'%0APre%C3%A7o%3A%20' + Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(car.valor_final) +'%0ALink%3A%20' + url " class="cars_info_brand_details_zap">
@@ -390,5 +390,16 @@ export default {
                 }
             }
         }
+
+        .promotion {
+            text-decoration: line-through;
+            font-size: 20px;
+            color: #EF233C;
+        }
+        .arrow {
+            font-size: 20px;
+            color:#EF233C;
     }
+    }
+   
 </style>
